@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1116">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="../icon.svg">
+<link rel="apple-touch-icon" href="../icon.svg">
+<link rel="stylesheet" href="../vendor/leaflet.css">
+<title>Wasserentnahmestellen</title>
+<style>
+  :root{
+    --bg:#0d1116;
+    --panel:#161d25;
+    --panel-2:#1e2833;
+    --line:#2b3743;
+    --text:#e6edf3;
+    --dim:#93a3b3;
+    --signal:#e23c22;
+    --ok:#3fb26a;
+    --warn:#e8a020;
+    --touch:56px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Roboto","Segoe UI",sans-serif;
+    font-size:17px;line-height:1.35;
+    display:flex;flex-direction:column;
+    overscroll-behavior:none;
+  }
+  header{
+    padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:12px;flex:none;
+  }
+  header h1{font-size:16px;font-weight:600;margin:0;letter-spacing:.2px}
+  #gps{margin-left:auto;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
+  #gps b{display:block;font-size:15px;font-weight:600}
+  .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
+  #sync-jetzt{
+    flex:none;width:40px;height:40px;border-radius:8px;background:var(--panel-2);
+    border:1px solid var(--line);color:var(--text);font-size:19px;cursor:pointer;
+  }
+
+  main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .view{display:none;padding:12px 14px 24px}
+  .view.on{display:block}
+
+  nav{
+    flex:none;display:grid;grid-template-columns:repeat(2,1fr);
+    background:var(--panel);border-top:1px solid var(--line);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  nav button{
+    background:none;border:0;color:var(--dim);font:inherit;font-size:14px;
+    padding:14px 2px;min-height:var(--touch);cursor:pointer;
+  }
+  nav button.on{color:var(--text);box-shadow:inset 0 3px 0 var(--signal)}
+
+  /* Karte */
+  #v-karte{padding:0}
+  #map{width:100%;height:calc(100vh - 118px);height:calc(100dvh - 118px);background:#1a232c}
+
+  input,select,textarea,button{font:inherit}
+  input,select{
+    width:100%;background:var(--panel-2);color:var(--text);
+    border:1px solid var(--line);border-radius:6px;padding:12px;min-height:var(--touch);
+  }
+  label{display:block;margin:14px 0 5px;font-size:14px;color:var(--dim)}
+  .btn{
+    display:block;width:100%;min-height:var(--touch);border:0;border-radius:6px;
+    background:var(--panel-2);color:var(--text);padding:14px;cursor:pointer;
+    border:1px solid var(--line);
+  }
+  .btn.primary{background:var(--signal);border-color:var(--signal);font-weight:600}
+  .btn.ghost{background:none}
+  .row{display:flex;gap:10px}
+  .row>*{flex:1}
+
+  /* Liste */
+  #suche{margin-bottom:10px}
+  .item{
+    display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;margin-bottom:8px;min-height:var(--touch);cursor:pointer;color:inherit;
+  }
+  .item .dist{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;min-width:92px}
+  .item .meta{font-size:14px;color:var(--dim);margin-top:2px}
+  .item .name{font-size:17px}
+  .tag{
+    font-size:12px;padding:2px 7px;border-radius:4px;border:1px solid var(--line);
+    color:var(--dim);margin-left:8px;white-space:nowrap;
+  }
+  .empty{color:var(--dim);padding:28px 4px;font-size:16px}
+  .anleitung-link{
+    display:block;text-align:center;margin-top:18px;color:var(--dim);
+    font-size:14px;text-decoration:none;
+  }
+
+  /* Peilung: Karte vollflächig, Bedienelemente nur bei Berührung */
+  #peil{display:none}
+  #peil.on{
+    display:block;position:fixed;inset:0;z-index:1500;background:var(--bg);
+  }
+  #peilMap{width:100%;height:100%;background:#1a232c}
+  .peil-overlay{
+    position:fixed;inset:0;z-index:1600;pointer-events:none;
+    display:flex;flex-direction:column;justify-content:space-between;
+    opacity:0;transition:opacity .25s ease;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  .peil-overlay.sichtbar{opacity:1;pointer-events:auto}
+  .peil-oben{
+    position:relative;pointer-events:auto;padding:64px 88px 18px 14px;
+    background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
+  }
+  .peil-zurueck-btn{
+    position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
+    width:auto;min-height:44px;padding:10px 18px;background:#0d1116cc;
+  }
+  .peil-unten{
+    pointer-events:auto;padding:18px 14px 14px;
+    background:linear-gradient(transparent, #0d1116aa 40%, #0d1116ee);
+  }
+  .ziel{font-size:20px;font-weight:600;margin-bottom:2px}
+  .ziel-meta{color:var(--dim);font-size:14px}
+  .abstand{text-align:center;margin-top:4px}
+  .abstand .m{font-size:44px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+  .abstand .u{color:var(--dim);font-size:14px}
+  .hinweis{
+    margin-top:16px;padding:12px;border-radius:6px;background:var(--panel);
+    border:1px solid var(--line);font-size:14px;color:var(--dim);
+  }
+  .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
+  .kompass-mini{
+    position:fixed;right:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
+    width:64px;height:64px;background:#0d1116cc;border:1px solid var(--line);
+    border-radius:10px;padding:4px;pointer-events:none;
+  }
+  .eigene-pos{
+    width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
+    box-shadow:0 0 0 2px #3fa9ff88;
+  }
+  .nr-marker{
+    position:relative;transform:translate(-50%,-100%);
+    background:var(--pin, var(--signal));color:#fff;font-weight:700;font-size:12px;font-family:system-ui,sans-serif;
+    padding:3px 8px;border-radius:5px;white-space:nowrap;box-shadow:0 1px 5px #000a;
+  }
+  .nr-marker::after{
+    content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);
+    border:6px solid transparent;border-top-color:var(--pin, var(--signal));
+  }
+  .peil-hinweis-touch{
+    position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
+    color:var(--dim);font-size:13px;pointer-events:none;
+  }
+  .detail-overlay{
+    display:none;position:fixed;inset:0;z-index:1900;background:#000c;
+    align-items:flex-end;justify-content:center;padding:0;
+  }
+  .detail-overlay.on{display:flex}
+  .detail-karte{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px 14px 0 0;
+    padding:20px 18px calc(18px + env(safe-area-inset-bottom));width:100%;max-width:480px;
+    max-height:82vh;overflow-y:auto;
+  }
+  .detail-karte .ziel{margin-bottom:0}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wasserentnahmestellen</h1>
+  <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
+  <button id="sync-jetzt" title="Jetzt aktualisieren" aria-label="Jetzt aktualisieren">⟳</button>
+</header>
+
+<main>
+  <!-- Detailansicht: Punktdaten anzeigen, dann Ja/Nein zur Navigation -->
+  <div class="detail-overlay" id="detailOverlay">
+    <div class="detail-karte">
+      <div class="ziel" id="detailName">–</div>
+      <div class="ziel-meta" id="detailMeta"></div>
+      <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
+      <div class="hinweis" id="detailHinweis"></div>
+      <p style="margin:18px 0 10px;color:var(--dim)">Zu diesem Punkt navigieren?</p>
+      <div class="row">
+        <button class="btn primary" id="detail-ja">Ja, navigieren</button>
+        <button class="btn ghost" id="detail-nein">Nein</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Peilansicht (Navigation): Karte vollflächig, Pfeil dauerhaft sichtbar, Rest nur bei Berührung -->
+  <section id="peil">
+    <div id="peilMap"></div>
+    <svg class="kompass-mini" id="kompassMini" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
+      <g id="ring">
+        <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
+      </g>
+      <g id="pfeil">
+        <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+      </g>
+      <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+    </svg>
+    <button class="btn ghost peil-zurueck-btn" id="zurueck">Zurück</button>
+    <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
+    <div class="peil-overlay" id="peilOverlay">
+      <div class="peil-oben">
+        <div class="ziel" id="zielName">–</div>
+        <div class="ziel-meta" id="zielMeta"></div>
+      </div>
+      <div class="peil-unten">
+        <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
+        <div class="koord" id="zielKoord"></div>
+        <div class="hinweis" id="peilHinweis"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Karte -->
+  <section id="v-karte" class="view" style="position:relative">
+    <div id="map"></div>
+  </section>
+
+  <!-- Liste -->
+  <section id="v-liste" class="view on">
+    <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
+    <div class="row" style="margin-top:8px">
+      <div>
+        <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
+        <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+      </div>
+      <div>
+        <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
+        <select id="f-typ-filter"><option value="">Alle Arten</option></select>
+      </div>
+    </div>
+    <div id="liste" style="margin-top:10px"></div>
+    <a class="anleitung-link" href="../anleitung/index.html">Anleitung ansehen</a>
+  </section>
+</main>
+
+<nav>
+  <button data-view="v-liste" class="on">Suchen</button>
+  <button data-view="v-karte">Karte</button>
+</nav>
+
+<script src="../vendor/leaflet.js"></script>
+<script>
+"use strict";
+const KEY = "wasserentnahme.foehr.v1";
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+
+/* ---------- Speicher: localStorage mit Rückfall auf Arbeitsspeicher ---------- */
+const store = {
+  persistent: (() => { try { localStorage.setItem("__t","1"); localStorage.removeItem("__t"); return true; } catch(e){ return false; } })(),
+  mem: [],
+  load(){ if(this.persistent){ try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch(e){ return []; } } return this.mem; },
+  save(d){ if(this.persistent){ try { localStorage.setItem(KEY, JSON.stringify(d)); return; } catch(e){} } this.mem = d; }
+};
+let stellen = store.load();
+
+/* ---------- Geometrie ---------- */
+const R = 6371008.8, rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+function distanz(a,b,c,d){
+  const p=rad(a),q=rad(c),dp=rad(c-a),dl=rad(d-b);
+  const x=Math.sin(dp/2)**2+Math.cos(p)*Math.cos(q)*Math.sin(dl/2)**2;
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+function peilung(a,b,c,d){
+  const p=rad(a),q=rad(c),dl=rad(d-b);
+  const y=Math.sin(dl)*Math.cos(q);
+  const x=Math.cos(p)*Math.sin(q)-Math.sin(p)*Math.cos(q)*Math.cos(dl);
+  return (deg(Math.atan2(y,x))+360)%360;
+}
+const fmtDist = m => m<1000 ? Math.round(m)+" m" : (m/1000).toFixed(1)+" km";
+
+/* ---------- GPS ---------- */
+let pos = null;
+const gpsBox = document.getElementById("gps");
+const gpsDetail = document.getElementById("gpsdetail");
+
+if("geolocation" in navigator){
+  navigator.geolocation.watchPosition(p => {
+    pos = p.coords;
+    gpsBox.classList.toggle("fix-ok", p.coords.accuracy <= 15);
+    gpsBox.classList.toggle("fix-bad", p.coords.accuracy > 15);
+    gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
+    gpsDetail.textContent = p.coords.latitude.toFixed(5) + ", " + p.coords.longitude.toFixed(5);
+    if(typeof p.coords.heading === "number" && !isNaN(p.coords.heading) && p.coords.speed > 1) gpsKurs = p.coords.heading;
+    zeichneListe(); aktualisierePeil();
+  }, err => {
+    gpsBox.querySelector("b").textContent = "kein GPS";
+    gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
+  }, { enableHighAccuracy:true, maximumAge:2000, timeout:20000 });
+} else {
+  gpsDetail.textContent = "vom Gerät nicht unterstützt";
+}
+
+/* ---------- Kompass ---------- */
+let kompass = null, gpsKurs = null, kompassAktiv = false;
+function orientierung(e){
+  let h = null;
+  if(typeof e.webkitCompassHeading === "number") h = e.webkitCompassHeading;
+  else if(e.absolute && typeof e.alpha === "number") h = (360 - e.alpha) % 360;
+  if(h !== null){ kompass = h; kompassAktiv = true; aktualisierePeil(); }
+}
+window.addEventListener("deviceorientationabsolute", orientierung, true);
+window.addEventListener("deviceorientation", orientierung, true);
+
+/* ---------- Ansichten ---------- */
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  document.getElementById("peil").classList.remove("on");
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === b.dataset.view));
+  if(b.dataset.view === "v-karte"){ initKarte(); setTimeout(() => map.invalidateSize(), 50); }
+}));
+
+/* ---------- Liste ---------- */
+const listeEl = document.getElementById("liste");
+const sucheEl = document.getElementById("suche");
+const ortschaftFilterEl = document.getElementById("f-ortschaft-filter");
+const typFilterEl = document.getElementById("f-typ-filter");
+sucheEl.addEventListener("input", zeichneListe);
+ortschaftFilterEl.addEventListener("change", zeichneListe);
+typFilterEl.addEventListener("change", zeichneListe);
+
+function ortschaften(){
+  return [...new Set(stellen.map(s => (s.ortschaft || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
+}
+
+const TYP_GRUNDLISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne"];
+function typen(){
+  const benutzt = stellen.map(s => (s.typ || "").trim()).filter(Boolean);
+  return [...new Set([...TYP_GRUNDLISTE, ...benutzt])].sort((a,b) => a.localeCompare(b, "de"));
+}
+
+function aktualisiereFilterListen(){
+  const werte = ortschaften();
+  const aktuellerFilter = ortschaftFilterEl.value;
+  ortschaftFilterEl.innerHTML = '<option value="">Alle Ortschaften</option>' +
+    werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
+  if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
+
+  const typWerte = typen();
+  const aktuellerTypFilter = typFilterEl.value;
+  typFilterEl.innerHTML = '<option value="">Alle Arten</option>' +
+    typWerte.map(t => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
+  if(typWerte.includes(aktuellerTypFilter)) typFilterEl.value = aktuellerTypFilter;
+}
+
+function zeichneListe(){
+  aktualisiereFilterListen();
+  if(document.getElementById("peil").classList.contains("on")) return;
+  const q = sucheEl.value.trim().toLowerCase();
+  const ortschaftFilter = ortschaftFilterEl.value;
+  const typFilter = typFilterEl.value;
+  let d = stellen.slice();
+  if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+(s.ortschaft||"")+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
+  if(ortschaftFilter) d = d.filter(s => (s.ortschaft || "") === ortschaftFilter);
+  if(typFilter) d = d.filter(s => s.typ === typFilter);
+  if(pos) d.forEach(s => s._d = distanz(pos.latitude,pos.longitude,s.lat,s.lon));
+  d.sort((a,b) => pos ? a._d-b._d : (a.nr||"").localeCompare(b.nr||""));
+
+  if(!d.length){
+    listeEl.innerHTML = '<div class="empty">' +
+      (stellen.length ? "Kein Treffer für diese Suche/Filter." : "Noch keine Daten geladen. Auf ⟳ oben rechts tippen (Internet nötig).") +
+      "</div>";
+    return;
+  }
+  listeEl.innerHTML = "";
+  d.slice(0,200).forEach(s => {
+    const b = document.createElement("button");
+    b.className = "item";
+    const ortLage = [s.ortschaft, s.ort].filter(Boolean).join(" · ") || s.typ;
+    b.innerHTML =
+      '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
+      '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
+      (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
+      '<div class="meta">' + esc(ortLage) + '</div></span>';
+    b.addEventListener("click", () => zeigeDetails(s));
+    listeEl.appendChild(b);
+  });
+}
+const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+
+/* ---------- Detail + Peilung ---------- */
+let ziel = null;
+let detailStelle = null;
+function zeigeDetails(s){
+  detailStelle = s;
+  document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
+  document.getElementById("detailMeta").textContent =
+    [s.typ, s.dn, s.menge ? s.menge + " m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+  document.getElementById("detailKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  document.getElementById("detailHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  document.getElementById("detailOverlay").classList.add("on");
+}
+document.getElementById("detail-ja").addEventListener("click", () => {
+  document.getElementById("detailOverlay").classList.remove("on");
+  if(detailStelle) oeffnePeil(detailStelle);
+});
+document.getElementById("detail-nein").addEventListener("click", () => {
+  document.getElementById("detailOverlay").classList.remove("on");
+  detailStelle = null;
+});
+
+function oeffnePeil(s){
+  ziel = s;
+  document.getElementById("peil").classList.add("on");
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
+  document.getElementById("zielName").textContent = s.nr || "ohne Nummer";
+  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+  document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  peilAutoZoom = true;
+  aktualisierePeil();
+  aktualisierePeilKarte(true);
+  zeigePeilOverlay();
+}
+document.getElementById("zurueck").addEventListener("click", () => {
+  document.getElementById("peil").classList.remove("on");
+  document.getElementById("v-liste").classList.add("on");
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
+  zeichneListe();
+});
+
+function aktualisierePeil(){
+  if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
+  const mEl = document.getElementById("abstandM"), uEl = document.getElementById("abstandU");
+  if(!pos){ mEl.textContent = "–"; uEl.textContent = "keine eigene Position"; return; }
+  const m = distanz(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  mEl.textContent = m < 1000 ? Math.round(m) : (m/1000).toFixed(1);
+  uEl.textContent = m < 1000 ? "Meter Luftlinie" : "Kilometer Luftlinie";
+  const b = peilung(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  const ref = kompassAktiv ? kompass : (gpsKurs !== null ? gpsKurs : 0);
+  const dreh = (b - ref + 360) % 360;
+  document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
+  document.getElementById("ring").setAttribute("transform", "rotate(" + (-ref).toFixed(1) + " 100 100)");
+  aktualisierePeilKarte(false);
+}
+
+/* ---------- Peilkarte (eigene Position + Ziel) ---------- */
+let peilMap = null, peilZielMarker = null, peilEigenMarker = null, peilLinie = null;
+let peilAutoZoom = true;
+
+function initPeilMap(){
+  if(peilMap) return;
+  L.Icon.Default.imagePath = "../vendor/images/";
+  peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+  }).addTo(peilMap);
+
+  // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
+  peilMap.dragging.disable();
+  const container = peilMap.getContainer();
+  const zweiFingerCheck = e => {
+    if(e.touches.length >= 2){ peilMap.dragging.enable(); peilAutoZoom = false; }
+    else peilMap.dragging.disable();
+  };
+  container.addEventListener("touchstart", e => {
+    zweiFingerCheck(e);
+    if(e.touches.length === 1) zeigePeilOverlay();
+  }, { passive:true });
+  container.addEventListener("touchmove", zweiFingerCheck, { passive:true });
+  container.addEventListener("touchend", zweiFingerCheck, { passive:true });
+
+  // Desktop/Maus-Test: Klick blendet Bedienelemente ebenfalls ein
+  container.addEventListener("click", () => zeigePeilOverlay());
+}
+
+let peilAusblendTimer = null;
+function zeigePeilOverlay(){
+  document.getElementById("peilOverlay").classList.add("sichtbar");
+  clearTimeout(peilAusblendTimer);
+  peilAusblendTimer = setTimeout(() => {
+    document.getElementById("peilOverlay").classList.remove("sichtbar");
+  }, 4000);
+}
+
+function aktualisierePeilKarte(fit){
+  if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
+  initPeilMap();
+  setTimeout(() => peilMap.invalidateSize(), 50);
+
+  const zielLL = [ziel.lat, ziel.lon];
+  if(!peilZielMarker) peilZielMarker = L.marker(zielLL, { icon: nrIcon(ziel) }).addTo(peilMap);
+  else { peilZielMarker.setLatLng(zielLL); peilZielMarker.setIcon(nrIcon(ziel)); }
+
+  if(pos){
+    const eigeneLL = [pos.latitude, pos.longitude];
+    if(!peilEigenMarker){
+      peilEigenMarker = L.marker(eigeneLL, {
+        icon: L.divIcon({ className:"", html:'<div class="eigene-pos"></div>', iconSize:[16,16], iconAnchor:[8,8] })
+      }).addTo(peilMap);
+    } else peilEigenMarker.setLatLng(eigeneLL);
+
+    if(peilLinie) peilMap.removeLayer(peilLinie);
+    peilLinie = L.polyline([eigeneLL, zielLL], { color:"#e23c22", weight:3, dashArray:"6 6" }).addTo(peilMap);
+
+    if(fit || peilAutoZoom){
+      peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
+    }
+  } else if(fit){
+    peilMap.setView(zielLL, 15);
+  }
+}
+
+/* ---------- Karte ---------- */
+let map = null, markerLayer = null;
+
+function initKarte(){
+  if(map) return;
+  L.Icon.Default.imagePath = "../vendor/images/";
+  map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+  }).addTo(map);
+  markerLayer = L.layerGroup().addTo(map);
+  zeichneKarte();
+}
+
+function typFarbe(typ){
+  const t = (typ || "").toLowerCase();
+  if(t.includes("hydrant")) return "#e23c22";
+  if(t.includes("saug")) return "#2f8fd1";
+  if(t.includes("brunnen")) return "#8a5a2b";
+  if(t.includes("zisterne") || t.includes("behälter")) return "#7a4fc9";
+  if(t.includes("gerätehaus")) return "#3fb26a";
+  if(t.includes("sammelplatz")) return "#e8a020";
+  return "#5d6d7d";
+}
+
+function nrIcon(s){
+  const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
+  const farbe = typFarbe(s.typ);
+  return L.divIcon({
+    className: "", html: '<div class="nr-marker" style="--pin:' + farbe + '">' + esc(beschriftung) + '</div>',
+    iconSize: [0, 0], iconAnchor: [0, 0]
+  });
+}
+
+function zeichneKarte(){
+  if(!markerLayer) return;
+  markerLayer.clearLayers();
+  stellen.forEach(s => {
+    if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
+    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
+    m.on("click", () => zeigeDetails(s));
+    m.addTo(markerLayer);
+  });
+}
+
+/* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
+const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
+const SYNC_ZEIT_KEY = "wasserentnahme.foehr.synczeit";
+const SYNC_URL = "../daten/stellen.geojson";
+
+function ortsNameAusDatei(dateiname){
+  if(!dateiname) return "";
+  let n = dateiname.replace(/\.(geojson|json)$/i, "");
+  n = n.replace(/[_\-]+/g, " ");
+  n = n.replace(/\b(geodaten|daten|dorf|hydranten|wasserentnahme|stellen|punkte|export|import)\b/gi, "");
+  n = n.replace(/\(\s*\d+\s*\)/g, "");
+  n = n.replace(/\s+/g, " ").trim();
+  if(!n) return "";
+  return n.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+}
+
+function geoJsonZuStellen(j, dateiname){
+  const eingelesen = [];
+  const ortschaftAusDatei = ortsNameAusDatei(dateiname);
+  (j.features || []).forEach(ft => {
+    if(!ft.geometry || ft.geometry.type !== "Point") return;
+    const p = ft.properties || {}, c = ft.geometry.coordinates;
+    let menge = p.flow_rate || p.menge || "";
+    if(!menge && typeof p.menge_l_min === "number"){
+      menge = Math.round(p.menge_l_min * 0.06 * 10) / 10;
+    }
+    let bem = p.description || p.bem || "";
+    if(!bem && (p.lagegenauigkeit || p.lagehinweis || p.quelle || p.quellkarte)){
+      bem = [p.lagegenauigkeit || p.lagehinweis, (p.quelle || p.quellkarte) ? "Quelle: " + (p.quelle || p.quellkarte) : ""].filter(Boolean).join(" · ");
+    }
+    eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: p.name || p.ort || p.addr || "",
+      ortschaft: p["addr:city"] || p.ortschaft || p.ortsname || ortschaftAusDatei,
+      typ: p.art || p["fire_hydrant:type"] || p.typ || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
+      menge: menge, bem: bem,
+      lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
+  });
+  return eingelesen;
+}
+
+function einfacherHash(text){
+  let h = 0;
+  for(let i = 0; i < text.length; i++) h = (h * 31 + text.charCodeAt(i)) | 0;
+  return h + ":" + text.length;
+}
+
+async function serverAbgleich(manuell){
+  const btn = document.getElementById("sync-jetzt");
+  btn.style.opacity = "0.5";
+  try {
+    const res = await fetch(SYNC_URL, { cache: "no-store" });
+    if(!res.ok) throw new Error("nicht erreichbar");
+    const text = await res.text();
+    const hash = einfacherHash(text);
+    let vorherigerHash = null;
+    try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}
+    if(hash === vorherigerHash){
+      if(manuell) alert("Bereits aktuell.");
+      return;
+    }
+    const eingelesen = geoJsonZuStellen(JSON.parse(text));
+    if(!eingelesen.length && stellen.length) return;
+
+    stellen = eingelesen;
+    store.save(stellen);
+    try {
+      localStorage.setItem(SYNC_HASH_KEY, hash);
+      localStorage.setItem(SYNC_ZEIT_KEY, new Date().toISOString());
+    } catch(e){}
+    zeichneListe(); zeichneKarte();
+    if(manuell) alert(eingelesen.length + " Stellen aus dem Internet übernommen.");
+  } catch(e){
+    if(manuell) alert("Kein Abgleich möglich (kein Internet oder Datei nicht erreichbar).");
+  } finally {
+    btn.style.opacity = "1";
+  }
+}
+
+document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgleich(true));
+window.addEventListener("load", () => { if(navigator.onLine) serverAbgleich(false); });
+window.addEventListener("online", () => serverAbgleich(false));
+
+zeichneListe();
+</script>
+</body>
+</html>
