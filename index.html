@@ -832,8 +832,10 @@ function aktualisiereKarteOrtschaftFilter(){
   const el = document.getElementById("karte-ortschaft-filter");
   const werte = ortschaften();
   const aktuell = el.value;
-  el.innerHTML = '<option value="">Alle Ortschaften</option>' +
-    werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
+  const anzahl = {};
+  stellen.forEach(s => { const o = (s.ortschaft || "").trim(); if(o) anzahl[o] = (anzahl[o] || 0) + 1; });
+  el.innerHTML = '<option value="">Alle Ortschaften (' + stellen.length + ')</option>' +
+    werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + ' (' + (anzahl[o] || 0) + ')</option>').join("");
   if(werte.includes(aktuell)) el.value = aktuell;
 }
 
