@@ -110,18 +110,23 @@
   #peil{display:none;padding:12px 14px 24px}
   #peil.on{display:block}
   .ziel{font-size:20px;font-weight:600;margin-bottom:2px}
-  .ziel-meta{color:var(--dim);font-size:14px;margin-bottom:14px}
-  .kompass{display:block;margin:0 auto;width:min(78vw,300px);height:min(78vw,300px)}
-  .abstand{text-align:center;margin-top:6px}
-  .abstand .m{font-size:56px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
-  .abstand .u{color:var(--dim);font-size:15px}
+  .ziel-meta{color:var(--dim);font-size:14px;margin-bottom:10px}
+  .abstand{text-align:center;margin-top:4px}
+  .abstand .m{font-size:44px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+  .abstand .u{color:var(--dim);font-size:14px}
   .hinweis{
     margin-top:16px;padding:12px;border-radius:6px;background:var(--panel);
     border:1px solid var(--line);font-size:14px;color:var(--dim);
   }
   .hinweis.warn{border-color:var(--warn);color:var(--warn)}
   .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
-  #peilMap{width:100%;height:34vh;min-height:220px;border-radius:8px;margin-top:14px;background:#1a232c}
+  .peil-kartewrap{position:relative;margin-top:10px}
+  #peilMap{width:100%;height:52vh;min-height:340px;border-radius:8px;background:#1a232c}
+  .kompass-mini{
+    position:absolute;right:10px;bottom:10px;z-index:1000;
+    width:78px;height:78px;background:#0d1116cc;border:1px solid var(--line);
+    border-radius:10px;padding:4px;pointer-events:none;
+  }
   .eigene-pos{
     width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
     box-shadow:0 0 0 2px #3fa9ff88;
@@ -145,23 +150,22 @@
     <button class="btn ghost" id="zurueck" style="margin-bottom:14px">Zurück zur Liste</button>
     <div class="ziel" id="zielName">–</div>
     <div class="ziel-meta" id="zielMeta"></div>
-    <svg class="kompass" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
-      <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
-      <g id="ring">
-        <text x="100" y="24" text-anchor="middle" fill="#93a3b3" font-size="15" font-family="system-ui">N</text>
-        <text x="176" y="106" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">O</text>
-        <text x="100" y="188" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">S</text>
-        <text x="24" y="106" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">W</text>
-      </g>
-      <g id="pfeil">
-        <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
-      </g>
-      <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
-    </svg>
     <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
+    <div class="peil-kartewrap">
+      <div id="peilMap"></div>
+      <svg class="kompass-mini" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
+        <g id="ring">
+          <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
+        </g>
+        <g id="pfeil">
+          <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+        </g>
+        <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+      </svg>
+    </div>
     <div class="koord" id="zielKoord"></div>
-    <div id="peilMap"></div>
     <div class="hinweis" id="peilHinweis"></div>
     <div class="row" style="margin-top:14px">
       <button class="btn" id="bearbeiten">Bearbeiten</button>
