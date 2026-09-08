@@ -1,0 +1,1518 @@
+{
+  "type": "FeatureCollection",
+  "name": "Utersum_gross",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "906",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.41174,
+          54.724446
+        ]
+      },
+      "properties": {
+        "id": "906",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.041,
+        "pdf_x_pt": 395.591,
+        "pdf_y_von_oben_pt": 24.829,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "906 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "907",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.410981,
+          54.719571
+        ]
+      },
+      "properties": {
+        "id": "907",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.826,
+        "pdf_x_pt": 375.386,
+        "pdf_y_von_oben_pt": 229.703,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "907 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "908",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.407771,
+          54.715934
+        ]
+      },
+      "properties": {
+        "id": "908",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.784,
+        "pdf_x_pt": 295.98,
+        "pdf_y_von_oben_pt": 382.023,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "908 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "909",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.407476,
+          54.715629
+        ]
+      },
+      "properties": {
+        "id": "909",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.852,
+        "pdf_x_pt": 288.678,
+        "pdf_y_von_oben_pt": 394.789,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "909 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "911",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.403091,
+          54.715659
+        ]
+      },
+      "properties": {
+        "id": "911",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.801,
+        "pdf_x_pt": 181.966,
+        "pdf_y_von_oben_pt": 392.667,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "911 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "913",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.404233,
+          54.71544
+        ]
+      },
+      "properties": {
+        "id": "913",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.728,
+        "pdf_x_pt": 209.691,
+        "pdf_y_von_oben_pt": 402.088,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "913 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "914",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.404071,
+          54.714744
+        ]
+      },
+      "properties": {
+        "id": "914",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.938,
+        "pdf_x_pt": 205.504,
+        "pdf_y_von_oben_pt": 431.316,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "914 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "915",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.406932,
+          54.714625
+        ]
+      },
+      "properties": {
+        "id": "915",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.193,
+        "pdf_x_pt": 275.083,
+        "pdf_y_von_oben_pt": 436.931,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "915 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "916",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.407225,
+          54.714545
+        ]
+      },
+      "properties": {
+        "id": "916",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.045,
+        "pdf_x_pt": 282.188,
+        "pdf_y_von_oben_pt": 440.357,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "916 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "918",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.403783,
+          54.713838
+        ]
+      },
+      "properties": {
+        "id": "918",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.591,
+        "pdf_x_pt": 198.155,
+        "pdf_y_von_oben_pt": 469.389,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "918 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "919",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.406601,
+          54.713783
+        ]
+      },
+      "properties": {
+        "id": "919",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.885,
+        "pdf_x_pt": 266.739,
+        "pdf_y_von_oben_pt": 472.245,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "919 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "921",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.406471,
+          54.711897
+        ]
+      },
+      "properties": {
+        "id": "921",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.833,
+        "pdf_x_pt": 262.906,
+        "pdf_y_von_oben_pt": 551.57,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "921 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "922",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.40517,
+          54.712017
+        ]
+      },
+      "properties": {
+        "id": "922",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.751,
+        "pdf_x_pt": 231.271,
+        "pdf_y_von_oben_pt": 546.265,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "922 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "923",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.404931,
+          54.712349
+        ]
+      },
+      "properties": {
+        "id": "923",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 225.566,
+        "pdf_y_von_oben_pt": 532.228,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "923 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "924",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.403974,
+          54.712312
+        ]
+      },
+      "properties": {
+        "id": "924",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.905,
+        "pdf_x_pt": 202.266,
+        "pdf_y_von_oben_pt": 533.604,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "924 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "925",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.402819,
+          54.712199
+        ]
+      },
+      "properties": {
+        "id": "925",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.048,
+        "pdf_x_pt": 174.121,
+        "pdf_y_von_oben_pt": 538.132,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "925 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "926",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.398553,
+          54.712769
+        ]
+      },
+      "properties": {
+        "id": "926",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.771,
+        "pdf_x_pt": 70.459,
+        "pdf_y_von_oben_pt": 513.285,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "926 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "927",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.397285,
+          54.713598
+        ]
+      },
+      "properties": {
+        "id": "927",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.827,
+        "pdf_x_pt": 39.9,
+        "pdf_y_von_oben_pt": 478.171,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "927 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "928",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.398326,
+          54.711108
+        ]
+      },
+      "properties": {
+        "id": "928",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.866,
+        "pdf_x_pt": 64.354,
+        "pdf_y_von_oben_pt": 583.111,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "928 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "929",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.397581,
+          54.709681
+        ]
+      },
+      "properties": {
+        "id": "929",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.824,
+        "pdf_x_pt": 45.692,
+        "pdf_y_von_oben_pt": 642.975,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "929 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "931",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.404519,
+          54.709813
+        ]
+      },
+      "properties": {
+        "id": "931",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.824,
+        "pdf_x_pt": 214.64,
+        "pdf_y_von_oben_pt": 638.827,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "931 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "932",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401228,
+          54.70941
+        ]
+      },
+      "properties": {
+        "id": "932",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.035,
+        "pdf_x_pt": 134.387,
+        "pdf_y_von_oben_pt": 655.12,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "932 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "933",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.405884,
+          54.709348
+        ]
+      },
+      "properties": {
+        "id": "933",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.913,
+        "pdf_x_pt": 247.694,
+        "pdf_y_von_oben_pt": 658.656,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "933 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "934",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.402783,
+          54.708776
+        ]
+      },
+      "properties": {
+        "id": "934",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.053,
+        "pdf_x_pt": 172.014,
+        "pdf_y_von_oben_pt": 682.081,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "934 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "935",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.403438,
+          54.708817
+        ]
+      },
+      "properties": {
+        "id": "935",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 187.962,
+        "pdf_y_von_oben_pt": 680.504,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "935 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "936",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.40409,
+          54.708757
+        ]
+      },
+      "properties": {
+        "id": "936",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.89,
+        "pdf_x_pt": 203.81,
+        "pdf_y_von_oben_pt": 683.152,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "936 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "937",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.400999,
+          54.708433
+        ]
+      },
+      "properties": {
+        "id": "937",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.797,
+        "pdf_x_pt": 128.454,
+        "pdf_y_von_oben_pt": 696.154,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "937 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "938",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.405698,
+          54.707173
+        ]
+      },
+      "properties": {
+        "id": "938",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.792,
+        "pdf_x_pt": 242.396,
+        "pdf_y_von_oben_pt": 750.112,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "938 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "939",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.403765,
+          54.703636
+        ]
+      },
+      "properties": {
+        "id": "939",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.821,
+        "pdf_x_pt": 194.088,
+        "pdf_y_von_oben_pt": 898.483,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "939 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "941",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.399478,
+          54.705144
+        ]
+      },
+      "properties": {
+        "id": "941",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.976,
+        "pdf_x_pt": 90.247,
+        "pdf_y_von_oben_pt": 834.178,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "941 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "942",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.400197,
+          54.705113
+        ]
+      },
+      "properties": {
+        "id": "942",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 107.751,
+        "pdf_y_von_oben_pt": 835.616,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "942 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "943",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.400041,
+          54.704486
+        ]
+      },
+      "properties": {
+        "id": "943",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.902,
+        "pdf_x_pt": 103.713,
+        "pdf_y_von_oben_pt": 861.957,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "943 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "944",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.399452,
+          54.704068
+        ]
+      },
+      "properties": {
+        "id": "944",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.836,
+        "pdf_x_pt": 89.229,
+        "pdf_y_von_oben_pt": 879.432,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "944 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "945",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401854,
+          54.703845
+        ]
+      },
+      "properties": {
+        "id": "945",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 147.642,
+        "pdf_y_von_oben_pt": 889.311,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "945 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "947",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.39979,
+          54.703317
+        ]
+      },
+      "properties": {
+        "id": "947",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.862,
+        "pdf_x_pt": 97.177,
+        "pdf_y_von_oben_pt": 911.1,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "947 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "948",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401045,
+          54.703262
+        ]
+      },
+      "properties": {
+        "id": "948",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.833,
+        "pdf_x_pt": 127.736,
+        "pdf_y_von_oben_pt": 913.666,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "948 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "949",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401182,
+          54.702921
+        ]
+      },
+      "properties": {
+        "id": "949",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.85,
+        "pdf_x_pt": 130.946,
+        "pdf_y_von_oben_pt": 928.021,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "949 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "951",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401758,
+          54.702912
+        ]
+      },
+      "properties": {
+        "id": "951",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 144.968,
+        "pdf_y_von_oben_pt": 928.501,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "951 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "952",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.401957,
+          54.702753
+        ]
+      },
+      "properties": {
+        "id": "952",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.128,
+        "pdf_x_pt": 149.747,
+        "pdf_y_von_oben_pt": 935.245,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "952 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "954",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.422041,
+          54.716139
+        ]
+      },
+      "properties": {
+        "id": "954",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.204,
+        "pdf_x_pt": 643.388,
+        "pdf_y_von_oben_pt": 376.27,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "954 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "955",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.425566,
+          54.716165
+        ]
+      },
+      "properties": {
+        "id": "955",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.838,
+        "pdf_x_pt": 729.204,
+        "pdf_y_von_oben_pt": 375.914,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "955 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "966",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415269,
+          54.705646
+        ]
+      },
+      "properties": {
+        "id": "966",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.874,
+        "pdf_x_pt": 474.875,
+        "pdf_y_von_oben_pt": 816.257,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "966 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "967",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.416742,
+          54.705291
+        ]
+      },
+      "properties": {
+        "id": "967",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.068,
+        "pdf_x_pt": 510.624,
+        "pdf_y_von_oben_pt": 831.459,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "967 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "968",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.418124,
+          54.705005
+        ]
+      },
+      "properties": {
+        "id": "968",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.839,
+        "pdf_x_pt": 544.166,
+        "pdf_y_von_oben_pt": 843.782,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "968 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "969",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.418195,
+          54.703916
+        ]
+      },
+      "properties": {
+        "id": "969",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.542,
+        "pdf_x_pt": 545.496,
+        "pdf_y_von_oben_pt": 889.62,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "969 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "972",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.417256,
+          54.703477
+        ]
+      },
+      "properties": {
+        "id": "972",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 522.489,
+        "pdf_y_von_oben_pt": 907.856,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "972 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "973",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.416168,
+          54.703697
+        ]
+      },
+      "properties": {
+        "id": "973",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.039,
+        "pdf_x_pt": 496.077,
+        "pdf_y_von_oben_pt": 898.394,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "973 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "974",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.419517,
+          54.704689
+        ]
+      },
+      "properties": {
+        "id": "974",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.02,
+        "pdf_x_pt": 577.961,
+        "pdf_y_von_oben_pt": 857.341,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "974 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "977",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.421493,
+          54.704355
+        ]
+      },
+      "properties": {
+        "id": "977",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.859,
+        "pdf_x_pt": 625.956,
+        "pdf_y_von_oben_pt": 871.808,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "977 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "978",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.42397,
+          54.703869
+        ]
+      },
+      "properties": {
+        "id": "978",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.829,
+        "pdf_x_pt": 686.096,
+        "pdf_y_von_oben_pt": 892.751,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "978 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "982",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.421644,
+          54.706706
+        ]
+      },
+      "properties": {
+        "id": "982",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.867,
+        "pdf_x_pt": 630.451,
+        "pdf_y_von_oben_pt": 772.931,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "982 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "983",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.422398,
+          54.706585
+        ]
+      },
+      "properties": {
+        "id": "983",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 648.752,
+        "pdf_y_von_oben_pt": 778.182,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "983 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "984",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.422468,
+          54.7064
+        ]
+      },
+      "properties": {
+        "id": "984",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.252,
+        "pdf_x_pt": 650.401,
+        "pdf_y_von_oben_pt": 785.995,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "984 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "985",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.423149,
+          54.706433
+        ]
+      },
+      "properties": {
+        "id": "985",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Utersum_gross.pdf",
+        "ortsname": "Utersum",
+        "ortsquelle": "Utersum_gross.pdf",
+        "zuordnungsabstand_relativ": 1.014,
+        "pdf_x_pt": 666.999,
+        "pdf_y_von_oben_pt": 784.736,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "985 - Hydrant"
+      }
+    }
+  ]
+}

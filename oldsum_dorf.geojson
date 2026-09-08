@@ -1,0 +1,1350 @@
+{
+  "type": "FeatureCollection",
+  "name": "Oldsum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "795",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.464172,
+          54.729767
+        ]
+      },
+      "properties": {
+        "id": "795",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.145,
+        "pdf_x_pt": 1079.099,
+        "pdf_y_von_oben_pt": 370.482,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "795 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "796",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.464309,
+          54.729242
+        ]
+      },
+      "properties": {
+        "id": "796",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.811,
+        "pdf_x_pt": 1084.364,
+        "pdf_y_von_oben_pt": 407.327,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "796 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "797",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.463865,
+          54.731307
+        ]
+      },
+      "properties": {
+        "id": "797",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 1067.518,
+        "pdf_y_von_oben_pt": 262.434,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "797 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "798",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.463365,
+          54.730285
+        ]
+      },
+      "properties": {
+        "id": "798",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.094,
+        "pdf_x_pt": 1046.666,
+        "pdf_y_von_oben_pt": 333.889,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "798 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "799",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.463598,
+          54.728887
+        ]
+      },
+      "properties": {
+        "id": "799",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.809,
+        "pdf_x_pt": 1055.332,
+        "pdf_y_von_oben_pt": 431.92,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "799 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "801",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462776,
+          54.728932
+        ]
+      },
+      "properties": {
+        "id": "801",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.233,
+        "pdf_x_pt": 1022.021,
+        "pdf_y_von_oben_pt": 428.516,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "801 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "802",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462204,
+          54.728117
+        ]
+      },
+      "properties": {
+        "id": "802",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.86,
+        "pdf_x_pt": 998.351,
+        "pdf_y_von_oben_pt": 485.441,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "802 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "803",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.46079,
+          54.727926
+        ]
+      },
+      "properties": {
+        "id": "803",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.891,
+        "pdf_x_pt": 940.899,
+        "pdf_y_von_oben_pt": 498.417,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "803 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "804",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462121,
+          54.730899
+        ]
+      },
+      "properties": {
+        "id": "804",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.846,
+        "pdf_x_pt": 996.55,
+        "pdf_y_von_oben_pt": 290.5,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "804 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "805",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.461065,
+          54.730998
+        ]
+      },
+      "properties": {
+        "id": "805",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.857,
+        "pdf_x_pt": 953.786,
+        "pdf_y_von_oben_pt": 283.182,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "805 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "806",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.461862,
+          54.729257
+        ]
+      },
+      "properties": {
+        "id": "806",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 985.118,
+        "pdf_y_von_oben_pt": 405.473,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "806 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "807",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.46117,
+          54.729257
+        ]
+      },
+      "properties": {
+        "id": "807",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.005,
+        "pdf_x_pt": 957.04,
+        "pdf_y_von_oben_pt": 405.271,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "807 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "808",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.460077,
+          54.729444
+        ]
+      },
+      "properties": {
+        "id": "808",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.848,
+        "pdf_x_pt": 912.832,
+        "pdf_y_von_oben_pt": 391.809,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "808 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "809",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459229,
+          54.729578
+        ]
+      },
+      "properties": {
+        "id": "809",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.023,
+        "pdf_x_pt": 878.52,
+        "pdf_y_von_oben_pt": 382.171,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "809 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "811",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459172,
+          54.731015
+        ]
+      },
+      "properties": {
+        "id": "811",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.818,
+        "pdf_x_pt": 877.023,
+        "pdf_y_von_oben_pt": 281.429,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "811 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "812",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457781,
+          54.731362
+        ]
+      },
+      "properties": {
+        "id": "812",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.265,
+        "pdf_x_pt": 820.787,
+        "pdf_y_von_oben_pt": 256.653,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "812 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "813",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.456282,
+          54.72854
+        ]
+      },
+      "properties": {
+        "id": "813",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.886,
+        "pdf_x_pt": 758.39,
+        "pdf_y_von_oben_pt": 453.929,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "813 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "814",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.455754,
+          54.731708
+        ]
+      },
+      "properties": {
+        "id": "814",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 738.766,
+        "pdf_y_von_oben_pt": 231.778,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "814 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "815",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.456252,
+          54.73261
+        ]
+      },
+      "properties": {
+        "id": "815",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 759.456,
+        "pdf_y_von_oben_pt": 168.724,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "815 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "816",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.454461,
+          54.731723
+        ]
+      },
+      "properties": {
+        "id": "816",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.814,
+        "pdf_x_pt": 686.32,
+        "pdf_y_von_oben_pt": 230.335,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "816 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "817",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.45301,
+          54.730274
+        ]
+      },
+      "properties": {
+        "id": "817",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 626.656,
+        "pdf_y_von_oben_pt": 331.41,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "817 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "818",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.452385,
+          54.730063
+        ]
+      },
+      "properties": {
+        "id": "818",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.007,
+        "pdf_x_pt": 601.202,
+        "pdf_y_von_oben_pt": 345.992,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "818 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "819",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.453088,
+          54.732114
+        ]
+      },
+      "properties": {
+        "id": "819",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.859,
+        "pdf_x_pt": 630.866,
+        "pdf_y_von_oben_pt": 202.455,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "819 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "821",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.452082,
+          54.732752
+        ]
+      },
+      "properties": {
+        "id": "821",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.031,
+        "pdf_x_pt": 590.414,
+        "pdf_y_von_oben_pt": 157.464,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "821 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "822",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.449832,
+          54.731108
+        ]
+      },
+      "properties": {
+        "id": "822",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.844,
+        "pdf_x_pt": 498.227,
+        "pdf_y_von_oben_pt": 271.953,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "822 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "823",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.448769,
+          54.730407
+        ]
+      },
+      "properties": {
+        "id": "823",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.949,
+        "pdf_x_pt": 454.718,
+        "pdf_y_von_oben_pt": 320.744,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "823 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "824",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.44817,
+          54.729968
+        ]
+      },
+      "properties": {
+        "id": "824",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.035,
+        "pdf_x_pt": 430.18,
+        "pdf_y_von_oben_pt": 351.293,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "824 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "825",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.450452,
+          54.733006
+        ]
+      },
+      "properties": {
+        "id": "825",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.791,
+        "pdf_x_pt": 524.455,
+        "pdf_y_von_oben_pt": 139.124,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "825 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "826",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.449365,
+          54.732298
+        ]
+      },
+      "properties": {
+        "id": "826",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.889,
+        "pdf_x_pt": 479.959,
+        "pdf_y_von_oben_pt": 188.367,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "826 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "827",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.448303,
+          54.731685
+        ]
+      },
+      "properties": {
+        "id": "827",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.448,
+        "pdf_x_pt": 436.542,
+        "pdf_y_von_oben_pt": 231.014,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "827 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "828",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.448423,
+          54.731724
+        ]
+      },
+      "properties": {
+        "id": "828",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.472,
+        "pdf_x_pt": 441.455,
+        "pdf_y_von_oben_pt": 228.301,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "828 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "829",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.447194,
+          54.731176
+        ]
+      },
+      "properties": {
+        "id": "829",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.052,
+        "pdf_x_pt": 391.303,
+        "pdf_y_von_oben_pt": 266.333,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "829 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "831",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.445665,
+          54.730446
+        ]
+      },
+      "properties": {
+        "id": "831",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.82,
+        "pdf_x_pt": 328.865,
+        "pdf_y_von_oben_pt": 317.009,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "831 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "832",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.446687,
+          54.729945
+        ]
+      },
+      "properties": {
+        "id": "832",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 370.023,
+        "pdf_y_von_oben_pt": 352.395,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "832 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "834",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.44869,
+          54.732896
+        ]
+      },
+      "properties": {
+        "id": "834",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.543,
+        "pdf_x_pt": 452.928,
+        "pdf_y_von_oben_pt": 146.253,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "834 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "835",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442884,
+          54.732329
+        ]
+      },
+      "properties": {
+        "id": "835",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.918,
+        "pdf_x_pt": 217.11,
+        "pdf_y_von_oben_pt": 184.148,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "835 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "836",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.438862,
+          54.733431
+        ]
+      },
+      "properties": {
+        "id": "836",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.805,
+        "pdf_x_pt": 54.624,
+        "pdf_y_von_oben_pt": 105.631,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "836 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "857",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.451108,
+          54.724701
+        ]
+      },
+      "properties": {
+        "id": "857",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.841,
+        "pdf_x_pt": 546.422,
+        "pdf_y_von_oben_pt": 721.356,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "857 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "862",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442878,
+          54.727087
+        ]
+      },
+      "properties": {
+        "id": "862",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.074,
+        "pdf_x_pt": 213.964,
+        "pdf_y_von_oben_pt": 551.506,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "862 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "863",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.440472,
+          54.726791
+        ]
+      },
+      "properties": {
+        "id": "863",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.799,
+        "pdf_x_pt": 116.193,
+        "pdf_y_von_oben_pt": 571.476,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "863 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "864",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443598,
+          54.726101
+        ]
+      },
+      "properties": {
+        "id": "864",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 242.592,
+        "pdf_y_von_oben_pt": 620.815,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "864 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "865",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442333,
+          54.725965
+        ]
+      },
+      "properties": {
+        "id": "865",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.284,
+        "pdf_x_pt": 191.234,
+        "pdf_y_von_oben_pt": 629.987,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "865 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "866",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442114,
+          54.725684
+        ]
+      },
+      "properties": {
+        "id": "866",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.809,
+        "pdf_x_pt": 182.181,
+        "pdf_y_von_oben_pt": 649.606,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "866 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "867",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443399,
+          54.725475
+        ]
+      },
+      "properties": {
+        "id": "867",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.772,
+        "pdf_x_pt": 234.19,
+        "pdf_y_von_oben_pt": 664.65,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "867 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443336,
+          54.724807
+        ]
+      },
+      "properties": {
+        "id": "868",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.85,
+        "pdf_x_pt": 231.231,
+        "pdf_y_von_oben_pt": 711.417,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "868 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "869",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.43951,
+          54.726002
+        ]
+      },
+      "properties": {
+        "id": "869",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.212,
+        "pdf_x_pt": 76.735,
+        "pdf_y_von_oben_pt": 626.438,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "869 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "871",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.440738,
+          54.724973
+        ]
+      },
+      "properties": {
+        "id": "871",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.892,
+        "pdf_x_pt": 125.953,
+        "pdf_y_von_oben_pt": 698.964,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "871 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "872",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439276,
+          54.725097
+        ]
+      },
+      "properties": {
+        "id": "872",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oldsum_Dorf.pdf",
+        "ortsname": "Oldsum",
+        "ortsquelle": "Oldsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.548,
+        "pdf_x_pt": 66.741,
+        "pdf_y_von_oben_pt": 689.804,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "872 - Hydrant"
+      }
+    }
+  ]
+}

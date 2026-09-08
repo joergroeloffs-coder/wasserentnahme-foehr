@@ -1,0 +1,2470 @@
+{
+  "type": "FeatureCollection",
+  "name": "Wrixum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "258",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553538,
+          54.68953
+        ]
+      },
+      "properties": {
+        "id": "258",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.769,
+        "pdf_x_pt": 677.952,
+        "pdf_y_von_oben_pt": 1149.668,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "258 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "259",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552299,
+          54.689417
+        ]
+      },
+      "properties": {
+        "id": "259",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.764,
+        "pdf_x_pt": 627.613,
+        "pdf_y_von_oben_pt": 1157.336,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "259 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "260",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552909,
+          54.690192
+        ]
+      },
+      "properties": {
+        "id": "260",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.155,
+        "pdf_x_pt": 652.733,
+        "pdf_y_von_oben_pt": 1103.124,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "260 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "261",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553502,
+          54.69091
+        ]
+      },
+      "properties": {
+        "id": "261",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.113,
+        "pdf_x_pt": 677.111,
+        "pdf_y_von_oben_pt": 1052.953,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "261 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "262",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554758,
+          54.692127
+        ]
+      },
+      "properties": {
+        "id": "262",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.388,
+        "pdf_x_pt": 728.649,
+        "pdf_y_von_oben_pt": 968.03,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "262 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "263",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555427,
+          54.691867
+        ]
+      },
+      "properties": {
+        "id": "263",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.81,
+        "pdf_x_pt": 755.697,
+        "pdf_y_von_oben_pt": 986.395,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "263 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "264",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555333,
+          54.693172
+        ]
+      },
+      "properties": {
+        "id": "264",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.794,
+        "pdf_x_pt": 752.423,
+        "pdf_y_von_oben_pt": 894.951,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "264 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "268",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556513,
+          54.694367
+        ]
+      },
+      "properties": {
+        "id": "268",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.902,
+        "pdf_x_pt": 800.858,
+        "pdf_y_von_oben_pt": 811.506,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "268 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "348",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549304,
+          54.689462
+        ]
+      },
+      "properties": {
+        "id": "348",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.811,
+        "pdf_x_pt": 506.022,
+        "pdf_y_von_oben_pt": 1153.407,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "348 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "351",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546723,
+          54.689227
+        ]
+      },
+      "properties": {
+        "id": "351",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.199,
+        "pdf_x_pt": 401.164,
+        "pdf_y_von_oben_pt": 1169.227,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "351 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "352",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547275,
+          54.689807
+        ]
+      },
+      "properties": {
+        "id": "352",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.008,
+        "pdf_x_pt": 423.837,
+        "pdf_y_von_oben_pt": 1128.751,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "352 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "355",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.544199,
+          54.68929
+        ]
+      },
+      "properties": {
+        "id": "355",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.913,
+        "pdf_x_pt": 298.72,
+        "pdf_y_von_oben_pt": 1164.195,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "355 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "357",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542189,
+          54.68968
+        ]
+      },
+      "properties": {
+        "id": "357",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.858,
+        "pdf_x_pt": 217.299,
+        "pdf_y_von_oben_pt": 1136.422,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "357 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "358",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.544793,
+          54.690001
+        ]
+      },
+      "properties": {
+        "id": "358",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.959,
+        "pdf_x_pt": 323.148,
+        "pdf_y_von_oben_pt": 1114.534,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "358 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "359",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.551538,
+          54.689297
+        ]
+      },
+      "properties": {
+        "id": "359",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.837,
+        "pdf_x_pt": 596.64,
+        "pdf_y_von_oben_pt": 1165.554,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "359 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "360",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549954,
+          54.689754
+        ]
+      },
+      "properties": {
+        "id": "360",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.915,
+        "pdf_x_pt": 532.553,
+        "pdf_y_von_oben_pt": 1133.095,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "360 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "361",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54866,
+          54.690176
+        ]
+      },
+      "properties": {
+        "id": "361",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.804,
+        "pdf_x_pt": 480.224,
+        "pdf_y_von_oben_pt": 1103.25,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "361 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "362",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5481,
+          54.690354
+        ]
+      },
+      "properties": {
+        "id": "362",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 457.569,
+        "pdf_y_von_oben_pt": 1090.588,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "362 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "363",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549386,
+          54.691286
+        ]
+      },
+      "properties": {
+        "id": "363",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 510.205,
+        "pdf_y_von_oben_pt": 1025.633,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "363 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "366",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546608,
+          54.690752
+        ]
+      },
+      "properties": {
+        "id": "366",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.121,
+        "pdf_x_pt": 397.175,
+        "pdf_y_von_oben_pt": 1062.323,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "366 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "367",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548073,
+          54.691765
+        ]
+      },
+      "properties": {
+        "id": "367",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.001,
+        "pdf_x_pt": 457.109,
+        "pdf_y_von_oben_pt": 991.676,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "367 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "368",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545699,
+          54.691074
+        ]
+      },
+      "properties": {
+        "id": "368",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.055,
+        "pdf_x_pt": 360.406,
+        "pdf_y_von_oben_pt": 1039.539,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "368 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "369",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545923,
+          54.69151
+        ]
+      },
+      "properties": {
+        "id": "369",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.847,
+        "pdf_x_pt": 369.693,
+        "pdf_y_von_oben_pt": 1009.073,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "369 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "370",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546569,
+          54.692236
+        ]
+      },
+      "properties": {
+        "id": "370",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.068,
+        "pdf_x_pt": 396.245,
+        "pdf_y_von_oben_pt": 958.328,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "370 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "371",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547314,
+          54.693069
+        ]
+      },
+      "properties": {
+        "id": "371",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.997,
+        "pdf_x_pt": 426.879,
+        "pdf_y_von_oben_pt": 900.097,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "371 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "372",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547955,
+          54.693848
+        ]
+      },
+      "properties": {
+        "id": "372",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.945,
+        "pdf_x_pt": 453.258,
+        "pdf_y_von_oben_pt": 845.653,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "372 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "373",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550363,
+          54.694636
+        ]
+      },
+      "properties": {
+        "id": "373",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.879,
+        "pdf_x_pt": 551.352,
+        "pdf_y_von_oben_pt": 791.1,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "373 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "374",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552443,
+          54.694675
+        ]
+      },
+      "properties": {
+        "id": "374",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.799,
+        "pdf_x_pt": 635.81,
+        "pdf_y_von_oben_pt": 788.847,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "374 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "375",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554497,
+          54.694529
+        ]
+      },
+      "properties": {
+        "id": "375",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.02,
+        "pdf_x_pt": 719.119,
+        "pdf_y_von_oben_pt": 799.614,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "375 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "380",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554945,
+          54.696658
+        ]
+      },
+      "properties": {
+        "id": "380",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 738.251,
+        "pdf_y_von_oben_pt": 650.572,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "380 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "381",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556865,
+          54.695325
+        ]
+      },
+      "properties": {
+        "id": "381",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.138,
+        "pdf_x_pt": 815.581,
+        "pdf_y_von_oben_pt": 744.46,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "381 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "382",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.55372,
+          54.695305
+        ]
+      },
+      "properties": {
+        "id": "382",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.948,
+        "pdf_x_pt": 687.893,
+        "pdf_y_von_oben_pt": 745.063,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "382 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "383",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554567,
+          54.695103
+        ]
+      },
+      "properties": {
+        "id": "383",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.926,
+        "pdf_x_pt": 722.192,
+        "pdf_y_von_oben_pt": 759.455,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "383 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "384",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555253,
+          54.695261
+        ]
+      },
+      "properties": {
+        "id": "384",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.947,
+        "pdf_x_pt": 750.121,
+        "pdf_y_von_oben_pt": 748.518,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "384 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "385",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555762,
+          54.695785
+        ]
+      },
+      "properties": {
+        "id": "385",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.146,
+        "pdf_x_pt": 771.001,
+        "pdf_y_von_oben_pt": 711.963,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "385 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "386",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556546,
+          54.695865
+        ]
+      },
+      "properties": {
+        "id": "386",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.81,
+        "pdf_x_pt": 802.851,
+        "pdf_y_von_oben_pt": 706.517,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "386 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "387",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54322,
+          54.689493
+        ]
+      },
+      "properties": {
+        "id": "387",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.964,
+        "pdf_x_pt": 259.056,
+        "pdf_y_von_oben_pt": 1149.755,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "387 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "388",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554973,
+          54.696015
+        ]
+      },
+      "properties": {
+        "id": "388",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.841,
+        "pdf_x_pt": 739.072,
+        "pdf_y_von_oben_pt": 695.596,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "388 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "389",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554043,
+          54.696353
+        ]
+      },
+      "properties": {
+        "id": "389",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.875,
+        "pdf_x_pt": 701.503,
+        "pdf_y_von_oben_pt": 671.693,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "389 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "390",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553628,
+          54.696123
+        ]
+      },
+      "properties": {
+        "id": "390",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 684.559,
+        "pdf_y_von_oben_pt": 687.705,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "390 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "391",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552947,
+          54.696784
+        ]
+      },
+      "properties": {
+        "id": "391",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.097,
+        "pdf_x_pt": 657.196,
+        "pdf_y_von_oben_pt": 641.232,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "391 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "392",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552412,
+          54.69737
+        ]
+      },
+      "properties": {
+        "id": "392",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.31,
+        "pdf_x_pt": 635.75,
+        "pdf_y_von_oben_pt": 600.017,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "392 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "397",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556775,
+          54.697908
+        ]
+      },
+      "properties": {
+        "id": "397",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.924,
+        "pdf_x_pt": 813.048,
+        "pdf_y_von_oben_pt": 563.466,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "397 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "398",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555903,
+          54.698194
+        ]
+      },
+      "properties": {
+        "id": "398",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 777.802,
+        "pdf_y_von_oben_pt": 543.22,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "398 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "399",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554922,
+          54.698402
+        ]
+      },
+      "properties": {
+        "id": "399",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.79,
+        "pdf_x_pt": 738.063,
+        "pdf_y_von_oben_pt": 528.348,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "399 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "402",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552337,
+          54.696299
+        ]
+      },
+      "properties": {
+        "id": "402",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.788,
+        "pdf_x_pt": 632.199,
+        "pdf_y_von_oben_pt": 675.048,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "402 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "425",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541441,
+          54.693229
+        ]
+      },
+      "properties": {
+        "id": "425",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.854,
+        "pdf_x_pt": 188.551,
+        "pdf_y_von_oben_pt": 887.451,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "425 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "426",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546857,
+          54.694003
+        ]
+      },
+      "properties": {
+        "id": "426",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.786,
+        "pdf_x_pt": 408.763,
+        "pdf_y_von_oben_pt": 834.513,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "426 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "427",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546135,
+          54.694466
+        ]
+      },
+      "properties": {
+        "id": "427",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.783,
+        "pdf_x_pt": 379.655,
+        "pdf_y_von_oben_pt": 801.894,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "427 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "428",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546725,
+          54.695062
+        ]
+      },
+      "properties": {
+        "id": "428",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.815,
+        "pdf_x_pt": 403.857,
+        "pdf_y_von_oben_pt": 760.283,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "428 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "429",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547906,
+          54.69497
+        ]
+      },
+      "properties": {
+        "id": "429",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.099,
+        "pdf_x_pt": 451.766,
+        "pdf_y_von_oben_pt": 767.064,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "429 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "431",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547695,
+          54.695103
+        ]
+      },
+      "properties": {
+        "id": "431",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.373,
+        "pdf_x_pt": 443.255,
+        "pdf_y_von_oben_pt": 757.65,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "431 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "432",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549355,
+          54.695458
+        ]
+      },
+      "properties": {
+        "id": "432",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.932,
+        "pdf_x_pt": 510.821,
+        "pdf_y_von_oben_pt": 733.194,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "432 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "433",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548202,
+          54.695908
+        ]
+      },
+      "properties": {
+        "id": "433",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.192,
+        "pdf_x_pt": 464.213,
+        "pdf_y_von_oben_pt": 701.357,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "433 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "434",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546762,
+          54.695934
+        ]
+      },
+      "properties": {
+        "id": "434",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.105,
+        "pdf_x_pt": 405.766,
+        "pdf_y_von_oben_pt": 699.163,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "434 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "435",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549724,
+          54.696323
+        ]
+      },
+      "properties": {
+        "id": "435",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.878,
+        "pdf_x_pt": 526.182,
+        "pdf_y_von_oben_pt": 672.717,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "435 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "436",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547445,
+          54.696692
+        ]
+      },
+      "properties": {
+        "id": "436",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.924,
+        "pdf_x_pt": 433.83,
+        "pdf_y_von_oben_pt": 646.255,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "436 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "437",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546643,
+          54.697043
+        ]
+      },
+      "properties": {
+        "id": "437",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.365,
+        "pdf_x_pt": 401.464,
+        "pdf_y_von_oben_pt": 621.422,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "437 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "438",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54794,
+          54.697024
+        ]
+      },
+      "properties": {
+        "id": "438",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.077,
+        "pdf_x_pt": 454.092,
+        "pdf_y_von_oben_pt": 623.123,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "438 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "439",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549137,
+          54.697086
+        ]
+      },
+      "properties": {
+        "id": "439",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.755,
+        "pdf_x_pt": 502.701,
+        "pdf_y_von_oben_pt": 619.047,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "439 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "441",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548904,
+          54.69762
+        ]
+      },
+      "properties": {
+        "id": "441",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.792,
+        "pdf_x_pt": 493.457,
+        "pdf_y_von_oben_pt": 581.538,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "441 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "442",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548069,
+          54.698248
+        ]
+      },
+      "properties": {
+        "id": "442",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.847,
+        "pdf_x_pt": 459.884,
+        "pdf_y_von_oben_pt": 537.356,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "442 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "443",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553643,
+          54.699149
+        ]
+      },
+      "properties": {
+        "id": "443",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.274,
+        "pdf_x_pt": 686.492,
+        "pdf_y_von_oben_pt": 475.682,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "443 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "444",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552527,
+          54.698357
+        ]
+      },
+      "properties": {
+        "id": "444",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.542,
+        "pdf_x_pt": 640.845,
+        "pdf_y_von_oben_pt": 530.842,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "444 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "445",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.551498,
+          54.697941
+        ]
+      },
+      "properties": {
+        "id": "445",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.113,
+        "pdf_x_pt": 598.914,
+        "pdf_y_von_oben_pt": 559.771,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "445 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "446",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552481,
+          54.699835
+        ]
+      },
+      "properties": {
+        "id": "446",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.927,
+        "pdf_x_pt": 639.622,
+        "pdf_y_von_oben_pt": 427.265,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "446 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "447",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550984,
+          54.700566
+        ]
+      },
+      "properties": {
+        "id": "447",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.019,
+        "pdf_x_pt": 579.202,
+        "pdf_y_von_oben_pt": 375.641,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "447 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "448",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550621,
+          54.699613
+        ]
+      },
+      "properties": {
+        "id": "448",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.792,
+        "pdf_x_pt": 564.044,
+        "pdf_y_von_oben_pt": 442.342,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "448 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "449",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549242,
+          54.699035
+        ]
+      },
+      "properties": {
+        "id": "449",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.181,
+        "pdf_x_pt": 507.818,
+        "pdf_y_von_oben_pt": 482.471,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "449 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "452",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549729,
+          54.69952
+        ]
+      },
+      "properties": {
+        "id": "452",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.419,
+        "pdf_x_pt": 527.804,
+        "pdf_y_von_oben_pt": 448.657,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "452 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "453",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549022,
+          54.69882
+        ]
+      },
+      "properties": {
+        "id": "453",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 498.798,
+        "pdf_y_von_oben_pt": 497.516,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "453 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "454",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.549381,
+          54.700952
+        ]
+      },
+      "properties": {
+        "id": "454",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.876,
+        "pdf_x_pt": 514.349,
+        "pdf_y_von_oben_pt": 348.206,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "454 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "455",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547894,
+          54.699555
+        ]
+      },
+      "properties": {
+        "id": "455",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.026,
+        "pdf_x_pt": 453.358,
+        "pdf_y_von_oben_pt": 445.677,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "455 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "456",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548175,
+          54.699994
+        ]
+      },
+      "properties": {
+        "id": "456",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 464.958,
+        "pdf_y_von_oben_pt": 415.022,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "456 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "457",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548227,
+          54.701154
+        ]
+      },
+      "properties": {
+        "id": "457",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.038,
+        "pdf_x_pt": 467.591,
+        "pdf_y_von_oben_pt": 333.695,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "457 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "458",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547491,
+          54.701321
+        ]
+      },
+      "properties": {
+        "id": "458",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 437.804,
+        "pdf_y_von_oben_pt": 321.83,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "458 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "459",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547451,
+          54.701538
+        ]
+      },
+      "properties": {
+        "id": "459",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.768,
+        "pdf_x_pt": 436.281,
+        "pdf_y_von_oben_pt": 306.602,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "459 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "462",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545158,
+          54.700689
+        ]
+      },
+      "properties": {
+        "id": "462",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.875,
+        "pdf_x_pt": 342.814,
+        "pdf_y_von_oben_pt": 365.44,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "462 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "463",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546416,
+          54.702266
+        ]
+      },
+      "properties": {
+        "id": "463",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.816,
+        "pdf_x_pt": 394.586,
+        "pdf_y_von_oben_pt": 255.259,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "463 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "464",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543264,
+          54.701679
+        ]
+      },
+      "properties": {
+        "id": "464",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.826,
+        "pdf_x_pt": 266.396,
+        "pdf_y_von_oben_pt": 295.6,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "464 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "465",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54511,
+          54.703037
+        ]
+      },
+      "properties": {
+        "id": "465",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 341.94,
+        "pdf_y_von_oben_pt": 200.866,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "465 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "466",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.544859,
+          54.703141
+        ]
+      },
+      "properties": {
+        "id": "466",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.942,
+        "pdf_x_pt": 331.809,
+        "pdf_y_von_oben_pt": 193.536,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "466 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "467",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543952,
+          54.702276
+        ]
+      },
+      "properties": {
+        "id": "467",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 294.626,
+        "pdf_y_von_oben_pt": 253.942,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "467 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "468",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543843,
+          54.704038
+        ]
+      },
+      "properties": {
+        "id": "468",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.026,
+        "pdf_x_pt": 290.984,
+        "pdf_y_von_oben_pt": 130.392,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "468 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "469",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542741,
+          54.704648
+        ]
+      },
+      "properties": {
+        "id": "469",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.83,
+        "pdf_x_pt": 246.538,
+        "pdf_y_von_oben_pt": 87.309,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "469 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "471",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.540684,
+          54.703442
+        ]
+      },
+      "properties": {
+        "id": "471",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.871,
+        "pdf_x_pt": 162.518,
+        "pdf_y_von_oben_pt": 171.254,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "471 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "472",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541773,
+          54.705175
+        ]
+      },
+      "properties": {
+        "id": "472",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 207.505,
+        "pdf_y_von_oben_pt": 50.072,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "472 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "473",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.540923,
+          54.704528
+        ]
+      },
+      "properties": {
+        "id": "473",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Dorf.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 172.739,
+        "pdf_y_von_oben_pt": 95.228,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "473 - Bohrbrunnen"
+      }
+    }
+  ]
+}

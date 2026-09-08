@@ -1,0 +1,734 @@
+{
+  "type": "FeatureCollection",
+  "name": "Greveling_Bredland",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "309",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526833,
+          54.684925
+        ]
+      },
+      "properties": {
+        "id": "309",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 1.107,
+        "pdf_x_pt": 825.725,
+        "pdf_y_von_oben_pt": 469.773,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "309 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "310",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529494,
+          54.683266
+        ]
+      },
+      "properties": {
+        "id": "310",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.78,
+        "pdf_x_pt": 932.978,
+        "pdf_y_von_oben_pt": 586.815,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "310 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "311",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.531753,
+          54.683068
+        ]
+      },
+      "properties": {
+        "id": "311",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.864,
+        "pdf_x_pt": 1024.602,
+        "pdf_y_von_oben_pt": 601.306,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "311 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "312",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.534554,
+          54.682842
+        ]
+      },
+      "properties": {
+        "id": "312",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 1.096,
+        "pdf_x_pt": 1138.221,
+        "pdf_y_von_oben_pt": 617.996,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "312 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "313",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53528,
+          54.682148
+        ]
+      },
+      "properties": {
+        "id": "313",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 1.203,
+        "pdf_x_pt": 1167.352,
+        "pdf_y_von_oben_pt": 666.831,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "313 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "423",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53095,
+          54.690628
+        ]
+      },
+      "properties": {
+        "id": "423",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.876,
+        "pdf_x_pt": 995.699,
+        "pdf_y_von_oben_pt": 71.292,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "423 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "621",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526406,
+          54.683466
+        ]
+      },
+      "properties": {
+        "id": "621",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.9,
+        "pdf_x_pt": 807.693,
+        "pdf_y_von_oben_pt": 571.892,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "621 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "622",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526178,
+          54.682644
+        ]
+      },
+      "properties": {
+        "id": "622",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.827,
+        "pdf_x_pt": 798.042,
+        "pdf_y_von_oben_pt": 629.429,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "622 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "623",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.524947,
+          54.683605
+        ]
+      },
+      "properties": {
+        "id": "623",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.989,
+        "pdf_x_pt": 748.538,
+        "pdf_y_von_oben_pt": 561.691,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "623 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "624",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.524747,
+          54.68225
+        ]
+      },
+      "properties": {
+        "id": "624",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.853,
+        "pdf_x_pt": 739.746,
+        "pdf_y_von_oben_pt": 656.601,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "624 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "625",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523595,
+          54.682173
+        ]
+      },
+      "properties": {
+        "id": "625",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.79,
+        "pdf_x_pt": 692.918,
+        "pdf_y_von_oben_pt": 661.68,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "625 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "626",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523393,
+          54.683752
+        ]
+      },
+      "properties": {
+        "id": "626",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 685.517,
+        "pdf_y_von_oben_pt": 550.919,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "626 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "627",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522191,
+          54.682777
+        ]
+      },
+      "properties": {
+        "id": "627",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 1.257,
+        "pdf_x_pt": 636.2,
+        "pdf_y_von_oben_pt": 618.896,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "627 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "628",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521574,
+          54.68323
+        ]
+      },
+      "properties": {
+        "id": "628",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.814,
+        "pdf_x_pt": 611.369,
+        "pdf_y_von_oben_pt": 587.006,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "628 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "629",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522167,
+          54.683857
+        ]
+      },
+      "properties": {
+        "id": "629",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.816,
+        "pdf_x_pt": 635.779,
+        "pdf_y_von_oben_pt": 543.226,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "629 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "631",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.515486,
+          54.684958
+        ]
+      },
+      "properties": {
+        "id": "631",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.815,
+        "pdf_x_pt": 365.065,
+        "pdf_y_von_oben_pt": 464.128,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "631 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "632",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.514596,
+          54.684153
+        ]
+      },
+      "properties": {
+        "id": "632",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.875,
+        "pdf_x_pt": 328.535,
+        "pdf_y_von_oben_pt": 520.261,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "632 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "633",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.513728,
+          54.68341
+        ]
+      },
+      "properties": {
+        "id": "633",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.791,
+        "pdf_x_pt": 292.924,
+        "pdf_y_von_oben_pt": 572.07,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "633 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "634",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.513615,
+          54.682675
+        ]
+      },
+      "properties": {
+        "id": "634",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.816,
+        "pdf_x_pt": 287.957,
+        "pdf_y_von_oben_pt": 623.558,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "634 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "635",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.514947,
+          54.682294
+        ]
+      },
+      "properties": {
+        "id": "635",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.87,
+        "pdf_x_pt": 341.881,
+        "pdf_y_von_oben_pt": 650.626,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "635 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "636",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.515724,
+          54.682645
+        ]
+      },
+      "properties": {
+        "id": "636",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 1.145,
+        "pdf_x_pt": 373.562,
+        "pdf_y_von_oben_pt": 626.242,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "636 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "637",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.515245,
+          54.683465
+        ]
+      },
+      "properties": {
+        "id": "637",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 354.532,
+        "pdf_y_von_oben_pt": 568.632,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "637 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "638",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.513343,
+          54.683993
+        ]
+      },
+      "properties": {
+        "id": "638",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.811,
+        "pdf_x_pt": 277.584,
+        "pdf_y_von_oben_pt": 531.126,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "638 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "639",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.511837,
+          54.684034
+        ]
+      },
+      "properties": {
+        "id": "639",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.846,
+        "pdf_x_pt": 216.461,
+        "pdf_y_von_oben_pt": 527.812,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "639 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "641",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.507789,
+          54.68428
+        ]
+      },
+      "properties": {
+        "id": "641",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 52.19,
+        "pdf_y_von_oben_pt": 509.366,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "641 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "642",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.508042,
+          54.686752
+        ]
+      },
+      "properties": {
+        "id": "642",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Greveling_Bredland.pdf",
+        "ortsname": "Greveling/Bredland",
+        "ortsquelle": "Greveling_Bredland.pdf",
+        "zuordnungsabstand_relativ": 0.897,
+        "pdf_x_pt": 63.674,
+        "pdf_y_von_oben_pt": 336.165,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "642 - Hydrant"
+      }
+    }
+  ]
+}

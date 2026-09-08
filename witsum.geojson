@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "name": "Witsum",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "780",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442044,
+          54.698057
+        ]
+      },
+      "properties": {
+        "id": "780",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 0.833,
+        "pdf_x_pt": 560.007,
+        "pdf_y_von_oben_pt": 631.21,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "780 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "781",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442075,
+          54.699007
+        ]
+      },
+      "properties": {
+        "id": "781",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 0.846,
+        "pdf_x_pt": 562.635,
+        "pdf_y_von_oben_pt": 531.391,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "781 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "782",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442463,
+          54.699954
+        ]
+      },
+      "properties": {
+        "id": "782",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 587.055,
+        "pdf_y_von_oben_pt": 432.007,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "782 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "783",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439656,
+          54.700467
+        ]
+      },
+      "properties": {
+        "id": "783",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 1.126,
+        "pdf_x_pt": 416.559,
+        "pdf_y_von_oben_pt": 376.717,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "783 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "784",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439969,
+          54.699097
+        ]
+      },
+      "properties": {
+        "id": "784",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 1.047,
+        "pdf_x_pt": 434.512,
+        "pdf_y_von_oben_pt": 520.865,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "784 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "785",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439653,
+          54.698862
+        ]
+      },
+      "properties": {
+        "id": "785",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 0.853,
+        "pdf_x_pt": 415.078,
+        "pdf_y_von_oben_pt": 545.427,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "785 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "786",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.434251,
+          54.69994
+        ]
+      },
+      "properties": {
+        "id": "786",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 1.144,
+        "pdf_x_pt": 86.997,
+        "pdf_y_von_oben_pt": 429.596,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "786 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "789",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.43455,
+          54.701482
+        ]
+      },
+      "properties": {
+        "id": "789",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Witsum.pdf",
+        "ortsname": "Witsum",
+        "ortsquelle": "Witsum.pdf",
+        "zuordnungsabstand_relativ": 0.877,
+        "pdf_x_pt": 106.47,
+        "pdf_y_von_oben_pt": 267.611,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "789 - Hydrant"
+      }
+    }
+  ]
+}

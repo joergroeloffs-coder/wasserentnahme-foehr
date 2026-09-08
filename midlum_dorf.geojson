@@ -1,0 +1,1014 @@
+{
+  "type": "FeatureCollection",
+  "name": "Midlum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "502",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530104,
+          54.710851
+        ]
+      },
+      "properties": {
+        "id": "502",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.254,
+        "pdf_x_pt": 1169.07,
+        "pdf_y_von_oben_pt": 829.543,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "502 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "505",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528977,
+          54.711411
+        ]
+      },
+      "properties": {
+        "id": "505",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.897,
+        "pdf_x_pt": 1100.887,
+        "pdf_y_von_oben_pt": 770.143,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "505 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "506",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528709,
+          54.711431
+        ]
+      },
+      "properties": {
+        "id": "506",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 1084.582,
+        "pdf_y_von_oben_pt": 767.969,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "506 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "507",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529896,
+          54.712501
+        ]
+      },
+      "properties": {
+        "id": "507",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.047,
+        "pdf_x_pt": 1157.612,
+        "pdf_y_von_oben_pt": 656.052,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "507 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "508",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529604,
+          54.712546
+        ]
+      },
+      "properties": {
+        "id": "508",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.946,
+        "pdf_x_pt": 1139.877,
+        "pdf_y_von_oben_pt": 651.136,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "508 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "509",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528174,
+          54.711768
+        ]
+      },
+      "properties": {
+        "id": "509",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.137,
+        "pdf_x_pt": 1052.291,
+        "pdf_y_von_oben_pt": 732.322,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "509 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "512",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526318,
+          54.711667
+        ]
+      },
+      "properties": {
+        "id": "512",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.826,
+        "pdf_x_pt": 939.219,
+        "pdf_y_von_oben_pt": 742.061,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "512 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "513",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526399,
+          54.711867
+        ]
+      },
+      "properties": {
+        "id": "513",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 944.283,
+        "pdf_y_von_oben_pt": 721.165,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "513 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "514",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528129,
+          54.712976
+        ]
+      },
+      "properties": {
+        "id": "514",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 1050.361,
+        "pdf_y_von_oben_pt": 605.335,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "514 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "515",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526364,
+          54.713211
+        ]
+      },
+      "properties": {
+        "id": "515",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.918,
+        "pdf_x_pt": 943.088,
+        "pdf_y_von_oben_pt": 579.865,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "515 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "531",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.524239,
+          54.718044
+        ]
+      },
+      "properties": {
+        "id": "531",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 817.16,
+        "pdf_y_von_oben_pt": 70.797,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "531 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "532",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523527,
+          54.71748
+        ]
+      },
+      "properties": {
+        "id": "532",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.917,
+        "pdf_x_pt": 773.44,
+        "pdf_y_von_oben_pt": 129.765,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "532 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "533",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521133,
+          54.717209
+        ]
+      },
+      "properties": {
+        "id": "533",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.112,
+        "pdf_x_pt": 627.542,
+        "pdf_y_von_oben_pt": 157.268,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "533 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "534",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.51906,
+          54.716651
+        ]
+      },
+      "properties": {
+        "id": "534",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.919,
+        "pdf_x_pt": 500.97,
+        "pdf_y_von_oben_pt": 214.986,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "534 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "535",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517598,
+          54.716189
+        ]
+      },
+      "properties": {
+        "id": "535",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 411.624,
+        "pdf_y_von_oben_pt": 262.933,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "535 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "536",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.515595,
+          54.71486
+        ]
+      },
+      "properties": {
+        "id": "536",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.964,
+        "pdf_x_pt": 288.774,
+        "pdf_y_von_oben_pt": 401.77,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "536 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "537",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523478,
+          54.716707
+        ]
+      },
+      "properties": {
+        "id": "537",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.032,
+        "pdf_x_pt": 769.898,
+        "pdf_y_von_oben_pt": 211.026,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "537 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "538",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523351,
+          54.715884
+        ]
+      },
+      "properties": {
+        "id": "538",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.168,
+        "pdf_x_pt": 761.606,
+        "pdf_y_von_oben_pt": 297.465,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "538 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "539",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522978,
+          54.715486
+        ]
+      },
+      "properties": {
+        "id": "539",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.821,
+        "pdf_x_pt": 738.62,
+        "pdf_y_von_oben_pt": 339.203,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "539 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "541",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52102,
+          54.715167
+        ]
+      },
+      "properties": {
+        "id": "541",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.775,
+        "pdf_x_pt": 619.217,
+        "pdf_y_von_oben_pt": 371.799,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "541 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "542",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.520357,
+          54.714851
+        ]
+      },
+      "properties": {
+        "id": "542",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 578.621,
+        "pdf_y_von_oben_pt": 404.753,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "542 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "543",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518886,
+          54.714763
+        ]
+      },
+      "properties": {
+        "id": "543",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.239,
+        "pdf_x_pt": 489.008,
+        "pdf_y_von_oben_pt": 413.335,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "543 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "544",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518529,
+          54.714821
+        ]
+      },
+      "properties": {
+        "id": "544",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 467.328,
+        "pdf_y_von_oben_pt": 407.119,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "544 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "545",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518449,
+          54.714093
+        ]
+      },
+      "properties": {
+        "id": "545",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.839,
+        "pdf_x_pt": 461.948,
+        "pdf_y_von_oben_pt": 483.584,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "545 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "547",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522321,
+          54.713914
+        ]
+      },
+      "properties": {
+        "id": "547",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.829,
+        "pdf_x_pt": 697.48,
+        "pdf_y_von_oben_pt": 504.093,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "547 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "548",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522234,
+          54.714994
+        ]
+      },
+      "properties": {
+        "id": "548",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.891,
+        "pdf_x_pt": 692.951,
+        "pdf_y_von_oben_pt": 390.604,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "548 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "549",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52216,
+          54.713585
+        ]
+      },
+      "properties": {
+        "id": "549",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 687.445,
+        "pdf_y_von_oben_pt": 538.683,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "549 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "551",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522434,
+          54.713262
+        ]
+      },
+      "properties": {
+        "id": "551",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 703.902,
+        "pdf_y_von_oben_pt": 572.731,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "551 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "552",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521832,
+          54.713322
+        ]
+      },
+      "properties": {
+        "id": "552",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.021,
+        "pdf_x_pt": 667.305,
+        "pdf_y_von_oben_pt": 566.151,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "552 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "553",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.520471,
+          54.713092
+        ]
+      },
+      "properties": {
+        "id": "553",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.887,
+        "pdf_x_pt": 584.338,
+        "pdf_y_von_oben_pt": 589.69,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "553 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "554",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522349,
+          54.712472
+        ]
+      },
+      "properties": {
+        "id": "554",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 698.162,
+        "pdf_y_von_oben_pt": 655.736,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "554 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "555",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522362,
+          54.711844
+        ]
+      },
+      "properties": {
+        "id": "555",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.041,
+        "pdf_x_pt": 698.509,
+        "pdf_y_von_oben_pt": 721.705,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "555 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "556",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.51849,
+          54.712189
+        ]
+      },
+      "properties": {
+        "id": "556",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.992,
+        "pdf_x_pt": 463.088,
+        "pdf_y_von_oben_pt": 683.792,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "556 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "557",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517123,
+          54.712391
+        ]
+      },
+      "properties": {
+        "id": "557",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.916,
+        "pdf_x_pt": 379.999,
+        "pdf_y_von_oben_pt": 661.969,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "557 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "558",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517779,
+          54.71302
+        ]
+      },
+      "properties": {
+        "id": "558",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 420.424,
+        "pdf_y_von_oben_pt": 596.082,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "558 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "559",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518,
+          54.713319
+        ]
+      },
+      "properties": {
+        "id": "559",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Midlum_Dorf.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Midlum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.879,
+        "pdf_x_pt": 434.069,
+        "pdf_y_von_oben_pt": 564.806,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "559 - Hydrant"
+      }
+    }
+  ]
+}

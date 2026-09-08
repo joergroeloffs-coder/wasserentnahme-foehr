@@ -1,0 +1,1266 @@
+{
+  "type": "FeatureCollection",
+  "name": "Wrixum_Feld",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "309",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52683,
+          54.684926
+        ]
+      },
+      "properties": {
+        "id": "309",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.11,
+        "pdf_x_pt": 184.608,
+        "pdf_y_von_oben_pt": 812.519,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "309 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "325",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.540373,
+          54.684914
+        ]
+      },
+      "properties": {
+        "id": "325",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.754,
+        "pdf_x_pt": 803.278,
+        "pdf_y_von_oben_pt": 817.629,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "325 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "326",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541135,
+          54.685765
+        ]
+      },
+      "properties": {
+        "id": "326",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.93,
+        "pdf_x_pt": 838.495,
+        "pdf_y_von_oben_pt": 750.791,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "326 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "327",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547339,
+          54.685732
+        ]
+      },
+      "properties": {
+        "id": "327",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.872,
+        "pdf_x_pt": 1121.913,
+        "pdf_y_von_oben_pt": 755.338,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "327 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "328",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547989,
+          54.686279
+        ]
+      },
+      "properties": {
+        "id": "328",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.197,
+        "pdf_x_pt": 1151.854,
+        "pdf_y_von_oben_pt": 712.433,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "328 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "330",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545588,
+          54.685365
+        ]
+      },
+      "properties": {
+        "id": "330",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.873,
+        "pdf_x_pt": 1041.743,
+        "pdf_y_von_oben_pt": 783.714,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "330 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "331",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543451,
+          54.685963
+        ]
+      },
+      "properties": {
+        "id": "331",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.812,
+        "pdf_x_pt": 944.404,
+        "pdf_y_von_oben_pt": 735.942,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "331 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "332",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.544795,
+          54.686961
+        ]
+      },
+      "properties": {
+        "id": "332",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.983,
+        "pdf_x_pt": 1006.275,
+        "pdf_y_von_oben_pt": 657.623,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "332 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "333",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542854,
+          54.686819
+        ]
+      },
+      "properties": {
+        "id": "333",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.866,
+        "pdf_x_pt": 917.543,
+        "pdf_y_von_oben_pt": 668.246,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "333 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "335",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543604,
+          54.687645
+        ]
+      },
+      "properties": {
+        "id": "335",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.917,
+        "pdf_x_pt": 952.248,
+        "pdf_y_von_oben_pt": 603.386,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "335 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "336",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541755,
+          54.68643
+        ]
+      },
+      "properties": {
+        "id": "336",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.945,
+        "pdf_x_pt": 867.171,
+        "pdf_y_von_oben_pt": 698.545,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "336 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "337",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542377,
+          54.687191
+        ]
+      },
+      "properties": {
+        "id": "337",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.863,
+        "pdf_x_pt": 895.941,
+        "pdf_y_von_oben_pt": 638.735,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "337 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "338",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542959,
+          54.687863
+        ]
+      },
+      "properties": {
+        "id": "338",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.558,
+        "pdf_x_pt": 922.854,
+        "pdf_y_von_oben_pt": 585.964,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "338 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "339",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541603,
+          54.687406
+        ]
+      },
+      "properties": {
+        "id": "339",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.884,
+        "pdf_x_pt": 860.706,
+        "pdf_y_von_oben_pt": 621.589,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "339 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "340",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541738,
+          54.68817
+        ]
+      },
+      "properties": {
+        "id": "340",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 867.258,
+        "pdf_y_von_oben_pt": 561.362,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "340 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "341",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542352,
+          54.688778
+        ]
+      },
+      "properties": {
+        "id": "341",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.893,
+        "pdf_x_pt": 895.6,
+        "pdf_y_von_oben_pt": 513.621,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "341 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "342",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548388,
+          54.687339
+        ]
+      },
+      "properties": {
+        "id": "342",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.975,
+        "pdf_x_pt": 1170.617,
+        "pdf_y_von_oben_pt": 628.96,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "342 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "343",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548033,
+          54.687944
+        ]
+      },
+      "properties": {
+        "id": "343",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.114,
+        "pdf_x_pt": 1154.671,
+        "pdf_y_von_oben_pt": 581.116,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "343 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "345",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54842,
+          54.688696
+        ]
+      },
+      "properties": {
+        "id": "345",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 1172.716,
+        "pdf_y_von_oben_pt": 521.984,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "345 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "349",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547963,
+          54.688952
+        ]
+      },
+      "properties": {
+        "id": "349",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.304,
+        "pdf_x_pt": 1151.955,
+        "pdf_y_von_oben_pt": 501.652,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "349 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "350",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545837,
+          54.688025
+        ]
+      },
+      "properties": {
+        "id": "350",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.846,
+        "pdf_x_pt": 1054.394,
+        "pdf_y_von_oben_pt": 574.091,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "350 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "351",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546721,
+          54.68923
+        ]
+      },
+      "properties": {
+        "id": "351",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.209,
+        "pdf_x_pt": 1095.36,
+        "pdf_y_von_oben_pt": 479.362,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "351 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "352",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547272,
+          54.689811
+        ]
+      },
+      "properties": {
+        "id": "352",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.008,
+        "pdf_x_pt": 1120.811,
+        "pdf_y_von_oben_pt": 433.741,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "352 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "353",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543682,
+          54.688686
+        ]
+      },
+      "properties": {
+        "id": "353",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.836,
+        "pdf_x_pt": 956.316,
+        "pdf_y_von_oben_pt": 521.287,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "353 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "355",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.544193,
+          54.689293
+        ]
+      },
+      "properties": {
+        "id": "355",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.916,
+        "pdf_x_pt": 979.955,
+        "pdf_y_von_oben_pt": 473.61,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "355 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "357",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.542188,
+          54.689679
+        ]
+      },
+      "properties": {
+        "id": "357",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.856,
+        "pdf_x_pt": 888.556,
+        "pdf_y_von_oben_pt": 442.544,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "357 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "358",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54479,
+          54.690002
+        ]
+      },
+      "properties": {
+        "id": "358",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.959,
+        "pdf_x_pt": 1007.572,
+        "pdf_y_von_oben_pt": 417.878,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "358 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "362",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548097,
+          54.690357
+        ]
+      },
+      "properties": {
+        "id": "362",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 1158.76,
+        "pdf_y_von_oben_pt": 390.948,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "362 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "366",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546606,
+          54.690755
+        ]
+      },
+      "properties": {
+        "id": "366",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.149,
+        "pdf_x_pt": 1090.857,
+        "pdf_y_von_oben_pt": 359.081,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "366 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "367",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.548067,
+          54.691768
+        ]
+      },
+      "properties": {
+        "id": "367",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.009,
+        "pdf_x_pt": 1158.094,
+        "pdf_y_von_oben_pt": 279.688,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "367 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "368",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545696,
+          54.691077
+        ]
+      },
+      "properties": {
+        "id": "368",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.042,
+        "pdf_x_pt": 1049.459,
+        "pdf_y_von_oben_pt": 333.416,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "368 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "369",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.545919,
+          54.69151
+        ]
+      },
+      "properties": {
+        "id": "369",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.843,
+        "pdf_x_pt": 1059.877,
+        "pdf_y_von_oben_pt": 299.349,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "369 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "370",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546565,
+          54.69224
+        ]
+      },
+      "properties": {
+        "id": "370",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.098,
+        "pdf_x_pt": 1089.721,
+        "pdf_y_von_oben_pt": 242.018,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "370 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "371",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54731,
+          54.693073
+        ]
+      },
+      "properties": {
+        "id": "371",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.001,
+        "pdf_x_pt": 1124.161,
+        "pdf_y_von_oben_pt": 176.584,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "371 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "372",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547954,
+          54.693852
+        ]
+      },
+      "properties": {
+        "id": "372",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.945,
+        "pdf_x_pt": 1153.935,
+        "pdf_y_von_oben_pt": 115.348,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "372 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "387",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543217,
+          54.689494
+        ]
+      },
+      "properties": {
+        "id": "387",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.959,
+        "pdf_x_pt": 935.457,
+        "pdf_y_von_oben_pt": 457.42,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "387 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "421",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526961,
+          54.693078
+        ]
+      },
+      "properties": {
+        "id": "421",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.83,
+        "pdf_x_pt": 194.873,
+        "pdf_y_von_oben_pt": 169.866,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "421 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "422",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.527369,
+          54.692583
+        ]
+      },
+      "properties": {
+        "id": "422",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.957,
+        "pdf_x_pt": 213.225,
+        "pdf_y_von_oben_pt": 209.032,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "422 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "423",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53095,
+          54.690627
+        ]
+      },
+      "properties": {
+        "id": "423",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.874,
+        "pdf_x_pt": 375.77,
+        "pdf_y_von_oben_pt": 364.354,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "423 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "424",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.536655,
+          54.692844
+        ]
+      },
+      "properties": {
+        "id": "424",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.037,
+        "pdf_x_pt": 637.447,
+        "pdf_y_von_oben_pt": 191.327,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "424 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "425",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541439,
+          54.693231
+        ]
+      },
+      "properties": {
+        "id": "425",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.847,
+        "pdf_x_pt": 856.105,
+        "pdf_y_von_oben_pt": 162.292,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "425 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "426",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546856,
+          54.694007
+        ]
+      },
+      "properties": {
+        "id": "426",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.778,
+        "pdf_x_pt": 1103.885,
+        "pdf_y_von_oben_pt": 102.768,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "426 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "427",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546133,
+          54.694468
+        ]
+      },
+      "properties": {
+        "id": "427",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.833,
+        "pdf_x_pt": 1071.073,
+        "pdf_y_von_oben_pt": 66.239,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "427 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "428",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.546724,
+          54.695066
+        ]
+      },
+      "properties": {
+        "id": "428",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 0.872,
+        "pdf_x_pt": 1098.362,
+        "pdf_y_von_oben_pt": 19.277,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "428 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "429",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.547902,
+          54.694973
+        ]
+      },
+      "properties": {
+        "id": "429",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wrixum_Feld.pdf",
+        "ortsname": "Wrixum",
+        "ortsquelle": "Wrixum_Feld.pdf",
+        "zuordnungsabstand_relativ": 1.157,
+        "pdf_x_pt": 1152.134,
+        "pdf_y_von_oben_pt": 26.984,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "429 - Hydrant"
+      }
+    }
+  ]
+}
