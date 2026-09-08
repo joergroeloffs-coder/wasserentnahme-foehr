@@ -267,6 +267,13 @@
     <div class="zeile"><span>Gespeicherte Stellen</span><span id="d-anzahl">0</span></div>
     <div class="zeile"><span>Speicherung</span><span id="d-speicher">–</span></div>
     <div class="zeile"><span>Kompass</span><span id="d-kompass">wird geprüft</span></div>
+    <div class="zeile"><span>Gecachte Kartenkacheln</span><span id="d-kacheln">wird geprüft…</span></div>
+    <div class="zeile"><span>Belegter Speicherplatz</span><span id="d-speicherplatz">wird geprüft…</span></div>
+    <div class="hinweis">
+      Zeigt, wie viele Kartenkacheln auf diesem Gerät offline verfügbar sind. Hohe Zahl heißt
+      nicht automatisch "überall scharf" — nur Kacheln der Zoomstufen, die beim Online-Laden
+      tatsächlich angezeigt wurden, sind gecacht. Wert gilt nur für dieses eine Gerät.
+    </div>
 
     <h2>Sichern und übertragen</h2>
     <button class="btn" id="export">Als GeoJSON exportieren</button>
@@ -727,6 +734,35 @@ function zeichneDaten(){
   document.getElementById("d-anzahl").textContent = stellen.length;
   document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
   document.getElementById("d-pin").textContent = pinGesetzt() ? "aktiv" : "nicht gesetzt";
+  kachelInfoAktualisieren();
+}
+
+/* ---------- Cache-Info (Offline-Kacheln) ---------- */
+const TILE_CACHE_NAME = "osm-tiles-v1"; // muss zu TILE_CACHE in sw.js passen
+function kachelInfoAktualisieren(){
+  const kachelnEl = document.getElementById("d-kacheln");
+  const speicherEl = document.getElementById("d-speicherplatz");
+  if(!("caches" in window)){
+    kachelnEl.textContent = "nicht verfügbar";
+    speicherEl.textContent = "nicht verfügbar";
+    return;
+  }
+  caches.open(TILE_CACHE_NAME)
+    .then(c => c.keys())
+    .then(keys => { kachelnEl.textContent = keys.length + " Kacheln"; })
+    .catch(() => { kachelnEl.textContent = "nicht verfügbar"; });
+
+  if(navigator.storage && navigator.storage.estimate){
+    navigator.storage.estimate()
+      .then(est => {
+        speicherEl.textContent = typeof est.usage === "number"
+          ? (est.usage / 1024 / 1024).toFixed(1) + " MB (App gesamt)"
+          : "nicht verfügbar";
+      })
+      .catch(() => { speicherEl.textContent = "nicht verfügbar"; });
+  } else {
+    speicherEl.textContent = "nicht verfügbar";
+  }
 }
 
 /* ---------- PIN-Schutz ---------- */
