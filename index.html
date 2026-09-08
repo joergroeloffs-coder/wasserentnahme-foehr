@@ -177,13 +177,33 @@
   <!-- Liste -->
   <section id="v-liste" class="view on">
     <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
-    <div id="liste"></div>
+    <div class="row" style="margin-top:8px">
+      <div>
+        <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
+        <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+      </div>
+      <div>
+        <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
+        <select id="f-typ-filter">
+          <option value="">Alle Arten</option>
+          <option value="Unterflurhydrant">Unterflurhydrant</option>
+          <option value="Überflurhydrant">Überflurhydrant</option>
+          <option value="Saugstelle">Saugstelle / offenes Gewässer</option>
+          <option value="Löschwasserbrunnen">Löschwasserbrunnen</option>
+          <option value="Zisterne">Zisterne / Behälter</option>
+        </select>
+      </div>
+    </div>
+    <div id="liste" style="margin-top:10px"></div>
   </section>
 
   <!-- Erfassen -->
   <section id="v-neu" class="view">
     <label for="f-nr">Nummer oder Kurzname</label>
     <input id="f-nr" placeholder="z. B. H-042">
+    <label for="f-ortschaft">Ortschaft</label>
+    <input id="f-ortschaft" list="ortschaften-liste" placeholder="z. B. Süderende">
+    <datalist id="ortschaften-liste"></datalist>
     <label for="f-ort">Straße und Lage</label>
     <input id="f-ort" placeholder="z. B. Sandwall, Gehweg vor Nr. 12">
     <label for="f-typ">Art</label>
@@ -333,19 +353,42 @@ document.querySelectorAll("nav button").forEach(b => b.addEventListener("click",
 /* ---------- Liste ---------- */
 const listeEl = document.getElementById("liste");
 const sucheEl = document.getElementById("suche");
+const ortschaftFilterEl = document.getElementById("f-ortschaft-filter");
+const typFilterEl = document.getElementById("f-typ-filter");
 sucheEl.addEventListener("input", zeichneListe);
+ortschaftFilterEl.addEventListener("change", zeichneListe);
+typFilterEl.addEventListener("change", zeichneListe);
+
+function ortschaften(){
+  return [...new Set(stellen.map(s => (s.ortschaft || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
+}
+
+function aktualisiereOrtschaftsListen(){
+  const werte = ortschaften();
+  const aktuellerFilter = ortschaftFilterEl.value;
+  ortschaftFilterEl.innerHTML = '<option value="">Alle Ortschaften</option>' +
+    werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
+  if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
+  document.getElementById("ortschaften-liste").innerHTML =
+    werte.map(o => '<option value="' + esc(o) + '">').join("");
+}
 
 function zeichneListe(){
+  aktualisiereOrtschaftsListen();
   if(document.getElementById("peil").classList.contains("on")) return;
   const q = sucheEl.value.trim().toLowerCase();
+  const ortschaftFilter = ortschaftFilterEl.value;
+  const typFilter = typFilterEl.value;
   let d = stellen.slice();
-  if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
+  if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+(s.ortschaft||"")+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
+  if(ortschaftFilter) d = d.filter(s => (s.ortschaft || "") === ortschaftFilter);
+  if(typFilter) d = d.filter(s => s.typ === typFilter);
   if(pos) d.forEach(s => s._d = distanz(pos.latitude,pos.longitude,s.lat,s.lon));
   d.sort((a,b) => pos ? a._d-b._d : (a.nr||"").localeCompare(b.nr||""));
 
   if(!d.length){
     listeEl.innerHTML = '<div class="empty">' +
-      (stellen.length ? "Kein Treffer für diese Suche." : "Noch keine Stellen erfasst. Über „Erfassen“ den ersten Punkt aufnehmen oder unter „Daten“ eine GeoJSON-Datei einlesen.") +
+      (stellen.length ? "Kein Treffer für diese Suche/Filter." : "Noch keine Stellen erfasst. Über „Erfassen“ den ersten Punkt aufnehmen oder unter „Daten“ eine GeoJSON-Datei einlesen.") +
       "</div>";
     return;
   }
@@ -353,11 +396,12 @@ function zeichneListe(){
   d.slice(0,200).forEach(s => {
     const b = document.createElement("button");
     b.className = "item";
+    const ortLage = [s.ortschaft, s.ort].filter(Boolean).join(" · ") || s.typ;
     b.innerHTML =
       '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
       '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
-      '<div class="meta">' + esc(s.ort || s.typ) + '</div></span>';
+      '<div class="meta">' + esc(ortLage) + '</div></span>';
     b.addEventListener("click", () => oeffnePeil(s));
     listeEl.appendChild(b);
   });
@@ -371,7 +415,7 @@ function oeffnePeil(s){
   document.getElementById("peil").classList.add("on");
   document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
   document.getElementById("zielName").textContent = s.nr || "ohne Nummer";
-  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ort].filter(Boolean).join(" · ");
+  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   aktualisierePeil();
@@ -470,7 +514,7 @@ function zeichneKarte(){
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
     const m = L.marker([s.lat, s.lon]);
-    m.bindPopup(esc(s.nr || "ohne Nummer") + (s.ort ? "<br>" + esc(s.ort) : ""));
+    m.bindPopup(esc(s.nr || "ohne Nummer") + (s.ortschaft || s.ort ? "<br>" + esc([s.ortschaft, s.ort].filter(Boolean).join(" · ")) : ""));
     m.on("click", () => oeffnePeil(s));
     m.addTo(markerLayer);
   });
@@ -506,6 +550,7 @@ document.getElementById("manuell").addEventListener("click", () => {
 function neu(lat, lon, genau){
   const s = {
     nr: document.getElementById("f-nr").value.trim(),
+    ortschaft: document.getElementById("f-ortschaft").value.trim(),
     ort: document.getElementById("f-ort").value.trim(),
     typ: document.getElementById("f-typ").value,
     dn: document.getElementById("f-dn").value,
@@ -518,7 +563,7 @@ function neu(lat, lon, genau){
   if(i >= 0){ if(!confirm("Nummer " + s.nr + " ist bereits erfasst. Überschreiben?")) return; stellen[i] = s; }
   else stellen.push(s);
   store.save(stellen);
-  ["f-nr","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
+  ["f-nr","f-ortschaft","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
   document.getElementById("neuPos").textContent =
     "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
   neuLatLon = null;
@@ -536,7 +581,7 @@ document.getElementById("export").addEventListener("click", () => {
   const fc = { type:"FeatureCollection", features: stellen.map(s => ({
     type:"Feature",
     geometry:{ type:"Point", coordinates:[s.lon, s.lat] },
-    properties:{ ref:s.nr, name:s.ort, "emergency":"fire_hydrant", art:s.typ,
+    properties:{ ref:s.nr, name:s.ort, "addr:city":s.ortschaft || undefined, "emergency":"fire_hydrant", art:s.typ,
       "fire_hydrant:diameter":s.dn || undefined, "flow_rate":s.menge || undefined,
       description:s.bem || undefined, "survey:date":(s.erfasst||"").slice(0,10) }
   })) };
@@ -556,6 +601,7 @@ document.getElementById("import").addEventListener("change", ev => {
         if(!ft.geometry || ft.geometry.type !== "Point") return;
         const p = ft.properties || {}, c = ft.geometry.coordinates;
         eingelesen.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+          ortschaft: p["addr:city"] || p.ortschaft || "",
           typ: p.art || p["fire_hydrant:type"] || "Hydrant", dn: p["fire_hydrant:diameter"] || p.dn || "",
           menge: p.flow_rate || "", bem: p.description || p.bem || "",
           lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
