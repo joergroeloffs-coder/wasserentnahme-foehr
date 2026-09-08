@@ -617,12 +617,12 @@ async function serverAbgleich(manuell){
     const hash = einfacherHash(text);
     let vorherigerHash = null;
     try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}
-    if(hash === vorherigerHash){
-      if(manuell) alert("Bereits aktuell.");
+    if(!manuell && hash === vorherigerHash) return;
+    const eingelesen = geoJsonZuStellen(JSON.parse(text));
+    if(!eingelesen.length && stellen.length){
+      if(manuell) alert("Serverdatei enthält keine gültigen Punkte, Bestand bleibt unverändert.");
       return;
     }
-    const eingelesen = geoJsonZuStellen(JSON.parse(text));
-    if(!eingelesen.length && stellen.length) return;
 
     stellen = eingelesen;
     store.save(stellen);
