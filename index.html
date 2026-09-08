@@ -460,6 +460,7 @@ const fmtDist = m => m<1000 ? Math.round(m)+" m" : (m/1000).toFixed(1)+" km";
 
 /* ---------- GPS ---------- */
 let pos = null;
+let letzterListenRedraw = 0;
 const gpsBox = document.getElementById("gps");
 const gpsDetail = document.getElementById("gpsdetail");
 
@@ -471,7 +472,9 @@ if("geolocation" in navigator){
     gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
     gpsDetail.textContent = p.coords.latitude.toFixed(5) + ", " + p.coords.longitude.toFixed(5);
     if(typeof p.coords.heading === "number" && !isNaN(p.coords.heading) && p.coords.speed > 1) gpsKurs = p.coords.heading;
-    zeichneListe(); aktualisierePeil();
+    aktualisierePeil();
+    const jetzt = Date.now();
+    if(jetzt - letzterListenRedraw > 1500){ letzterListenRedraw = jetzt; zeichneListe(); }
   }, err => {
     gpsBox.querySelector("b").textContent = "kein GPS";
     gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
@@ -500,6 +503,7 @@ document.querySelectorAll("nav button").forEach(b => b.addEventListener("click",
   if(b.dataset.view === "v-daten") zeichneDaten();
   if(b.dataset.view === "v-karte"){ initKarte(); setTimeout(() => map.invalidateSize(), 50); }
   if(b.dataset.view === "v-neu"){ bearbeiteIndex = -1; formularLeeren(); }
+  if(b.dataset.view === "v-liste"){ aktualisiereOrtschaftsListen(); zeichneListe(); }
 }));
 
 /* ---------- Liste ---------- */
@@ -540,8 +544,8 @@ function aktualisiereOrtschaftsListen(){
 }
 
 function zeichneListe(){
-  aktualisiereOrtschaftsListen();
   if(document.getElementById("peil").classList.contains("on")) return;
+  if(!document.getElementById("v-liste").classList.contains("on")) return;
   const q = sucheEl.value.trim().toLowerCase();
   const ortschaftFilter = ortschaftFilterEl.value;
   const typFilter = typFilterEl.value;
@@ -667,6 +671,7 @@ function stelleLoeschen(s){
   store.save(stellen);
   markUngesichert();
   if(bearbeiteIndex === idx){ bearbeiteIndex = -1; formularLeeren(); document.getElementById("edit-loeschen").hidden = true; }
+  aktualisiereOrtschaftsListen();
   zeichneListe();
   zeichneKarte();
 }
@@ -928,6 +933,7 @@ function neu(lat, lon, genau){
     ? "Änderungen gespeichert."
     : "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)")
   ) + " Nicht vergessen: unter „Daten“ exportieren und die Datei an Claude schicken, damit es zentral übernommen wird.";
+  aktualisiereOrtschaftsListen();
   zeichneListe();
   zeichneKarte();
 }
@@ -1146,7 +1152,7 @@ document.getElementById("import").addEventListener("change", ev => {
       if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + eingelesen.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
       if(!pinPruefen()) { ev.target.value = ""; return; }
       stellen = eingelesen;
-      store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
+      store.save(stellen); zeichneDaten(); aktualisiereOrtschaftsListen(); zeichneListe(); zeichneKarte();
       alert(stellen.length + " Stellen eingelesen, Bestand ersetzt.");
     } catch(e){ alert("Datei ist kein lesbares GeoJSON."); }
     ev.target.value = "";
@@ -1176,14 +1182,14 @@ document.getElementById("import-mehrere").addEventListener("change", async ev =>
     const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
     if(i >= 0){ stellen[i] = s; aktualisiert++; } else { stellen.push(s); neu++; }
   });
-  store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
+  store.save(stellen); zeichneDaten(); aktualisiereOrtschaftsListen(); zeichneListe(); zeichneKarte();
   alert(neu + " neu, " + aktualisiert + " aktualisiert. Bestand jetzt: " + stellen.length + " Stellen.");
   ev.target.value = "";
 });
 document.getElementById("loeschen").addEventListener("click", () => {
   if(!confirm("Alle " + stellen.length + " Stellen löschen? Vorher exportieren, sonst sind die Daten weg.")) return;
   if(!pinPruefen()) return;
-  stellen = []; store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
+  stellen = []; store.save(stellen); zeichneDaten(); aktualisiereOrtschaftsListen(); zeichneListe(); zeichneKarte();
 });
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN ---------- */
@@ -1228,7 +1234,7 @@ async function serverAbgleich(manuell){
       localStorage.setItem(SYNC_HASH_KEY, hash);
       localStorage.setItem(SYNC_ZEIT_KEY, new Date().toISOString());
     } catch(e){}
-    zeichneListe(); zeichneKarte(); zeichneDaten();
+    aktualisiereOrtschaftsListen(); zeichneListe(); zeichneKarte(); zeichneDaten();
     if(manuell) alert(eingelesen.length + " Stellen aus dem Internet übernommen.");
   } catch(e){
     if(manuell) alert("Kein Abgleich möglich (kein Internet oder Datei nicht erreichbar).");
@@ -1240,7 +1246,7 @@ document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgl
 window.addEventListener("load", () => { if(autoSyncAktiv() && navigator.onLine) serverAbgleich(false); });
 window.addEventListener("online", () => { if(autoSyncAktiv()) serverAbgleich(false); });
 
-zeichneListe(); zeichneDaten();
+aktualisiereOrtschaftsListen(); zeichneListe(); zeichneDaten();
 </script>
 </body>
 </html>

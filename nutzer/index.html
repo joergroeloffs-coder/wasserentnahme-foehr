@@ -305,6 +305,7 @@ const fmtDist = m => m<1000 ? Math.round(m)+" m" : (m/1000).toFixed(1)+" km";
 
 /* ---------- GPS ---------- */
 let pos = null;
+let letzterListenRedraw = 0;
 const gpsBox = document.getElementById("gps");
 const gpsDetail = document.getElementById("gpsdetail");
 
@@ -316,7 +317,9 @@ if("geolocation" in navigator){
     gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
     gpsDetail.textContent = p.coords.latitude.toFixed(5) + ", " + p.coords.longitude.toFixed(5);
     if(typeof p.coords.heading === "number" && !isNaN(p.coords.heading) && p.coords.speed > 1) gpsKurs = p.coords.heading;
-    zeichneListe(); aktualisierePeil();
+    aktualisierePeil();
+    const jetzt = Date.now();
+    if(jetzt - letzterListenRedraw > 1500){ letzterListenRedraw = jetzt; zeichneListe(); }
   }, err => {
     gpsBox.querySelector("b").textContent = "kein GPS";
     gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
@@ -342,6 +345,7 @@ document.querySelectorAll("nav button").forEach(b => b.addEventListener("click",
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === b.dataset.view));
   if(b.dataset.view === "v-karte"){ initKarte(); setTimeout(() => map.invalidateSize(), 50); }
+  if(b.dataset.view === "v-liste"){ aktualisiereFilterListen(); zeichneListe(); }
 }));
 
 /* ---------- Liste ---------- */
@@ -378,8 +382,8 @@ function aktualisiereFilterListen(){
 }
 
 function zeichneListe(){
-  aktualisiereFilterListen();
   if(document.getElementById("peil").classList.contains("on")) return;
+  if(!document.getElementById("v-liste").classList.contains("on")) return;
   const q = sucheEl.value.trim().toLowerCase();
   const ortschaftFilter = ortschaftFilterEl.value;
   const typFilter = typFilterEl.value;
@@ -705,7 +709,7 @@ async function serverAbgleich(manuell){
       localStorage.setItem(SYNC_HASH_KEY, hash);
       localStorage.setItem(SYNC_ZEIT_KEY, new Date().toISOString());
     } catch(e){}
-    zeichneListe(); zeichneKarte();
+    aktualisiereFilterListen(); zeichneListe(); zeichneKarte();
     if(manuell) alert(eingelesen.length + " Stellen aus dem Internet übernommen.");
   } catch(e){
     if(manuell) alert("Kein Abgleich möglich (kein Internet oder Datei nicht erreichbar).");
@@ -718,7 +722,7 @@ document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgl
 window.addEventListener("load", () => { if(navigator.onLine) serverAbgleich(false); });
 window.addEventListener("online", () => serverAbgleich(false));
 
-zeichneListe();
+aktualisiereFilterListen(); zeichneListe();
 </script>
 </body>
 </html>
