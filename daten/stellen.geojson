@@ -2046,7 +2046,7 @@
    "properties": {
     "ref": "214b",
     "name": "",
-    "addr:city": "Föhr (Nordwest)",
+    "addr:city": "Oldsum",
     "emergency": "fire_hydrant",
     "art": "Bohrbrunnen",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: 04_Foehr_Nord_West.pdf",
@@ -3780,10 +3780,10 @@
    "properties": {
     "ref": "307",
     "name": "",
-    "addr:city": "Föhr (Südost)",
+    "addr:city": "Wyk auf Föhr",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 400,
+    "flow_rate": "400",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: 04_Foehr_Sued_Ost.pdf",
     "survey:date": ""
    }
@@ -4798,10 +4798,10 @@
    "properties": {
     "ref": "365",
     "name": "",
-    "addr:city": "Föhr",
+    "addr:city": "Wyk auf Föhr",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: 03_Foehr_ges_Quer.pdf",
     "survey:date": ""
    }
