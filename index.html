@@ -167,6 +167,17 @@
     position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
     color:var(--dim);font-size:13px;pointer-events:none;
   }
+  .detail-overlay{
+    display:none;position:fixed;inset:0;z-index:1900;background:#000c;
+    align-items:flex-end;justify-content:center;padding:0;
+  }
+  .detail-overlay.on{display:flex}
+  .detail-karte{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px 14px 0 0;
+    padding:20px 18px calc(18px + env(safe-area-inset-bottom));width:100%;max-width:480px;
+    max-height:82vh;overflow-y:auto;
+  }
+  .detail-karte .ziel{margin-bottom:0}
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
   .zeile{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
   .zeile span:first-child{flex:none}
@@ -182,6 +193,21 @@
 </header>
 
 <main>
+  <!-- Detailansicht: Punktdaten anzeigen, dann Ja/Nein zur Navigation -->
+  <div class="detail-overlay" id="detailOverlay">
+    <div class="detail-karte">
+      <div class="ziel" id="detailName">–</div>
+      <div class="ziel-meta" id="detailMeta"></div>
+      <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
+      <div class="hinweis" id="detailHinweis"></div>
+      <p style="margin:18px 0 10px;color:var(--dim)">Zu diesem Punkt navigieren?</p>
+      <div class="row">
+        <button class="btn primary" id="detail-ja">Ja, navigieren</button>
+        <button class="btn ghost" id="detail-nein">Nein</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Peilansicht (Navigation): Karte vollflächig, Pfeil dauerhaft sichtbar, Rest nur bei Berührung -->
   <section id="peil">
     <div id="peilMap"></div>
@@ -522,7 +548,7 @@ function zeichneListe(){
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
       '<div class="meta">' + esc(ortLage) + '</div></span>' +
       '<button class="item-edit" type="button" aria-label="Bearbeiten" title="Bearbeiten">✎</button>';
-    b.addEventListener("click", () => oeffnePeil(s));
+    b.addEventListener("click", () => zeigeDetails(s));
     b.querySelector(".item-edit").addEventListener("click", ev => { ev.stopPropagation(); bearbeitenStarten(s); });
     listeEl.appendChild(b);
   });
@@ -531,6 +557,25 @@ const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;"
 
 /* ---------- Peilung ---------- */
 let ziel = null;
+let detailStelle = null;
+function zeigeDetails(s){
+  detailStelle = s;
+  document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
+  document.getElementById("detailMeta").textContent =
+    [s.typ, s.dn, s.menge ? s.menge + " m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+  document.getElementById("detailKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  document.getElementById("detailHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  document.getElementById("detailOverlay").classList.add("on");
+}
+document.getElementById("detail-ja").addEventListener("click", () => {
+  document.getElementById("detailOverlay").classList.remove("on");
+  if(detailStelle) oeffnePeil(detailStelle);
+});
+document.getElementById("detail-nein").addEventListener("click", () => {
+  document.getElementById("detailOverlay").classList.remove("on");
+  detailStelle = null;
+});
+
 function oeffnePeil(s){
   ziel = s;
   document.getElementById("peil").classList.add("on");
@@ -718,8 +763,7 @@ function zeichneKarte(){
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
     const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
-    m.bindPopup(esc(s.nr || "ohne Nummer") + (s.ortschaft || s.ort ? "<br>" + esc([s.ortschaft, s.ort].filter(Boolean).join(" · ")) : ""));
-    m.on("click", () => oeffnePeil(s));
+    m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
   });
 }
