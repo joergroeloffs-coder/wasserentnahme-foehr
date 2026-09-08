@@ -568,13 +568,6 @@ function initPeilMap(){
   container.addEventListener("click", () => zeigePeilOverlay());
 }
 
-function zoomFuerEntfernung(m){
-  if(m > 3000) return 13;
-  if(m > 1000) return 15;
-  if(m > 300) return 17;
-  return 18;
-}
-
 let peilAusblendTimer = null;
 function zeigePeilOverlay(){
   document.getElementById("peilOverlay").classList.add("sichtbar");
@@ -604,11 +597,8 @@ function aktualisierePeilKarte(fit){
     if(peilLinie) peilMap.removeLayer(peilLinie);
     peilLinie = L.polyline([eigeneLL, zielLL], { color:"#e23c22", weight:3, dashArray:"6 6" }).addTo(peilMap);
 
-    if(fit){
+    if(fit || peilAutoZoom){
       peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
-    } else if(peilAutoZoom){
-      const m = distanz(pos.latitude, pos.longitude, ziel.lat, ziel.lon);
-      peilMap.setView(zielLL, zoomFuerEntfernung(m));
     }
   } else if(fit){
     peilMap.setView(zielLL, 15);
