@@ -1032,11 +1032,11 @@ function geoJsonZuStellen(j, dateiname){
       menge = Math.round(p.menge_l_min * 0.06 * 10) / 10; // L/min -> m³/h
     }
     let bem = p.description || p.bem || "";
-    if(!bem && (p.lagegenauigkeit || p.quelle)){
-      bem = [p.lagegenauigkeit, p.quelle ? "Quelle: " + p.quelle : ""].filter(Boolean).join(" · ");
+    if(!bem && (p.lagegenauigkeit || p.lagehinweis || p.quelle || p.quellkarte)){
+      bem = [p.lagegenauigkeit || p.lagehinweis, (p.quelle || p.quellkarte) ? "Quelle: " + (p.quelle || p.quellkarte) : ""].filter(Boolean).join(" · ");
     }
     eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: p.name || p.ort || p.addr || "",
-      ortschaft: p["addr:city"] || p.ortschaft || ortschaftAusDatei,
+      ortschaft: p["addr:city"] || p.ortschaft || p.ortsname || ortschaftAusDatei,
       typ: p.art || p["fire_hydrant:type"] || p.typ || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
       menge: menge, bem: bem,
       lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
