@@ -154,6 +154,15 @@
     width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
     box-shadow:0 0 0 2px #3fa9ff88;
   }
+  .nr-marker{
+    position:relative;transform:translate(-50%,-100%);
+    background:var(--signal);color:#fff;font-weight:700;font-size:12px;font-family:system-ui,sans-serif;
+    padding:3px 8px;border-radius:5px;white-space:nowrap;box-shadow:0 1px 5px #000a;
+  }
+  .nr-marker::after{
+    content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);
+    border:6px solid transparent;border-top-color:var(--signal);
+  }
   .peil-hinweis-touch{
     position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
     color:var(--dim);font-size:13px;pointer-events:none;
@@ -622,8 +631,8 @@ function aktualisierePeilKarte(fit){
   setTimeout(() => peilMap.invalidateSize(), 50);
 
   const zielLL = [ziel.lat, ziel.lon];
-  if(!peilZielMarker) peilZielMarker = L.marker(zielLL).addTo(peilMap);
-  else peilZielMarker.setLatLng(zielLL);
+  if(!peilZielMarker) peilZielMarker = L.marker(zielLL, { icon: nrIcon(ziel) }).addTo(peilMap);
+  else { peilZielMarker.setLatLng(zielLL); peilZielMarker.setIcon(nrIcon(ziel)); }
 
   if(pos){
     const eigeneLL = [pos.latitude, pos.longitude];
@@ -670,12 +679,20 @@ function initKarte(){
   zeichneKarte();
 }
 
+function nrIcon(s){
+  const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
+  return L.divIcon({
+    className: "", html: '<div class="nr-marker">' + esc(beschriftung) + '</div>',
+    iconSize: [0, 0], iconAnchor: [0, 0]
+  });
+}
+
 function zeichneKarte(){
   if(!markerLayer) return;
   markerLayer.clearLayers();
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
-    const m = L.marker([s.lat, s.lon]);
+    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
     m.bindPopup(esc(s.nr || "ohne Nummer") + (s.ortschaft || s.ort ? "<br>" + esc([s.ortschaft, s.ort].filter(Boolean).join(" · ")) : ""));
     m.on("click", () => oeffnePeil(s));
     m.addTo(markerLayer);
