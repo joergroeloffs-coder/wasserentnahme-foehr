@@ -156,12 +156,12 @@
   }
   .nr-marker{
     position:relative;transform:translate(-50%,-100%);
-    background:var(--signal);color:#fff;font-weight:700;font-size:12px;font-family:system-ui,sans-serif;
+    background:var(--pin, var(--signal));color:#fff;font-weight:700;font-size:12px;font-family:system-ui,sans-serif;
     padding:3px 8px;border-radius:5px;white-space:nowrap;box-shadow:0 1px 5px #000a;
   }
   .nr-marker::after{
     content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);
-    border:6px solid transparent;border-top-color:var(--signal);
+    border:6px solid transparent;border-top-color:var(--pin, var(--signal));
   }
   .peil-hinweis-touch{
     position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
@@ -303,9 +303,17 @@
 
     <h2>Sichern und übertragen (manuell)</h2>
     <button class="btn" id="export">Als GeoJSON exportieren</button>
-    <label for="import" style="margin-top:10px">GeoJSON einlesen</label>
+    <label for="import" style="margin-top:10px">Eine Datei einlesen (ersetzt Bestand)</label>
     <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
-    <div class="hinweis">Der Import ersetzt den gesamten Bestand durch den Inhalt der Datei (mit Sicherheitsabfrage). So bleiben Löschungen aus dem Update erhalten.</div>
+    <div class="hinweis">Ersetzt den gesamten Bestand durch den Inhalt dieser einen Datei (mit Sicherheitsabfrage). So bleiben Löschungen aus dem Update erhalten.</div>
+
+    <label for="import-mehrere" style="margin-top:16px">Mehrere Dateien auf einmal einlesen (ergänzt Bestand)</label>
+    <input id="import-mehrere" type="file" multiple accept=".geojson,.json,application/geo+json,application/json">
+    <div class="hinweis">
+      Für mehrere Dateien gleichzeitig (z. B. eine je Ortschaft) — im Auswahldialog mehrere
+      Dateien markieren. Bestehende Punkte mit gleicher Nummer werden aktualisiert, alle
+      anderen bleiben unverändert. Keine Datei überschreibt eine andere.
+    </div>
 
     <h2>Automatischer Abgleich (Internet/WLAN)</h2>
     <label style="display:flex;align-items:center;gap:10px;margin:14px 0 5px;cursor:pointer">
@@ -339,6 +347,11 @@
     <h2>Bedienung</h2>
     <a class="btn" href="anleitung/index.html" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">Anleitung mit Bildern ansehen</a>
     <div class="hinweis" style="margin-top:12px">
+      <b style="color:var(--text)">Farben der Markierungen:</b>
+      Rot = Hydrant · Blau = Saugstelle · Braun = Brunnen · Lila = Zisterne/Behälter ·
+      Grün = Gerätehaus · Gelb = Sammelplatz · Grau = sonstige/unbekannte Art.
+    </div>
+    <div class="hinweis">
       Die Anwendung arbeitet ohne Netz. Sie zeigt Luftlinie und Richtung, keine Fahrstrecke —
       der Pfeil zeigt geradeaus zum Ziel, nicht auf die Straße.
       Der Pfeil richtet sich nach dem Magnetkompass des Tablets. Ohne Kompass wird die
@@ -679,10 +692,22 @@ function initKarte(){
   zeichneKarte();
 }
 
+function typFarbe(typ){
+  const t = (typ || "").toLowerCase();
+  if(t.includes("hydrant")) return "#e23c22";
+  if(t.includes("saug")) return "#2f8fd1";
+  if(t.includes("brunnen")) return "#8a5a2b";
+  if(t.includes("zisterne") || t.includes("behälter")) return "#7a4fc9";
+  if(t.includes("gerätehaus")) return "#3fb26a";
+  if(t.includes("sammelplatz")) return "#e8a020";
+  return "#5d6d7d";
+}
+
 function nrIcon(s){
   const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
+  const farbe = typFarbe(s.typ);
   return L.divIcon({
-    className: "", html: '<div class="nr-marker">' + esc(beschriftung) + '</div>',
+    className: "", html: '<div class="nr-marker" style="--pin:' + farbe + '">' + esc(beschriftung) + '</div>',
     iconSize: [0, 0], iconAnchor: [0, 0]
   });
 }
@@ -979,6 +1004,33 @@ document.getElementById("import").addEventListener("change", ev => {
     ev.target.value = "";
   };
   r.readAsText(f);
+});
+document.getElementById("import-mehrere").addEventListener("change", async ev => {
+  const dateien = Array.from(ev.target.files);
+  if(!dateien.length) return;
+  let gesamt = [], uebersprungen = [];
+  for(const f of dateien){
+    try {
+      const text = await f.text();
+      gesamt = gesamt.concat(geoJsonZuStellen(JSON.parse(text)));
+    } catch(e){ uebersprungen.push(f.name); }
+  }
+  if(!gesamt.length){
+    alert("Keine gültigen Punkte gefunden." + (uebersprungen.length ? "\nNicht lesbar: " + uebersprungen.join(", ") : ""));
+    ev.target.value = ""; return;
+  }
+  if(!confirm(gesamt.length + " Punkte aus " + dateien.length + " Datei(en) zum Bestand hinzufügen bzw. aktualisieren?" +
+    (uebersprungen.length ? "\n\nNicht lesbar (werden übersprungen): " + uebersprungen.join(", ") : ""))) { ev.target.value = ""; return; }
+  if(!pinPruefen()) { ev.target.value = ""; return; }
+
+  let neu = 0, aktualisiert = 0;
+  gesamt.forEach(s => {
+    const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
+    if(i >= 0){ stellen[i] = s; aktualisiert++; } else { stellen.push(s); neu++; }
+  });
+  store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
+  alert(neu + " neu, " + aktualisiert + " aktualisiert. Bestand jetzt: " + stellen.length + " Stellen.");
+  ev.target.value = "";
 });
 document.getElementById("loeschen").addEventListener("click", () => {
   if(!confirm("Alle " + stellen.length + " Stellen löschen? Vorher exportieren, sonst sind die Daten weg.")) return;
