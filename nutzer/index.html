@@ -62,6 +62,14 @@
   /* Karte */
   #v-karte{padding:0}
   #map{width:100%;height:calc(100vh - 118px);height:calc(100dvh - 118px);background:#1a232c}
+  .karte-leiste{
+    position:absolute;left:0;right:0;top:0;z-index:1000;padding:10px 14px 10px 58px;
+    display:flex;gap:8px;align-items:center;background:linear-gradient(#0d1116cc,transparent);
+  }
+  .karte-leiste select{
+    width:auto;min-height:44px;padding:8px 30px 8px 12px;font-size:14px;
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+  }
 
   input,select,textarea,button{font:inherit}
   input,select{
@@ -229,6 +237,9 @@
 
   <!-- Karte -->
   <section id="v-karte" class="view" style="position:relative">
+    <div class="karte-leiste">
+      <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+    </div>
     <div id="map"></div>
   </section>
 
@@ -573,16 +584,30 @@ function nrIcon(s){
   });
 }
 
+function aktualisiereKarteOrtschaftFilter(){
+  const el = document.getElementById("karte-ortschaft-filter");
+  const werte = ortschaften();
+  const aktuell = el.value;
+  el.innerHTML = '<option value="">Alle Ortschaften</option>' +
+    werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
+  if(werte.includes(aktuell)) el.value = aktuell;
+}
+
 function zeichneKarte(){
   if(!markerLayer) return;
+  aktualisiereKarteOrtschaftFilter();
+  const filter = document.getElementById("karte-ortschaft-filter").value;
   markerLayer.clearLayers();
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
+    if(filter && (s.ortschaft || "") !== filter) return;
     const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
   });
 }
+
+document.getElementById("karte-ortschaft-filter").addEventListener("change", zeichneKarte);
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
 const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
