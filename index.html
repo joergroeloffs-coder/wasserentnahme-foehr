@@ -160,9 +160,11 @@
   }
   .nr-marker{
     position:relative;transform:translate(-50%,-100%);
+    display:inline-flex;align-items:center;gap:4px;
     background:var(--pin, var(--signal));color:#fff;font-weight:700;font-size:12px;font-family:system-ui,sans-serif;
     padding:3px 8px;border-radius:5px;white-space:nowrap;box-shadow:0 1px 5px #000a;
   }
+  .nr-icon{width:14px;height:14px;flex:none;display:block}
   .nr-marker::after{
     content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);
     border:6px solid transparent;border-top-color:var(--pin, var(--signal));
@@ -787,11 +789,34 @@ function typFarbe(typ){
   return "#5d6d7d";
 }
 
+const TYP_ICONS = {
+  unterflur: '<circle cx="12" cy="12" r="7"/><line x1="12" y1="7" x2="12" y2="9.5"/><line x1="12" y1="14.5" x2="12" y2="17"/><line x1="7" y1="12" x2="9.5" y2="12"/><line x1="14.5" y1="12" x2="17" y2="12"/>',
+  hydrant: '<rect x="8" y="7" width="8" height="11" rx="2"/><rect x="7" y="4" width="10" height="4" rx="1.5"/><line x1="4" y1="11" x2="8" y2="11"/><line x1="16" y1="11" x2="20" y2="11"/>',
+  saug: '<path d="M6 16c1.4-1.3 1.4-2.6 0-3.9M12 16c1.4-1.3 1.4-2.6 0-3.9M18 16c1.4-1.3 1.4-2.6 0-3.9"/><line x1="12" y1="3" x2="12" y2="9"/><path d="M9 6l3-3 3 3"/>',
+  brunnen: '<circle cx="12" cy="9" r="5"/><line x1="12" y1="14" x2="12" y2="19"/><line x1="9" y1="19" x2="15" y2="19"/>',
+  zisterne: '<ellipse cx="12" cy="7" rx="6" ry="2.4"/><path d="M6 7v9c0 1.3 2.7 2.4 6 2.4s6-1.1 6-2.4V7"/>',
+  geraetehaus: '<path d="M4 11L12 4l8 7"/><path d="M6 10v9h12v-9"/><rect x="10" y="14" width="4" height="5"/>',
+  sammelplatz: '<circle cx="12" cy="6" r="2" fill="#fff" stroke="none"/><path d="M12 9v5M8 12l4 2.4 4-2.4M7 19l5-7 5 7"/>',
+  sonstige: '<path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1.4 1-1.4 2"/><circle cx="12" cy="16.5" r="0.6" fill="#fff" stroke="none"/>'
+};
+function typIcon(typ){
+  const t = (typ || "").toLowerCase();
+  if(t.includes("unterflur")) return TYP_ICONS.unterflur;
+  if(t.includes("hydrant")) return TYP_ICONS.hydrant;
+  if(t.includes("saug")) return TYP_ICONS.saug;
+  if(t.includes("brunnen")) return TYP_ICONS.brunnen;
+  if(t.includes("zisterne") || t.includes("behälter")) return TYP_ICONS.zisterne;
+  if(t.includes("gerätehaus")) return TYP_ICONS.geraetehaus;
+  if(t.includes("sammelplatz")) return TYP_ICONS.sammelplatz;
+  return TYP_ICONS.sonstige;
+}
+
 function nrIcon(s){
   const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
   const farbe = typFarbe(s.typ);
+  const svg = '<svg class="nr-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + typIcon(s.typ) + '</svg>';
   return L.divIcon({
-    className: "", html: '<div class="nr-marker" style="--pin:' + farbe + '">' + esc(beschriftung) + '</div>',
+    className: "", html: '<div class="nr-marker" style="--pin:' + farbe + '">' + svg + esc(beschriftung) + '</div>',
     iconSize: [0, 0], iconAnchor: [0, 0]
   });
 }
