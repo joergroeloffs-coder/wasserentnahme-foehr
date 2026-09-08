@@ -13251,6 +13251,60 @@
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Hedehusum_Aussied.pdf",
     "survey:date": ""
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.438943028450014,
+     54.726025398688925
+    ]
+   },
+   "properties": {
+    "ref": "GH SUE",
+    "name": "Hauptstraße",
+    "addr:city": "Süderende",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-08"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.45102906227112,
+     54.73312386141984
+    ]
+   },
+   "properties": {
+    "ref": "GH OLD",
+    "name": "",
+    "addr:city": "Oldsum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-08"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.405136466026308,
+     54.71237073808073
+    ]
+   },
+   "properties": {
+    "ref": "GH UTE",
+    "name": "",
+    "addr:city": "Utersum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-08"
+   }
   }
  ]
 }
