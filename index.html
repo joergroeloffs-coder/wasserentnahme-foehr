@@ -359,11 +359,12 @@
     </label>
     <div class="zeile"><span>Letzter Abgleich</span><span id="d-sync-zeit">noch nie</span></div>
     <button class="btn" id="sync-jetzt">Jetzt nach Updates suchen</button>
-    <div class="hinweis">
-      Prüft beim Öffnen der App und bei Internet-Verbindung automatisch, ob eine neue
-      Datenversion online liegt, und übernimmt sie automatisch (ersetzt den Bestand, ohne PIN,
-      da vertrauenswürdige Quelle). Auf dem Erfassungsgerät ausschalten, damit eigene neue
-      Einträge nicht überschrieben werden, bevor sie online gestellt wurden.
+    <div class="hinweis warn">
+      Standardmäßig <b>AUS</b> auf diesem (Bearbeitungs-)Gerät: Ein Server-Update würde sonst
+      jede eigene, noch nicht exportierte Änderung kommentarlos überschreiben (voller Ersatz
+      des Bestands, ersetzt auch neu erfasste/geänderte Punkte). Nur einschalten, wenn du
+      sicher bist, dass es keine ungesicherten lokalen Änderungen gibt — z. B. direkt nachdem
+      du selbst exportiert und die Datei zentral aktualisiert hast.
     </div>
 
     <h2>Schutz vor versehentlichem Ändern</h2>
@@ -1145,7 +1146,9 @@ const SYNC_ZEIT_KEY = "wasserentnahme.foehr.synczeit";
 const SYNC_URL = "./daten/stellen.geojson";
 
 function autoSyncAktiv(){
-  try { const v = localStorage.getItem(AUTO_SYNC_KEY); return v === null ? true : v === "1"; } catch(e){ return true; }
+  // In der Hauptversion (Bearbeitungsgerät) standardmäßig AUS: sonst überschreibt ein
+  // Server-Update lokale, noch nicht exportierte Änderungen kommentarlos.
+  try { const v = localStorage.getItem(AUTO_SYNC_KEY); return v === "1"; } catch(e){ return false; }
 }
 function autoSyncSetzen(an){ try { localStorage.setItem(AUTO_SYNC_KEY, an ? "1" : "0"); } catch(e){} }
 function einfacherHash(text){
