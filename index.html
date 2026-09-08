@@ -339,6 +339,11 @@
     </div>
 
     <h2>Sichern und übertragen (manuell)</h2>
+    <div class="hinweis warn" id="ungesichert-hinweis" hidden>
+      Es gibt Änderungen, die noch nicht zentral übernommen sind. Jetzt exportieren und die
+      Datei an Claude schicken, damit sie ins zentrale Archiv (und damit in die Nutzerversion)
+      übernommen werden.
+    </div>
     <button class="btn" id="export">Als GeoJSON exportieren</button>
     <label for="import" style="margin-top:10px">Eine Datei einlesen (ersetzt Bestand)</label>
     <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
@@ -656,6 +661,7 @@ function stelleLoeschen(s){
   if(!confirm("Punkt „" + (s.nr || "ohne Nummer") + "“ wirklich löschen?")) return;
   stellen.splice(idx, 1);
   store.save(stellen);
+  markUngesichert();
   if(bearbeiteIndex === idx){ bearbeiteIndex = -1; formularLeeren(); document.getElementById("edit-loeschen").hidden = true; }
   zeichneListe();
   zeichneKarte();
@@ -884,17 +890,24 @@ function neu(lat, lon, genau){
     else stellen.push(s);
   }
   store.save(stellen);
+  markUngesichert();
   const warEdit = bearbeiteIndex >= 0;
   bearbeiteIndex = -1;
   formularLeeren();
-  document.getElementById("neuPos").textContent = warEdit
+  document.getElementById("neuPos").textContent = (warEdit
     ? "Änderungen gespeichert."
-    : "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
+    : "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)")
+  ) + " Nicht vergessen: unter „Daten“ exportieren und die Datei an Claude schicken, damit es zentral übernommen wird.";
   zeichneListe();
   zeichneKarte();
 }
 
 /* ---------- Daten ---------- */
+const UNGESICHERT_KEY = "wasserentnahme.foehr.ungesichert";
+function markUngesichert(){ try { localStorage.setItem(UNGESICHERT_KEY, "1"); } catch(e){} }
+function ungesichertZuruecksetzen(){ try { localStorage.removeItem(UNGESICHERT_KEY); } catch(e){} }
+function istUngesichert(){ try { return localStorage.getItem(UNGESICHERT_KEY) === "1"; } catch(e){ return false; } }
+
 function zeichneDaten(){
   document.getElementById("d-anzahl").textContent = stellen.length;
   document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
@@ -904,6 +917,7 @@ function zeichneDaten(){
   let syncZeit = null;
   try { syncZeit = localStorage.getItem(SYNC_ZEIT_KEY); } catch(e){}
   document.getElementById("d-sync-zeit").textContent = syncZeit ? new Date(syncZeit).toLocaleString("de-DE") : "noch nie";
+  document.getElementById("ungesichert-hinweis").hidden = !istUngesichert();
 }
 
 /* ---------- Cache-Info (Offline-Kacheln) ---------- */
@@ -1056,6 +1070,9 @@ document.getElementById("export").addEventListener("click", () => {
   a.href = URL.createObjectURL(new Blob([JSON.stringify(fc,null,1)], {type:"application/geo+json"}));
   a.download = "wasserentnahmestellen-" + new Date().toISOString().slice(0,10) + ".geojson";
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  ungesichertZuruecksetzen();
+  zeichneDaten();
+  alert("Exportiert. Letzter Schritt: Diese Datei jetzt an Claude schicken, damit sie zentral übernommen wird (nur der Export allein reicht nicht).");
 });
 function ortsNameAusDatei(dateiname){
   if(!dateiname) return "";
