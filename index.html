@@ -1010,8 +1010,20 @@ document.getElementById("export").addEventListener("click", () => {
   a.download = "wasserentnahmestellen-" + new Date().toISOString().slice(0,10) + ".geojson";
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 });
-function geoJsonZuStellen(j){
+function ortsNameAusDatei(dateiname){
+  if(!dateiname) return "";
+  let n = dateiname.replace(/\.(geojson|json)$/i, "");
+  n = n.replace(/[_\-]+/g, " ");
+  n = n.replace(/\b(geodaten|daten|dorf|hydranten|wasserentnahme|stellen|punkte|export|import)\b/gi, "");
+  n = n.replace(/\(\s*\d+\s*\)/g, ""); // z. B. "(1)"
+  n = n.replace(/\s+/g, " ").trim();
+  if(!n) return "";
+  return n.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+}
+
+function geoJsonZuStellen(j, dateiname){
   const eingelesen = [];
+  const ortschaftAusDatei = ortsNameAusDatei(dateiname);
   (j.features || []).forEach(ft => {
     if(!ft.geometry || ft.geometry.type !== "Point") return;
     const p = ft.properties || {}, c = ft.geometry.coordinates;
@@ -1024,7 +1036,7 @@ function geoJsonZuStellen(j){
       bem = [p.lagegenauigkeit, p.quelle ? "Quelle: " + p.quelle : ""].filter(Boolean).join(" · ");
     }
     eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: p.name || p.ort || p.addr || "",
-      ortschaft: p["addr:city"] || p.ortschaft || "",
+      ortschaft: p["addr:city"] || p.ortschaft || ortschaftAusDatei,
       typ: p.art || p["fire_hydrant:type"] || p.typ || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
       menge: menge, bem: bem,
       lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
@@ -1037,7 +1049,7 @@ document.getElementById("import").addEventListener("change", ev => {
   const r = new FileReader();
   r.onload = () => {
     try {
-      const eingelesen = geoJsonZuStellen(JSON.parse(r.result));
+      const eingelesen = geoJsonZuStellen(JSON.parse(r.result), f.name);
       if(!eingelesen.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
       if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + eingelesen.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
       if(!pinPruefen()) { ev.target.value = ""; return; }
@@ -1056,7 +1068,7 @@ document.getElementById("import-mehrere").addEventListener("change", async ev =>
   for(const f of dateien){
     try {
       const text = await f.text();
-      gesamt = gesamt.concat(geoJsonZuStellen(JSON.parse(text)));
+      gesamt = gesamt.concat(geoJsonZuStellen(JSON.parse(text), f.name));
     } catch(e){ uebersprungen.push(f.name); }
   }
   if(!gesamt.length){
