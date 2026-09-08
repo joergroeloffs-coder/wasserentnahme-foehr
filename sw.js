@@ -1,5 +1,5 @@
 "use strict";
-const SHELL_CACHE = "shell-v1";
+const SHELL_CACHE = "shell-v2";
 const TILE_CACHE = "osm-tiles-v1";
 const SHELL_FILES = [
   "./",
@@ -50,13 +50,13 @@ self.addEventListener("fetch", event => {
 
   if(url.origin === self.location.origin){
     event.respondWith(
-      caches.match(event.request).then(hit => hit || fetch(event.request).then(res => {
+      fetch(event.request).then(res => {
         if(res.ok){
           const copy = res.clone();
           caches.open(SHELL_CACHE).then(c => c.put(event.request, copy));
         }
         return res;
-      }).catch(() => caches.match("./index.html")))
+      }).catch(() => caches.match(event.request).then(hit => hit || caches.match("./index.html")))
     );
   }
 });
