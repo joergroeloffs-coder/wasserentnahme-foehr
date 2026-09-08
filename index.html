@@ -178,6 +178,10 @@
     max-height:82vh;overflow-y:auto;
   }
   .detail-karte .ziel{margin-bottom:0}
+  #detailMap{
+    width:100%;height:38vh;min-height:210px;border-radius:8px;margin-bottom:14px;
+    background:#1a232c;
+  }
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
   .zeile{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
   .zeile span:first-child{flex:none}
@@ -196,6 +200,7 @@
   <!-- Detailansicht: Punktdaten anzeigen, dann Ja/Nein zur Navigation -->
   <div class="detail-overlay" id="detailOverlay">
     <div class="detail-karte">
+      <div id="detailMap"></div>
       <div class="ziel" id="detailName">–</div>
       <div class="ziel-meta" id="detailMeta"></div>
       <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
@@ -205,6 +210,7 @@
         <button class="btn primary" id="detail-ja">Ja, navigieren</button>
         <button class="btn ghost" id="detail-nein">Nein</button>
       </div>
+      <button class="btn ghost" id="detail-bearbeiten" style="margin-top:10px">Bearbeiten</button>
     </div>
   </div>
 
@@ -558,8 +564,25 @@ const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;"
 /* ---------- Peilung ---------- */
 let ziel = null;
 let detailStelle = null;
+let detailMap = null, detailMarker = null;
+function initDetailMap(){
+  if(detailMap) return;
+  L.Icon.Default.imagePath = "vendor/images/";
+  detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+  }).addTo(detailMap);
+}
+
 function zeigeDetails(s){
   detailStelle = s;
+  initDetailMap();
+  setTimeout(() => detailMap.invalidateSize(), 50);
+  const ll = [s.lat, s.lon];
+  if(!detailMarker) detailMarker = L.marker(ll, { icon: nrIcon(s) }).addTo(detailMap);
+  else { detailMarker.setLatLng(ll); detailMarker.setIcon(nrIcon(s)); }
+  detailMap.setView(ll, 16);
   document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
   document.getElementById("detailMeta").textContent =
     [s.typ, s.dn, s.menge ? s.menge + " m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
@@ -574,6 +597,10 @@ document.getElementById("detail-ja").addEventListener("click", () => {
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   detailStelle = null;
+});
+document.getElementById("detail-bearbeiten").addEventListener("click", () => {
+  document.getElementById("detailOverlay").classList.remove("on");
+  if(detailStelle) bearbeitenStarten(detailStelle);
 });
 
 function oeffnePeil(s){
