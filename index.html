@@ -163,6 +163,10 @@
     <div class="koord" id="zielKoord"></div>
     <div id="peilMap"></div>
     <div class="hinweis" id="peilHinweis"></div>
+    <div class="row" style="margin-top:14px">
+      <button class="btn" id="bearbeiten">Bearbeiten</button>
+      <button class="btn ghost" id="einzelLoeschen" style="color:var(--signal);border-color:var(--signal)">Löschen</button>
+    </div>
   </section>
 
   <!-- Karte -->
@@ -348,6 +352,7 @@ document.querySelectorAll("nav button").forEach(b => b.addEventListener("click",
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === b.dataset.view));
   if(b.dataset.view === "v-daten") zeichneDaten();
   if(b.dataset.view === "v-karte"){ initKarte(); setTimeout(() => map.invalidateSize(), 50); }
+  if(b.dataset.view === "v-neu"){ bearbeiteIndex = -1; formularLeeren(); }
 }));
 
 /* ---------- Liste ---------- */
@@ -426,6 +431,37 @@ document.getElementById("zurueck").addEventListener("click", () => {
   document.getElementById("v-liste").classList.add("on");
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
   zeichneListe();
+});
+document.getElementById("bearbeiten").addEventListener("click", () => {
+  const idx = stellen.indexOf(ziel);
+  if(idx < 0) return;
+  bearbeiteIndex = idx;
+  document.getElementById("f-nr").value = ziel.nr || "";
+  document.getElementById("f-ortschaft").value = ziel.ortschaft || "";
+  document.getElementById("f-ort").value = ziel.ort || "";
+  document.getElementById("f-typ").value = ziel.typ || "Unterflurhydrant";
+  document.getElementById("f-dn").value = ziel.dn || "";
+  document.getElementById("f-menge").value = ziel.menge || "";
+  document.getElementById("f-bem").value = ziel.bem || "";
+  document.getElementById("neuPos").textContent =
+    "Bisherige Position: " + ziel.lat.toFixed(5) + ", " + ziel.lon.toFixed(5) + " — bleibt erhalten, außer neu gesetzt.";
+  document.getElementById("speichern").textContent = "Änderungen speichern";
+  neuLatLon = null;
+  document.getElementById("peil").classList.remove("on");
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-neu"));
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-neu"));
+});
+document.getElementById("einzelLoeschen").addEventListener("click", () => {
+  const idx = stellen.indexOf(ziel);
+  if(idx < 0) return;
+  if(!confirm("Punkt „" + (ziel.nr || "ohne Nummer") + "“ wirklich löschen?")) return;
+  stellen.splice(idx, 1);
+  store.save(stellen);
+  document.getElementById("peil").classList.remove("on");
+  document.getElementById("v-liste").classList.add("on");
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
+  zeichneListe();
+  zeichneKarte();
 });
 
 function aktualisierePeil(){
@@ -535,8 +571,20 @@ document.getElementById("aufKarte").addEventListener("click", () => {
 });
 
 /* ---------- Erfassen ---------- */
+let bearbeiteIndex = -1;
+
+function formularLeeren(){
+  ["f-nr","f-ortschaft","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("f-typ").value = "Unterflurhydrant";
+  document.getElementById("f-dn").value = "";
+  document.getElementById("neuPos").textContent = "Position wird beim Speichern vom GPS übernommen.";
+  document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
+  neuLatLon = null;
+}
+
 document.getElementById("speichern").addEventListener("click", () => {
   if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, null); return; }
+  if(bearbeiteIndex >= 0){ const s = stellen[bearbeiteIndex]; neu(s.lat, s.lon, s.genau); return; }
   if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben bzw. auf Karte antippen."); return; }
   neu(pos.latitude, pos.longitude, Math.round(pos.accuracy));
 });
@@ -556,18 +604,27 @@ function neu(lat, lon, genau){
     dn: document.getElementById("f-dn").value,
     menge: document.getElementById("f-menge").value.trim(),
     bem: document.getElementById("f-bem").value.trim(),
-    lat: lat, lon: lon, genau: genau, erfasst: new Date().toISOString()
+    lat: lat, lon: lon, genau: genau,
+    erfasst: bearbeiteIndex >= 0 ? stellen[bearbeiteIndex].erfasst : new Date().toISOString()
   };
   if(!s.nr && !s.ort){ alert("Nummer oder Lage angeben, sonst ist der Punkt später nicht auffindbar."); return; }
-  const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
-  if(i >= 0){ if(!confirm("Nummer " + s.nr + " ist bereits erfasst. Überschreiben?")) return; stellen[i] = s; }
-  else stellen.push(s);
+
+  if(bearbeiteIndex >= 0){
+    const konflikt = s.nr ? stellen.findIndex((x,idx) => idx !== bearbeiteIndex && x.nr && x.nr === s.nr) : -1;
+    if(konflikt >= 0 && !confirm("Nummer " + s.nr + " ist bereits bei einem anderen Punkt vergeben. Trotzdem speichern?")) return;
+    stellen[bearbeiteIndex] = s;
+  } else {
+    const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
+    if(i >= 0){ if(!confirm("Nummer " + s.nr + " ist bereits erfasst. Überschreiben?")) return; stellen[i] = s; }
+    else stellen.push(s);
+  }
   store.save(stellen);
-  ["f-nr","f-ortschaft","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
-  document.getElementById("neuPos").textContent =
-    "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
-  neuLatLon = null;
-  document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
+  const warEdit = bearbeiteIndex >= 0;
+  bearbeiteIndex = -1;
+  formularLeeren();
+  document.getElementById("neuPos").textContent = warEdit
+    ? "Änderungen gespeichert."
+    : "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
   zeichneListe();
   zeichneKarte();
 }
