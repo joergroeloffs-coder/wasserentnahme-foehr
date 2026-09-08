@@ -275,6 +275,22 @@
       tatsächlich angezeigt wurden, sind gecacht. Wert gilt nur für dieses eine Gerät.
     </div>
 
+    <h2>Karte für die ganze Insel vorladen</h2>
+    <label for="vorlade-zoom">Bis Zoomstufe (höher = schärfer, aber mehr Daten/Zeit)</label>
+    <select id="vorlade-zoom">
+      <option value="14">14 – grober Überblick</option>
+      <option value="15">15</option>
+      <option value="16" selected>16 – Straßen gut erkennbar</option>
+      <option value="17">17 – sehr detailliert</option>
+    </select>
+    <button class="btn primary" id="vorladen-start" style="margin-top:10px">Insel jetzt vorladen (braucht Internet)</button>
+    <div class="hinweis" id="vorladen-status">
+      Lädt gezielt alle Kartenkacheln für ganz Föhr bis zur gewählten Zoomstufe herunter und
+      speichert sie offline – auch für Orte, die noch nie manuell angesehen wurden. Je nach
+      Zoomstufe mehrere Minuten und einige zehn bis über hundert MB Datenverbrauch. Muss auf
+      jedem Tablet einmal einzeln ausgeführt werden.
+    </div>
+
     <h2>Sichern und übertragen</h2>
     <button class="btn" id="export">Als GeoJSON exportieren</button>
     <label for="import" style="margin-top:10px">GeoJSON einlesen</label>
@@ -764,6 +780,87 @@ function kachelInfoAktualisieren(){
     speicherEl.textContent = "nicht verfügbar";
   }
 }
+
+/* ---------- Insel vorladen (alle Kacheln für Föhr) ---------- */
+const FOEHR_BBOX = { west: 8.40, south: 54.64, east: 8.63, north: 54.77 };
+const VORLADEN_MIN_ZOOM = 13;
+
+function tileIndexBereich(zoom, bbox){
+  const n = Math.pow(2, zoom);
+  const lon2x = lon => Math.floor((lon + 180) / 360 * n);
+  const lat2y = lat => {
+    const rad = lat * Math.PI / 180;
+    return Math.floor((1 - Math.log(Math.tan(rad) + 1 / Math.cos(rad)) / Math.PI) / 2 * n);
+  };
+  return {
+    xMin: lon2x(bbox.west), xMax: lon2x(bbox.east),
+    yMin: lat2y(bbox.north), yMax: lat2y(bbox.south)
+  };
+}
+
+function kachelnFuerInsel(maxZoom){
+  const liste = [];
+  for(let z = VORLADEN_MIN_ZOOM; z <= maxZoom; z++){
+    const { xMin, xMax, yMin, yMax } = tileIndexBereich(z, FOEHR_BBOX);
+    for(let x = xMin; x <= xMax; x++){
+      for(let y = yMin; y <= yMax; y++) liste.push({ z, x, y });
+    }
+  }
+  return liste;
+}
+
+let vorladenLaeuft = false, vorladenAbbrechen = false;
+document.getElementById("vorladen-start").addEventListener("click", async () => {
+  const statusEl = document.getElementById("vorladen-status");
+  const startBtn = document.getElementById("vorladen-start");
+
+  if(vorladenLaeuft){ vorladenAbbrechen = true; return; }
+
+  if(!navigator.onLine){ alert("Kein Internet erkannt. Zum Vorladen wird eine Verbindung benötigt."); return; }
+
+  const maxZoom = parseInt(document.getElementById("vorlade-zoom").value, 10);
+  const kacheln = kachelnFuerInsel(maxZoom);
+  const mbSchaetzung = Math.round(kacheln.length * 15 / 1024);
+  if(!confirm(kacheln.length + " Kartenkacheln werden heruntergeladen (geschätzt ca. " + mbSchaetzung + " MB). Das kann mehrere Minuten dauern. Fortfahren?")) return;
+
+  vorladenLaeuft = true;
+  vorladenAbbrechen = false;
+  startBtn.textContent = "Abbrechen";
+
+  const cache = await caches.open(TILE_CACHE_NAME);
+  let fertig = 0, fehler = 0;
+  const GLEICHZEITIG = 4;
+  let naechsterIndex = 0;
+
+  async function naechstesLaden(){
+    while(naechsterIndex < kacheln.length && !vorladenAbbrechen){
+      const i = naechsterIndex++;
+      const { z, x, y } = kacheln[i];
+      const url = "https://tile.openstreetmap.org/" + z + "/" + x + "/" + y + ".png";
+      try {
+        const vorhanden = await cache.match(url);
+        if(!vorhanden){
+          const res = await fetch(url);
+          if(res.ok) await cache.put(url, res);
+          else fehler++;
+        }
+      } catch(e){ fehler++; }
+      fertig++;
+      if(fertig % 10 === 0 || fertig === kacheln.length){
+        statusEl.textContent = fertig + " / " + kacheln.length + " Kacheln geladen" + (fehler ? " (" + fehler + " Fehler)" : "") + "…";
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: GLEICHZEITIG }, naechstesLaden));
+
+  vorladenLaeuft = false;
+  startBtn.textContent = "Insel jetzt vorladen (braucht Internet)";
+  statusEl.textContent = vorladenAbbrechen
+    ? "Abgebrochen nach " + fertig + " von " + kacheln.length + " Kacheln."
+    : "Fertig: " + fertig + " Kacheln geprüft/geladen" + (fehler ? ", " + fehler + " Fehler (z. B. kurzzeitig kein Netz)." : ".") + " Für weitere Zoomstufen diesen Vorgang erneut mit höherer Stufe starten.";
+  kachelInfoAktualisieren();
+});
 
 /* ---------- PIN-Schutz ---------- */
 const PIN_KEY = "wasserentnahme.foehr.pin";
