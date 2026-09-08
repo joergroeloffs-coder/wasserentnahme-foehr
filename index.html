@@ -121,6 +121,11 @@
   }
   .hinweis.warn{border-color:var(--warn);color:var(--warn)}
   .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
+  #peilMap{width:100%;height:34vh;min-height:220px;border-radius:8px;margin-top:14px;background:#1a232c}
+  .eigene-pos{
+    width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
+    box-shadow:0 0 0 2px #3fa9ff88;
+  }
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
   .zeile{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
   .zeile span:last-child{color:var(--dim)}
@@ -156,6 +161,7 @@
     </svg>
     <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
     <div class="koord" id="zielKoord"></div>
+    <div id="peilMap"></div>
     <div class="hinweis" id="peilHinweis"></div>
   </section>
 
@@ -369,6 +375,7 @@ function oeffnePeil(s){
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   aktualisierePeil();
+  aktualisierePeilKarte(true);
 }
 document.getElementById("zurueck").addEventListener("click", () => {
   document.getElementById("peil").classList.remove("on");
@@ -389,6 +396,46 @@ function aktualisierePeil(){
   const dreh = (b - ref + 360) % 360;
   document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
   document.getElementById("ring").setAttribute("transform", "rotate(" + (-ref).toFixed(1) + " 100 100)");
+  aktualisierePeilKarte(false);
+}
+
+/* ---------- Peilkarte (eigene Position + Ziel) ---------- */
+let peilMap = null, peilZielMarker = null, peilEigenMarker = null, peilLinie = null;
+
+function initPeilMap(){
+  if(peilMap) return;
+  L.Icon.Default.imagePath = "vendor/images/";
+  peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+  }).addTo(peilMap);
+}
+
+function aktualisierePeilKarte(fit){
+  if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
+  initPeilMap();
+  setTimeout(() => peilMap.invalidateSize(), 50);
+
+  const zielLL = [ziel.lat, ziel.lon];
+  if(!peilZielMarker) peilZielMarker = L.marker(zielLL).addTo(peilMap);
+  else peilZielMarker.setLatLng(zielLL);
+
+  if(pos){
+    const eigeneLL = [pos.latitude, pos.longitude];
+    if(!peilEigenMarker){
+      peilEigenMarker = L.marker(eigeneLL, {
+        icon: L.divIcon({ className:"", html:'<div class="eigene-pos"></div>', iconSize:[16,16], iconAnchor:[8,8] })
+      }).addTo(peilMap);
+    } else peilEigenMarker.setLatLng(eigeneLL);
+
+    if(peilLinie) peilMap.removeLayer(peilLinie);
+    peilLinie = L.polyline([eigeneLL, zielLL], { color:"#e23c22", weight:3, dashArray:"6 6" }).addTo(peilMap);
+
+    if(fit) peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
+  } else if(fit){
+    peilMap.setView(zielLL, 15);
+  }
 }
 
 /* ---------- Karte ---------- */
