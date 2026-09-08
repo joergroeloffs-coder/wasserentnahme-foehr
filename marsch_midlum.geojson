@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "name": "Marsch_Midlum",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "561",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52653,
+          54.734635
+        ]
+      },
+      "properties": {
+        "id": "561",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Midlum.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Marsch_Midlum.pdf",
+        "zuordnungsabstand_relativ": 0.942,
+        "pdf_x_pt": 874.672,
+        "pdf_y_von_oben_pt": 697.751,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "561 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "562",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52361,
+          54.742152
+        ]
+      },
+      "properties": {
+        "id": "562",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Midlum.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Marsch_Midlum.pdf",
+        "zuordnungsabstand_relativ": 0.789,
+        "pdf_x_pt": 771.355,
+        "pdf_y_von_oben_pt": 222.871,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "562 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "563",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.525159,
+          54.744429
+        ]
+      },
+      "properties": {
+        "id": "563",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Midlum.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Marsch_Midlum.pdf",
+        "zuordnungsabstand_relativ": 1.274,
+        "pdf_x_pt": 828.855,
+        "pdf_y_von_oben_pt": 79.673,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "563 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "564",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.511649,
+          54.736438
+        ]
+      },
+      "properties": {
+        "id": "564",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Midlum.pdf",
+        "ortsname": "Midlum",
+        "ortsquelle": "Marsch_Midlum.pdf",
+        "zuordnungsabstand_relativ": 0.837,
+        "pdf_x_pt": 332.291,
+        "pdf_y_von_oben_pt": 580.211,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "564 - Hydrant"
+      }
+    }
+  ]
+}

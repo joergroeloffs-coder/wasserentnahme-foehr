@@ -1,0 +1,3198 @@
+{
+  "type": "FeatureCollection",
+  "name": "Wyk_Nord_Ost",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "101",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.56967,
+          54.687343
+        ]
+      },
+      "properties": {
+        "id": "101",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.55,
+        "pdf_x_pt": 762.84,
+        "pdf_y_von_oben_pt": 771.878,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "101 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "102",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.569512,
+          54.6872
+        ]
+      },
+      "properties": {
+        "id": "102",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.959,
+        "pdf_x_pt": 756.478,
+        "pdf_y_von_oben_pt": 781.65,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "102 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "103",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.569179,
+          54.686644
+        ]
+      },
+      "properties": {
+        "id": "103",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.888,
+        "pdf_x_pt": 743.03,
+        "pdf_y_von_oben_pt": 819.687,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "103 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "105",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.568829,
+          54.688141
+        ]
+      },
+      "properties": {
+        "id": "105",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.887,
+        "pdf_x_pt": 729.777,
+        "pdf_y_von_oben_pt": 717.032,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "105 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "106",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.568324,
+          54.687564
+        ]
+      },
+      "properties": {
+        "id": "106",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.574,
+        "pdf_x_pt": 709.448,
+        "pdf_y_von_oben_pt": 756.411,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "106 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "107",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.568271,
+          54.687511
+        ]
+      },
+      "properties": {
+        "id": "107",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 707.352,
+        "pdf_y_von_oben_pt": 760.05,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "107 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "108",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567624,
+          54.686803
+        ]
+      },
+      "properties": {
+        "id": "108",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 681.352,
+        "pdf_y_von_oben_pt": 808.408,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "108 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "109",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.568016,
+          54.688409
+        ]
+      },
+      "properties": {
+        "id": "109",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.895,
+        "pdf_x_pt": 697.606,
+        "pdf_y_von_oben_pt": 698.436,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "109 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "110",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.569284,
+          54.68852
+        ]
+      },
+      "properties": {
+        "id": "110",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.215,
+        "pdf_x_pt": 748.0,
+        "pdf_y_von_oben_pt": 691.142,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "110 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "112",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567424,
+          54.687702
+        ]
+      },
+      "properties": {
+        "id": "112",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.138,
+        "pdf_x_pt": 673.791,
+        "pdf_y_von_oben_pt": 746.74,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "112 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "113",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.566599,
+          54.687101
+        ]
+      },
+      "properties": {
+        "id": "113",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.861,
+        "pdf_x_pt": 640.752,
+        "pdf_y_von_oben_pt": 787.783,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "113 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "114",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.565685,
+          54.687555
+        ]
+      },
+      "properties": {
+        "id": "114",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.467,
+        "pdf_x_pt": 604.646,
+        "pdf_y_von_oben_pt": 756.426,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "114 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "115",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.565212,
+          54.688693
+        ]
+      },
+      "properties": {
+        "id": "115",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.097,
+        "pdf_x_pt": 586.378,
+        "pdf_y_von_oben_pt": 678.288,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "115 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "116",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564617,
+          54.688018
+        ]
+      },
+      "properties": {
+        "id": "116",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.859,
+        "pdf_x_pt": 562.439,
+        "pdf_y_von_oben_pt": 724.457,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "116 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "133",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563738,
+          54.68701
+        ]
+      },
+      "properties": {
+        "id": "133",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.872,
+        "pdf_x_pt": 527.112,
+        "pdf_y_von_oben_pt": 793.318,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "133 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "223",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.56201,
+          54.686738
+        ]
+      },
+      "properties": {
+        "id": "223",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.569,
+        "pdf_x_pt": 458.36,
+        "pdf_y_von_oben_pt": 811.548,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "223 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "226",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560628,
+          54.686623
+        ]
+      },
+      "properties": {
+        "id": "226",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.918,
+        "pdf_x_pt": 403.411,
+        "pdf_y_von_oben_pt": 819.163,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "226 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "227",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561533,
+          54.687393
+        ]
+      },
+      "properties": {
+        "id": "227",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.8,
+        "pdf_x_pt": 439.691,
+        "pdf_y_von_oben_pt": 766.576,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "227 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "230",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560025,
+          54.687131
+        ]
+      },
+      "properties": {
+        "id": "230",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.805,
+        "pdf_x_pt": 379.714,
+        "pdf_y_von_oben_pt": 784.14,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "230 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "232",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560979,
+          54.688176
+        ]
+      },
+      "properties": {
+        "id": "232",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.803,
+        "pdf_x_pt": 418.055,
+        "pdf_y_von_oben_pt": 712.771,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "232 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "233",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558079,
+          54.68761
+        ]
+      },
+      "properties": {
+        "id": "233",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.063,
+        "pdf_x_pt": 302.632,
+        "pdf_y_von_oben_pt": 750.873,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "233 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "234",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560017,
+          54.689311
+        ]
+      },
+      "properties": {
+        "id": "234",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 380.309,
+        "pdf_y_von_oben_pt": 634.759,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "234 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "235",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559929,
+          54.689661
+        ]
+      },
+      "properties": {
+        "id": "235",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.95,
+        "pdf_x_pt": 376.997,
+        "pdf_y_von_oben_pt": 610.748,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "235 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "236",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557007,
+          54.687972
+        ]
+      },
+      "properties": {
+        "id": "236",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.786,
+        "pdf_x_pt": 260.225,
+        "pdf_y_von_oben_pt": 725.798,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "236 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "237",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557576,
+          54.688904
+        ]
+      },
+      "properties": {
+        "id": "237",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.856,
+        "pdf_x_pt": 283.221,
+        "pdf_y_von_oben_pt": 662.068,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "237 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "238",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558265,
+          54.689704
+        ]
+      },
+      "properties": {
+        "id": "238",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.832,
+        "pdf_x_pt": 310.914,
+        "pdf_y_von_oben_pt": 607.398,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "238 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "239",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559189,
+          54.690352
+        ]
+      },
+      "properties": {
+        "id": "239",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.804,
+        "pdf_x_pt": 347.914,
+        "pdf_y_von_oben_pt": 563.218,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "239 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "240",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559122,
+          54.691064
+        ]
+      },
+      "properties": {
+        "id": "240",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.944,
+        "pdf_x_pt": 345.539,
+        "pdf_y_von_oben_pt": 514.384,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "240 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "241",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558687,
+          54.692033
+        ]
+      },
+      "properties": {
+        "id": "241",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.143,
+        "pdf_x_pt": 328.692,
+        "pdf_y_von_oben_pt": 447.819,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "241 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "242",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558688,
+          54.692022
+        ]
+      },
+      "properties": {
+        "id": "242",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.703,
+        "pdf_x_pt": 328.717,
+        "pdf_y_von_oben_pt": 448.63,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "242 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "243",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553825,
+          54.686545
+        ]
+      },
+      "properties": {
+        "id": "243",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.777,
+        "pdf_x_pt": 133.205,
+        "pdf_y_von_oben_pt": 822.88,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "243 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "244",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555044,
+          54.687117
+        ]
+      },
+      "properties": {
+        "id": "244",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.841,
+        "pdf_x_pt": 181.899,
+        "pdf_y_von_oben_pt": 783.956,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "244 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "245",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555098,
+          54.687773
+        ]
+      },
+      "properties": {
+        "id": "245",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.812,
+        "pdf_x_pt": 184.294,
+        "pdf_y_von_oben_pt": 739.021,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "245 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "246",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555826,
+          54.688323
+        ]
+      },
+      "properties": {
+        "id": "246",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.814,
+        "pdf_x_pt": 213.442,
+        "pdf_y_von_oben_pt": 701.495,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "246 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "247",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552741,
+          54.686652
+        ]
+      },
+      "properties": {
+        "id": "247",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.54,
+        "pdf_x_pt": 90.225,
+        "pdf_y_von_oben_pt": 815.278,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "247 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "248",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553687,
+          54.687045
+        ]
+      },
+      "properties": {
+        "id": "248",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.902,
+        "pdf_x_pt": 127.969,
+        "pdf_y_von_oben_pt": 788.592,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "248 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "249",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554133,
+          54.687761
+        ]
+      },
+      "properties": {
+        "id": "249",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.793,
+        "pdf_x_pt": 145.997,
+        "pdf_y_von_oben_pt": 739.58,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "249 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "250",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559259,
+          54.692757
+        ]
+      },
+      "properties": {
+        "id": "250",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.822,
+        "pdf_x_pt": 351.723,
+        "pdf_y_von_oben_pt": 398.375,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "250 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "251",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558916,
+          54.692382
+        ]
+      },
+      "properties": {
+        "id": "251",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.888,
+        "pdf_x_pt": 337.96,
+        "pdf_y_von_oben_pt": 423.97,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "251 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "252",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555004,
+          54.688628
+        ]
+      },
+      "properties": {
+        "id": "252",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.011,
+        "pdf_x_pt": 180.939,
+        "pdf_y_von_oben_pt": 680.398,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "252 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "253",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552066,
+          54.687098
+        ]
+      },
+      "properties": {
+        "id": "253",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.795,
+        "pdf_x_pt": 63.61,
+        "pdf_y_von_oben_pt": 784.562,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "253 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "254",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552847,
+          54.687646
+        ]
+      },
+      "properties": {
+        "id": "254",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 94.867,
+        "pdf_y_von_oben_pt": 747.165,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "254 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "255",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550869,
+          54.687726
+        ]
+      },
+      "properties": {
+        "id": "255",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.824,
+        "pdf_x_pt": 16.346,
+        "pdf_y_von_oben_pt": 741.226,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "255 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "256",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552048,
+          54.687865
+        ]
+      },
+      "properties": {
+        "id": "256",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.845,
+        "pdf_x_pt": 63.223,
+        "pdf_y_von_oben_pt": 731.964,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "256 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "257",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553051,
+          54.688393
+        ]
+      },
+      "properties": {
+        "id": "257",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.86,
+        "pdf_x_pt": 103.287,
+        "pdf_y_von_oben_pt": 696.003,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "257 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "258",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553536,
+          54.689533
+        ]
+      },
+      "properties": {
+        "id": "258",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.777,
+        "pdf_x_pt": 123.035,
+        "pdf_y_von_oben_pt": 618.009,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "258 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "259",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552298,
+          54.68942
+        ]
+      },
+      "properties": {
+        "id": "259",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.764,
+        "pdf_x_pt": 73.828,
+        "pdf_y_von_oben_pt": 625.471,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "259 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "260",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552906,
+          54.690195
+        ]
+      },
+      "properties": {
+        "id": "260",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.164,
+        "pdf_x_pt": 98.331,
+        "pdf_y_von_oben_pt": 572.491,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "260 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "261",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5535,
+          54.690912
+        ]
+      },
+      "properties": {
+        "id": "261",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.113,
+        "pdf_x_pt": 122.194,
+        "pdf_y_von_oben_pt": 523.449,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "261 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "262",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554439,
+          54.692158
+        ]
+      },
+      "properties": {
+        "id": "262",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 160.049,
+        "pdf_y_von_oben_pt": 438.261,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "262 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "263",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555426,
+          54.69187
+        ]
+      },
+      "properties": {
+        "id": "263",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.812,
+        "pdf_x_pt": 199.136,
+        "pdf_y_von_oben_pt": 458.226,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "263 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "264",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555332,
+          54.693174
+        ]
+      },
+      "properties": {
+        "id": "264",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 195.965,
+        "pdf_y_von_oben_pt": 368.835,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "264 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "265",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557368,
+          54.692511
+        ]
+      },
+      "properties": {
+        "id": "265",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.793,
+        "pdf_x_pt": 276.518,
+        "pdf_y_von_oben_pt": 414.79,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "265 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "266",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557929,
+          54.693175
+        ]
+      },
+      "properties": {
+        "id": "266",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.824,
+        "pdf_x_pt": 299.077,
+        "pdf_y_von_oben_pt": 369.413,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "266 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "267",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557372,
+          54.693971
+        ]
+      },
+      "properties": {
+        "id": "267",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.773,
+        "pdf_x_pt": 277.302,
+        "pdf_y_von_oben_pt": 314.693,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "267 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "268",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.55651,
+          54.69437
+        ]
+      },
+      "properties": {
+        "id": "268",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.902,
+        "pdf_x_pt": 243.268,
+        "pdf_y_von_oben_pt": 287.136,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "268 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "269",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557501,
+          54.694909
+        ]
+      },
+      "properties": {
+        "id": "269",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.937,
+        "pdf_x_pt": 282.832,
+        "pdf_y_von_oben_pt": 250.433,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "269 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "270",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558885,
+          54.694316
+        ]
+      },
+      "properties": {
+        "id": "270",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.797,
+        "pdf_x_pt": 337.554,
+        "pdf_y_von_oben_pt": 291.374,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "270 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "271",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559896,
+          54.693692
+        ]
+      },
+      "properties": {
+        "id": "271",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.876,
+        "pdf_x_pt": 377.411,
+        "pdf_y_von_oben_pt": 334.402,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "271 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "272",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.559642,
+          54.693142
+        ]
+      },
+      "properties": {
+        "id": "272",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.926,
+        "pdf_x_pt": 367.1,
+        "pdf_y_von_oben_pt": 372.068,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "272 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "273",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554265,
+          54.688329
+        ]
+      },
+      "properties": {
+        "id": "273",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.787,
+        "pdf_x_pt": 151.467,
+        "pdf_y_von_oben_pt": 700.68,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "273 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "275",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.562086,
+          54.694028
+        ]
+      },
+      "properties": {
+        "id": "275",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 464.551,
+        "pdf_y_von_oben_pt": 311.866,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "275 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "276",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561329,
+          54.693262
+        ]
+      },
+      "properties": {
+        "id": "276",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.846,
+        "pdf_x_pt": 434.144,
+        "pdf_y_von_oben_pt": 364.233,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "276 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "277",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560037,
+          54.691639
+        ]
+      },
+      "properties": {
+        "id": "277",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.533,
+        "pdf_x_pt": 382.153,
+        "pdf_y_von_oben_pt": 475.168,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "277 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "278",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561217,
+          54.692315
+        ]
+      },
+      "properties": {
+        "id": "278",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.897,
+        "pdf_x_pt": 429.298,
+        "pdf_y_von_oben_pt": 429.135,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "278 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "279",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561935,
+          54.691868
+        ]
+      },
+      "properties": {
+        "id": "279",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.009,
+        "pdf_x_pt": 457.62,
+        "pdf_y_von_oben_pt": 459.906,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "279 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "280",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561581,
+          54.691482
+        ]
+      },
+      "properties": {
+        "id": "280",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.202,
+        "pdf_x_pt": 443.379,
+        "pdf_y_von_oben_pt": 486.29,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "280 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "281",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560644,
+          54.690452
+        ]
+      },
+      "properties": {
+        "id": "281",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.903,
+        "pdf_x_pt": 405.744,
+        "pdf_y_von_oben_pt": 556.672,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "281 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "282",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.565917,
+          54.694235
+        ]
+      },
+      "properties": {
+        "id": "282",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 616.781,
+        "pdf_y_von_oben_pt": 298.596,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "282 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "283",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564487,
+          54.693793
+        ]
+      },
+      "properties": {
+        "id": "283",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.836,
+        "pdf_x_pt": 559.782,
+        "pdf_y_von_oben_pt": 328.547,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "283 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "284",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563565,
+          54.692468
+        ]
+      },
+      "properties": {
+        "id": "284",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.801,
+        "pdf_x_pt": 522.615,
+        "pdf_y_von_oben_pt": 419.191,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "284 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "285",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563163,
+          54.691849
+        ]
+      },
+      "properties": {
+        "id": "285",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.808,
+        "pdf_x_pt": 506.352,
+        "pdf_y_von_oben_pt": 461.508,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "285 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "286",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563471,
+          54.691057
+        ]
+      },
+      "properties": {
+        "id": "286",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.286,
+        "pdf_x_pt": 518.243,
+        "pdf_y_von_oben_pt": 515.847,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "286 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "287",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.562298,
+          54.690891
+        ]
+      },
+      "properties": {
+        "id": "287",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.826,
+        "pdf_x_pt": 471.593,
+        "pdf_y_von_oben_pt": 526.959,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "287 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "288",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561512,
+          54.690049
+        ]
+      },
+      "properties": {
+        "id": "288",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.99,
+        "pdf_x_pt": 440.016,
+        "pdf_y_von_oben_pt": 584.479,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "288 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "289",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.560841,
+          54.689293
+        ]
+      },
+      "properties": {
+        "id": "289",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 413.063,
+        "pdf_y_von_oben_pt": 636.181,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "289 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "291",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.566667,
+          54.691218
+        ]
+      },
+      "properties": {
+        "id": "291",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.508,
+        "pdf_x_pt": 645.239,
+        "pdf_y_von_oben_pt": 505.603,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "291 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "292",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.566086,
+          54.691706
+        ]
+      },
+      "properties": {
+        "id": "292",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.315,
+        "pdf_x_pt": 622.401,
+        "pdf_y_von_oben_pt": 472.009,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "292 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "293",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564746,
+          54.692086
+        ]
+      },
+      "properties": {
+        "id": "293",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.036,
+        "pdf_x_pt": 569.345,
+        "pdf_y_von_oben_pt": 445.616,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "293 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "295",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564327,
+          54.690792
+        ]
+      },
+      "properties": {
+        "id": "295",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.076,
+        "pdf_x_pt": 552.134,
+        "pdf_y_von_oben_pt": 534.205,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "295 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "296",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563005,
+          54.689719
+        ]
+      },
+      "properties": {
+        "id": "296",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.021,
+        "pdf_x_pt": 499.189,
+        "pdf_y_von_oben_pt": 607.471,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "296 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "297",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561982,
+          54.688718
+        ]
+      },
+      "properties": {
+        "id": "297",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.93,
+        "pdf_x_pt": 458.089,
+        "pdf_y_von_oben_pt": 675.852,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "297 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "298",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.564289,
+          54.689271
+        ]
+      },
+      "properties": {
+        "id": "298",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.905,
+        "pdf_x_pt": 549.986,
+        "pdf_y_von_oben_pt": 638.452,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "298 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "299",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.56351,
+          54.688982
+        ]
+      },
+      "properties": {
+        "id": "299",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.169,
+        "pdf_x_pt": 518.897,
+        "pdf_y_von_oben_pt": 658.126,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "299 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "300",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.563966,
+          54.688141
+        ]
+      },
+      "properties": {
+        "id": "300",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.115,
+        "pdf_x_pt": 536.63,
+        "pdf_y_von_oben_pt": 715.856,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "300 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "301",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.562848,
+          54.68825
+        ]
+      },
+      "properties": {
+        "id": "301",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.872,
+        "pdf_x_pt": 492.314,
+        "pdf_y_von_oben_pt": 708.162,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "301 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "302",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.562275,
+          54.68762
+        ]
+      },
+      "properties": {
+        "id": "302",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.898,
+        "pdf_x_pt": 469.256,
+        "pdf_y_von_oben_pt": 751.153,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "302 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "303",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567301,
+          54.692826
+        ]
+      },
+      "properties": {
+        "id": "303",
+        "typ": "Hydrant",
+        "menge_l_min": "<400",
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.894,
+        "pdf_x_pt": 671.143,
+        "pdf_y_von_oben_pt": 395.485,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "303 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "305",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567,
+          54.692478
+        ]
+      },
+      "properties": {
+        "id": "305",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.871,
+        "pdf_x_pt": 659.016,
+        "pdf_y_von_oben_pt": 419.327,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "305 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "306",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567573,
+          54.69229
+        ]
+      },
+      "properties": {
+        "id": "306",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.823,
+        "pdf_x_pt": 681.708,
+        "pdf_y_von_oben_pt": 432.322,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "306 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "308",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.567909,
+          54.692156
+        ]
+      },
+      "properties": {
+        "id": "308",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.078,
+        "pdf_x_pt": 694.969,
+        "pdf_y_von_oben_pt": 441.598,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "308 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "359",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.551535,
+          54.6893
+        ]
+      },
+      "properties": {
+        "id": "359",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.84,
+        "pdf_x_pt": 43.471,
+        "pdf_y_von_oben_pt": 633.484,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "359 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "374",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552442,
+          54.694678
+        ]
+      },
+      "properties": {
+        "id": "374",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.797,
+        "pdf_x_pt": 81.819,
+        "pdf_y_von_oben_pt": 265.093,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "374 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "375",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554494,
+          54.694532
+        ]
+      },
+      "properties": {
+        "id": "375",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.02,
+        "pdf_x_pt": 163.277,
+        "pdf_y_von_oben_pt": 275.551,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "375 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "381",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556863,
+          54.695327
+        ]
+      },
+      "properties": {
+        "id": "381",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.89,
+        "pdf_x_pt": 257.683,
+        "pdf_y_von_oben_pt": 221.63,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "381 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "382",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553718,
+          54.695309
+        ]
+      },
+      "properties": {
+        "id": "382",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.955,
+        "pdf_x_pt": 132.772,
+        "pdf_y_von_oben_pt": 222.13,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "382 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "383",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554565,
+          54.695106
+        ]
+      },
+      "properties": {
+        "id": "383",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.926,
+        "pdf_x_pt": 166.351,
+        "pdf_y_von_oben_pt": 236.214,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "383 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "384",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555251,
+          54.695264
+        ]
+      },
+      "properties": {
+        "id": "384",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.946,
+        "pdf_x_pt": 193.662,
+        "pdf_y_von_oben_pt": 225.585,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "384 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "385",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555759,
+          54.695788
+        ]
+      },
+      "properties": {
+        "id": "385",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.16,
+        "pdf_x_pt": 214.029,
+        "pdf_y_von_oben_pt": 189.749,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "385 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "386",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556542,
+          54.695867
+        ]
+      },
+      "properties": {
+        "id": "386",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.819,
+        "pdf_x_pt": 245.158,
+        "pdf_y_von_oben_pt": 184.508,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "386 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "387",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555893,
+          54.695985
+        ]
+      },
+      "properties": {
+        "id": "387",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.111,
+        "pdf_x_pt": 219.439,
+        "pdf_y_von_oben_pt": 176.29,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "387 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "388",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554973,
+          54.696018
+        ]
+      },
+      "properties": {
+        "id": "388",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.834,
+        "pdf_x_pt": 182.922,
+        "pdf_y_von_oben_pt": 173.792,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "388 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "389",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.554041,
+          54.696357
+        ]
+      },
+      "properties": {
+        "id": "389",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.885,
+        "pdf_x_pt": 146.073,
+        "pdf_y_von_oben_pt": 150.403,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "389 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "390",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.553627,
+          54.696126
+        ]
+      },
+      "properties": {
+        "id": "390",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 129.54,
+        "pdf_y_von_oben_pt": 166.106,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "390 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "391",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552944,
+          54.696788
+        ]
+      },
+      "properties": {
+        "id": "391",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.097,
+        "pdf_x_pt": 102.691,
+        "pdf_y_von_oben_pt": 120.557,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "391 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "392",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552411,
+          54.697374
+        ]
+      },
+      "properties": {
+        "id": "392",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.324,
+        "pdf_x_pt": 81.759,
+        "pdf_y_von_oben_pt": 80.267,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "392 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "393",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557539,
+          54.696581
+        ]
+      },
+      "properties": {
+        "id": "393",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.278,
+        "pdf_x_pt": 285.096,
+        "pdf_y_von_oben_pt": 135.807,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "393 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "394",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558215,
+          54.697213
+        ]
+      },
+      "properties": {
+        "id": "394",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.239,
+        "pdf_x_pt": 312.199,
+        "pdf_y_von_oben_pt": 92.642,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "394 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "395",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.558367,
+          54.697138
+        ]
+      },
+      "properties": {
+        "id": "395",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.394,
+        "pdf_x_pt": 318.202,
+        "pdf_y_von_oben_pt": 97.845,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "395 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "396",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557435,
+          54.697641
+        ]
+      },
+      "properties": {
+        "id": "396",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.086,
+        "pdf_x_pt": 281.422,
+        "pdf_y_von_oben_pt": 63.131,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "396 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "397",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.556773,
+          54.69791
+        ]
+      },
+      "properties": {
+        "id": "397",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 255.253,
+        "pdf_y_von_oben_pt": 44.536,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "397 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "398",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.555901,
+          54.698195
+        ]
+      },
+      "properties": {
+        "id": "398",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.851,
+        "pdf_x_pt": 220.726,
+        "pdf_y_von_oben_pt": 24.804,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "398 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "402",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.552335,
+          54.696303
+        ]
+      },
+      "properties": {
+        "id": "402",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.788,
+        "pdf_x_pt": 78.311,
+        "pdf_y_von_oben_pt": 153.655,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "402 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "445",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.551497,
+          54.697945
+        ]
+      },
+      "properties": {
+        "id": "445",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Wyk_Nord_Ost.pdf",
+        "ortsname": "Wyk auf Föhr (Nordost)",
+        "ortsquelle": "Wyk_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.113,
+        "pdf_x_pt": 45.746,
+        "pdf_y_von_oben_pt": 40.944,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "445 - Hydrant"
+      }
+    }
+  ]
+}

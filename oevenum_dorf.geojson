@@ -1,0 +1,874 @@
+{
+  "type": "FeatureCollection",
+  "name": "Oevenum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "481",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532594,
+          54.706087
+        ]
+      },
+      "properties": {
+        "id": "481",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.829,
+        "pdf_x_pt": 492.56,
+        "pdf_y_von_oben_pt": 956.599,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "481 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "482",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5344,
+          54.708483
+        ]
+      },
+      "properties": {
+        "id": "482",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.659,
+        "pdf_x_pt": 588.288,
+        "pdf_y_von_oben_pt": 741.331,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "482 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "483",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53522,
+          54.708802
+        ]
+      },
+      "properties": {
+        "id": "483",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.029,
+        "pdf_x_pt": 631.243,
+        "pdf_y_von_oben_pt": 712.93,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "483 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "484",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532956,
+          54.708518
+        ]
+      },
+      "properties": {
+        "id": "484",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.844,
+        "pdf_x_pt": 512.954,
+        "pdf_y_von_oben_pt": 737.682,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "484 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "485",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532003,
+          54.70917
+        ]
+      },
+      "properties": {
+        "id": "485",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.772,
+        "pdf_x_pt": 463.625,
+        "pdf_y_von_oben_pt": 678.641,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "485 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "486",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.533147,
+          54.709483
+        ]
+      },
+      "properties": {
+        "id": "486",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 523.484,
+        "pdf_y_von_oben_pt": 650.881,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "486 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "487",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.533478,
+          54.709984
+        ]
+      },
+      "properties": {
+        "id": "487",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.802,
+        "pdf_x_pt": 541.062,
+        "pdf_y_von_oben_pt": 605.868,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "487 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "488",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.533018,
+          54.710212
+        ]
+      },
+      "properties": {
+        "id": "488",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.396,
+        "pdf_x_pt": 517.21,
+        "pdf_y_von_oben_pt": 585.153,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "488 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "489",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532824,
+          54.710555
+        ]
+      },
+      "properties": {
+        "id": "489",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.003,
+        "pdf_x_pt": 507.275,
+        "pdf_y_von_oben_pt": 554.171,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "489 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "492",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.527572,
+          54.70938
+        ]
+      },
+      "properties": {
+        "id": "492",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.976,
+        "pdf_x_pt": 232.5,
+        "pdf_y_von_oben_pt": 658.184,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "492 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "493",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528225,
+          54.709617
+        ]
+      },
+      "properties": {
+        "id": "493",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 266.709,
+        "pdf_y_von_oben_pt": 637.106,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "493 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "494",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529435,
+          54.709938
+        ]
+      },
+      "properties": {
+        "id": "494",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.04,
+        "pdf_x_pt": 330.088,
+        "pdf_y_von_oben_pt": 608.57,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "494 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "495",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528785,
+          54.71013
+        ]
+      },
+      "properties": {
+        "id": "495",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.455,
+        "pdf_x_pt": 296.242,
+        "pdf_y_von_oben_pt": 591.049,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "495 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "496",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528587,
+          54.710543
+        ]
+      },
+      "properties": {
+        "id": "496",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.792,
+        "pdf_x_pt": 286.196,
+        "pdf_y_von_oben_pt": 553.77,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "496 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "497",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530947,
+          54.710081
+        ]
+      },
+      "properties": {
+        "id": "497",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.004,
+        "pdf_x_pt": 409.047,
+        "pdf_y_von_oben_pt": 596.214,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "497 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "498",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53222,
+          54.711081
+        ]
+      },
+      "properties": {
+        "id": "498",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.858,
+        "pdf_x_pt": 476.095,
+        "pdf_y_von_oben_pt": 506.602,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "498 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "499",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530396,
+          54.710388
+        ]
+      },
+      "properties": {
+        "id": "499",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 380.512,
+        "pdf_y_von_oben_pt": 568.386,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "499 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "502",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530108,
+          54.710849
+        ]
+      },
+      "properties": {
+        "id": "502",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.146,
+        "pdf_x_pt": 365.742,
+        "pdf_y_von_oben_pt": 526.789,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "502 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "503",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532063,
+          54.71181
+        ]
+      },
+      "properties": {
+        "id": "503",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 468.352,
+        "pdf_y_von_oben_pt": 440.839,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "503 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "504",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.531265,
+          54.71207
+        ]
+      },
+      "properties": {
+        "id": "504",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.782,
+        "pdf_x_pt": 426.831,
+        "pdf_y_von_oben_pt": 417.162,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "504 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "505",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52898,
+          54.711409
+        ]
+      },
+      "properties": {
+        "id": "505",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.953,
+        "pdf_x_pt": 307.227,
+        "pdf_y_von_oben_pt": 475.929,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "505 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "506",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528711,
+          54.71143
+        ]
+      },
+      "properties": {
+        "id": "506",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 293.186,
+        "pdf_y_von_oben_pt": 473.961,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "506 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "507",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529899,
+          54.712499
+        ]
+      },
+      "properties": {
+        "id": "507",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.056,
+        "pdf_x_pt": 355.826,
+        "pdf_y_von_oben_pt": 378.095,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "507 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "508",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52961,
+          54.712545
+        ]
+      },
+      "properties": {
+        "id": "508",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.788,
+        "pdf_x_pt": 340.766,
+        "pdf_y_von_oben_pt": 373.797,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "508 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "509",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528179,
+          54.711767
+        ]
+      },
+      "properties": {
+        "id": "509",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.141,
+        "pdf_x_pt": 265.626,
+        "pdf_y_von_oben_pt": 443.355,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "509 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "512",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526325,
+          54.711667
+        ]
+      },
+      "properties": {
+        "id": "512",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 168.806,
+        "pdf_y_von_oben_pt": 451.756,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "512 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "513",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526402,
+          54.711865
+        ]
+      },
+      "properties": {
+        "id": "513",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 172.945,
+        "pdf_y_von_oben_pt": 433.948,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "513 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "514",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528134,
+          54.712974
+        ]
+      },
+      "properties": {
+        "id": "514",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.786,
+        "pdf_x_pt": 264.005,
+        "pdf_y_von_oben_pt": 334.683,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "514 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "515",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526367,
+          54.71321
+        ]
+      },
+      "properties": {
+        "id": "515",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.915,
+        "pdf_x_pt": 171.956,
+        "pdf_y_von_oben_pt": 312.814,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "515 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "521",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.534221,
+          54.715078
+        ]
+      },
+      "properties": {
+        "id": "521",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.092,
+        "pdf_x_pt": 582.946,
+        "pdf_y_von_oben_pt": 147.219,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "521 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "538",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523355,
+          54.715885
+        ]
+      },
+      "properties": {
+        "id": "538",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Oevenum_Dorf.pdf",
+        "ortsname": "Oevenum",
+        "ortsquelle": "Oevenum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.542,
+        "pdf_x_pt": 16.396,
+        "pdf_y_von_oben_pt": 70.747,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "538 - Bohrbrunnen"
+      }
+    }
+  ]
+}

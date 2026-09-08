@@ -1,0 +1,118 @@
+{
+  "type": "FeatureCollection",
+  "name": "Marsch_Alkersum",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "614",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493939,
+          54.73348
+        ]
+      },
+      "properties": {
+        "id": "614",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Alkersum.pdf",
+        "ortsname": "Alkersum",
+        "ortsquelle": "Marsch_Alkersum.pdf",
+        "zuordnungsabstand_relativ": 0.822,
+        "pdf_x_pt": 713.211,
+        "pdf_y_von_oben_pt": 718.359,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "614 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "615",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.502157,
+          54.737831
+        ]
+      },
+      "properties": {
+        "id": "615",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Alkersum.pdf",
+        "ortsname": "Alkersum",
+        "ortsquelle": "Marsch_Alkersum.pdf",
+        "zuordnungsabstand_relativ": 1.063,
+        "pdf_x_pt": 1015.155,
+        "pdf_y_von_oben_pt": 446.082,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "615 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "838",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486003,
+          54.741051
+        ]
+      },
+      "properties": {
+        "id": "838",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Alkersum.pdf",
+        "ortsname": "Alkersum",
+        "ortsquelle": "Marsch_Alkersum.pdf",
+        "zuordnungsabstand_relativ": 0.934,
+        "pdf_x_pt": 427.082,
+        "pdf_y_von_oben_pt": 238.832,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "838 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "839",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.495635,
+          54.739201
+        ]
+      },
+      "properties": {
+        "id": "839",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Marsch_Alkersum.pdf",
+        "ortsname": "Alkersum",
+        "ortsquelle": "Marsch_Alkersum.pdf",
+        "zuordnungsabstand_relativ": 0.946,
+        "pdf_x_pt": 777.76,
+        "pdf_y_von_oben_pt": 357.955,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "839 - Hydrant"
+      }
+    }
+  ]
+}

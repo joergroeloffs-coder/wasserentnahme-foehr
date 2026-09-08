@@ -1,0 +1,454 @@
+{
+  "type": "FeatureCollection",
+  "name": "Toftumer_Heide",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "841",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.466199,
+          54.72212
+        ]
+      },
+      "properties": {
+        "id": "841",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.83,
+        "pdf_x_pt": 1026.79,
+        "pdf_y_von_oben_pt": 376.119,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "841 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "855",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.454707,
+          54.718222
+        ]
+      },
+      "properties": {
+        "id": "855",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.82,
+        "pdf_x_pt": 605.184,
+        "pdf_y_von_oben_pt": 618.752,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "855 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "856",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.448957,
+          54.72136
+        ]
+      },
+      "properties": {
+        "id": "856",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.799,
+        "pdf_x_pt": 396.748,
+        "pdf_y_von_oben_pt": 419.266,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "856 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "857",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.451103,
+          54.7247
+        ]
+      },
+      "properties": {
+        "id": "857",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.838,
+        "pdf_x_pt": 476.787,
+        "pdf_y_von_oben_pt": 209.191,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "857 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "858",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.447667,
+          54.722005
+        ]
+      },
+      "properties": {
+        "id": "858",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.822,
+        "pdf_x_pt": 349.958,
+        "pdf_y_von_oben_pt": 378.219,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "858 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "859",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.444806,
+          54.722665
+        ]
+      },
+      "properties": {
+        "id": "859",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 1.097,
+        "pdf_x_pt": 245.797,
+        "pdf_y_von_oben_pt": 335.8,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "859 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "862",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442873,
+          54.727088
+        ]
+      },
+      "properties": {
+        "id": "862",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 1.083,
+        "pdf_x_pt": 177.449,
+        "pdf_y_von_oben_pt": 56.315,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "862 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "863",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.44047,
+          54.726792
+        ]
+      },
+      "properties": {
+        "id": "863",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.796,
+        "pdf_x_pt": 89.552,
+        "pdf_y_von_oben_pt": 74.33,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "863 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "864",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443594,
+          54.726101
+        ]
+      },
+      "properties": {
+        "id": "864",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 203.3,
+        "pdf_y_von_oben_pt": 118.732,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "864 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "865",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442331,
+          54.725965
+        ]
+      },
+      "properties": {
+        "id": "865",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 1.27,
+        "pdf_x_pt": 157.085,
+        "pdf_y_von_oben_pt": 126.977,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "865 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "866",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442112,
+          54.725684
+        ]
+      },
+      "properties": {
+        "id": "866",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.809,
+        "pdf_x_pt": 148.957,
+        "pdf_y_von_oben_pt": 144.642,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "866 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "867",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443398,
+          54.725474
+        ]
+      },
+      "properties": {
+        "id": "867",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.772,
+        "pdf_x_pt": 195.824,
+        "pdf_y_von_oben_pt": 158.246,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "867 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.443335,
+          54.724809
+        ]
+      },
+      "properties": {
+        "id": "868",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.844,
+        "pdf_x_pt": 193.173,
+        "pdf_y_von_oben_pt": 200.179,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "868 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "869",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439507,
+          54.726004
+        ]
+      },
+      "properties": {
+        "id": "869",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 1.212,
+        "pdf_x_pt": 54.003,
+        "pdf_y_von_oben_pt": 123.737,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "869 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "871",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.440734,
+          54.724974
+        ]
+      },
+      "properties": {
+        "id": "871",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.978,
+        "pdf_x_pt": 98.284,
+        "pdf_y_von_oben_pt": 189.063,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "871 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "872",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.439274,
+          54.725098
+        ]
+      },
+      "properties": {
+        "id": "872",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Toftumer_Heide.pdf",
+        "ortsname": "Toftum",
+        "ortsquelle": "Toftumer_Heide.pdf",
+        "zuordnungsabstand_relativ": 0.555,
+        "pdf_x_pt": 45.038,
+        "pdf_y_von_oben_pt": 180.828,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "872 - Hydrant"
+      }
+    }
+  ]
+}

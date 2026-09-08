@@ -1,0 +1,1070 @@
+{
+  "type": "FeatureCollection",
+  "name": "Nieblum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "643",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.499956,
+          54.683193
+        ]
+      },
+      "properties": {
+        "id": "643",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.912,
+        "pdf_x_pt": 778.458,
+        "pdf_y_von_oben_pt": 1090.207,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "643 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "644",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.492943,
+          54.686536
+        ]
+      },
+      "properties": {
+        "id": "644",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.782,
+        "pdf_x_pt": 459.97,
+        "pdf_y_von_oben_pt": 824.481,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "644 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "645",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493221,
+          54.687535
+        ]
+      },
+      "properties": {
+        "id": "645",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.737,
+        "pdf_x_pt": 473.231,
+        "pdf_y_von_oben_pt": 745.771,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "645 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "646",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.495554,
+          54.688509
+        ]
+      },
+      "properties": {
+        "id": "646",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.623,
+        "pdf_x_pt": 580.352,
+        "pdf_y_von_oben_pt": 669.713,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "646 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "647",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.492141,
+          54.688281
+        ]
+      },
+      "properties": {
+        "id": "647",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 424.306,
+        "pdf_y_von_oben_pt": 686.597,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "647 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "648",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.491434,
+          54.687834
+        ]
+      },
+      "properties": {
+        "id": "648",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.776,
+        "pdf_x_pt": 391.774,
+        "pdf_y_von_oben_pt": 721.633,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "648 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "649",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.490765,
+          54.687383
+        ]
+      },
+      "properties": {
+        "id": "649",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.685,
+        "pdf_x_pt": 360.944,
+        "pdf_y_von_oben_pt": 756.96,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "649 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "651",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489644,
+          54.687302
+        ]
+      },
+      "properties": {
+        "id": "651",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.656,
+        "pdf_x_pt": 309.705,
+        "pdf_y_von_oben_pt": 763.048,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "651 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "652",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.491489,
+          54.688723
+        ]
+      },
+      "properties": {
+        "id": "652",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.614,
+        "pdf_x_pt": 394.75,
+        "pdf_y_von_oben_pt": 651.535,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "652 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "653",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489823,
+          54.688229
+        ]
+      },
+      "properties": {
+        "id": "653",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.849,
+        "pdf_x_pt": 318.391,
+        "pdf_y_von_oben_pt": 689.947,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "653 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "654",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489309,
+          54.687976
+        ]
+      },
+      "properties": {
+        "id": "654",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.657,
+        "pdf_x_pt": 294.775,
+        "pdf_y_von_oben_pt": 709.805,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "654 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "655",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489132,
+          54.687622
+        ]
+      },
+      "properties": {
+        "id": "655",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.85,
+        "pdf_x_pt": 286.489,
+        "pdf_y_von_oben_pt": 737.608,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "655 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "656",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493189,
+          54.690277
+        ]
+      },
+      "properties": {
+        "id": "656",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.634,
+        "pdf_x_pt": 473.302,
+        "pdf_y_von_oben_pt": 529.489,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "656 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "657",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.490996,
+          54.689177
+        ]
+      },
+      "properties": {
+        "id": "657",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.826,
+        "pdf_x_pt": 372.49,
+        "pdf_y_von_oben_pt": 615.598,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "657 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "658",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.495607,
+          54.692399
+        ]
+      },
+      "properties": {
+        "id": "658",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.599,
+        "pdf_x_pt": 584.9,
+        "pdf_y_von_oben_pt": 362.965,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "658 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "659",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.495129,
+          54.696156
+        ]
+      },
+      "properties": {
+        "id": "659",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.563,
+        "pdf_x_pt": 565.171,
+        "pdf_y_von_oben_pt": 66.534,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "659 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "661",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493061,
+          54.694128
+        ]
+      },
+      "properties": {
+        "id": "661",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.659,
+        "pdf_x_pt": 469.575,
+        "pdf_y_von_oben_pt": 225.773,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "661 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "662",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493914,
+          54.693913
+        ]
+      },
+      "properties": {
+        "id": "662",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.827,
+        "pdf_x_pt": 508.432,
+        "pdf_y_von_oben_pt": 243.053,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "662 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "663",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.491945,
+          54.693251
+        ]
+      },
+      "properties": {
+        "id": "663",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.794,
+        "pdf_x_pt": 418.105,
+        "pdf_y_von_oben_pt": 294.617,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "663 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "664",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.491748,
+          54.692452
+        ]
+      },
+      "properties": {
+        "id": "664",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.917,
+        "pdf_x_pt": 408.691,
+        "pdf_y_von_oben_pt": 357.551,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "664 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "665",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493917,
+          54.692423
+        ]
+      },
+      "properties": {
+        "id": "665",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.068,
+        "pdf_x_pt": 507.747,
+        "pdf_y_von_oben_pt": 360.505,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "665 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "666",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.492356,
+          54.691027
+        ]
+      },
+      "properties": {
+        "id": "666",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 435.644,
+        "pdf_y_von_oben_pt": 470.155,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "666 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "667",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.492181,
+          54.690952
+        ]
+      },
+      "properties": {
+        "id": "667",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.772,
+        "pdf_x_pt": 427.604,
+        "pdf_y_von_oben_pt": 475.975,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "667 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "668",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.490771,
+          54.691203
+        ]
+      },
+      "properties": {
+        "id": "668",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 363.364,
+        "pdf_y_von_oben_pt": 455.755,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "668 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "669",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.490685,
+          54.692529
+        ]
+      },
+      "properties": {
+        "id": "669",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 360.146,
+        "pdf_y_von_oben_pt": 351.145,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "669 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "671",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489389,
+          54.693207
+        ]
+      },
+      "properties": {
+        "id": "671",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.828,
+        "pdf_x_pt": 301.353,
+        "pdf_y_von_oben_pt": 297.269,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "671 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "672",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489017,
+          54.691942
+        ]
+      },
+      "properties": {
+        "id": "672",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 283.63,
+        "pdf_y_von_oben_pt": 396.918,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "672 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "673",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.489532,
+          54.691024
+        ]
+      },
+      "properties": {
+        "id": "673",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.073,
+        "pdf_x_pt": 306.626,
+        "pdf_y_von_oben_pt": 469.465,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "673 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "674",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.488116,
+          54.691606
+        ]
+      },
+      "properties": {
+        "id": "674",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.535,
+        "pdf_x_pt": 242.271,
+        "pdf_y_von_oben_pt": 423.147,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "674 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "675",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486831,
+          54.691157
+        ]
+      },
+      "properties": {
+        "id": "675",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.837,
+        "pdf_x_pt": 183.336,
+        "pdf_y_von_oben_pt": 458.161,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "675 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "676",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485871,
+          54.690494
+        ]
+      },
+      "properties": {
+        "id": "676",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.029,
+        "pdf_x_pt": 139.122,
+        "pdf_y_von_oben_pt": 510.156,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "676 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "678",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.487593,
+          54.689972
+        ]
+      },
+      "properties": {
+        "id": "678",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.09,
+        "pdf_x_pt": 217.493,
+        "pdf_y_von_oben_pt": 551.872,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "678 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "679",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.487513,
+          54.689005
+        ]
+      },
+      "properties": {
+        "id": "679",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.672,
+        "pdf_x_pt": 213.284,
+        "pdf_y_von_oben_pt": 628.097,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "679 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "681",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.484866,
+          54.689849
+        ]
+      },
+      "properties": {
+        "id": "681",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.768,
+        "pdf_x_pt": 92.866,
+        "pdf_y_von_oben_pt": 560.732,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "681 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "682",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485126,
+          54.689248
+        ]
+      },
+      "properties": {
+        "id": "682",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.918,
+        "pdf_x_pt": 104.408,
+        "pdf_y_von_oben_pt": 608.173,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "682 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "683",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485419,
+          54.688622
+        ]
+      },
+      "properties": {
+        "id": "683",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.916,
+        "pdf_x_pt": 117.422,
+        "pdf_y_von_oben_pt": 657.613,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "683 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "684",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.48627,
+          54.687385
+        ]
+      },
+      "properties": {
+        "id": "684",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.662,
+        "pdf_x_pt": 155.606,
+        "pdf_y_von_oben_pt": 755.435,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "684 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "685",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486772,
+          54.687914
+        ]
+      },
+      "properties": {
+        "id": "685",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Nieblum_Dorf.pdf",
+        "ortsname": "Nieblum",
+        "ortsquelle": "Nieblum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.879,
+        "pdf_x_pt": 178.815,
+        "pdf_y_von_oben_pt": 713.862,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "685 - Hydrant"
+      }
+    }
+  ]
+}

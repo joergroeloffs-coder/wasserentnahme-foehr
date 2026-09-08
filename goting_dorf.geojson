@@ -1,0 +1,762 @@
+{
+  "type": "FeatureCollection",
+  "name": "Goting_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "674",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.488112,
+          54.691609
+        ]
+      },
+      "properties": {
+        "id": "674",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 1167.486,
+        "pdf_y_von_oben_pt": 289.75,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "674 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "675",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486828,
+          54.691159
+        ]
+      },
+      "properties": {
+        "id": "675",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.85,
+        "pdf_x_pt": 1115.134,
+        "pdf_y_von_oben_pt": 320.856,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "675 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "676",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485872,
+          54.690495
+        ]
+      },
+      "properties": {
+        "id": "676",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.035,
+        "pdf_x_pt": 1075.959,
+        "pdf_y_von_oben_pt": 367.093,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "676 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "678",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.487589,
+          54.689973
+        ]
+      },
+      "properties": {
+        "id": "678",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.092,
+        "pdf_x_pt": 1145.382,
+        "pdf_y_von_oben_pt": 404.182,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "678 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "679",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.487514,
+          54.689021
+        ]
+      },
+      "properties": {
+        "id": "679",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.843,
+        "pdf_x_pt": 1141.844,
+        "pdf_y_von_oben_pt": 470.921,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "679 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "681",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.484846,
+          54.689853
+        ]
+      },
+      "properties": {
+        "id": "681",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 1033.95,
+        "pdf_y_von_oben_pt": 411.743,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "681 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "682",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485127,
+          54.689247
+        ]
+      },
+      "properties": {
+        "id": "682",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.954,
+        "pdf_x_pt": 1045.051,
+        "pdf_y_von_oben_pt": 454.314,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "682 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "683",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.485412,
+          54.688631
+        ]
+      },
+      "properties": {
+        "id": "683",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.957,
+        "pdf_x_pt": 1056.305,
+        "pdf_y_von_oben_pt": 497.575,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "683 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "684",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486267,
+          54.687386
+        ]
+      },
+      "properties": {
+        "id": "684",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.799,
+        "pdf_x_pt": 1090.364,
+        "pdf_y_von_oben_pt": 585.083,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "684 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "685",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.486767,
+          54.687911
+        ]
+      },
+      "properties": {
+        "id": "685",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.259,
+        "pdf_x_pt": 1110.949,
+        "pdf_y_von_oben_pt": 548.47,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "685 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "701",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.481505,
+          54.690695
+        ]
+      },
+      "properties": {
+        "id": "701",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.815,
+        "pdf_x_pt": 898.766,
+        "pdf_y_von_oben_pt": 351.663,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "701 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "702",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.476825,
+          54.689881
+        ]
+      },
+      "properties": {
+        "id": "702",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 708.325,
+        "pdf_y_von_oben_pt": 407.222,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "702 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "703",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.474372,
+          54.689686
+        ]
+      },
+      "properties": {
+        "id": "703",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.18,
+        "pdf_x_pt": 608.619,
+        "pdf_y_von_oben_pt": 420.106,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "703 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "704",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.474398,
+          54.688507
+        ]
+      },
+      "properties": {
+        "id": "704",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.789,
+        "pdf_x_pt": 609.057,
+        "pdf_y_von_oben_pt": 502.71,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "704 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "705",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.472657,
+          54.688354
+        ]
+      },
+      "properties": {
+        "id": "705",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.786,
+        "pdf_x_pt": 538.286,
+        "pdf_y_von_oben_pt": 512.939,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "705 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "706",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.471152,
+          54.688334
+        ]
+      },
+      "properties": {
+        "id": "706",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.135,
+        "pdf_x_pt": 477.167,
+        "pdf_y_von_oben_pt": 513.803,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "706 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "707",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.469437,
+          54.686433
+        ]
+      },
+      "properties": {
+        "id": "707",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.837,
+        "pdf_x_pt": 406.557,
+        "pdf_y_von_oben_pt": 646.496,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "707 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "708",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.470776,
+          54.686311
+        ]
+      },
+      "properties": {
+        "id": "708",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.825,
+        "pdf_x_pt": 460.856,
+        "pdf_y_von_oben_pt": 655.444,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "708 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "709",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.468507,
+          54.685964
+        ]
+      },
+      "properties": {
+        "id": "709",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.815,
+        "pdf_x_pt": 368.543,
+        "pdf_y_von_oben_pt": 679.089,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "709 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "711",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.470158,
+          54.688776
+        ]
+      },
+      "properties": {
+        "id": "711",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.986,
+        "pdf_x_pt": 437.045,
+        "pdf_y_von_oben_pt": 482.553,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "711 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "712",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.471612,
+          54.689245
+        ]
+      },
+      "properties": {
+        "id": "712",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.114,
+        "pdf_x_pt": 496.334,
+        "pdf_y_von_oben_pt": 450.116,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "712 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "713",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.471321,
+          54.689609
+        ]
+      },
+      "properties": {
+        "id": "713",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.779,
+        "pdf_x_pt": 484.705,
+        "pdf_y_von_oben_pt": 424.512,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "713 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "714",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.471837,
+          54.690625
+        ]
+      },
+      "properties": {
+        "id": "714",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.987,
+        "pdf_x_pt": 506.177,
+        "pdf_y_von_oben_pt": 353.52,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "714 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "715",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.471933,
+          54.691996
+        ]
+      },
+      "properties": {
+        "id": "715",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.814,
+        "pdf_x_pt": 510.819,
+        "pdf_y_von_oben_pt": 257.435,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "715 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "716",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.468062,
+          54.69328
+        ]
+      },
+      "properties": {
+        "id": "716",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.951,
+        "pdf_x_pt": 354.298,
+        "pdf_y_von_oben_pt": 166.229,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "716 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "717",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.464182,
+          54.694221
+        ]
+      },
+      "properties": {
+        "id": "717",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.881,
+        "pdf_x_pt": 197.275,
+        "pdf_y_von_oben_pt": 99.085,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "717 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "729",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459875,
+          54.69514
+        ]
+      },
+      "properties": {
+        "id": "729",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Goting_Dorf.pdf",
+        "ortsname": "Goting",
+        "ortsquelle": "Goting_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.869,
+        "pdf_x_pt": 22.899,
+        "pdf_y_von_oben_pt": 33.249,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "729 - Hydrant"
+      }
+    }
+  ]
+}

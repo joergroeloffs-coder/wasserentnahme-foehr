@@ -1,0 +1,2134 @@
+{
+  "type": "FeatureCollection",
+  "name": "04_Foehr_Nord_Ost",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "400",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.569016,
+          54.708299
+        ]
+      },
+      "properties": {
+        "id": "400",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.069,
+        "pdf_x_pt": 2662.168,
+        "pdf_y_von_oben_pt": 2371.148,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "400 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "482",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.534403,
+          54.708474
+        ]
+      },
+      "properties": {
+        "id": "482",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.925,
+        "pdf_x_pt": 1512.887,
+        "pdf_y_von_oben_pt": 2353.664,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "482 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "483",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.535213,
+          54.708789
+        ]
+      },
+      "properties": {
+        "id": "483",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.029,
+        "pdf_x_pt": 1539.899,
+        "pdf_y_von_oben_pt": 2335.756,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "483 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "484",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532955,
+          54.708511
+        ]
+      },
+      "properties": {
+        "id": "484",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.853,
+        "pdf_x_pt": 1464.81,
+        "pdf_y_von_oben_pt": 2351.25,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "484 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "485",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532007,
+          54.709158
+        ]
+      },
+      "properties": {
+        "id": "485",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.775,
+        "pdf_x_pt": 1433.584,
+        "pdf_y_von_oben_pt": 2313.914,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "485 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "486",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.53314,
+          54.709471
+        ]
+      },
+      "properties": {
+        "id": "486",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 1471.328,
+        "pdf_y_von_oben_pt": 2296.235,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "486 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "487",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.533478,
+          54.709968
+        ]
+      },
+      "properties": {
+        "id": "487",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.802,
+        "pdf_x_pt": 1482.735,
+        "pdf_y_von_oben_pt": 2267.785,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "487 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "488",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.533011,
+          54.7102
+        ]
+      },
+      "properties": {
+        "id": "488",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.287,
+        "pdf_x_pt": 1467.317,
+        "pdf_y_von_oben_pt": 2254.373,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "488 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "489",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532822,
+          54.710546
+        ]
+      },
+      "properties": {
+        "id": "489",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.992,
+        "pdf_x_pt": 1461.188,
+        "pdf_y_von_oben_pt": 2234.5,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "489 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "492",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.527562,
+          54.709369
+        ]
+      },
+      "properties": {
+        "id": "492",
+        "typ": "E-Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 1286.08,
+        "pdf_y_von_oben_pt": 2300.864,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#8e24aa",
+        "marker-symbol": "industrial",
+        "marker-size": "medium",
+        "title": "492 - E-Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "493",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528218,
+          54.709608
+        ]
+      },
+      "properties": {
+        "id": "493",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.836,
+        "pdf_x_pt": 1307.947,
+        "pdf_y_von_oben_pt": 2287.296,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "493 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "494",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529429,
+          54.709925
+        ]
+      },
+      "properties": {
+        "id": "494",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.04,
+        "pdf_x_pt": 1348.287,
+        "pdf_y_von_oben_pt": 2269.355,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "494 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "495",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528782,
+          54.710121
+        ]
+      },
+      "properties": {
+        "id": "495",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.128,
+        "pdf_x_pt": 1326.886,
+        "pdf_y_von_oben_pt": 2258.006,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "495 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "496",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52859,
+          54.71053
+        ]
+      },
+      "properties": {
+        "id": "496",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.997,
+        "pdf_x_pt": 1320.645,
+        "pdf_y_von_oben_pt": 2234.511,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "496 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "497",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530941,
+          54.710071
+        ]
+      },
+      "properties": {
+        "id": "497",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.991,
+        "pdf_x_pt": 1398.548,
+        "pdf_y_von_oben_pt": 2261.319,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "497 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "498",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532212,
+          54.71107
+        ]
+      },
+      "properties": {
+        "id": "498",
+        "typ": "Hydrant",
+        "menge_l_min": 3200,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.083,
+        "pdf_x_pt": 1441.117,
+        "pdf_y_von_oben_pt": 2204.316,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "498 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "499",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530388,
+          54.710377
+        ]
+      },
+      "properties": {
+        "id": "499",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.668,
+        "pdf_x_pt": 1380.299,
+        "pdf_y_von_oben_pt": 2243.676,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "499 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "502",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.530111,
+          54.710836
+        ]
+      },
+      "properties": {
+        "id": "502",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.146,
+        "pdf_x_pt": 1371.289,
+        "pdf_y_von_oben_pt": 2217.303,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "502 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "503",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.532057,
+          54.711798
+        ]
+      },
+      "properties": {
+        "id": "503",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.992,
+        "pdf_x_pt": 1436.254,
+        "pdf_y_von_oben_pt": 2162.523,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "503 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "504",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.531265,
+          54.712056
+        ]
+      },
+      "properties": {
+        "id": "504",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.527,
+        "pdf_x_pt": 1410.058,
+        "pdf_y_von_oben_pt": 2147.589,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "504 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "505",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528978,
+          54.711394
+        ]
+      },
+      "properties": {
+        "id": "505",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.802,
+        "pdf_x_pt": 1333.86,
+        "pdf_y_von_oben_pt": 2185.062,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "505 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "506",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528703,
+          54.711418
+        ]
+      },
+      "properties": {
+        "id": "506",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 1324.755,
+        "pdf_y_von_oben_pt": 2183.608,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "506 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "507",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52989,
+          54.712486
+        ]
+      },
+      "properties": {
+        "id": "507",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.186,
+        "pdf_x_pt": 1364.561,
+        "pdf_y_von_oben_pt": 2122.615,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "507 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "508",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.529609,
+          54.712535
+        ]
+      },
+      "properties": {
+        "id": "508",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.797,
+        "pdf_x_pt": 1355.261,
+        "pdf_y_von_oben_pt": 2119.757,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "508 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "509",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528179,
+          54.711758
+        ]
+      },
+      "properties": {
+        "id": "509",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.454,
+        "pdf_x_pt": 1307.481,
+        "pdf_y_von_oben_pt": 2164.01,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "509 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "512",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526327,
+          54.711653
+        ]
+      },
+      "properties": {
+        "id": "512",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.307,
+        "pdf_x_pt": 1245.941,
+        "pdf_y_von_oben_pt": 2169.633,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "512 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "513",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526393,
+          54.711854
+        ]
+      },
+      "properties": {
+        "id": "513",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 1248.228,
+        "pdf_y_von_oben_pt": 2158.1,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "513 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "514",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.528132,
+          54.712958
+        ]
+      },
+      "properties": {
+        "id": "514",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.94,
+        "pdf_x_pt": 1306.374,
+        "pdf_y_von_oben_pt": 2095.148,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "514 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "515",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52636,
+          54.713199
+        ]
+      },
+      "properties": {
+        "id": "515",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.916,
+        "pdf_x_pt": 1247.651,
+        "pdf_y_von_oben_pt": 2080.994,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "515 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "521",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.534213,
+          54.715063
+        ]
+      },
+      "properties": {
+        "id": "521",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.091,
+        "pdf_x_pt": 1509.088,
+        "pdf_y_von_oben_pt": 1975.783,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "521 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "522",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550154,
+          54.730042
+        ]
+      },
+      "properties": {
+        "id": "522",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.947,
+        "pdf_x_pt": 2043.82,
+        "pdf_y_von_oben_pt": 1120.241,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "522 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "523",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.561996,
+          54.743012
+        ]
+      },
+      "properties": {
+        "id": "523",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.783,
+        "pdf_x_pt": 2441.469,
+        "pdf_y_von_oben_pt": 379.066,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "523 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "524",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.557029,
+          54.745254
+        ]
+      },
+      "properties": {
+        "id": "524",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.013,
+        "pdf_x_pt": 2277.501,
+        "pdf_y_von_oben_pt": 249.423,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "524 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "531",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.524227,
+          54.718031
+        ]
+      },
+      "properties": {
+        "id": "531",
+        "typ": "Saugstelle",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.091,
+        "pdf_x_pt": 1178.706,
+        "pdf_y_von_oben_pt": 1803.396,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#00897b",
+        "marker-symbol": "harbor",
+        "marker-size": "medium",
+        "title": "531 - Saugstelle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "532",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523537,
+          54.71747
+        ]
+      },
+      "properties": {
+        "id": "532",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.91,
+        "pdf_x_pt": 1155.558,
+        "pdf_y_von_oben_pt": 1835.411,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "532 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "533",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521128,
+          54.717199
+        ]
+      },
+      "properties": {
+        "id": "533",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.014,
+        "pdf_x_pt": 1075.49,
+        "pdf_y_von_oben_pt": 1850.466,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "533 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "534",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.519054,
+          54.71664
+        ]
+      },
+      "properties": {
+        "id": "534",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.921,
+        "pdf_x_pt": 1006.415,
+        "pdf_y_von_oben_pt": 1882.054,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "534 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "535",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517595,
+          54.716182
+        ]
+      },
+      "properties": {
+        "id": "535",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 957.802,
+        "pdf_y_von_oben_pt": 1907.986,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "535 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "536",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.515602,
+          54.71485
+        ]
+      },
+      "properties": {
+        "id": "536",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.964,
+        "pdf_x_pt": 891.113,
+        "pdf_y_von_oben_pt": 1983.965,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "536 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "537",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523485,
+          54.716695
+        ]
+      },
+      "properties": {
+        "id": "537",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.0,
+        "pdf_x_pt": 1153.559,
+        "pdf_y_von_oben_pt": 1879.843,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "537 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "538",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523344,
+          54.715873
+        ]
+      },
+      "properties": {
+        "id": "538",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.153,
+        "pdf_x_pt": 1148.559,
+        "pdf_y_von_oben_pt": 1926.983,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "538 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "539",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522985,
+          54.715475
+        ]
+      },
+      "properties": {
+        "id": "539",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.827,
+        "pdf_x_pt": 1136.476,
+        "pdf_y_von_oben_pt": 1949.689,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "539 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "541",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521022,
+          54.715153
+        ]
+      },
+      "properties": {
+        "id": "541",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.773,
+        "pdf_x_pt": 1071.176,
+        "pdf_y_von_oben_pt": 1967.78,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "541 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "542",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.520348,
+          54.714841
+        ]
+      },
+      "properties": {
+        "id": "542",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.148,
+        "pdf_x_pt": 1048.683,
+        "pdf_y_von_oben_pt": 1985.508,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "542 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "543",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.51888,
+          54.714754
+        ]
+      },
+      "properties": {
+        "id": "543",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.182,
+        "pdf_x_pt": 999.905,
+        "pdf_y_von_oben_pt": 1990.18,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "543 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "544",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518521,
+          54.714813
+        ]
+      },
+      "properties": {
+        "id": "544",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.987,
+        "pdf_x_pt": 987.997,
+        "pdf_y_von_oben_pt": 1986.742,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "544 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "545",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518445,
+          54.714087
+        ]
+      },
+      "properties": {
+        "id": "545",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.839,
+        "pdf_x_pt": 985.188,
+        "pdf_y_von_oben_pt": 2028.332,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "545 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "547",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522319,
+          54.713907
+        ]
+      },
+      "properties": {
+        "id": "547",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.832,
+        "pdf_x_pt": 1113.748,
+        "pdf_y_von_oben_pt": 2039.48,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "547 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "548",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522241,
+          54.71498
+        ]
+      },
+      "properties": {
+        "id": "548",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.878,
+        "pdf_x_pt": 1111.584,
+        "pdf_y_von_oben_pt": 1977.943,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "548 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "549",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522151,
+          54.713573
+        ]
+      },
+      "properties": {
+        "id": "549",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 1108.032,
+        "pdf_y_von_oben_pt": 2058.638,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "549 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "551",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522427,
+          54.713251
+        ]
+      },
+      "properties": {
+        "id": "551",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.542,
+        "pdf_x_pt": 1117.084,
+        "pdf_y_von_oben_pt": 2077.152,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "551 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "552",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.521826,
+          54.713313
+        ]
+      },
+      "properties": {
+        "id": "552",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.962,
+        "pdf_x_pt": 1097.15,
+        "pdf_y_von_oben_pt": 2073.452,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "552 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "553",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.520467,
+          54.71308
+        ]
+      },
+      "properties": {
+        "id": "553",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.887,
+        "pdf_x_pt": 1051.932,
+        "pdf_y_von_oben_pt": 2086.498,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "553 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "554",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522344,
+          54.712458
+        ]
+      },
+      "properties": {
+        "id": "554",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.855,
+        "pdf_x_pt": 1114.018,
+        "pdf_y_von_oben_pt": 2122.607,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "554 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "555",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.522368,
+          54.711833
+        ]
+      },
+      "properties": {
+        "id": "555",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.049,
+        "pdf_x_pt": 1114.571,
+        "pdf_y_von_oben_pt": 2158.434,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "555 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "556",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.518483,
+          54.71218
+        ]
+      },
+      "properties": {
+        "id": "556",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.018,
+        "pdf_x_pt": 985.711,
+        "pdf_y_von_oben_pt": 2137.701,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "556 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "557",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517127,
+          54.712383
+        ]
+      },
+      "properties": {
+        "id": "557",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.926,
+        "pdf_x_pt": 940.783,
+        "pdf_y_von_oben_pt": 2125.754,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "557 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "558",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517771,
+          54.713011
+        ]
+      },
+      "properties": {
+        "id": "558",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.974,
+        "pdf_x_pt": 962.385,
+        "pdf_y_von_oben_pt": 2089.906,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "558 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "559",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.517995,
+          54.713311
+        ]
+      },
+      "properties": {
+        "id": "559",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.877,
+        "pdf_x_pt": 969.961,
+        "pdf_y_von_oben_pt": 2072.725,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "559 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "561",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.526526,
+          54.734623
+        ]
+      },
+      "properties": {
+        "id": "561",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.953,
+        "pdf_x_pt": 1261.419,
+        "pdf_y_von_oben_pt": 852.384,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "561 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "562",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.523607,
+          54.742139
+        ]
+      },
+      "properties": {
+        "id": "562",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.787,
+        "pdf_x_pt": 1167.462,
+        "pdf_y_von_oben_pt": 420.746,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "562 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "563",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.525155,
+          54.744417
+        ]
+      },
+      "properties": {
+        "id": "563",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.278,
+        "pdf_x_pt": 1219.716,
+        "pdf_y_von_oben_pt": 290.417,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "563 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "564",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.511645,
+          54.736431
+        ]
+      },
+      "properties": {
+        "id": "564",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.839,
+        "pdf_x_pt": 768.308,
+        "pdf_y_von_oben_pt": 745.449,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "564 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "567",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.510604,
+          54.708824
+        ]
+      },
+      "properties": {
+        "id": "567",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.827,
+        "pdf_x_pt": 722.775,
+        "pdf_y_von_oben_pt": 2328.479,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "567 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "571",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.509973,
+          54.711984
+        ]
+      },
+      "properties": {
+        "id": "571",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 703.079,
+        "pdf_y_von_oben_pt": 2147.094,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "571 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "572",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.509618,
+          54.710203
+        ]
+      },
+      "properties": {
+        "id": "572",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.138,
+        "pdf_x_pt": 690.575,
+        "pdf_y_von_oben_pt": 2249.198,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "572 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "575",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.509212,
+          54.70952
+        ]
+      },
+      "properties": {
+        "id": "575",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.513,
+        "pdf_x_pt": 676.842,
+        "pdf_y_von_oben_pt": 2288.259,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "575 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "576",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.512122,
+          54.708655
+        ]
+      },
+      "properties": {
+        "id": "576",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.096,
+        "pdf_x_pt": 773.111,
+        "pdf_y_von_oben_pt": 2338.518,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "576 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "578",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.507976,
+          54.709082
+        ]
+      },
+      "properties": {
+        "id": "578",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.88,
+        "pdf_x_pt": 635.632,
+        "pdf_y_von_oben_pt": 2313.091,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "578 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "579",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.509026,
+          54.708779
+        ]
+      },
+      "properties": {
+        "id": "579",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.252,
+        "pdf_x_pt": 670.349,
+        "pdf_y_von_oben_pt": 2330.743,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "579 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "583",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.50891,
+          54.708184
+        ]
+      },
+      "properties": {
+        "id": "583",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.315,
+        "pdf_x_pt": 666.255,
+        "pdf_y_von_oben_pt": 2364.84,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "583 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "585",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.50755,
+          54.707904
+        ]
+      },
+      "properties": {
+        "id": "585",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.053,
+        "pdf_x_pt": 621.006,
+        "pdf_y_von_oben_pt": 2380.605,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "585 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "586",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.505809,
+          54.707944
+        ]
+      },
+      "properties": {
+        "id": "586",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.072,
+        "pdf_x_pt": 563.2,
+        "pdf_y_von_oben_pt": 2377.893,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "586 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "614",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.493936,
+          54.733476
+        ]
+      },
+      "properties": {
+        "id": "614",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.822,
+        "pdf_x_pt": 179.478,
+        "pdf_y_von_oben_pt": 911.047,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "614 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "615",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.502154,
+          54.737824
+        ]
+      },
+      "properties": {
+        "id": "615",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 1.064,
+        "pdf_x_pt": 453.958,
+        "pdf_y_von_oben_pt": 663.48,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "615 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "839",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.495631,
+          54.739196
+        ]
+      },
+      "properties": {
+        "id": "839",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "04_Foehr_Nord_Ost.pdf",
+        "ortsname": "Föhr (Nordost)",
+        "ortsquelle": "04_Foehr_Nord_Ost.pdf",
+        "zuordnungsabstand_relativ": 0.949,
+        "pdf_x_pt": 238.061,
+        "pdf_y_von_oben_pt": 583.383,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "839 - Hydrant"
+      }
+    }
+  ]
+}

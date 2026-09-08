@@ -1,0 +1,1238 @@
+{
+  "type": "FeatureCollection",
+  "name": "Borgsum_Dorf",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "716",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.468052,
+          54.693275
+        ]
+      },
+      "properties": {
+        "id": "716",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.687,
+        "pdf_x_pt": 845.242,
+        "pdf_y_von_oben_pt": 823.741,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "716 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "717",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.464181,
+          54.694216
+        ]
+      },
+      "properties": {
+        "id": "717",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.878,
+        "pdf_x_pt": 727.717,
+        "pdf_y_von_oben_pt": 773.365,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "717 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "725",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.463528,
+          54.697148
+        ]
+      },
+      "properties": {
+        "id": "725",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.869,
+        "pdf_x_pt": 708.98,
+        "pdf_y_von_oben_pt": 619.103,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "725 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "726",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462805,
+          54.697729
+        ]
+      },
+      "properties": {
+        "id": "726",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.783,
+        "pdf_x_pt": 687.208,
+        "pdf_y_von_oben_pt": 588.443,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "726 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "727",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.461911,
+          54.698428
+        ]
+      },
+      "properties": {
+        "id": "727",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.01,
+        "pdf_x_pt": 660.258,
+        "pdf_y_von_oben_pt": 551.462,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "727 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "728",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.46114,
+          54.697398
+        ]
+      },
+      "properties": {
+        "id": "728",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.008,
+        "pdf_x_pt": 636.365,
+        "pdf_y_von_oben_pt": 605.443,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "728 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "729",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459868,
+          54.69514
+        ]
+      },
+      "properties": {
+        "id": "729",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.872,
+        "pdf_x_pt": 596.747,
+        "pdf_y_von_oben_pt": 723.781,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "729 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "731",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.461031,
+          54.699137
+        ]
+      },
+      "properties": {
+        "id": "731",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.227,
+        "pdf_x_pt": 633.753,
+        "pdf_y_von_oben_pt": 513.995,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "731 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "732",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.460842,
+          54.69927
+        ]
+      },
+      "properties": {
+        "id": "732",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.028,
+        "pdf_x_pt": 628.039,
+        "pdf_y_von_oben_pt": 506.957,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "732 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "733",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459825,
+          54.699905
+        ]
+      },
+      "properties": {
+        "id": "733",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.885,
+        "pdf_x_pt": 597.311,
+        "pdf_y_von_oben_pt": 473.365,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "733 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "734",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459083,
+          54.699387
+        ]
+      },
+      "properties": {
+        "id": "734",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.977,
+        "pdf_x_pt": 574.524,
+        "pdf_y_von_oben_pt": 500.384,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "734 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "735",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458788,
+          54.698923
+        ]
+      },
+      "properties": {
+        "id": "735",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.834,
+        "pdf_x_pt": 565.376,
+        "pdf_y_von_oben_pt": 524.696,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "735 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "736",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458607,
+          54.698281
+        ]
+      },
+      "properties": {
+        "id": "736",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.836,
+        "pdf_x_pt": 559.604,
+        "pdf_y_von_oben_pt": 558.443,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "736 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "737",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458975,
+          54.700391
+        ]
+      },
+      "properties": {
+        "id": "737",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.034,
+        "pdf_x_pt": 571.631,
+        "pdf_y_von_oben_pt": 447.615,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "737 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "738",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458061,
+          54.700977
+        ]
+      },
+      "properties": {
+        "id": "738",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.766,
+        "pdf_x_pt": 544.034,
+        "pdf_y_von_oben_pt": 416.57,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "738 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "739",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457388,
+          54.701424
+        ]
+      },
+      "properties": {
+        "id": "739",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.81,
+        "pdf_x_pt": 523.749,
+        "pdf_y_von_oben_pt": 392.934,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "739 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "741",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.456898,
+          54.701839
+        ]
+      },
+      "properties": {
+        "id": "741",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.821,
+        "pdf_x_pt": 508.988,
+        "pdf_y_von_oben_pt": 371.015,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "741 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "742",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.455938,
+          54.700846
+        ]
+      },
+      "properties": {
+        "id": "742",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 479.362,
+        "pdf_y_von_oben_pt": 422.96,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "742 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "743",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.456286,
+          54.700541
+        ]
+      },
+      "properties": {
+        "id": "743",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.017,
+        "pdf_x_pt": 489.844,
+        "pdf_y_von_oben_pt": 439.096,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "743 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "744",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457018,
+          54.700253
+        ]
+      },
+      "properties": {
+        "id": "744",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.851,
+        "pdf_x_pt": 512.011,
+        "pdf_y_von_oben_pt": 454.42,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "744 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "745",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.45746,
+          54.699786
+        ]
+      },
+      "properties": {
+        "id": "745",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.698,
+        "pdf_x_pt": 525.288,
+        "pdf_y_von_oben_pt": 479.037,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "745 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "746",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.45815,
+          54.699393
+        ]
+      },
+      "properties": {
+        "id": "746",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.793,
+        "pdf_x_pt": 546.129,
+        "pdf_y_von_oben_pt": 499.885,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "746 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "747",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457838,
+          54.69918
+        ]
+      },
+      "properties": {
+        "id": "747",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.976,
+        "pdf_x_pt": 536.552,
+        "pdf_y_von_oben_pt": 511.012,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "747 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "748",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457692,
+          54.69871
+        ]
+      },
+      "properties": {
+        "id": "748",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.687,
+        "pdf_x_pt": 531.902,
+        "pdf_y_von_oben_pt": 535.663,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "748 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "749",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.454936,
+          54.699017
+        ]
+      },
+      "properties": {
+        "id": "749",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.895,
+        "pdf_x_pt": 448.13,
+        "pdf_y_von_oben_pt": 518.885,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "749 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "751",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462454,
+          54.701741
+        ]
+      },
+      "properties": {
+        "id": "751",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.814,
+        "pdf_x_pt": 678.089,
+        "pdf_y_von_oben_pt": 377.491,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "751 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "752",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.462401,
+          54.701698
+        ]
+      },
+      "properties": {
+        "id": "752",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.922,
+        "pdf_x_pt": 676.46,
+        "pdf_y_von_oben_pt": 379.727,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "752 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "753",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.460707,
+          54.701447
+        ]
+      },
+      "properties": {
+        "id": "753",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.143,
+        "pdf_x_pt": 624.791,
+        "pdf_y_von_oben_pt": 392.533,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "753 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "754",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459495,
+          54.702051
+        ]
+      },
+      "properties": {
+        "id": "754",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.024,
+        "pdf_x_pt": 588.123,
+        "pdf_y_von_oben_pt": 360.498,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "754 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "755",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458072,
+          54.702053
+        ]
+      },
+      "properties": {
+        "id": "755",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.048,
+        "pdf_x_pt": 544.804,
+        "pdf_y_von_oben_pt": 360.066,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "755 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "756",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458734,
+          54.702618
+        ]
+      },
+      "properties": {
+        "id": "756",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.125,
+        "pdf_x_pt": 565.188,
+        "pdf_y_von_oben_pt": 330.478,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "756 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "757",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.459023,
+          54.702629
+        ]
+      },
+      "properties": {
+        "id": "757",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.089,
+        "pdf_x_pt": 573.992,
+        "pdf_y_von_oben_pt": 329.97,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "757 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "758",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.458736,
+          54.703623
+        ]
+      },
+      "properties": {
+        "id": "758",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.856,
+        "pdf_x_pt": 565.649,
+        "pdf_y_von_oben_pt": 277.675,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "758 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "759",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.457809,
+          54.704547
+        ]
+      },
+      "properties": {
+        "id": "759",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.852,
+        "pdf_x_pt": 537.774,
+        "pdf_y_von_oben_pt": 228.89,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "759 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "761",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.454576,
+          54.702377
+        ]
+      },
+      "properties": {
+        "id": "761",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.06,
+        "pdf_x_pt": 438.496,
+        "pdf_y_von_oben_pt": 342.216,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "761 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "762",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.453465,
+          54.702658
+        ]
+      },
+      "properties": {
+        "id": "762",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.822,
+        "pdf_x_pt": 404.806,
+        "pdf_y_von_oben_pt": 327.185,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "762 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "763",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.452329,
+          54.703039
+        ]
+      },
+      "properties": {
+        "id": "763",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.807,
+        "pdf_x_pt": 370.379,
+        "pdf_y_von_oben_pt": 306.869,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "763 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "764",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.453058,
+          54.704282
+        ]
+      },
+      "properties": {
+        "id": "764",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 1.116,
+        "pdf_x_pt": 393.062,
+        "pdf_y_von_oben_pt": 241.708,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "764 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "765",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.453292,
+          54.704451
+        ]
+      },
+      "properties": {
+        "id": "765",
+        "typ": "Bohrbrunnen",
+        "menge_l_min": null,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.984,
+        "pdf_x_pt": 400.264,
+        "pdf_y_von_oben_pt": 232.866,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#f9a825",
+        "marker-symbol": "water",
+        "marker-size": "medium",
+        "title": "765 - Bohrbrunnen"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "766",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.454894,
+          54.705215
+        ]
+      },
+      "properties": {
+        "id": "766",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.781,
+        "pdf_x_pt": 449.312,
+        "pdf_y_von_oben_pt": 193.086,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "766 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "767",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.444227,
+          54.708384
+        ]
+      },
+      "properties": {
+        "id": "767",
+        "typ": "Hydrant",
+        "menge_l_min": 400,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.926,
+        "pdf_x_pt": 125.921,
+        "pdf_y_von_oben_pt": 24.051,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "767 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "780",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442056,
+          54.698057
+        ]
+      },
+      "properties": {
+        "id": "780",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.835,
+        "pdf_x_pt": 55.594,
+        "pdf_y_von_oben_pt": 566.33,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "780 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "781",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442078,
+          54.699009
+        ]
+      },
+      "properties": {
+        "id": "781",
+        "typ": "Hydrant",
+        "menge_l_min": 1600,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.917,
+        "pdf_x_pt": 56.679,
+        "pdf_y_von_oben_pt": 516.293,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "781 - Hydrant"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "782",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.442469,
+          54.699946
+        ]
+      },
+      "properties": {
+        "id": "782",
+        "typ": "Hydrant",
+        "menge_l_min": 800,
+        "quellkarte": "Borgsum_Dorf.pdf",
+        "ortsname": "Borgsum",
+        "ortsquelle": "Borgsum_Dorf.pdf",
+        "zuordnungsabstand_relativ": 0.785,
+        "pdf_x_pt": 68.961,
+        "pdf_y_von_oben_pt": 467.102,
+        "koordinatenquelle": "eingebettete GeoPDF-Georeferenzierung",
+        "lagehinweis": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt",
+        "marker-color": "#1565c0",
+        "marker-symbol": "fire-station",
+        "marker-size": "medium",
+        "title": "782 - Hydrant"
+      }
+    }
+  ]
+}
