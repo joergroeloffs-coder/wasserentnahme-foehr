@@ -608,7 +608,7 @@ function aktualisierePeilKarte(fit){
       peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
     } else if(peilAutoZoom){
       const m = distanz(pos.latitude, pos.longitude, ziel.lat, ziel.lon);
-      peilMap.setView(eigeneLL, zoomFuerEntfernung(m));
+      peilMap.setView(zielLL, zoomFuerEntfernung(m));
     }
   } else if(fit){
     peilMap.setView(zielLL, 15);
