@@ -946,10 +946,18 @@ function geoJsonZuStellen(j){
   (j.features || []).forEach(ft => {
     if(!ft.geometry || ft.geometry.type !== "Point") return;
     const p = ft.properties || {}, c = ft.geometry.coordinates;
-    eingelesen.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+    let menge = p.flow_rate || p.menge || "";
+    if(!menge && typeof p.menge_l_min === "number"){
+      menge = Math.round(p.menge_l_min * 0.06 * 10) / 10; // L/min -> m³/h
+    }
+    let bem = p.description || p.bem || "";
+    if(!bem && (p.lagegenauigkeit || p.quelle)){
+      bem = [p.lagegenauigkeit, p.quelle ? "Quelle: " + p.quelle : ""].filter(Boolean).join(" · ");
+    }
+    eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: p.name || p.ort || p.addr || "",
       ortschaft: p["addr:city"] || p.ortschaft || "",
-      typ: p.art || p["fire_hydrant:type"] || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
-      menge: p.flow_rate || "", bem: p.description || p.bem || "",
+      typ: p.art || p["fire_hydrant:type"] || p.typ || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
+      menge: menge, bem: bem,
       lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
   });
   return eingelesen;

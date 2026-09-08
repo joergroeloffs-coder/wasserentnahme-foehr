@@ -1,4 +1,553 @@
 {
-  "type": "FeatureCollection",
-  "features": []
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.532594,
+     54.706087
+    ]
+   },
+   "properties": {
+    "ref": "481",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 192,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5344,
+     54.708483
+    ]
+   },
+   "properties": {
+    "ref": "482",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.53522,
+     54.708802
+    ]
+   },
+   "properties": {
+    "ref": "483",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.532956,
+     54.708518
+    ]
+   },
+   "properties": {
+    "ref": "484",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 192,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.532003,
+     54.70917
+    ]
+   },
+   "properties": {
+    "ref": "485",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 192,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.533147,
+     54.709483
+    ]
+   },
+   "properties": {
+    "ref": "486",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.533478,
+     54.709984
+    ]
+   },
+   "properties": {
+    "ref": "487",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.533018,
+     54.710212
+    ]
+   },
+   "properties": {
+    "ref": "488",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.532824,
+     54.710555
+    ]
+   },
+   "properties": {
+    "ref": "489",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.527572,
+     54.70938
+    ]
+   },
+   "properties": {
+    "ref": "492",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "E-Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528225,
+     54.709617
+    ]
+   },
+   "properties": {
+    "ref": "493",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.529435,
+     54.709938
+    ]
+   },
+   "properties": {
+    "ref": "494",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528785,
+     54.71013
+    ]
+   },
+   "properties": {
+    "ref": "495",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528587,
+     54.710543
+    ]
+   },
+   "properties": {
+    "ref": "496",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.530947,
+     54.710081
+    ]
+   },
+   "properties": {
+    "ref": "497",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.53222,
+     54.711081
+    ]
+   },
+   "properties": {
+    "ref": "498",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 192,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.530396,
+     54.710388
+    ]
+   },
+   "properties": {
+    "ref": "499",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.530108,
+     54.710849
+    ]
+   },
+   "properties": {
+    "ref": "502",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.532063,
+     54.71181
+    ]
+   },
+   "properties": {
+    "ref": "503",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.531265,
+     54.71207
+    ]
+   },
+   "properties": {
+    "ref": "504",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.52898,
+     54.711409
+    ]
+   },
+   "properties": {
+    "ref": "505",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528711,
+     54.71143
+    ]
+   },
+   "properties": {
+    "ref": "506",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.529899,
+     54.712499
+    ]
+   },
+   "properties": {
+    "ref": "507",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.52961,
+     54.712545
+    ]
+   },
+   "properties": {
+    "ref": "508",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528179,
+     54.711767
+    ]
+   },
+   "properties": {
+    "ref": "509",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.526325,
+     54.711667
+    ]
+   },
+   "properties": {
+    "ref": "512",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.526402,
+     54.711865
+    ]
+   },
+   "properties": {
+    "ref": "513",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.528134,
+     54.712974
+    ]
+   },
+   "properties": {
+    "ref": "514",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 96,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.526367,
+     54.71321
+    ]
+   },
+   "properties": {
+    "ref": "515",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 48,
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.534221,
+     54.715078
+    ]
+   },
+   "properties": {
+    "ref": "521",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Saugstelle",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.523355,
+     54.715885
+    ]
+   },
+   "properties": {
+    "ref": "538",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "Nicht vermessungstechnisch bestimmt; kartografische Position, keine Vor-Ort-Bestaetigung · Quelle: Oevenum_Dorf (1).pdf"
+   }
+  }
+ ]
 }
