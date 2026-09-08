@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1116">
+<title>Wasserentnahmestellen</title>
+<style>
+  :root{
+    --bg:#0d1116;
+    --panel:#161d25;
+    --panel-2:#1e2833;
+    --line:#2b3743;
+    --text:#e6edf3;
+    --dim:#93a3b3;
+    --signal:#e23c22;
+    --ok:#3fb26a;
+    --warn:#e8a020;
+    --touch:56px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Roboto","Segoe UI",sans-serif;
+    font-size:17px;line-height:1.35;
+    display:flex;flex-direction:column;
+    overscroll-behavior:none;
+  }
+  header{
+    padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:12px;flex:none;
+  }
+  header h1{font-size:16px;font-weight:600;margin:0;letter-spacing:.2px}
+  #gps{margin-left:auto;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
+  #gps b{display:block;font-size:15px;font-weight:600}
+  .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
+
+  main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .view{display:none;padding:12px 14px 24px}
+  .view.on{display:block}
+
+  nav{
+    flex:none;display:grid;grid-template-columns:repeat(3,1fr);
+    background:var(--panel);border-top:1px solid var(--line);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  nav button{
+    background:none;border:0;color:var(--dim);font:inherit;font-size:15px;
+    padding:14px 4px;min-height:var(--touch);cursor:pointer;
+  }
+  nav button.on{color:var(--text);box-shadow:inset 0 3px 0 var(--signal)}
+
+  input,select,textarea,button{font:inherit}
+  input,select,textarea{
+    width:100%;background:var(--panel-2);color:var(--text);
+    border:1px solid var(--line);border-radius:6px;padding:12px;min-height:var(--touch);
+  }
+  label{display:block;margin:14px 0 5px;font-size:14px;color:var(--dim)}
+  .btn{
+    display:block;width:100%;min-height:var(--touch);border:0;border-radius:6px;
+    background:var(--panel-2);color:var(--text);padding:14px;cursor:pointer;
+    border:1px solid var(--line);
+  }
+  .btn.primary{background:var(--signal);border-color:var(--signal);font-weight:600}
+  .btn.ghost{background:none}
+  .row{display:flex;gap:10px}
+  .row>*{flex:1}
+
+  /* Liste */
+  #suche{margin-bottom:10px}
+  .item{
+    display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:12px 14px;margin-bottom:8px;min-height:var(--touch);cursor:pointer;color:inherit;
+  }
+  .item .dist{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;min-width:92px}
+  .item .meta{font-size:14px;color:var(--dim);margin-top:2px}
+  .item .name{font-size:17px}
+  .tag{
+    font-size:12px;padding:2px 7px;border-radius:4px;border:1px solid var(--line);
+    color:var(--dim);margin-left:8px;white-space:nowrap;
+  }
+  .empty{color:var(--dim);padding:28px 4px;font-size:16px}
+
+  /* Peilung */
+  #peil{display:none;padding:12px 14px 24px}
+  #peil.on{display:block}
+  .ziel{font-size:20px;font-weight:600;margin-bottom:2px}
+  .ziel-meta{color:var(--dim);font-size:14px;margin-bottom:14px}
+  .kompass{display:block;margin:0 auto;width:min(78vw,300px);height:min(78vw,300px)}
+  .abstand{text-align:center;margin-top:6px}
+  .abstand .m{font-size:56px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+  .abstand .u{color:var(--dim);font-size:15px}
+  .hinweis{
+    margin-top:16px;padding:12px;border-radius:6px;background:var(--panel);
+    border:1px solid var(--line);font-size:14px;color:var(--dim);
+  }
+  .hinweis.warn{border-color:var(--warn);color:var(--warn)}
+  .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
+  h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
+  .zeile{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .zeile span:last-child{color:var(--dim)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wasserentnahmestellen</h1>
+  <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
+</header>
+
+<main>
+  <!-- Peilansicht -->
+  <section id="peil">
+    <button class="btn ghost" id="zurueck" style="margin-bottom:14px">Zurück zur Liste</button>
+    <div class="ziel" id="zielName">–</div>
+    <div class="ziel-meta" id="zielMeta"></div>
+    <svg class="kompass" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
+      <g id="ring">
+        <text x="100" y="24" text-anchor="middle" fill="#93a3b3" font-size="15" font-family="system-ui">N</text>
+        <text x="176" y="106" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">O</text>
+        <text x="100" y="188" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">S</text>
+        <text x="24" y="106" text-anchor="middle" fill="#5d6d7d" font-size="13" font-family="system-ui">W</text>
+      </g>
+      <g id="pfeil">
+        <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+      </g>
+      <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+    </svg>
+    <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
+    <div class="koord" id="zielKoord"></div>
+    <div class="hinweis" id="peilHinweis"></div>
+  </section>
+
+  <!-- Liste -->
+  <section id="v-liste" class="view on">
+    <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
+    <div id="liste"></div>
+  </section>
+
+  <!-- Erfassen -->
+  <section id="v-neu" class="view">
+    <label for="f-nr">Nummer oder Kurzname</label>
+    <input id="f-nr" placeholder="z. B. H-042">
+    <label for="f-ort">Straße und Lage</label>
+    <input id="f-ort" placeholder="z. B. Sandwall, Gehweg vor Nr. 12">
+    <label for="f-typ">Art</label>
+    <select id="f-typ">
+      <option value="Unterflurhydrant">Unterflurhydrant</option>
+      <option value="Überflurhydrant">Überflurhydrant</option>
+      <option value="Saugstelle">Saugstelle / offenes Gewässer</option>
+      <option value="Löschwasserbrunnen">Löschwasserbrunnen</option>
+      <option value="Zisterne">Zisterne / Behälter</option>
+    </select>
+    <div class="row">
+      <div>
+        <label for="f-dn">Nennweite</label>
+        <select id="f-dn">
+          <option value="">unbekannt</option>
+          <option>DN 80</option><option>DN 100</option><option>DN 125</option>
+          <option>DN 150</option><option>DN 200</option><option>DN 300</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-menge">Ergiebigkeit</label>
+        <input id="f-menge" inputmode="numeric" placeholder="m³/h">
+      </div>
+    </div>
+    <label for="f-bem">Bemerkung</label>
+    <textarea id="f-bem" rows="2" placeholder="Zufahrt, Besonderheiten, Zustand"></textarea>
+
+    <div class="hinweis" id="neuPos">Position wird beim Speichern vom GPS übernommen.</div>
+    <button class="btn primary" id="speichern" style="margin-top:12px">Am aktuellen Standort speichern</button>
+    <button class="btn ghost" id="manuell" style="margin-top:8px">Koordinaten von Hand eingeben</button>
+  </section>
+
+  <!-- Daten -->
+  <section id="v-daten" class="view">
+    <div class="zeile"><span>Gespeicherte Stellen</span><span id="d-anzahl">0</span></div>
+    <div class="zeile"><span>Speicherung</span><span id="d-speicher">–</span></div>
+    <div class="zeile"><span>Kompass</span><span id="d-kompass">wird geprüft</span></div>
+
+    <h2>Sichern und übertragen</h2>
+    <button class="btn" id="export">Als GeoJSON exportieren</button>
+    <label for="import" style="margin-top:10px">GeoJSON einlesen</label>
+    <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
+    <div class="hinweis">Der Import ergänzt den Bestand. Punkte mit gleicher Nummer werden überschrieben.</div>
+
+    <h2>Datenbestand</h2>
+    <button class="btn" id="loeschen">Alle Stellen auf diesem Gerät löschen</button>
+
+    <h2>Bedienung</h2>
+    <div class="hinweis">
+      Die Anwendung arbeitet ohne Netz. Sie zeigt Luftlinie und Richtung, keine Fahrstrecke —
+      der Pfeil zeigt geradeaus zum Ziel, nicht auf die Straße.
+      Der Pfeil richtet sich nach dem Magnetkompass des Tablets. Ohne Kompass wird die
+      Fahrtrichtung aus der GPS-Bewegung verwendet; dann stimmt die Anzeige nur bei Fahrt.
+    </div>
+  </section>
+</main>
+
+<nav>
+  <button data-view="v-liste" class="on">Suchen</button>
+  <button data-view="v-neu">Erfassen</button>
+  <button data-view="v-daten">Daten</button>
+</nav>
+
+<script>
+"use strict";
+const KEY = "wasserentnahme.foehr.v1";
+
+/* ---------- Speicher: localStorage mit Rückfall auf Arbeitsspeicher ---------- */
+const store = {
+  persistent: (() => { try { localStorage.setItem("__t","1"); localStorage.removeItem("__t"); return true; } catch(e){ return false; } })(),
+  mem: [],
+  load(){ if(this.persistent){ try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch(e){ return []; } } return this.mem; },
+  save(d){ if(this.persistent){ try { localStorage.setItem(KEY, JSON.stringify(d)); return; } catch(e){} } this.mem = d; }
+};
+let stellen = store.load();
+
+/* ---------- Geometrie ---------- */
+const R = 6371008.8, rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+function distanz(a,b,c,d){
+  const p=rad(a),q=rad(c),dp=rad(c-a),dl=rad(d-b);
+  const x=Math.sin(dp/2)**2+Math.cos(p)*Math.cos(q)*Math.sin(dl/2)**2;
+  return 2*R*Math.asin(Math.sqrt(x));
+}
+function peilung(a,b,c,d){
+  const p=rad(a),q=rad(c),dl=rad(d-b);
+  const y=Math.sin(dl)*Math.cos(q);
+  const x=Math.cos(p)*Math.sin(q)-Math.sin(p)*Math.cos(q)*Math.cos(dl);
+  return (deg(Math.atan2(y,x))+360)%360;
+}
+const fmtDist = m => m<1000 ? Math.round(m)+" m" : (m/1000).toFixed(1)+" km";
+
+/* ---------- GPS ---------- */
+let pos = null;
+const gpsBox = document.getElementById("gps");
+const gpsDetail = document.getElementById("gpsdetail");
+
+if("geolocation" in navigator){
+  navigator.geolocation.watchPosition(p => {
+    pos = p.coords;
+    gpsBox.classList.toggle("fix-ok", p.coords.accuracy <= 15);
+    gpsBox.classList.toggle("fix-bad", p.coords.accuracy > 15);
+    gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
+    gpsDetail.textContent = p.coords.latitude.toFixed(5) + ", " + p.coords.longitude.toFixed(5);
+    if(typeof p.coords.heading === "number" && !isNaN(p.coords.heading) && p.coords.speed > 1) gpsKurs = p.coords.heading;
+    zeichneListe(); aktualisierePeil();
+  }, err => {
+    gpsBox.querySelector("b").textContent = "kein GPS";
+    gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
+  }, { enableHighAccuracy:true, maximumAge:2000, timeout:20000 });
+} else {
+  gpsDetail.textContent = "vom Gerät nicht unterstützt";
+}
+
+/* ---------- Kompass ---------- */
+let kompass = null, gpsKurs = null, kompassAktiv = false;
+function orientierung(e){
+  let h = null;
+  if(typeof e.webkitCompassHeading === "number") h = e.webkitCompassHeading;
+  else if(e.absolute && typeof e.alpha === "number") h = (360 - e.alpha) % 360;
+  if(h !== null){ kompass = h; kompassAktiv = true; document.getElementById("d-kompass").textContent = "aktiv"; aktualisierePeil(); }
+}
+window.addEventListener("deviceorientationabsolute", orientierung, true);
+window.addEventListener("deviceorientation", orientierung, true);
+setTimeout(() => { if(!kompassAktiv) document.getElementById("d-kompass").textContent = "nicht verfügbar, Fahrtrichtung wird genutzt"; }, 4000);
+
+/* ---------- Ansichten ---------- */
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  document.getElementById("peil").classList.remove("on");
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === b.dataset.view));
+  if(b.dataset.view === "v-daten") zeichneDaten();
+}));
+
+/* ---------- Liste ---------- */
+const listeEl = document.getElementById("liste");
+const sucheEl = document.getElementById("suche");
+sucheEl.addEventListener("input", zeichneListe);
+
+function zeichneListe(){
+  if(document.getElementById("peil").classList.contains("on")) return;
+  const q = sucheEl.value.trim().toLowerCase();
+  let d = stellen.slice();
+  if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
+  if(pos) d.forEach(s => s._d = distanz(pos.latitude,pos.longitude,s.lat,s.lon));
+  d.sort((a,b) => pos ? a._d-b._d : (a.nr||"").localeCompare(b.nr||""));
+
+  if(!d.length){
+    listeEl.innerHTML = '<div class="empty">' +
+      (stellen.length ? "Kein Treffer für diese Suche." : "Noch keine Stellen erfasst. Über „Erfassen“ den ersten Punkt aufnehmen oder unter „Daten“ eine GeoJSON-Datei einlesen.") +
+      "</div>";
+    return;
+  }
+  listeEl.innerHTML = "";
+  d.slice(0,200).forEach(s => {
+    const b = document.createElement("button");
+    b.className = "item";
+    b.innerHTML =
+      '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
+      '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
+      (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
+      '<div class="meta">' + esc(s.ort || s.typ) + '</div></span>';
+    b.addEventListener("click", () => oeffnePeil(s));
+    listeEl.appendChild(b);
+  });
+}
+const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+
+/* ---------- Peilung ---------- */
+let ziel = null;
+function oeffnePeil(s){
+  ziel = s;
+  document.getElementById("peil").classList.add("on");
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
+  document.getElementById("zielName").textContent = s.nr || "ohne Nummer";
+  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ort].filter(Boolean).join(" · ");
+  document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  aktualisierePeil();
+}
+document.getElementById("zurueck").addEventListener("click", () => {
+  document.getElementById("peil").classList.remove("on");
+  document.getElementById("v-liste").classList.add("on");
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
+  zeichneListe();
+});
+
+function aktualisierePeil(){
+  if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
+  const mEl = document.getElementById("abstandM"), uEl = document.getElementById("abstandU");
+  if(!pos){ mEl.textContent = "–"; uEl.textContent = "keine eigene Position"; return; }
+  const m = distanz(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  mEl.textContent = m < 1000 ? Math.round(m) : (m/1000).toFixed(1);
+  uEl.textContent = m < 1000 ? "Meter Luftlinie" : "Kilometer Luftlinie";
+  const b = peilung(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  const ref = kompassAktiv ? kompass : (gpsKurs !== null ? gpsKurs : 0);
+  const dreh = (b - ref + 360) % 360;
+  document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
+  document.getElementById("ring").setAttribute("transform", "rotate(" + (-ref).toFixed(1) + " 100 100)");
+}
+
+/* ---------- Erfassen ---------- */
+document.getElementById("speichern").addEventListener("click", () => {
+  if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben."); return; }
+  neu(pos.latitude, pos.longitude, Math.round(pos.accuracy));
+});
+document.getElementById("manuell").addEventListener("click", () => {
+  const t = prompt("Koordinaten eingeben als Breite, Länge\nBeispiel: 54.69123, 8.56541");
+  if(!t) return;
+  const p = t.split(/[,\s]+/).map(Number).filter(n => !isNaN(n));
+  if(p.length < 2){ alert("Eingabe nicht lesbar."); return; }
+  neu(p[0], p[1], null);
+});
+function neu(lat, lon, genau){
+  const s = {
+    nr: document.getElementById("f-nr").value.trim(),
+    ort: document.getElementById("f-ort").value.trim(),
+    typ: document.getElementById("f-typ").value,
+    dn: document.getElementById("f-dn").value,
+    menge: document.getElementById("f-menge").value.trim(),
+    bem: document.getElementById("f-bem").value.trim(),
+    lat: lat, lon: lon, genau: genau, erfasst: new Date().toISOString()
+  };
+  if(!s.nr && !s.ort){ alert("Nummer oder Lage angeben, sonst ist der Punkt später nicht auffindbar."); return; }
+  const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
+  if(i >= 0){ if(!confirm("Nummer " + s.nr + " ist bereits erfasst. Überschreiben?")) return; stellen[i] = s; }
+  else stellen.push(s);
+  store.save(stellen);
+  ["f-nr","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("neuPos").textContent =
+    "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
+  zeichneListe();
+}
+
+/* ---------- Daten ---------- */
+function zeichneDaten(){
+  document.getElementById("d-anzahl").textContent = stellen.length;
+  document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
+}
+document.getElementById("export").addEventListener("click", () => {
+  const fc = { type:"FeatureCollection", features: stellen.map(s => ({
+    type:"Feature",
+    geometry:{ type:"Point", coordinates:[s.lon, s.lat] },
+    properties:{ ref:s.nr, name:s.ort, "emergency":"fire_hydrant", art:s.typ,
+      "fire_hydrant:diameter":s.dn || undefined, "flow_rate":s.menge || undefined,
+      description:s.bem || undefined, "survey:date":(s.erfasst||"").slice(0,10) }
+  })) };
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(fc,null,1)], {type:"application/geo+json"}));
+  a.download = "wasserentnahmestellen-" + new Date().toISOString().slice(0,10) + ".geojson";
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+});
+document.getElementById("import").addEventListener("change", ev => {
+  const f = ev.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    let n = 0;
+    try {
+      const j = JSON.parse(r.result);
+      (j.features || []).forEach(ft => {
+        if(!ft.geometry || ft.geometry.type !== "Point") return;
+        const p = ft.properties || {}, c = ft.geometry.coordinates;
+        const s = { nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+          typ: p.art || p["fire_hydrant:type"] || "Hydrant", dn: p["fire_hydrant:diameter"] || p.dn || "",
+          menge: p.flow_rate || "", bem: p.description || p.bem || "",
+          lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" };
+        const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
+        if(i >= 0) stellen[i] = s; else stellen.push(s);
+        n++;
+      });
+      store.save(stellen); zeichneDaten(); zeichneListe();
+      alert(n + " Stellen eingelesen.");
+    } catch(e){ alert("Datei ist kein lesbares GeoJSON."); }
+    ev.target.value = "";
+  };
+  r.readAsText(f);
+});
+document.getElementById("loeschen").addEventListener("click", () => {
+  if(!confirm("Alle " + stellen.length + " Stellen löschen? Vorher exportieren, sonst sind die Daten weg.")) return;
+  stellen = []; store.save(stellen); zeichneDaten(); zeichneListe();
+});
+
+zeichneListe(); zeichneDaten();
+</script>
+</body>
+</html>
