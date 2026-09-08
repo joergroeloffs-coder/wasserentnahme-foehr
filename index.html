@@ -257,6 +257,18 @@
     <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
     <div class="hinweis">Der Import ersetzt den gesamten Bestand durch den Inhalt der Datei (mit Sicherheitsabfrage). So bleiben Löschungen aus dem Update erhalten.</div>
 
+    <h2>Schutz vor versehentlichem Ändern</h2>
+    <div class="zeile"><span>PIN-Schutz</span><span id="d-pin">–</span></div>
+    <div class="row">
+      <button class="btn" id="pin-einrichten">PIN einrichten/ändern</button>
+      <button class="btn ghost" id="pin-entfernen">PIN entfernen</button>
+    </div>
+    <div class="hinweis">
+      Ist ein PIN gesetzt, wird er beim Bearbeiten, Löschen und beim Datei-Import (Ersetzen)
+      abgefragt. Das schützt nur vor versehentlichem Antippen, nicht vor Missbrauch — der PIN
+      ist auf dem Gerät gespeichert und einsehbar.
+    </div>
+
     <h2>Datenbestand</h2>
     <button class="btn" id="loeschen">Alle Stellen auf diesem Gerät löschen</button>
 
@@ -458,6 +470,7 @@ document.getElementById("bearbeiten").addEventListener("click", () => {
 document.getElementById("einzelLoeschen").addEventListener("click", () => {
   const idx = stellen.indexOf(ziel);
   if(idx < 0) return;
+  if(!pinPruefen()) return;
   if(!confirm("Punkt „" + (ziel.nr || "ohne Nummer") + "“ wirklich löschen?")) return;
   stellen.splice(idx, 1);
   store.save(stellen);
@@ -588,7 +601,10 @@ function formularLeeren(){
 
 document.getElementById("speichern").addEventListener("click", () => {
   if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, null); return; }
-  if(bearbeiteIndex >= 0){ const s = stellen[bearbeiteIndex]; neu(s.lat, s.lon, s.genau); return; }
+  if(bearbeiteIndex >= 0){
+    if(!pinPruefen()) return;
+    const s = stellen[bearbeiteIndex]; neu(s.lat, s.lon, s.genau); return;
+  }
   if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben bzw. auf Karte antippen."); return; }
   neu(pos.latitude, pos.longitude, Math.round(pos.accuracy));
 });
@@ -637,7 +653,38 @@ function neu(lat, lon, genau){
 function zeichneDaten(){
   document.getElementById("d-anzahl").textContent = stellen.length;
   document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
+  document.getElementById("d-pin").textContent = pinGesetzt() ? "aktiv" : "nicht gesetzt";
 }
+
+/* ---------- PIN-Schutz ---------- */
+const PIN_KEY = "wasserentnahme.foehr.pin";
+function pinGesetzt(){ try { return !!localStorage.getItem(PIN_KEY); } catch(e){ return false; } }
+function pinPruefen(){
+  let gespeichert;
+  try { gespeichert = localStorage.getItem(PIN_KEY); } catch(e){ gespeichert = null; }
+  if(!gespeichert) return true;
+  const eingabe = prompt("PIN eingeben, um fortzufahren:");
+  if(eingabe === null) return false;
+  if(eingabe !== gespeichert){ alert("Falscher PIN."); return false; }
+  return true;
+}
+document.getElementById("pin-einrichten").addEventListener("click", () => {
+  const p1 = prompt("Neuen vierstelligen PIN eingeben:");
+  if(p1 === null) return;
+  if(!/^\d{4}$/.test(p1)){ alert("Bitte genau vier Ziffern eingeben."); return; }
+  const p2 = prompt("PIN zur Bestätigung wiederholen:");
+  if(p2 !== p1){ alert("PINs stimmen nicht überein."); return; }
+  try { localStorage.setItem(PIN_KEY, p1); } catch(e){ alert("PIN konnte nicht gespeichert werden."); return; }
+  zeichneDaten();
+  alert("PIN gesetzt.");
+});
+document.getElementById("pin-entfernen").addEventListener("click", () => {
+  if(!pinGesetzt()){ alert("Es ist kein PIN gesetzt."); return; }
+  if(!pinPruefen()) return;
+  try { localStorage.removeItem(PIN_KEY); } catch(e){}
+  zeichneDaten();
+  alert("PIN entfernt.");
+});
 document.getElementById("export").addEventListener("click", () => {
   const fc = { type:"FeatureCollection", features: stellen.map(s => ({
     type:"Feature",
@@ -669,6 +716,7 @@ document.getElementById("import").addEventListener("change", ev => {
       });
       if(!eingelesen.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
       if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + eingelesen.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
+      if(!pinPruefen()) { ev.target.value = ""; return; }
       stellen = eingelesen;
       store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
       alert(stellen.length + " Stellen eingelesen, Bestand ersetzt.");
@@ -679,6 +727,7 @@ document.getElementById("import").addEventListener("change", ev => {
 });
 document.getElementById("loeschen").addEventListener("click", () => {
   if(!confirm("Alle " + stellen.length + " Stellen löschen? Vorher exportieren, sonst sind die Daten weg.")) return;
+  if(!pinPruefen()) return;
   stellen = []; store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
 });
 
