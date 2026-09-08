@@ -11696,10 +11696,10 @@
    "properties": {
     "ref": "862",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 800,
+    "flow_rate": "800",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11716,10 +11716,10 @@
    "properties": {
     "ref": "863",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11755,10 +11755,10 @@
    "properties": {
     "ref": "865",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11775,10 +11775,10 @@
    "properties": {
     "ref": "866",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11795,10 +11795,10 @@
    "properties": {
     "ref": "867",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11835,10 +11835,10 @@
    "properties": {
     "ref": "869",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 800,
+    "flow_rate": "800",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11855,10 +11855,10 @@
    "properties": {
     "ref": "871",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
@@ -11875,10 +11875,10 @@
    "properties": {
     "ref": "872",
     "name": "",
-    "addr:city": "Oldsum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
     "survey:date": ""
    }
