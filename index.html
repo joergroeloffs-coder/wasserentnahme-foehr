@@ -98,6 +98,10 @@
     padding:12px 14px;margin-bottom:8px;min-height:var(--touch);cursor:pointer;color:inherit;
   }
   .item .dist{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;min-width:92px}
+  .item-edit{
+    margin-left:auto;background:none;border:1px solid var(--line);color:var(--dim);
+    border-radius:6px;min-width:44px;min-height:44px;font-size:18px;cursor:pointer;flex:none;
+  }
   .item .meta{font-size:14px;color:var(--dim);margin-top:2px}
   .item .name{font-size:17px}
   .tag{
@@ -122,6 +126,10 @@
     position:relative;pointer-events:auto;padding:10px 14px 18px;
     background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
   }
+  .peil-zurueck-btn{
+    position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
+    width:auto;min-height:44px;padding:10px 18px;background:#0d1116cc;
+  }
   .peil-unten{
     pointer-events:auto;padding:18px 14px 14px;
     background:linear-gradient(transparent, #0d1116aa 40%, #0d1116ee);
@@ -138,7 +146,7 @@
   .hinweis.warn{border-color:var(--warn);color:var(--warn)}
   .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
   .kompass-mini{
-    position:absolute;right:14px;top:10px;
+    position:fixed;right:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
     width:64px;height:64px;background:#0d1116cc;border:1px solid var(--line);
     border-radius:10px;padding:4px;pointer-events:none;
   }
@@ -164,35 +172,31 @@
 </header>
 
 <main>
-  <!-- Peilansicht (Navigation): Karte vollflächig, Bedienelemente nur bei Berührung -->
+  <!-- Peilansicht (Navigation): Karte vollflächig, Pfeil dauerhaft sichtbar, Rest nur bei Berührung -->
   <section id="peil">
     <div id="peilMap"></div>
+    <svg class="kompass-mini" id="kompassMini" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
+      <g id="ring">
+        <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
+      </g>
+      <g id="pfeil">
+        <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+      </g>
+      <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+    </svg>
+    <button class="btn ghost peil-zurueck-btn" id="zurueck">Zurück</button>
     <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
     <div class="peil-overlay" id="peilOverlay">
       <div class="peil-oben">
-        <button class="btn ghost" id="zurueck">Zurück zur Liste</button>
         <div class="ziel" id="zielName">–</div>
         <div class="ziel-meta" id="zielMeta"></div>
-        <svg class="kompass-mini" viewBox="0 0 200 200" aria-hidden="true">
-          <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
-          <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
-          <g id="ring">
-            <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
-          </g>
-          <g id="pfeil">
-            <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
-          </g>
-          <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
-        </svg>
       </div>
       <div class="peil-unten">
         <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
         <div class="koord" id="zielKoord"></div>
         <div class="hinweis" id="peilHinweis"></div>
-        <div class="row" style="margin-top:14px">
-          <button class="btn" id="bearbeiten">Bearbeiten</button>
-          <button class="btn ghost" id="einzelLoeschen" style="color:var(--signal);border-color:var(--signal)">Löschen</button>
-        </div>
       </div>
     </div>
   </section>
@@ -216,14 +220,7 @@
       </div>
       <div>
         <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
-        <select id="f-typ-filter">
-          <option value="">Alle Arten</option>
-          <option value="Unterflurhydrant">Unterflurhydrant</option>
-          <option value="Überflurhydrant">Überflurhydrant</option>
-          <option value="Saugstelle">Saugstelle / offenes Gewässer</option>
-          <option value="Löschwasserbrunnen">Löschwasserbrunnen</option>
-          <option value="Zisterne">Zisterne / Behälter</option>
-        </select>
+        <select id="f-typ-filter"><option value="">Alle Arten</option></select>
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>
@@ -239,13 +236,8 @@
     <label for="f-ort">Straße und Lage</label>
     <input id="f-ort" placeholder="z. B. Sandwall, Gehweg vor Nr. 12">
     <label for="f-typ">Art</label>
-    <select id="f-typ">
-      <option value="Unterflurhydrant">Unterflurhydrant</option>
-      <option value="Überflurhydrant">Überflurhydrant</option>
-      <option value="Saugstelle">Saugstelle / offenes Gewässer</option>
-      <option value="Löschwasserbrunnen">Löschwasserbrunnen</option>
-      <option value="Zisterne">Zisterne / Behälter</option>
-    </select>
+    <input id="f-typ" list="typen-liste" placeholder="z. B. Unterflurhydrant, Gerätehaus, Sammelplatz">
+    <datalist id="typen-liste"></datalist>
     <div class="row">
       <div>
         <label for="f-dn">Nennweite</label>
@@ -267,6 +259,7 @@
     <button class="btn primary" id="speichern" style="margin-top:12px">Am aktuellen Standort speichern</button>
     <button class="btn ghost" id="aufKarte" style="margin-top:8px">Position auf Karte antippen</button>
     <button class="btn ghost" id="manuell" style="margin-top:8px">Koordinaten von Hand eingeben</button>
+    <button class="btn ghost" id="edit-loeschen" hidden style="margin-top:24px;color:var(--signal);border-color:var(--signal)">Diesen Punkt löschen</button>
   </section>
 
   <!-- Daten -->
@@ -304,9 +297,15 @@
       Fahrtrichtung aus der GPS-Bewegung verwendet; dann stimmt die Anzeige nur bei Fahrt.
     </div>
     <div class="hinweis">
-      Diese Datei (index.html) liegt lokal auf dem Tablet und wird direkt im Browser geöffnet.
-      Es ist zu keinem Zeitpunkt eine Internetverbindung nötig. Updates kommen ausschließlich
-      über eine neue GeoJSON-Datei (z. B. per E-Mail), die unter „Daten“ eingelesen wird.
+      Die App läuft nach dem ersten Öffnen mit Internet komplett offline (installiert als
+      App über „Zum Startbildschirm hinzufügen“). Neue Punkte kommen ausschließlich über eine
+      GeoJSON-Datei (z. B. per E-Mail), die unter „Daten“ eingelesen wird.
+    </div>
+    <div class="hinweis">
+      Beim einmaligen Laden mit Internet unter „Karte“ und „Suchen → Punkt öffnen“ nicht nur
+      verschieben, sondern in allen wichtigen Orten der Insel auch nah heranzoomen (bis an den
+      Anschlag). Nur Zoomstufen, die dabei tatsächlich angezeigt wurden, sind offline scharf —
+      sonst wirkt die Karte beim Heranzoomen im Fahrzeug unscharf/verpixelt.
     </div>
   </section>
 </main>
@@ -408,6 +407,12 @@ function ortschaften(){
   return [...new Set(stellen.map(s => (s.ortschaft || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
 }
 
+const TYP_GRUNDLISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne"];
+function typen(){
+  const benutzt = stellen.map(s => (s.typ || "").trim()).filter(Boolean);
+  return [...new Set([...TYP_GRUNDLISTE, ...benutzt])].sort((a,b) => a.localeCompare(b, "de"));
+}
+
 function aktualisiereOrtschaftsListen(){
   const werte = ortschaften();
   const aktuellerFilter = ortschaftFilterEl.value;
@@ -416,6 +421,14 @@ function aktualisiereOrtschaftsListen(){
   if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
   document.getElementById("ortschaften-liste").innerHTML =
     werte.map(o => '<option value="' + esc(o) + '">').join("");
+
+  const typWerte = typen();
+  const aktuellerTypFilter = typFilterEl.value;
+  typFilterEl.innerHTML = '<option value="">Alle Arten</option>' +
+    typWerte.map(t => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
+  if(typWerte.includes(aktuellerTypFilter)) typFilterEl.value = aktuellerTypFilter;
+  document.getElementById("typen-liste").innerHTML =
+    typWerte.map(t => '<option value="' + esc(t) + '">').join("");
 }
 
 function zeichneListe(){
@@ -446,8 +459,10 @@ function zeichneListe(){
       '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
       '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
-      '<div class="meta">' + esc(ortLage) + '</div></span>';
+      '<div class="meta">' + esc(ortLage) + '</div></span>' +
+      '<button class="item-edit" type="button" aria-label="Bearbeiten" title="Bearbeiten">✎</button>';
     b.addEventListener("click", () => oeffnePeil(s));
+    b.querySelector(".item-edit").addEventListener("click", ev => { ev.stopPropagation(); bearbeitenStarten(s); });
     listeEl.appendChild(b);
   });
 }
@@ -463,6 +478,7 @@ function oeffnePeil(s){
   document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  peilAutoZoom = true;
   aktualisierePeil();
   aktualisierePeilKarte(true);
   zeigePeilOverlay();
@@ -473,38 +489,38 @@ document.getElementById("zurueck").addEventListener("click", () => {
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
   zeichneListe();
 });
-document.getElementById("bearbeiten").addEventListener("click", () => {
-  const idx = stellen.indexOf(ziel);
+function bearbeitenStarten(s){
+  const idx = stellen.indexOf(s);
   if(idx < 0) return;
   bearbeiteIndex = idx;
-  document.getElementById("f-nr").value = ziel.nr || "";
-  document.getElementById("f-ortschaft").value = ziel.ortschaft || "";
-  document.getElementById("f-ort").value = ziel.ort || "";
-  document.getElementById("f-typ").value = ziel.typ || "Unterflurhydrant";
-  document.getElementById("f-dn").value = ziel.dn || "";
-  document.getElementById("f-menge").value = ziel.menge || "";
-  document.getElementById("f-bem").value = ziel.bem || "";
+  document.getElementById("f-nr").value = s.nr || "";
+  document.getElementById("f-ortschaft").value = s.ortschaft || "";
+  document.getElementById("f-ort").value = s.ort || "";
+  document.getElementById("f-typ").value = s.typ || "";
+  document.getElementById("f-dn").value = s.dn || "";
+  document.getElementById("f-menge").value = s.menge || "";
+  document.getElementById("f-bem").value = s.bem || "";
   document.getElementById("neuPos").textContent =
-    "Bisherige Position: " + ziel.lat.toFixed(5) + ", " + ziel.lon.toFixed(5) + " — bleibt erhalten, außer neu gesetzt.";
+    "Bisherige Position: " + s.lat.toFixed(5) + ", " + s.lon.toFixed(5) + " — bleibt erhalten, außer neu gesetzt.";
   document.getElementById("speichern").textContent = "Änderungen speichern";
+  document.getElementById("edit-loeschen").hidden = false;
   neuLatLon = null;
   document.getElementById("peil").classList.remove("on");
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-neu"));
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-neu"));
-});
-document.getElementById("einzelLoeschen").addEventListener("click", () => {
-  const idx = stellen.indexOf(ziel);
+}
+
+function stelleLoeschen(s){
+  const idx = stellen.indexOf(s);
   if(idx < 0) return;
   if(!pinPruefen()) return;
-  if(!confirm("Punkt „" + (ziel.nr || "ohne Nummer") + "“ wirklich löschen?")) return;
+  if(!confirm("Punkt „" + (s.nr || "ohne Nummer") + "“ wirklich löschen?")) return;
   stellen.splice(idx, 1);
   store.save(stellen);
-  document.getElementById("peil").classList.remove("on");
-  document.getElementById("v-liste").classList.add("on");
-  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
+  if(bearbeiteIndex === idx){ bearbeiteIndex = -1; formularLeeren(); document.getElementById("edit-loeschen").hidden = true; }
   zeichneListe();
   zeichneKarte();
-});
+}
 
 function aktualisierePeil(){
   if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
@@ -523,6 +539,7 @@ function aktualisierePeil(){
 
 /* ---------- Peilkarte (eigene Position + Ziel) ---------- */
 let peilMap = null, peilZielMarker = null, peilEigenMarker = null, peilLinie = null;
+let peilAutoZoom = true;
 
 function initPeilMap(){
   if(peilMap) return;
@@ -536,7 +553,10 @@ function initPeilMap(){
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
   peilMap.dragging.disable();
   const container = peilMap.getContainer();
-  const zweiFingerCheck = e => { if(e.touches.length >= 2) peilMap.dragging.enable(); else peilMap.dragging.disable(); };
+  const zweiFingerCheck = e => {
+    if(e.touches.length >= 2){ peilMap.dragging.enable(); peilAutoZoom = false; }
+    else peilMap.dragging.disable();
+  };
   container.addEventListener("touchstart", e => {
     zweiFingerCheck(e);
     if(e.touches.length === 1) zeigePeilOverlay();
@@ -546,6 +566,13 @@ function initPeilMap(){
 
   // Desktop/Maus-Test: Klick blendet Bedienelemente ebenfalls ein
   container.addEventListener("click", () => zeigePeilOverlay());
+}
+
+function zoomFuerEntfernung(m){
+  if(m > 3000) return 13;
+  if(m > 1000) return 15;
+  if(m > 300) return 17;
+  return 18;
 }
 
 let peilAusblendTimer = null;
@@ -577,7 +604,12 @@ function aktualisierePeilKarte(fit){
     if(peilLinie) peilMap.removeLayer(peilLinie);
     peilLinie = L.polyline([eigeneLL, zielLL], { color:"#e23c22", weight:3, dashArray:"6 6" }).addTo(peilMap);
 
-    if(fit) peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
+    if(fit){
+      peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
+    } else if(peilAutoZoom){
+      const m = distanz(pos.latitude, pos.longitude, ziel.lat, ziel.lon);
+      peilMap.setView(eigeneLL, zoomFuerEntfernung(m));
+    }
   } else if(fit){
     peilMap.setView(zielLL, 15);
   }
@@ -639,13 +671,16 @@ document.getElementById("aufKarte").addEventListener("click", () => {
 let bearbeiteIndex = -1;
 
 function formularLeeren(){
-  ["f-nr","f-ortschaft","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
-  document.getElementById("f-typ").value = "Unterflurhydrant";
+  ["f-nr","f-ortschaft","f-ort","f-typ","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
   document.getElementById("f-dn").value = "";
   document.getElementById("neuPos").textContent = "Position wird beim Speichern vom GPS übernommen.";
   document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
+  document.getElementById("edit-loeschen").hidden = true;
   neuLatLon = null;
 }
+document.getElementById("edit-loeschen").addEventListener("click", () => {
+  if(bearbeiteIndex >= 0) stelleLoeschen(stellen[bearbeiteIndex]);
+});
 
 document.getElementById("speichern").addEventListener("click", () => {
   if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, null); return; }
