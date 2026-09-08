@@ -106,11 +106,28 @@
   }
   .empty{color:var(--dim);padding:28px 4px;font-size:16px}
 
-  /* Peilung */
-  #peil{display:none;padding:12px 14px 24px}
-  #peil.on{display:block}
+  /* Peilung: Karte vollflächig, Bedienelemente nur bei Berührung */
+  #peil{display:none}
+  #peil.on{
+    display:block;position:fixed;inset:0;z-index:1500;background:var(--bg);
+  }
+  #peilMap{width:100%;height:100%;background:#1a232c}
+  .peil-overlay{
+    position:fixed;inset:0;z-index:1600;pointer-events:none;
+    display:flex;flex-direction:column;justify-content:space-between;
+    opacity:0;transition:opacity .25s ease;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  .peil-overlay.sichtbar{opacity:1;pointer-events:auto}
+  .peil-oben{
+    position:relative;pointer-events:auto;padding:10px 14px 18px;
+    background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
+  }
+  .peil-unten{
+    pointer-events:auto;padding:18px 14px 14px;
+    background:linear-gradient(transparent, #0d1116aa 40%, #0d1116ee);
+  }
   .ziel{font-size:20px;font-weight:600;margin-bottom:2px}
-  .ziel-meta{color:var(--dim);font-size:14px;margin-bottom:10px}
+  .ziel-meta{color:var(--dim);font-size:14px}
   .abstand{text-align:center;margin-top:4px}
   .abstand .m{font-size:44px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
   .abstand .u{color:var(--dim);font-size:14px}
@@ -120,16 +137,18 @@
   }
   .hinweis.warn{border-color:var(--warn);color:var(--warn)}
   .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
-  .peil-kartewrap{position:relative;margin-top:10px}
-  #peilMap{width:100%;height:52vh;min-height:340px;border-radius:8px;background:#1a232c}
   .kompass-mini{
-    position:absolute;right:10px;bottom:10px;z-index:1000;
-    width:78px;height:78px;background:#0d1116cc;border:1px solid var(--line);
+    position:absolute;right:14px;top:10px;
+    width:64px;height:64px;background:#0d1116cc;border:1px solid var(--line);
     border-radius:10px;padding:4px;pointer-events:none;
   }
   .eigene-pos{
     width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
     box-shadow:0 0 0 2px #3fa9ff88;
+  }
+  .peil-hinweis-touch{
+    position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
+    color:var(--dim);font-size:13px;pointer-events:none;
   }
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
   .zeile{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
@@ -145,31 +164,36 @@
 </header>
 
 <main>
-  <!-- Peilansicht -->
+  <!-- Peilansicht (Navigation): Karte vollflächig, Bedienelemente nur bei Berührung -->
   <section id="peil">
-    <button class="btn ghost" id="zurueck" style="margin-bottom:14px">Zurück zur Liste</button>
-    <div class="ziel" id="zielName">–</div>
-    <div class="ziel-meta" id="zielMeta"></div>
-    <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
-    <div class="peil-kartewrap">
-      <div id="peilMap"></div>
-      <svg class="kompass-mini" viewBox="0 0 200 200" aria-hidden="true">
-        <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
-        <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
-        <g id="ring">
-          <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
-        </g>
-        <g id="pfeil">
-          <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
-        </g>
-        <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
-      </svg>
-    </div>
-    <div class="koord" id="zielKoord"></div>
-    <div class="hinweis" id="peilHinweis"></div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn" id="bearbeiten">Bearbeiten</button>
-      <button class="btn ghost" id="einzelLoeschen" style="color:var(--signal);border-color:var(--signal)">Löschen</button>
+    <div id="peilMap"></div>
+    <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
+    <div class="peil-overlay" id="peilOverlay">
+      <div class="peil-oben">
+        <button class="btn ghost" id="zurueck">Zurück zur Liste</button>
+        <div class="ziel" id="zielName">–</div>
+        <div class="ziel-meta" id="zielMeta"></div>
+        <svg class="kompass-mini" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
+          <g id="ring">
+            <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
+          </g>
+          <g id="pfeil">
+            <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+          </g>
+          <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+        </svg>
+      </div>
+      <div class="peil-unten">
+        <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
+        <div class="koord" id="zielKoord"></div>
+        <div class="hinweis" id="peilHinweis"></div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" id="bearbeiten">Bearbeiten</button>
+          <button class="btn ghost" id="einzelLoeschen" style="color:var(--signal);border-color:var(--signal)">Löschen</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -441,6 +465,7 @@ function oeffnePeil(s){
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   aktualisierePeil();
   aktualisierePeilKarte(true);
+  zeigePeilOverlay();
 }
 document.getElementById("zurueck").addEventListener("click", () => {
   document.getElementById("peil").classList.remove("on");
@@ -507,6 +532,29 @@ function initPeilMap(){
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
   }).addTo(peilMap);
+
+  // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
+  peilMap.dragging.disable();
+  const container = peilMap.getContainer();
+  const zweiFingerCheck = e => { if(e.touches.length >= 2) peilMap.dragging.enable(); else peilMap.dragging.disable(); };
+  container.addEventListener("touchstart", e => {
+    zweiFingerCheck(e);
+    if(e.touches.length === 1) zeigePeilOverlay();
+  }, { passive:true });
+  container.addEventListener("touchmove", zweiFingerCheck, { passive:true });
+  container.addEventListener("touchend", zweiFingerCheck, { passive:true });
+
+  // Desktop/Maus-Test: Klick blendet Bedienelemente ebenfalls ein
+  container.addEventListener("click", () => zeigePeilOverlay());
+}
+
+let peilAusblendTimer = null;
+function zeigePeilOverlay(){
+  document.getElementById("peilOverlay").classList.add("sichtbar");
+  clearTimeout(peilAusblendTimer);
+  peilAusblendTimer = setTimeout(() => {
+    document.getElementById("peilOverlay").classList.remove("sichtbar");
+  }, 4000);
 }
 
 function aktualisierePeilKarte(fit){
