@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1116">
+<title>Anleitung – Wasserentnahmestellen</title>
+<style>
+  :root{ --bg:#0d1116; --panel:#161d25; --panel-2:#1e2833; --line:#2b3743; --text:#e6edf3; --dim:#93a3b3; --signal:#e23c22; }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Roboto","Segoe UI",sans-serif;
+    line-height:1.5;padding:0 0 60px;
+  }
+  header{padding:22px 18px;background:var(--panel);border-bottom:1px solid var(--line)}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;color:var(--dim);font-size:15px}
+  main{max-width:640px;margin:0 auto;padding:0 18px}
+  .schritt{
+    display:flex;gap:14px;margin-top:34px;padding-top:34px;border-top:1px solid var(--line);
+  }
+  .schritt:first-of-type{border-top:0;margin-top:24px;padding-top:0}
+  .nr{
+    flex:none;width:36px;height:36px;border-radius:50%;background:var(--signal);
+    color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;
+  }
+  .inhalt h2{margin:2px 0 8px;font-size:18px}
+  .inhalt p{margin:0 0 10px;color:var(--dim)}
+  .inhalt img{
+    display:block;max-width:100%;width:340px;margin-top:12px;border-radius:10px;
+    border:1px solid var(--line);
+  }
+  .kasten{
+    background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;margin-top:14px;font-size:14px;color:var(--dim);
+  }
+  .kasten b{color:var(--text)}
+  .kasten.warn{border-color:#e8a020;color:#e8a020}
+  code{background:var(--panel-2);padding:2px 6px;border-radius:4px;font-size:13px}
+  a{color:#6db3ff}
+  .zurueck{
+    display:inline-block;margin:18px;color:var(--dim);text-decoration:none;font-size:14px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wasserentnahmestellen – kurze Anleitung</h1>
+  <p>Für jeden verständlich, ohne Vorwissen. Fünf Minuten Lesezeit.</p>
+</header>
+
+<a class="zurueck" href="../index.html">← Zurück zur App</a>
+
+<main>
+
+  <div class="schritt">
+    <div class="nr">1</div>
+    <div class="inhalt">
+      <h2>App einmalig einrichten (pro Tablet)</h2>
+      <p>Auf jedem Fahrzeug-Tablet <b>einmal</b>, solange WLAN/Internet vorhanden ist:</p>
+      <div class="kasten">
+        1. Adresse öffnen: <code>joergroeloffs-coder.github.io/wasserentnahme-foehr</code><br>
+        2. Im Browser-Menü „Zum Startbildschirm hinzufügen“ wählen<br>
+        3. Kurz die Karte in ein paar Ortschaften ansehen und heranzoomen (das lädt die
+        Kartenbilder herunter, damit sie später ohne Internet scharf sind) – oder unter
+        „Daten“ die Insel in einem Schritt vorladen (siehe Schritt 5)
+      </div>
+      <p>Danach funktioniert die App komplett <b>ohne Internet</b> im Fahrzeug.</p>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">2</div>
+    <div class="inhalt">
+      <h2>Stelle suchen</h2>
+      <p>
+        Im Reiter „Suchen“ erscheinen alle Stellen, sortiert nach Entfernung zum eigenen
+        Standort. Mit dem Suchfeld nach Nummer, Straße oder Ort suchen, oder über die zwei
+        Filter gezielt nach <b>Ortschaft</b> und <b>Art</b> einschränken (z. B. „alle
+        Überflurhydranten in Süderende“).
+      </p>
+      <img src="bilder/suchen.png" alt="Liste mit Suchfeld und Entfernungsangabe">
+      <img src="bilder/filter.png" alt="Filter nach Ortschaft ausgewählt">
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">3</div>
+    <div class="inhalt">
+      <h2>Zur Stelle navigieren</h2>
+      <p>
+        Auf einen Eintrag in der Liste tippen. Es öffnet sich die Navigationsansicht mit
+        Karte, eigener Position (blauer Punkt) und Ziel (roter Marker). Der Kompasspfeil oben
+        rechts zeigt zusätzlich grob die Richtung. Bildschirm antippen zeigt kurz Details
+        (Entfernung, Bemerkung) – „Zurück“ oben links führt zur Liste zurück.
+      </p>
+      <div class="kasten">
+        Verschieben der Karte nur mit <b>zwei Fingern</b> – das verhindert, dass man beim
+        Fahren aus Versehen die Karte verschiebt.
+      </div>
+      <img src="bilder/navigation.png" alt="Navigationsansicht mit Karte, Position und Kompass">
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">4</div>
+    <div class="inhalt">
+      <h2>Alle Stellen auf der Karte ansehen</h2>
+      <p>
+        Reiter „Karte“ zeigt alle erfassten Stellen auf einer normalen Karte. Antippen eines
+        Markers öffnet direkt die Navigation zu diesem Punkt.
+      </p>
+      <img src="bilder/karte.png" alt="Kartenansicht mit mehreren Markern">
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">5</div>
+    <div class="inhalt">
+      <h2>Neue Stelle erfassen (nur für Zuständige)</h2>
+      <p>
+        Reiter „Erfassen“: Nummer, Ortschaft, Straße/Lage und Art eintragen (Art ist frei
+        wählbar, z. B. auch „Gerätehaus“ oder „Sammelplatz“). Position kommt automatisch vom
+        GPS, alternativ „Position auf Karte antippen“ oder von Hand eingeben.
+      </p>
+      <img src="bilder/erfassen.png" alt="Formular zum Erfassen eines neuen Punkts">
+      <p>
+        Einen bestehenden Punkt ändern: in der Liste auf das Stift-Symbol tippen. Löschen
+        geht dort im geöffneten Formular über „Diesen Punkt löschen“.
+      </p>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">6</div>
+    <div class="inhalt">
+      <h2>Daten sichern, verteilen, Karte vorladen</h2>
+      <p>Reiter „Daten“ – die wichtigsten Punkte:</p>
+      <img src="bilder/daten.png" alt="Datenübersicht mit Kachel- und Speicherinfo">
+      <div class="kasten">
+        <b>Automatischer Abgleich:</b> ist die Option aktiviert, holt sich das Tablet bei
+        Internet automatisch die neueste Datenversion – kein manuelles Einlesen nötig.
+        Auf dem Erfassungsgerät sollte das <b>ausgeschaltet</b> sein.
+      </div>
+      <div class="kasten">
+        <b>Manuell (falls kein automatischer Abgleich):</b> „Als GeoJSON exportieren“ auf dem
+        Erfassungsgerät, Datei per E-Mail verschicken, auf den anderen Tablets unter
+        „GeoJSON einlesen“ auswählen.
+      </div>
+      <div class="kasten">
+        <b>Karte für die ganze Insel vorladen:</b> lädt alle Kartenbilder für Föhr auf einmal
+        herunter, statt jeden Ort einzeln manuell anzusehen. Braucht Internet und dauert
+        einige Minuten.
+      </div>
+      <div class="kasten warn">
+        <b>PIN-Schutz:</b> optional einrichtbar, fragt vor Bearbeiten/Löschen nach einer
+        vierstelligen Zahl – schützt nur vor versehentlichem Antippen, keine echte Sicherheit.
+      </div>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">!</div>
+    <div class="inhalt">
+      <h2>Wichtig zu wissen</h2>
+      <div class="kasten">
+        Die Karte zeigt <b>Luftlinie</b>, keine Fahrstrecke – der Pfeil zeigt geradeaus zum
+        Ziel, nicht auf die Straße. Ortskenntnis bleibt nötig, die App hilft nur beim letzten
+        Stück zum genauen Standort.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<a class="zurueck" href="../index.html">← Zurück zur App</a>
+
+</body>
+</html>

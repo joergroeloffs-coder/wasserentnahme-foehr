@@ -123,7 +123,7 @@
   }
   .peil-overlay.sichtbar{opacity:1;pointer-events:auto}
   .peil-oben{
-    position:relative;pointer-events:auto;padding:10px 14px 18px;
+    position:relative;pointer-events:auto;padding:64px 88px 18px 14px;
     background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
   }
   .peil-zurueck-btn{
@@ -159,8 +159,9 @@
     color:var(--dim);font-size:13px;pointer-events:none;
   }
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
-  .zeile{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
-  .zeile span:last-child{color:var(--dim)}
+  .zeile{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .zeile span:first-child{flex:none}
+  .zeile span:last-child{color:var(--dim);text-align:right}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -327,7 +328,8 @@
     <button class="btn" id="loeschen">Alle Stellen auf diesem Gerät löschen</button>
 
     <h2>Bedienung</h2>
-    <div class="hinweis">
+    <a class="btn" href="anleitung/index.html" style="display:block;text-align:center;text-decoration:none;box-sizing:border-box">Anleitung mit Bildern ansehen</a>
+    <div class="hinweis" style="margin-top:12px">
       Die Anwendung arbeitet ohne Netz. Sie zeigt Luftlinie und Richtung, keine Fahrstrecke —
       der Pfeil zeigt geradeaus zum Ziel, nicht auf die Straße.
       Der Pfeil richtet sich nach dem Magnetkompass des Tablets. Ohne Kompass wird die

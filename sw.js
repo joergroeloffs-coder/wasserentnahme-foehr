@@ -1,5 +1,5 @@
 "use strict";
-const SHELL_CACHE = "shell-v3";
+const SHELL_CACHE = "shell-v4";
 const TILE_CACHE = "osm-tiles-v1";
 const SHELL_FILES = [
   "./",
@@ -13,7 +13,14 @@ const SHELL_FILES = [
   "./vendor/images/marker-shadow.png",
   "./vendor/images/layers.png",
   "./vendor/images/layers-2x.png",
-  "./daten/stellen.geojson"
+  "./daten/stellen.geojson",
+  "./anleitung/index.html",
+  "./anleitung/bilder/suchen.png",
+  "./anleitung/bilder/filter.png",
+  "./anleitung/bilder/navigation.png",
+  "./anleitung/bilder/karte.png",
+  "./anleitung/bilder/erfassen.png",
+  "./anleitung/bilder/daten.png"
 ];
 
 self.addEventListener("install", event => {
