@@ -357,8 +357,18 @@ sucheEl.addEventListener("input", zeichneListe);
 ortschaftFilterEl.addEventListener("change", zeichneListe);
 typFilterEl.addEventListener("change", zeichneListe);
 
+const ORTSCHAFT_GRUPPEN = {
+  "Utersum": "Utersum / Dunsum / Witsum / Hedehusum",
+  "Dunsum": "Utersum / Dunsum / Witsum / Hedehusum",
+  "Witsum": "Utersum / Dunsum / Witsum / Hedehusum",
+  "Hedehusum": "Utersum / Dunsum / Witsum / Hedehusum",
+  "Nieblum": "Nieblum / Goting",
+  "Goting": "Nieblum / Goting"
+};
+function ortschaftGruppe(o){ return ORTSCHAFT_GRUPPEN[o] || o; }
+
 function ortschaften(){
-  return [...new Set(stellen.map(s => (s.ortschaft || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
+  return [...new Set(stellen.map(s => ortschaftGruppe((s.ortschaft || "").trim())).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
 }
 
 const TYP_GRUNDLISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne"];
@@ -389,7 +399,7 @@ function zeichneListe(){
   const typFilter = typFilterEl.value;
   let d = stellen.slice();
   if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+(s.ortschaft||"")+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
-  if(ortschaftFilter) d = d.filter(s => (s.ortschaft || "") === ortschaftFilter);
+  if(ortschaftFilter) d = d.filter(s => ortschaftGruppe((s.ortschaft || "").trim()) === ortschaftFilter);
   if(typFilter) d = d.filter(s => s.typ === typFilter);
   if(pos) d.forEach(s => s._d = distanz(pos.latitude,pos.longitude,s.lat,s.lon));
   d.sort((a,b) => pos ? a._d-b._d : (a.nr||"").localeCompare(b.nr||""));
@@ -620,7 +630,7 @@ function aktualisiereKarteOrtschaftFilter(){
   const werte = ortschaften();
   const aktuell = el.value;
   const anzahl = {};
-  stellen.forEach(s => { const o = (s.ortschaft || "").trim(); if(o) anzahl[o] = (anzahl[o] || 0) + 1; });
+  stellen.forEach(s => { const o = ortschaftGruppe((s.ortschaft || "").trim()); if(o) anzahl[o] = (anzahl[o] || 0) + 1; });
   el.innerHTML = '<option value="">Alle Ortschaften (' + stellen.length + ')</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + ' (' + (anzahl[o] || 0) + ')</option>').join("");
   if(werte.includes(aktuell)) el.value = aktuell;
@@ -633,7 +643,7 @@ function zeichneKarte(){
   markerLayer.clearLayers();
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
-    if(filter && (s.ortschaft || "") !== filter) return;
+    if(filter && ortschaftGruppe((s.ortschaft || "").trim()) !== filter) return;
     const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
