@@ -188,7 +188,7 @@
     <button class="btn" id="export">Als GeoJSON exportieren</button>
     <label for="import" style="margin-top:10px">GeoJSON einlesen</label>
     <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
-    <div class="hinweis">Der Import ergänzt den Bestand. Punkte mit gleicher Nummer werden überschrieben.</div>
+    <div class="hinweis">Der Import ersetzt den gesamten Bestand durch den Inhalt der Datei (mit Sicherheitsabfrage). So bleiben Löschungen aus dem Update erhalten.</div>
 
     <h2>Datenbestand</h2>
     <button class="btn" id="loeschen">Alle Stellen auf diesem Gerät löschen</button>
@@ -199,6 +199,11 @@
       der Pfeil zeigt geradeaus zum Ziel, nicht auf die Straße.
       Der Pfeil richtet sich nach dem Magnetkompass des Tablets. Ohne Kompass wird die
       Fahrtrichtung aus der GPS-Bewegung verwendet; dann stimmt die Anzeige nur bei Fahrt.
+    </div>
+    <div class="hinweis">
+      Diese Datei (index.html) liegt lokal auf dem Tablet und wird direkt im Browser geöffnet.
+      Es ist zu keinem Zeitpunkt eine Internetverbindung nötig. Updates kommen ausschließlich
+      über eine neue GeoJSON-Datei (z. B. per E-Mail), die unter „Daten“ eingelesen wird.
     </div>
   </section>
 </main>
@@ -401,22 +406,22 @@ document.getElementById("import").addEventListener("change", ev => {
   const f = ev.target.files[0]; if(!f) return;
   const r = new FileReader();
   r.onload = () => {
-    let n = 0;
     try {
       const j = JSON.parse(r.result);
+      const neu = [];
       (j.features || []).forEach(ft => {
         if(!ft.geometry || ft.geometry.type !== "Point") return;
         const p = ft.properties || {}, c = ft.geometry.coordinates;
-        const s = { nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+        neu.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
           typ: p.art || p["fire_hydrant:type"] || "Hydrant", dn: p["fire_hydrant:diameter"] || p.dn || "",
           menge: p.flow_rate || "", bem: p.description || p.bem || "",
-          lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" };
-        const i = s.nr ? stellen.findIndex(x => x.nr && x.nr === s.nr) : -1;
-        if(i >= 0) stellen[i] = s; else stellen.push(s);
-        n++;
+          lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
       });
+      if(!neu.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
+      if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + neu.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
+      stellen = neu;
       store.save(stellen); zeichneDaten(); zeichneListe();
-      alert(n + " Stellen eingelesen.");
+      alert(stellen.length + " Stellen eingelesen, Bestand ersetzt.");
     } catch(e){ alert("Datei ist kein lesbares GeoJSON."); }
     ev.target.value = "";
   };
