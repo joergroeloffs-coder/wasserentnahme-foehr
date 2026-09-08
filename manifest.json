@@ -1,0 +1,13 @@
+{
+  "name": "Wasserentnahmestellen Föhr",
+  "short_name": "H2O Föhr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1116",
+  "theme_color": "#0d1116",
+  "lang": "de",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

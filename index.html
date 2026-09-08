@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1116">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="vendor/leaflet.css">
 <title>Wasserentnahmestellen</title>
 <style>
   :root{
@@ -41,15 +45,34 @@
   .view.on{display:block}
 
   nav{
-    flex:none;display:grid;grid-template-columns:repeat(3,1fr);
+    flex:none;display:grid;grid-template-columns:repeat(4,1fr);
     background:var(--panel);border-top:1px solid var(--line);
     padding-bottom:env(safe-area-inset-bottom);
   }
   nav button{
-    background:none;border:0;color:var(--dim);font:inherit;font-size:15px;
-    padding:14px 4px;min-height:var(--touch);cursor:pointer;
+    background:none;border:0;color:var(--dim);font:inherit;font-size:14px;
+    padding:14px 2px;min-height:var(--touch);cursor:pointer;
   }
   nav button.on{color:var(--text);box-shadow:inset 0 3px 0 var(--signal)}
+
+  /* Karte */
+  #v-karte{padding:0}
+  #map{width:100%;height:calc(100vh - 118px);height:calc(100dvh - 118px);background:#1a232c}
+  .karte-leiste{
+    position:absolute;left:0;right:0;top:0;z-index:1000;padding:10px 14px;
+    display:flex;gap:8px;align-items:center;background:linear-gradient(#0d1116cc,transparent);
+  }
+  .karte-leiste button{
+    min-height:44px;padding:8px 14px;border-radius:6px;border:1px solid var(--line);
+    background:var(--panel);color:var(--text);cursor:pointer;font-size:14px;
+  }
+  .karte-leiste button.aktiv{background:var(--signal);border-color:var(--signal);font-weight:600}
+  .karte-banner{
+    position:absolute;left:14px;right:14px;bottom:14px;z-index:1000;
+    background:var(--signal);color:#fff;padding:10px 14px;border-radius:6px;
+    font-size:14px;text-align:center;display:none;
+  }
+  .karte-banner.on{display:block}
 
   input,select,textarea,button{font:inherit}
   input,select,textarea{
@@ -136,6 +159,15 @@
     <div class="hinweis" id="peilHinweis"></div>
   </section>
 
+  <!-- Karte -->
+  <section id="v-karte" class="view" style="position:relative">
+    <div class="karte-leiste">
+      <button id="karte-hinzufuegen">+ Punkt auf Karte setzen</button>
+    </div>
+    <div id="map"></div>
+    <div class="karte-banner" id="karteBanner">Position auf der Karte antippen …</div>
+  </section>
+
   <!-- Liste -->
   <section id="v-liste" class="view on">
     <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
@@ -175,6 +207,7 @@
 
     <div class="hinweis" id="neuPos">Position wird beim Speichern vom GPS übernommen.</div>
     <button class="btn primary" id="speichern" style="margin-top:12px">Am aktuellen Standort speichern</button>
+    <button class="btn ghost" id="aufKarte" style="margin-top:8px">Position auf Karte antippen</button>
     <button class="btn ghost" id="manuell" style="margin-top:8px">Koordinaten von Hand eingeben</button>
   </section>
 
@@ -210,13 +243,19 @@
 
 <nav>
   <button data-view="v-liste" class="on">Suchen</button>
+  <button data-view="v-karte">Karte</button>
   <button data-view="v-neu">Erfassen</button>
   <button data-view="v-daten">Daten</button>
 </nav>
 
+<script src="vendor/leaflet.js"></script>
 <script>
 "use strict";
 const KEY = "wasserentnahme.foehr.v1";
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
 
 /* ---------- Speicher: localStorage mit Rückfall auf Arbeitsspeicher ---------- */
 const store = {
@@ -282,6 +321,7 @@ document.querySelectorAll("nav button").forEach(b => b.addEventListener("click",
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === b.dataset.view));
   if(b.dataset.view === "v-daten") zeichneDaten();
+  if(b.dataset.view === "v-karte"){ initKarte(); setTimeout(() => map.invalidateSize(), 50); }
 }));
 
 /* ---------- Liste ---------- */
@@ -351,9 +391,62 @@ function aktualisierePeil(){
   document.getElementById("ring").setAttribute("transform", "rotate(" + (-ref).toFixed(1) + " 100 100)");
 }
 
+/* ---------- Karte ---------- */
+let map = null, markerLayer = null, waehleModus = false, neuLatLon = null;
+
+function initKarte(){
+  if(map) return;
+  L.Icon.Default.imagePath = "vendor/images/";
+  map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+  }).addTo(map);
+  markerLayer = L.layerGroup().addTo(map);
+  map.on("click", e => {
+    if(!waehleModus) return;
+    waehleModus = false;
+    document.getElementById("karteBanner").classList.remove("on");
+    neuLatLon = { lat: e.latlng.lat, lon: e.latlng.lng };
+    document.getElementById("speichern").textContent = "Angetippte Position speichern";
+    document.getElementById("neuPos").textContent =
+      "Position von Karte übernommen: " + neuLatLon.lat.toFixed(5) + ", " + neuLatLon.lon.toFixed(5);
+    document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-neu"));
+    document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-neu"));
+  });
+  zeichneKarte();
+}
+
+function zeichneKarte(){
+  if(!markerLayer) return;
+  markerLayer.clearLayers();
+  stellen.forEach(s => {
+    if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
+    const m = L.marker([s.lat, s.lon]);
+    m.bindPopup(esc(s.nr || "ohne Nummer") + (s.ort ? "<br>" + esc(s.ort) : ""));
+    m.on("click", () => oeffnePeil(s));
+    m.addTo(markerLayer);
+  });
+}
+
+document.getElementById("karte-hinzufuegen").addEventListener("click", () => {
+  waehleModus = true;
+  document.getElementById("karteBanner").classList.add("on");
+});
+
+document.getElementById("aufKarte").addEventListener("click", () => {
+  document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-karte"));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-karte"));
+  initKarte();
+  setTimeout(() => map.invalidateSize(), 50);
+  waehleModus = true;
+  document.getElementById("karteBanner").classList.add("on");
+});
+
 /* ---------- Erfassen ---------- */
 document.getElementById("speichern").addEventListener("click", () => {
-  if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben."); return; }
+  if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, null); return; }
+  if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben bzw. auf Karte antippen."); return; }
   neu(pos.latitude, pos.longitude, Math.round(pos.accuracy));
 });
 document.getElementById("manuell").addEventListener("click", () => {
@@ -381,7 +474,10 @@ function neu(lat, lon, genau){
   ["f-nr","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
   document.getElementById("neuPos").textContent =
     "Gespeichert: " + lat.toFixed(5) + ", " + lon.toFixed(5) + (genau !== null ? " (±" + genau + " m)" : " (von Hand)");
+  neuLatLon = null;
+  document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
   zeichneListe();
+  zeichneKarte();
 }
 
 /* ---------- Daten ---------- */
@@ -408,19 +504,19 @@ document.getElementById("import").addEventListener("change", ev => {
   r.onload = () => {
     try {
       const j = JSON.parse(r.result);
-      const neu = [];
+      const eingelesen = [];
       (j.features || []).forEach(ft => {
         if(!ft.geometry || ft.geometry.type !== "Point") return;
         const p = ft.properties || {}, c = ft.geometry.coordinates;
-        neu.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+        eingelesen.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
           typ: p.art || p["fire_hydrant:type"] || "Hydrant", dn: p["fire_hydrant:diameter"] || p.dn || "",
           menge: p.flow_rate || "", bem: p.description || p.bem || "",
           lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
       });
-      if(!neu.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
-      if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + neu.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
-      stellen = neu;
-      store.save(stellen); zeichneDaten(); zeichneListe();
+      if(!eingelesen.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
+      if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + eingelesen.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
+      stellen = eingelesen;
+      store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
       alert(stellen.length + " Stellen eingelesen, Bestand ersetzt.");
     } catch(e){ alert("Datei ist kein lesbares GeoJSON."); }
     ev.target.value = "";
@@ -429,7 +525,7 @@ document.getElementById("import").addEventListener("change", ev => {
 });
 document.getElementById("loeschen").addEventListener("click", () => {
   if(!confirm("Alle " + stellen.length + " Stellen löschen? Vorher exportieren, sonst sind die Daten weg.")) return;
-  stellen = []; store.save(stellen); zeichneDaten(); zeichneListe();
+  stellen = []; store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
 });
 
 zeichneListe(); zeichneDaten();
