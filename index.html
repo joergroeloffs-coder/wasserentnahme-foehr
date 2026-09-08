@@ -291,7 +291,7 @@
       </div>
       <div>
         <label for="f-menge">Ergiebigkeit</label>
-        <input id="f-menge" inputmode="numeric" placeholder="m³/h">
+        <input id="f-menge" inputmode="numeric" placeholder="l/min">
       </div>
     </div>
     <label for="f-bem">Bemerkung</label>
@@ -585,7 +585,7 @@ function zeigeDetails(s){
   detailMap.setView(ll, 16);
   document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
   document.getElementById("detailMeta").textContent =
-    [s.typ, s.dn, s.menge ? s.menge + " m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+    [s.typ, s.dn, s.menge ? s.menge + " l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("detailKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("detailHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   document.getElementById("detailOverlay").classList.add("on");
@@ -608,7 +608,7 @@ function oeffnePeil(s){
   document.getElementById("peil").classList.add("on");
   document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
   document.getElementById("zielName").textContent = s.nr || "ohne Nummer";
-  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" m³/h" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   peilAutoZoom = true;
@@ -1055,9 +1055,7 @@ function geoJsonZuStellen(j, dateiname){
     if(!ft.geometry || ft.geometry.type !== "Point") return;
     const p = ft.properties || {}, c = ft.geometry.coordinates;
     let menge = p.flow_rate || p.menge || "";
-    if(!menge && typeof p.menge_l_min === "number"){
-      menge = Math.round(p.menge_l_min * 0.06 * 10) / 10; // L/min -> m³/h
-    }
+    if(!menge && typeof p.menge_l_min === "number") menge = p.menge_l_min;
     let bem = p.description || p.bem || "";
     if(!bem && (p.lagegenauigkeit || p.lagehinweis || p.quelle || p.quellkarte)){
       bem = [p.lagegenauigkeit || p.lagehinweis, (p.quelle || p.quellkarte) ? "Quelle: " + (p.quelle || p.quellkarte) : ""].filter(Boolean).join(" · ");
