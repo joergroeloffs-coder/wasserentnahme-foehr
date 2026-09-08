@@ -291,11 +291,25 @@
       jedem Tablet einmal einzeln ausgeführt werden.
     </div>
 
-    <h2>Sichern und übertragen</h2>
+    <h2>Sichern und übertragen (manuell)</h2>
     <button class="btn" id="export">Als GeoJSON exportieren</button>
     <label for="import" style="margin-top:10px">GeoJSON einlesen</label>
     <input id="import" type="file" accept=".geojson,.json,application/geo+json,application/json">
     <div class="hinweis">Der Import ersetzt den gesamten Bestand durch den Inhalt der Datei (mit Sicherheitsabfrage). So bleiben Löschungen aus dem Update erhalten.</div>
+
+    <h2>Automatischer Abgleich (Internet/WLAN)</h2>
+    <label style="display:flex;align-items:center;gap:10px;margin:14px 0 5px;cursor:pointer">
+      <input type="checkbox" id="auto-sync-toggle" style="width:22px;height:22px;min-height:0;flex:none">
+      <span>Bei Internet/WLAN automatisch aktualisieren</span>
+    </label>
+    <div class="zeile"><span>Letzter Abgleich</span><span id="d-sync-zeit">noch nie</span></div>
+    <button class="btn" id="sync-jetzt">Jetzt nach Updates suchen</button>
+    <div class="hinweis">
+      Prüft beim Öffnen der App und bei Internet-Verbindung automatisch, ob eine neue
+      Datenversion online liegt, und übernimmt sie automatisch (ersetzt den Bestand, ohne PIN,
+      da vertrauenswürdige Quelle). Auf dem Erfassungsgerät ausschalten, damit eigene neue
+      Einträge nicht überschrieben werden, bevor sie online gestellt wurden.
+    </div>
 
     <h2>Schutz vor versehentlichem Ändern</h2>
     <div class="zeile"><span>PIN-Schutz</span><span id="d-pin">–</span></div>
@@ -751,6 +765,10 @@ function zeichneDaten(){
   document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
   document.getElementById("d-pin").textContent = pinGesetzt() ? "aktiv" : "nicht gesetzt";
   kachelInfoAktualisieren();
+  document.getElementById("auto-sync-toggle").checked = autoSyncAktiv();
+  let syncZeit = null;
+  try { syncZeit = localStorage.getItem(SYNC_ZEIT_KEY); } catch(e){}
+  document.getElementById("d-sync-zeit").textContent = syncZeit ? new Date(syncZeit).toLocaleString("de-DE") : "noch nie";
 }
 
 /* ---------- Cache-Info (Offline-Kacheln) ---------- */
@@ -904,22 +922,26 @@ document.getElementById("export").addEventListener("click", () => {
   a.download = "wasserentnahmestellen-" + new Date().toISOString().slice(0,10) + ".geojson";
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
 });
+function geoJsonZuStellen(j){
+  const eingelesen = [];
+  (j.features || []).forEach(ft => {
+    if(!ft.geometry || ft.geometry.type !== "Point") return;
+    const p = ft.properties || {}, c = ft.geometry.coordinates;
+    eingelesen.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
+      ortschaft: p["addr:city"] || p.ortschaft || "",
+      typ: p.art || p["fire_hydrant:type"] || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
+      menge: p.flow_rate || "", bem: p.description || p.bem || "",
+      lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
+  });
+  return eingelesen;
+}
+
 document.getElementById("import").addEventListener("change", ev => {
   const f = ev.target.files[0]; if(!f) return;
   const r = new FileReader();
   r.onload = () => {
     try {
-      const j = JSON.parse(r.result);
-      const eingelesen = [];
-      (j.features || []).forEach(ft => {
-        if(!ft.geometry || ft.geometry.type !== "Point") return;
-        const p = ft.properties || {}, c = ft.geometry.coordinates;
-        eingelesen.push({ nr: p.ref || p.nr || p.name || "", ort: p.name || p.ort || p.addr || "",
-          ortschaft: p["addr:city"] || p.ortschaft || "",
-          typ: p.art || p["fire_hydrant:type"] || "Hydrant", dn: p["fire_hydrant:diameter"] || p.dn || "",
-          menge: p.flow_rate || "", bem: p.description || p.bem || "",
-          lat: c[1], lon: c[0], genau: null, erfasst: p["survey:date"] || "" });
-      });
+      const eingelesen = geoJsonZuStellen(JSON.parse(r.result));
       if(!eingelesen.length){ alert("Datei enthält keine gültigen Punkte. Bestand bleibt unverändert."); ev.target.value = ""; return; }
       if(!confirm("Bestand vollständig ersetzen?\n\nBisher: " + stellen.length + " Stellen\nNeu aus Datei: " + eingelesen.length + " Stellen\n\nAlle bisherigen Stellen, die nicht in dieser Datei enthalten sind, werden entfernt.")) { ev.target.value = ""; return; }
       if(!pinPruefen()) { ev.target.value = ""; return; }
@@ -936,6 +958,55 @@ document.getElementById("loeschen").addEventListener("click", () => {
   if(!pinPruefen()) return;
   stellen = []; store.save(stellen); zeichneDaten(); zeichneListe(); zeichneKarte();
 });
+
+/* ---------- Automatischer Abgleich bei Internet/WLAN ---------- */
+const AUTO_SYNC_KEY = "wasserentnahme.foehr.autosync";
+const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
+const SYNC_ZEIT_KEY = "wasserentnahme.foehr.synczeit";
+const SYNC_URL = "./daten/stellen.geojson";
+
+function autoSyncAktiv(){
+  try { const v = localStorage.getItem(AUTO_SYNC_KEY); return v === null ? true : v === "1"; } catch(e){ return true; }
+}
+function autoSyncSetzen(an){ try { localStorage.setItem(AUTO_SYNC_KEY, an ? "1" : "0"); } catch(e){} }
+function einfacherHash(text){
+  let h = 0;
+  for(let i = 0; i < text.length; i++) h = (h * 31 + text.charCodeAt(i)) | 0;
+  return h + ":" + text.length;
+}
+
+async function serverAbgleich(manuell){
+  try {
+    const res = await fetch(SYNC_URL, { cache: "no-store" });
+    if(!res.ok) throw new Error("nicht erreichbar");
+    const text = await res.text();
+    const hash = einfacherHash(text);
+    let vorherigerHash = null;
+    try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}
+    if(hash === vorherigerHash){
+      if(manuell) alert("Bereits aktuell.");
+      return;
+    }
+    const eingelesen = geoJsonZuStellen(JSON.parse(text));
+    if(!eingelesen.length && stellen.length) return; // leere/kaputte Serverdatei nicht automatisch übernehmen
+
+    stellen = eingelesen;
+    store.save(stellen);
+    try {
+      localStorage.setItem(SYNC_HASH_KEY, hash);
+      localStorage.setItem(SYNC_ZEIT_KEY, new Date().toISOString());
+    } catch(e){}
+    zeichneListe(); zeichneKarte(); zeichneDaten();
+    if(manuell) alert(eingelesen.length + " Stellen aus dem Internet übernommen.");
+  } catch(e){
+    if(manuell) alert("Kein Abgleich möglich (kein Internet oder Datei nicht erreichbar).");
+  }
+}
+
+document.getElementById("auto-sync-toggle").addEventListener("change", e => autoSyncSetzen(e.target.checked));
+document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgleich(true));
+window.addEventListener("load", () => { if(autoSyncAktiv() && navigator.onLine) serverAbgleich(false); });
+window.addEventListener("online", () => { if(autoSyncAktiv()) serverAbgleich(false); });
 
 zeichneListe(); zeichneDaten();
 </script>
