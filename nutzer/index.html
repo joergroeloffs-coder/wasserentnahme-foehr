@@ -564,7 +564,7 @@ function initKarte(){
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
   }).addTo(map);
-  markerLayer = L.layerGroup().addTo(map);
+  markerLayer = L.featureGroup().addTo(map);
   zeichneKarte();
 }
 
@@ -634,7 +634,10 @@ function zeichneKarte(){
   });
 }
 
-document.getElementById("karte-ortschaft-filter").addEventListener("change", zeichneKarte);
+document.getElementById("karte-ortschaft-filter").addEventListener("change", () => {
+  zeichneKarte();
+  if(markerLayer.getLayers().length) map.fitBounds(markerLayer.getBounds(), { padding: [30, 30], maxZoom: 17 });
+});
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
 const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
