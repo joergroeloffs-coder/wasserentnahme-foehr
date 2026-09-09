@@ -1,5 +1,5 @@
 "use strict";
-const SHELL_CACHE = "nutzer-admin-shell-v2";
+const SHELL_CACHE = "nutzer-admin-shell-v3";
 const TILE_CACHE = "osm-tiles-v1";
 const SHELL_FILES = [
   "./",
@@ -7,6 +7,7 @@ const SHELL_FILES = [
   "./manifest.json",
   "../icon.svg",
   "../icon-180.png",
+  "../icon-192.png",
   "../icon-512.png",
   "../vendor/leaflet.js",
   "../vendor/leaflet.css",

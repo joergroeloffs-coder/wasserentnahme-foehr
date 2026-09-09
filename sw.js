@@ -1,5 +1,5 @@
 "use strict";
-const SHELL_CACHE = "shell-v5";
+const SHELL_CACHE = "shell-v6";
 const TILE_CACHE = "osm-tiles-v1";
 const SHELL_FILES = [
   "./",
@@ -7,6 +7,7 @@ const SHELL_FILES = [
   "./manifest.json",
   "./icon.svg",
   "./icon-180.png",
+  "./icon-192.png",
   "./icon-512.png",
   "./vendor/leaflet.js",
   "./vendor/leaflet.css",
