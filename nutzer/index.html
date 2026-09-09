@@ -188,7 +188,10 @@
 <body>
 
 <header>
-  <h1>Wasserentnahmestellen</h1>
+  <div>
+    <h1>Wasserentnahmestellen</h1>
+    <div id="zugangsnummer" style="font-size:11px;color:var(--dim);margin-top:2px"></div>
+  </div>
   <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
   <button id="pos-teilen" title="Eigene Position teilen" aria-label="Eigene Position teilen">⌖</button>
   <button id="sync-jetzt" title="Jetzt aktualisieren" aria-label="Jetzt aktualisieren">⟳</button>
@@ -295,6 +298,27 @@
       '</div>';
     throw new Error("Testzeitraum abgelaufen");
   }
+})();
+
+/* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung ---------- */
+(function zugangsnummerAnzeigen(){
+  const ZN_KEY = "wasserentnahme.nutzer.zugangsnummer";
+  try {
+    const ausUrl = new URLSearchParams(window.location.search).get("zugang");
+    let nr = null;
+    if(ausUrl && /^\d{8,}$/.test(ausUrl)){
+      nr = ausUrl;
+      localStorage.setItem(ZN_KEY, nr);
+    } else {
+      nr = localStorage.getItem(ZN_KEY);
+      if(!nr){
+        nr = String(Math.floor(10000000 + Math.random() * 90000000));
+        localStorage.setItem(ZN_KEY, nr);
+      }
+    }
+    const el = document.getElementById("zugangsnummer");
+    if(el) el.textContent = "Zugang Nr. " + nr;
+  } catch(e){}
 })();
 
 const KEY = "wasserentnahme.foehr.v1";
