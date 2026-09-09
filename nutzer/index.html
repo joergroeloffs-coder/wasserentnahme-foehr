@@ -488,24 +488,21 @@ document.getElementById("detail-nein").addEventListener("click", () => {
   detailStelle = null;
 });
 
-/* ---------- Position teilen (Text an Admin) ---------- */
-async function teilenText(text){
-  if(navigator.share){
-    try { await navigator.share({ text }); return; }
-    catch(e){ if(e && e.name === "AbortError") return; }
-  }
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("In Zwischenablage kopiert:\n\n" + text);
-  } catch(e){
-    prompt("Zum Kopieren markieren und kopieren:", text);
-  }
+/* ---------- Position teilen (immer per E-Mail an den Admin) ---------- */
+const POSITION_EMAIL = "jumboroloffs@web.de";
+
+function sendePositionPerMail(betreff, text){
+  const url = "mailto:" + POSITION_EMAIL + "?subject=" + encodeURIComponent(betreff) + "&body=" + encodeURIComponent(text);
+  window.location.href = url;
 }
 
 document.getElementById("pos-teilen").addEventListener("click", () => {
   if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
-  teilenText("Eigene Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m)");
+  sendePositionPerMail(
+    "Eigene Position",
+    "Eigene Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m)"
+  );
 });
 
 document.getElementById("detail-korrektur").addEventListener("click", () => {
@@ -515,7 +512,7 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
   const text = "Korrektur zu " + (detailStelle.nr || "ohne Nummer") + ": richtige Position " +
     pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m) — bisher gespeichert: " +
     detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
-  teilenText(text);
+  sendePositionPerMail("Positions-Korrektur " + (detailStelle.nr || ""), text);
 });
 
 function oeffnePeil(s){
