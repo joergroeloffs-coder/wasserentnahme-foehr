@@ -275,6 +275,28 @@
 <script src="../vendor/leaflet.js"></script>
 <script>
 "use strict";
+
+/* ---------- Testzeitraum: 30 Tage ab erstem Öffnen auf diesem Gerät ---------- */
+(function trialPruefen(){
+  const TRIAL_TAGE = 30;
+  const TRIAL_KEY = "wasserentnahme.nutzer.trialstart";
+  let start;
+  try {
+    const gespeichert = localStorage.getItem(TRIAL_KEY);
+    if(gespeichert){ start = Number(gespeichert); }
+    else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
+  } catch(e){ start = Date.now(); }
+  const ablauf = start + TRIAL_TAGE * 24 * 60 * 60 * 1000;
+  if(Date.now() > ablauf){
+    document.body.innerHTML =
+      '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
+      '<h1 style="font-size:20px;margin:0 0 12px">Testzeitraum abgelaufen</h1>' +
+      '<p style="color:#93a3b3;max-width:320px;margin:0">Der ' + TRIAL_TAGE + '-tägige Testzeitraum dieser Version ist beendet. Bei Interesse an einer dauerhaften Nutzung bitte den Admin kontaktieren.</p>' +
+      '</div>';
+    throw new Error("Testzeitraum abgelaufen");
+  }
+})();
+
 const KEY = "wasserentnahme.foehr.v1";
 
 if("serviceWorker" in navigator){
