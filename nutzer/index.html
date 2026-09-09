@@ -509,10 +509,11 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
   if(!detailStelle) return;
   if(!pos){ alert("Keine eigene GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
+  const bezeichnung = [detailStelle.typ, detailStelle.nr || "ohne Nummer"].filter(Boolean).join(" ");
   const text = "Korrektur zu " + (detailStelle.nr || "ohne Nummer") + ": richtige Position " +
     pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m) — bisher gespeichert: " +
     detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
-  sendePositionPerMail("Positions-Korrektur " + (detailStelle.nr || ""), text);
+  sendePositionPerMail("Korrektur " + bezeichnung, text);
 });
 
 function oeffnePeil(s){
