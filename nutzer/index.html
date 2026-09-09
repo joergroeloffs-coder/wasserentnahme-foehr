@@ -39,7 +39,7 @@
   #gps{margin-left:auto;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
   #gps b{display:block;font-size:15px;font-weight:600}
   .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
-  #sync-jetzt{
+  #sync-jetzt, #pos-teilen{
     flex:none;width:40px;height:40px;border-radius:8px;background:var(--panel-2);
     border:1px solid var(--line);color:var(--text);font-size:19px;cursor:pointer;
   }
@@ -190,6 +190,7 @@
 <header>
   <h1>Wasserentnahmestellen</h1>
   <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
+  <button id="pos-teilen" title="Eigene Position teilen" aria-label="Eigene Position teilen">⌖</button>
   <button id="sync-jetzt" title="Jetzt aktualisieren" aria-label="Jetzt aktualisieren">⟳</button>
 </header>
 
@@ -207,6 +208,7 @@
         <button class="btn primary" id="detail-ja">Ja, navigieren</button>
         <button class="btn ghost" id="detail-nein">Nein</button>
       </div>
+      <button class="btn ghost" id="detail-korrektur" style="margin-top:10px">Eigene Position als Korrektur teilen</button>
     </div>
   </div>
 
@@ -462,6 +464,36 @@ document.getElementById("detail-ja").addEventListener("click", () => {
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   detailStelle = null;
+});
+
+/* ---------- Position teilen (Text an Admin) ---------- */
+async function teilenText(text){
+  if(navigator.share){
+    try { await navigator.share({ text }); return; }
+    catch(e){ if(e && e.name === "AbortError") return; }
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("In Zwischenablage kopiert:\n\n" + text);
+  } catch(e){
+    prompt("Zum Kopieren markieren und kopieren:", text);
+  }
+}
+
+document.getElementById("pos-teilen").addEventListener("click", () => {
+  if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
+  const genauigkeit = Math.round(pos.accuracy);
+  teilenText("Eigene Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m)");
+});
+
+document.getElementById("detail-korrektur").addEventListener("click", () => {
+  if(!detailStelle) return;
+  if(!pos){ alert("Keine eigene GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
+  const genauigkeit = Math.round(pos.accuracy);
+  const text = "Korrektur zu " + (detailStelle.nr || "ohne Nummer") + ": richtige Position " +
+    pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m) — bisher gespeichert: " +
+    detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
+  teilenText(text);
 });
 
 function oeffnePeil(s){

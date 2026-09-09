@@ -309,6 +309,7 @@
     <div class="hinweis" id="neuPos">Position wird beim Speichern vom GPS übernommen.</div>
     <button class="btn primary" id="speichern" style="margin-top:12px">Am aktuellen Standort speichern</button>
     <button class="btn ghost" id="aufKarte" style="margin-top:8px">Position auf Karte antippen</button>
+    <button class="btn ghost" id="gps-uebernehmen" hidden style="margin-top:8px">Aktuelle GPS-Position übernehmen</button>
     <button class="btn ghost" id="manuell" style="margin-top:8px">Koordinaten von Hand eingeben</button>
     <button class="btn ghost" id="edit-loeschen" hidden style="margin-top:24px;color:var(--signal);border-color:var(--signal)">Diesen Punkt löschen</button>
   </section>
@@ -670,6 +671,7 @@ function bearbeitenStarten(s){
     "Bisherige Position: " + s.lat.toFixed(5) + ", " + s.lon.toFixed(5) + " — bleibt erhalten, außer neu gesetzt.";
   document.getElementById("speichern").textContent = "Änderungen speichern";
   document.getElementById("edit-loeschen").hidden = false;
+  document.getElementById("gps-uebernehmen").hidden = false;
   neuLatLon = null;
   document.getElementById("peil").classList.remove("on");
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-neu"));
@@ -895,6 +897,7 @@ function formularLeeren(){
   document.getElementById("neuPos").textContent = "Position wird beim Speichern vom GPS übernommen.";
   document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
   document.getElementById("edit-loeschen").hidden = true;
+  document.getElementById("gps-uebernehmen").hidden = true;
   neuLatLon = null;
 }
 document.getElementById("edit-loeschen").addEventListener("click", () => {
@@ -902,13 +905,24 @@ document.getElementById("edit-loeschen").addEventListener("click", () => {
 });
 
 document.getElementById("speichern").addEventListener("click", () => {
-  if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, null); return; }
   if(bearbeiteIndex >= 0){
     if(!pinPruefen()) return;
+    if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, neuLatLon.genau != null ? neuLatLon.genau : null); return; }
     const s = stellen[bearbeiteIndex]; neu(s.lat, s.lon, s.genau); return;
   }
+  if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, neuLatLon.genau != null ? neuLatLon.genau : null); return; }
   if(!pos){ alert("Keine GPS-Position. Warten, bis oben rechts eine Genauigkeit angezeigt wird, oder Koordinaten von Hand eingeben bzw. auf Karte antippen."); return; }
   neu(pos.latitude, pos.longitude, Math.round(pos.accuracy));
+});
+document.getElementById("gps-uebernehmen").addEventListener("click", () => {
+  if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben rechts eine Genauigkeit angezeigt wird."); return; }
+  const genauigkeit = Math.round(pos.accuracy);
+  if(genauigkeit > 15 && !confirm("GPS-Genauigkeit nur ±" + genauigkeit + " m. Trotzdem als neue Position übernehmen?")) return;
+  neuLatLon = { lat: pos.latitude, lon: pos.longitude, genau: genauigkeit };
+  document.getElementById("speichern").textContent = "Neue Position speichern";
+  document.getElementById("neuPos").textContent =
+    "Aktuelle GPS-Position übernommen: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) +
+    " (±" + genauigkeit + " m) — erst mit „Neue Position speichern“ endgültig.";
 });
 document.getElementById("manuell").addEventListener("click", () => {
   const t = prompt("Koordinaten eingeben als Breite, Länge\nBeispiel: 54.69123, 8.56541");
