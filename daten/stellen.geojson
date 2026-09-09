@@ -13305,6 +13305,26 @@
     "art": "Gerätehaus",
     "survey:date": "2026-09-08"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.555893,
+     54.695985
+    ]
+   },
+   "properties": {
+    "ref": "387-WYK-NO",
+    "plan_id": "387",
+    "name": "387 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
   }
  ]
 }
