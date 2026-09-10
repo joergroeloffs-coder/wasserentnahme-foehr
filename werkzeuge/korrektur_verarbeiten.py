@@ -67,16 +67,13 @@ def haversine_m(lat1, lon1, lat2, lon2):
     return 2 * r * math.asin(math.sqrt(a))
 
 
-def main():
-    if len(sys.argv) != 2:
-        print("Nutzung: python3 werkzeuge/korrektur_verarbeiten.py pfad/zur/mail.txt")
-        sys.exit(1)
-
-    text = Path(sys.argv[1]).read_text(encoding="utf-8")
+def verarbeite_text(text):
+    """Verarbeitet den Text einer oder mehrerer MELDUNG-Mails interaktiv
+    (Rückfrage je Korrektur, am Ende Rückfrage für Commit + Push)."""
     bloecke = parse_meldungen(text)
     if not bloecke:
         print("Keine MELDUNG-Blöcke gefunden.")
-        sys.exit(1)
+        return
 
     rohdaten = DATEN_PFAD.read_bytes()
     hatte_trailing_newline = rohdaten.endswith(b"\n")
@@ -126,7 +123,7 @@ def main():
 
     if not uebernommene_refs:
         print("\nKeine Korrektur übernommen, nichts zu tun.")
-        sys.exit(0)
+        return
 
     ausgabe = json.dumps(daten, ensure_ascii=False, indent=1)
     if hatte_trailing_newline:
@@ -145,6 +142,14 @@ def main():
     subprocess.run(["git", "commit", "-m", commit_msg], cwd=REPO_ROOT, check=True)
     subprocess.run(["git", "push", "origin", "main"], cwd=REPO_ROOT, check=True)
     print("Fertig — gepusht.")
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Nutzung: python3 werkzeuge/korrektur_verarbeiten.py pfad/zur/mail.txt")
+        sys.exit(1)
+    text = Path(sys.argv[1]).read_text(encoding="utf-8")
+    verarbeite_text(text)
 
 
 if __name__ == "__main__":
