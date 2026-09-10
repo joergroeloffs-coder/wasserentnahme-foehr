@@ -524,10 +524,10 @@ function sendePositionPerMail(betreff, text){
 document.getElementById("pos-teilen").addEventListener("click", () => {
   if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
-  sendePositionPerMail(
-    "Eigene Position",
-    "Eigene Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m)"
-  );
+  const text = "MELDUNG: Eigene Position\n" +
+    "Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + "\n" +
+    "Genauigkeit: ±" + genauigkeit + " m";
+  sendePositionPerMail("Eigene Position", text);
 });
 
 document.getElementById("detail-korrektur").addEventListener("click", () => {
@@ -535,9 +535,12 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
   if(!pos){ alert("Keine eigene GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
   const bezeichnung = [detailStelle.typ, detailStelle.nr || "ohne Nummer"].filter(Boolean).join(" ");
-  const text = "Korrektur zu " + (detailStelle.nr || "ohne Nummer") + ": richtige Position " +
-    pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m) — bisher gespeichert: " +
-    detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
+  const text = "MELDUNG: Korrektur\n" +
+    "Ref: " + (detailStelle.nr || "") + "\n" +
+    "Bezeichnung: " + bezeichnung + "\n" +
+    "Neue Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + "\n" +
+    "Genauigkeit: ±" + genauigkeit + " m\n" +
+    "Bisherige Position (App): " + detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
   sendePositionPerMail("Korrektur " + bezeichnung, text);
 });
 
