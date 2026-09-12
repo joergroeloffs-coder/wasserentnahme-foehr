@@ -13325,6 +13325,25 @@
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
     "survey:date": ""
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.398,
+     54.7132
+    ]
+   },
+   "properties": {
+    "ref": "AED-UTS-01",
+    "name": "DLRG Hauptstrand",
+    "addr:city": "Utersum",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Position genähert (keine Koordinate in der Quelle) an Adresse \"Hauptstrand, 25938 Utersum auf Föhr\" · Quelle: Defikataster (definetz.online) · nicht vor Ort bestätigt",
+    "survey:date": ""
+   }
   }
  ]
 }
