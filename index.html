@@ -294,13 +294,13 @@
     <label for="f-nr">Nummer oder Kurzname</label>
     <input id="f-nr" placeholder="z. B. H-042">
     <label for="f-ortschaft">Ortschaft</label>
-    <input id="f-ortschaft" list="ortschaften-liste" placeholder="z. B. Süderende">
-    <datalist id="ortschaften-liste"></datalist>
+    <select id="f-ortschaft"><option value="">– wählen –</option></select>
+    <input id="f-ortschaft-neu" placeholder="Neue Ortschaft eingeben" hidden style="margin-top:8px">
     <label for="f-ort">Straße und Lage</label>
     <input id="f-ort" placeholder="z. B. Sandwall, Gehweg vor Nr. 12">
     <label for="f-typ">Art</label>
-    <input id="f-typ" list="typen-liste" placeholder="z. B. Unterflurhydrant, Gerätehaus, Sammelplatz">
-    <datalist id="typen-liste"></datalist>
+    <select id="f-typ"><option value="">– wählen –</option></select>
+    <input id="f-typ-neu" placeholder="Neue Art eingeben" hidden style="margin-top:8px">
     <div class="row">
       <div>
         <label for="f-dn">Nennweite</label>
@@ -552,22 +552,61 @@ function typen(){
   return [...new Set([...TYP_GRUNDLISTE, ...benutzt])].sort((a,b) => a.localeCompare(b, "de"));
 }
 
+const NEU_OPTION = '<option value="__neu__">+ Neue/andere eingeben…</option>';
+
+function fuelleAuswahl(selectEl, werte, behalteWert){
+  const aktuell = behalteWert ? selectEl.value : "";
+  selectEl.innerHTML = '<option value="">– wählen –</option>' +
+    werte.map(w => '<option value="' + esc(w) + '">' + esc(w) + "</option>").join("") +
+    NEU_OPTION;
+  if(aktuell && (werte.includes(aktuell) || aktuell === "__neu__")) selectEl.value = aktuell;
+}
+
 function aktualisiereOrtschaftsListen(){
   const werte = ortschaften();
   const aktuellerFilter = ortschaftFilterEl.value;
   ortschaftFilterEl.innerHTML = '<option value="">Alle Ortschaften</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
   if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
-  document.getElementById("ortschaften-liste").innerHTML =
-    ortschaftenRoh().map(o => '<option value="' + esc(o) + '">').join("");
+  fuelleAuswahl(document.getElementById("f-ortschaft"), ortschaftenRoh(), true);
 
   const typWerte = typen();
   const aktuellerTypFilter = typFilterEl.value;
   typFilterEl.innerHTML = '<option value="">Alle Arten</option>' +
     typWerte.map(t => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
   if(typWerte.includes(aktuellerTypFilter)) typFilterEl.value = aktuellerTypFilter;
-  document.getElementById("typen-liste").innerHTML =
-    typWerte.map(t => '<option value="' + esc(t) + '">').join("");
+  fuelleAuswahl(document.getElementById("f-typ"), typWerte, true);
+}
+
+function schalteNeuFeld(selectId, neuId){
+  const select = document.getElementById(selectId);
+  const neu = document.getElementById(neuId);
+  neu.hidden = select.value !== "__neu__";
+  if(neu.hidden) neu.value = "";
+  else neu.focus();
+}
+document.getElementById("f-ortschaft").addEventListener("change", () => schalteNeuFeld("f-ortschaft", "f-ortschaft-neu"));
+document.getElementById("f-typ").addEventListener("change", () => schalteNeuFeld("f-typ", "f-typ-neu"));
+
+function setzeAuswahlWert(selectId, neuId, wert){
+  const select = document.getElementById(selectId);
+  const neu = document.getElementById(neuId);
+  const optionVorhanden = [...select.options].some(o => o.value === wert);
+  if(wert && !optionVorhanden){
+    select.value = "__neu__";
+    neu.hidden = false;
+    neu.value = wert;
+  } else {
+    select.value = wert || "";
+    neu.hidden = true;
+    neu.value = "";
+  }
+}
+
+function leseAuswahlWert(selectId, neuId){
+  const select = document.getElementById(selectId);
+  if(select.value === "__neu__") return document.getElementById(neuId).value.trim();
+  return select.value;
 }
 
 function zeichneListe(){
@@ -673,9 +712,9 @@ function bearbeitenStarten(s){
   if(idx < 0) return;
   bearbeiteIndex = idx;
   document.getElementById("f-nr").value = s.nr || "";
-  document.getElementById("f-ortschaft").value = s.ortschaft || "";
+  setzeAuswahlWert("f-ortschaft", "f-ortschaft-neu", s.ortschaft || "");
   document.getElementById("f-ort").value = s.ort || "";
-  document.getElementById("f-typ").value = s.typ || "";
+  setzeAuswahlWert("f-typ", "f-typ-neu", s.typ || "");
   document.getElementById("f-dn").value = s.dn || "";
   document.getElementById("f-menge").value = s.menge || "";
   document.getElementById("f-bem").value = s.bem || "";
@@ -907,7 +946,9 @@ document.getElementById("aufKarte").addEventListener("click", () => {
 let bearbeiteIndex = -1;
 
 function formularLeeren(){
-  ["f-nr","f-ortschaft","f-ort","f-typ","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
+  ["f-nr","f-ort","f-menge","f-bem"].forEach(id => document.getElementById(id).value = "");
+  setzeAuswahlWert("f-ortschaft", "f-ortschaft-neu", "");
+  setzeAuswahlWert("f-typ", "f-typ-neu", "");
   document.getElementById("f-dn").value = "";
   document.getElementById("neuPos").textContent = "Position wird beim Speichern vom GPS übernommen.";
   document.getElementById("speichern").textContent = "Am aktuellen Standort speichern";
@@ -949,9 +990,9 @@ document.getElementById("manuell").addEventListener("click", () => {
 function neu(lat, lon, genau){
   const s = {
     nr: document.getElementById("f-nr").value.trim(),
-    ortschaft: document.getElementById("f-ortschaft").value.trim(),
+    ortschaft: leseAuswahlWert("f-ortschaft", "f-ortschaft-neu"),
     ort: document.getElementById("f-ort").value.trim(),
-    typ: document.getElementById("f-typ").value,
+    typ: leseAuswahlWert("f-typ", "f-typ-neu"),
     dn: document.getElementById("f-dn").value,
     menge: document.getElementById("f-menge").value.trim(),
     bem: document.getElementById("f-bem").value.trim(),
