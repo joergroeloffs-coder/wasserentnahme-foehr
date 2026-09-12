@@ -386,7 +386,7 @@ function ortschaften(){
   return [...new Set(stellen.map(s => ortschaftGruppe((s.ortschaft || "").trim())).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
 }
 
-const TYP_GRUNDLISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne"];
+const TYP_GRUNDLISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne","Defibrillator"];
 function typen(){
   const benutzt = stellen.map(s => (s.typ || "").trim()).filter(Boolean);
   return [...new Set([...TYP_GRUNDLISTE, ...benutzt])].sort((a,b) => a.localeCompare(b, "de"));
@@ -635,6 +635,7 @@ function typFarbe(typ){
   if(t.includes("zisterne") || t.includes("behälter")) return "#7a4fc9";
   if(t.includes("gerätehaus")) return "#3fb26a";
   if(t.includes("sammelplatz")) return "#e8a020";
+  if(t.includes("defibrillator") || t.includes("aed")) return "#e0398a";
   return "#5d6d7d";
 }
 
@@ -646,6 +647,7 @@ const TYP_ICONS = {
   zisterne: '<ellipse cx="12" cy="7" rx="6" ry="2.4"/><path d="M6 7v9c0 1.3 2.7 2.4 6 2.4s6-1.1 6-2.4V7"/>',
   geraetehaus: '<path d="M4 11L12 4l8 7"/><path d="M6 10v9h12v-9"/><rect x="10" y="14" width="4" height="5"/>',
   sammelplatz: '<circle cx="12" cy="6" r="2" fill="#fff" stroke="none"/><path d="M12 9v5M8 12l4 2.4 4-2.4M7 19l5-7 5 7"/>',
+  defibrillator: '<path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>',
   sonstige: '<path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1.4 1-1.4 2"/><circle cx="12" cy="16.5" r="0.6" fill="#fff" stroke="none"/>'
 };
 function typIcon(typ){
@@ -657,6 +659,7 @@ function typIcon(typ){
   if(t.includes("zisterne") || t.includes("behälter")) return TYP_ICONS.zisterne;
   if(t.includes("gerätehaus")) return TYP_ICONS.geraetehaus;
   if(t.includes("sammelplatz")) return TYP_ICONS.sammelplatz;
+  if(t.includes("defibrillator") || t.includes("aed")) return TYP_ICONS.defibrillator;
   return TYP_ICONS.sonstige;
 }
 
