@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Verarbeitet Korrektur-Meldungen aus der Nutzer-App (E-Mails an jumboroloffs@web.de)
+Verarbeitet Korrektur-Meldungen aus der Nutzer-App (E-Mails an wasserentnahme-foehr@web.de)
 und übernimmt sie nach Bestätigung in daten/stellen.geojson.
 
 Nutzung:
