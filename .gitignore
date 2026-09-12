@@ -1,2 +1,4 @@
 *.tgz
 werkzeuge/zugangsdaten.json
+werkzeuge/zu_pruefen.txt
+__pycache__/
