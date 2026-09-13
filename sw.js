@@ -1,6 +1,6 @@
 "use strict";
-const SHELL_CACHE = "shell-v6";
-const TILE_CACHE = "osm-tiles-v1";
+const SHELL_CACHE = "shell-v7-openfreemap";
+const TILE_CACHE = "openfreemap-assets-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -11,6 +11,9 @@ const SHELL_FILES = [
   "./icon-512.png",
   "./vendor/leaflet.js",
   "./vendor/leaflet.css",
+  "https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js",
+  "https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css",
+  "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js",
   "./vendor/images/marker-icon.png",
   "./vendor/images/marker-icon-2x.png",
   "./vendor/images/marker-shadow.png",
@@ -40,20 +43,38 @@ self.addEventListener("activate", event => {
   );
 });
 
-function isTile(url){
-  return url.hostname.endsWith("tile.openstreetmap.org");
+function isMapAsset(url){
+  return url.hostname === "tiles.openfreemap.org";
+}
+
+function isMapLibrary(url){
+  return url.hostname === "unpkg.com" &&
+    (url.pathname.startsWith("/maplibre-gl@5.24.0/") ||
+     url.pathname.startsWith("/@maplibre/maplibre-gl-leaflet@0.1.4/"));
 }
 
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
 
-  if(isTile(url)){
+  if(isMapAsset(url)){
     event.respondWith(
       caches.open(TILE_CACHE).then(cache =>
         cache.match(event.request).then(hit => hit || fetch(event.request).then(res => {
           if(res.ok) cache.put(event.request, res.clone());
           return res;
         }).catch(() => hit))
+      )
+    );
+    return;
+  }
+
+  if(isMapLibrary(url)){
+    event.respondWith(
+      caches.open(SHELL_CACHE).then(cache =>
+        cache.match(event.request).then(hit => hit || fetch(event.request).then(res => {
+          if(res.ok) cache.put(event.request, res.clone());
+          return res;
+        }))
       )
     );
     return;

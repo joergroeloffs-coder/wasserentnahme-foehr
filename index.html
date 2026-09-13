@@ -8,6 +8,7 @@
 <link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
 <title>Wasserentnahmestellen</title>
 <style>
   :root{
@@ -331,28 +332,24 @@
     <div class="zeile"><span>Gespeicherte Stellen</span><span id="d-anzahl">0</span></div>
     <div class="zeile"><span>Speicherung</span><span id="d-speicher">–</span></div>
     <div class="zeile"><span>Kompass</span><span id="d-kompass">wird geprüft</span></div>
-    <div class="zeile"><span>Gecachte Kartenkacheln</span><span id="d-kacheln">wird geprüft…</span></div>
+    <div class="zeile"><span>Offline gespeicherte Kartendateien</span><span id="d-kacheln">wird geprüft…</span></div>
     <div class="zeile"><span>Belegter Speicherplatz</span><span id="d-speicherplatz">wird geprüft…</span></div>
     <div class="hinweis">
-      Zeigt, wie viele Kartenkacheln auf diesem Gerät offline verfügbar sind. Hohe Zahl heißt
-      nicht automatisch "überall scharf" — nur Kacheln der Zoomstufen, die beim Online-Laden
-      tatsächlich angezeigt wurden, sind gecacht. Wert gilt nur für dieses eine Gerät.
+      Zeigt, wie viele Kartendateien von OpenFreeMap auf diesem Gerät offline verfügbar sind.
+      Beim normalen Online-Laden werden bereits betrachtete Bereiche automatisch gespeichert.
+      Der Wert gilt nur für dieses eine Gerät.
     </div>
 
     <h2>Karte für die ganze Insel vorladen</h2>
-    <label for="vorlade-zoom">Bis Zoomstufe (höher = schärfer, aber mehr Daten/Zeit)</label>
+    <label for="vorlade-zoom">Detailstufe</label>
     <select id="vorlade-zoom">
-      <option value="14">14 – grober Überblick</option>
-      <option value="15">15</option>
-      <option value="16" selected>16 – Straßen gut erkennbar</option>
-      <option value="17">17 – sehr detailliert</option>
+      <option value="14" selected>Vollständig – Straßen und Gebäude</option>
     </select>
     <button class="btn primary" id="vorladen-start" style="margin-top:10px">Insel jetzt vorladen (braucht Internet)</button>
     <div class="hinweis" id="vorladen-status">
-      Lädt gezielt alle Kartenkacheln für ganz Föhr bis zur gewählten Zoomstufe herunter und
-      speichert sie offline – auch für Orte, die noch nie manuell angesehen wurden. Je nach
-      Zoomstufe mehrere Minuten und einige zehn bis über hundert MB Datenverbrauch. Muss auf
-      jedem Tablet einmal einzeln ausgeführt werden.
+      Lädt gezielt die Vektorkarte für ganz Föhr herunter und speichert sie offline – auch für
+      Orte, die noch nie manuell angesehen wurden. Das muss auf jedem Tablet einmal einzeln
+      ausgeführt werden.
     </div>
 
     <h2>Sichern und übertragen (manuell)</h2>
@@ -439,9 +436,19 @@
 </nav>
 
 <script src="vendor/leaflet.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
 const KEY = "wasserentnahme.foehr.v1";
+const OPENFREEMAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
+const OPENFREEMAP_TILEJSON = "https://tiles.openfreemap.org/planet";
+
+function grundkarteHinzufuegen(leafletMap){
+  return L.maplibreGL({
+    style: OPENFREEMAP_STYLE
+  }).addTo(leafletMap);
+}
 
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
@@ -654,10 +661,7 @@ function initDetailMap(){
   if(detailMap) return;
   L.Icon.Default.imagePath = "vendor/images/";
   detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
-  L.tileLayer("https://{s}://{z}/{x}/{y}{r}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(detailMap);
+  grundkarteHinzufuegen(detailMap);
 }
 
 function zeigeDetails(s){
@@ -766,10 +770,7 @@ function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "vendor/images/";
   peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
-  L.tileLayer("https://{s}://{z}/{x}/{y}{r}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(peilMap);
+  grundkarteHinzufuegen(peilMap);
 
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
   peilMap.dragging.disable();
@@ -833,10 +834,7 @@ function initKarte(){
   if(map) return;
   L.Icon.Default.imagePath = "vendor/images/";
   map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(map);
+  grundkarteHinzufuegen(map);
   markerLayer = L.featureGroup().addTo(map);
   map.on("click", e => {
     if(!waehleModus) return;
@@ -1042,8 +1040,8 @@ function zeichneDaten(){
   document.getElementById("ungesichert-hinweis").hidden = !istUngesichert();
 }
 
-/* ---------- Cache-Info (Offline-Kacheln) ---------- */
-const TILE_CACHE_NAME = "osm-tiles-v1"; // muss zu TILE_CACHE in sw.js passen
+/* ---------- Cache-Info (Offline-Kartendateien) ---------- */
+const TILE_CACHE_NAME = "openfreemap-assets-v1"; // muss zu TILE_CACHE in sw.js passen
 function kachelInfoAktualisieren(){
   const kachelnEl = document.getElementById("d-kacheln");
   const speicherEl = document.getElementById("d-speicherplatz");
@@ -1054,7 +1052,7 @@ function kachelInfoAktualisieren(){
   }
   caches.open(TILE_CACHE_NAME)
     .then(c => c.keys())
-    .then(keys => { kachelnEl.textContent = keys.length + " Kacheln"; })
+    .then(keys => { kachelnEl.textContent = keys.length + " Dateien"; })
     .catch(() => { kachelnEl.textContent = "nicht verfügbar"; });
 
   if(navigator.storage && navigator.storage.estimate){
@@ -1070,9 +1068,10 @@ function kachelInfoAktualisieren(){
   }
 }
 
-/* ---------- Insel vorladen (alle Kacheln für Föhr) ---------- */
+/* ---------- Insel vorladen (OpenFreeMap-Vektorkarte für Föhr) ---------- */
 const FOEHR_BBOX = { west: 8.40, south: 54.64, east: 8.63, north: 54.77 };
-const VORLADEN_MIN_ZOOM = 13;
+const VORLADEN_MIN_ZOOM = 8;
+const VORLADEN_MAX_ZOOM = 14;
 
 function tileIndexBereich(zoom, bbox){
   const n = Math.pow(2, zoom);
@@ -1089,13 +1088,62 @@ function tileIndexBereich(zoom, bbox){
 
 function kachelnFuerInsel(maxZoom){
   const liste = [];
-  for(let z = VORLADEN_MIN_ZOOM; z <= maxZoom; z++){
+  const bisZoom = Math.min(maxZoom, VORLADEN_MAX_ZOOM);
+  for(let z = VORLADEN_MIN_ZOOM; z <= bisZoom; z++){
     const { xMin, xMax, yMin, yMax } = tileIndexBereich(z, FOEHR_BBOX);
     for(let x = xMin; x <= xMax; x++){
       for(let y = yMin; y <= yMax; y++) liste.push({ z, x, y });
     }
   }
   return liste;
+}
+
+async function abrufenUndCachen(url, cache){
+  try {
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    await cache.put(url, res.clone());
+    return res;
+  } catch(e){
+    const vorhanden = await cache.match(url);
+    if(vorhanden) return vorhanden;
+    throw e;
+  }
+}
+
+async function openFreeMapMetadaten(cache){
+  const styleAntwort = await abrufenUndCachen(OPENFREEMAP_STYLE, cache);
+  const style = await styleAntwort.json();
+  const tilejsonUrl = style.sources && style.sources.openmaptiles && style.sources.openmaptiles.url
+    ? style.sources.openmaptiles.url
+    : OPENFREEMAP_TILEJSON;
+  const tilejsonAntwort = await abrufenUndCachen(tilejsonUrl, cache);
+  const tilejson = await tilejsonAntwort.json();
+  if(!tilejson.tiles || !tilejson.tiles[0]) throw new Error("Keine Kartenadresse gefunden");
+  return { style, kachelVorlage:tilejson.tiles[0] };
+}
+
+async function openFreeMapZusatzdateienCachen(style, cache){
+  const urls = [];
+  if(style.sprite){
+    urls.push(style.sprite + ".json", style.sprite + ".png");
+    urls.push(style.sprite + "@2x.json", style.sprite + "@2x.png");
+  }
+  if(style.glyphs){
+    const schriften = new Set();
+    (style.layers || []).forEach(layer => {
+      const f = layer.layout && layer.layout["text-font"];
+      if(Array.isArray(f) && f.length && f.every(x => typeof x === "string")) schriften.add(f.join(","));
+    });
+    schriften.forEach(font => {
+      urls.push(style.glyphs
+        .replace("{fontstack}", encodeURIComponent(font))
+        .replace("{range}", "0-255"));
+    });
+  }
+  let fehler = 0;
+  await Promise.all(urls.map(url => abrufenUndCachen(url, cache).catch(() => { fehler++; })));
+  return fehler;
 }
 
 let vorladenLaeuft = false, vorladenAbbrechen = false;
@@ -1109,34 +1157,46 @@ document.getElementById("vorladen-start").addEventListener("click", async () => 
 
   const maxZoom = parseInt(document.getElementById("vorlade-zoom").value, 10);
   const kacheln = kachelnFuerInsel(maxZoom);
-  const mbSchaetzung = Math.round(kacheln.length * 15 / 1024);
-  if(!confirm(kacheln.length + " Kartenkacheln werden heruntergeladen (geschätzt ca. " + mbSchaetzung + " MB). Das kann mehrere Minuten dauern. Fortfahren?")) return;
+  const mbSchaetzung = Math.max(1, Math.round(kacheln.length * 60 / 1024));
+  if(!confirm(kacheln.length + " Kartendateien werden heruntergeladen (grob geschätzt ca. " + mbSchaetzung + " MB). Das kann mehrere Minuten dauern. Fortfahren?")) return;
 
   vorladenLaeuft = true;
   vorladenAbbrechen = false;
   startBtn.textContent = "Abbrechen";
+  statusEl.textContent = "Kartendaten von OpenFreeMap werden vorbereitet…";
 
   const cache = await caches.open(TILE_CACHE_NAME);
   let fertig = 0, fehler = 0;
   const GLEICHZEITIG = 4;
   let naechsterIndex = 0;
+  let metadaten;
+  try {
+    metadaten = await openFreeMapMetadaten(cache);
+    fehler += await openFreeMapZusatzdateienCachen(metadaten.style, cache);
+  } catch(e){
+    vorladenLaeuft = false;
+    startBtn.textContent = "Insel jetzt vorladen (braucht Internet)";
+    statusEl.textContent = "Die OpenFreeMap-Kartendaten konnten nicht vorbereitet werden. Bitte Internetverbindung prüfen und erneut versuchen.";
+    return;
+  }
 
   async function naechstesLaden(){
     while(naechsterIndex < kacheln.length && !vorladenAbbrechen){
       const i = naechsterIndex++;
       const { z, x, y } = kacheln[i];
-      const url = "https://{s}://{z}/{x}/{y}{r}.png";
+      const url = metadaten.kachelVorlage
+        .replace("{z}", String(z))
+        .replace("{x}", String(x))
+        .replace("{y}", String(y));
       try {
         const vorhanden = await cache.match(url);
         if(!vorhanden){
-          const res = await fetch(url);
-          if(res.ok) await cache.put(url, res);
-          else fehler++;
+          await abrufenUndCachen(url, cache);
         }
       } catch(e){ fehler++; }
       fertig++;
       if(fertig % 10 === 0 || fertig === kacheln.length){
-        statusEl.textContent = fertig + " / " + kacheln.length + " Kacheln geladen" + (fehler ? " (" + fehler + " Fehler)" : "") + "…";
+        statusEl.textContent = fertig + " / " + kacheln.length + " Kartendateien geladen" + (fehler ? " (" + fehler + " Fehler)" : "") + "…";
       }
     }
   }
@@ -1146,8 +1206,8 @@ document.getElementById("vorladen-start").addEventListener("click", async () => 
   vorladenLaeuft = false;
   startBtn.textContent = "Insel jetzt vorladen (braucht Internet)";
   statusEl.textContent = vorladenAbbrechen
-    ? "Abgebrochen nach " + fertig + " von " + kacheln.length + " Kacheln."
-    : "Fertig: " + fertig + " Kacheln geprüft/geladen" + (fehler ? ", " + fehler + " Fehler (z. B. kurzzeitig kein Netz)." : ".") + " Für weitere Zoomstufen diesen Vorgang erneut mit höherer Stufe starten.";
+    ? "Abgebrochen nach " + fertig + " von " + kacheln.length + " Kartendateien."
+    : "Fertig: " + fertig + " Kartendateien geprüft/geladen" + (fehler ? ", " + fehler + " Fehler (z. B. kurzzeitig kein Netz)." : ".") + " Die Grundkarte für Föhr ist jetzt offline gespeichert.";
   kachelInfoAktualisieren();
 });
 
