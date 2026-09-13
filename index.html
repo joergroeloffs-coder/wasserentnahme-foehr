@@ -654,7 +654,7 @@ function initDetailMap(){
   if(detailMap) return;
   L.Icon.Default.imagePath = "vendor/images/";
   detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://{s}://{z}/{x}/{y}{r}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
   }).addTo(detailMap);
@@ -766,7 +766,7 @@ function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "vendor/images/";
   peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://{s}://{z}/{x}/{y}{r}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
   }).addTo(peilMap);
@@ -1125,7 +1125,7 @@ document.getElementById("vorladen-start").addEventListener("click", async () => 
     while(naechsterIndex < kacheln.length && !vorladenAbbrechen){
       const i = naechsterIndex++;
       const { z, x, y } = kacheln[i];
-      const url = "https://tile.openstreetmap.org/" + z + "/" + x + "/" + y + ".png";
+      const url = "https://{s}://{z}/{x}/{y}{r}.png";
       try {
         const vorhanden = await cache.match(url);
         if(!vorhanden){
