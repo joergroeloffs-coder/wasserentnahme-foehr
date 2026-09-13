@@ -8,7 +8,7 @@
 <link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="stylesheet" href="vendor/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
 <title>Wasserentnahmestellen</title>
 <style>
   :root{
@@ -97,6 +97,22 @@
   .btn.ghost{background:none}
   .row{display:flex;gap:10px}
   .row>*{flex:1}
+
+  .defi-schnell{
+    width:100%;min-height:72px;margin-bottom:12px;padding:12px 15px;
+    display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer;
+    border:1px solid #ff6b72;border-radius:9px;background:#c91f2c;color:#fff;
+    box-shadow:0 3px 12px #0005;
+  }
+  .defi-schnell:active{transform:translateY(1px)}
+  .defi-schnell:disabled{opacity:.7;cursor:wait}
+  .defi-schnell .defi-icon{
+    width:43px;height:43px;flex:none;display:grid;place-items:center;
+    border-radius:50%;background:#fff;color:#c91f2c;
+  }
+  .defi-schnell svg{width:29px;height:29px}
+  .defi-schnell strong{display:block;font-size:18px;line-height:1.2}
+  .defi-schnell small{display:block;margin-top:3px;font-size:13px;color:#ffe8e9}
 
   /* Liste */
   #suche{margin-bottom:10px}
@@ -276,6 +292,18 @@
 
   <!-- Liste -->
   <section id="v-liste" class="view on">
+    <button id="defi-schnell" class="defi-schnell" type="button">
+      <span class="defi-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20c-4.3-3.1-8-6.2-8-10.3A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8 2.7c0 4.1-3.7 7.2-8 10.3z"/>
+          <path d="M13.2 8.6l-2.7 4.2h3l-2.7 4.1"/>
+        </svg>
+      </span>
+      <span>
+        <strong>Nächsten Defibrillator finden</strong>
+        <small>Standort verwenden und direkt anzeigen</small>
+      </span>
+    </button>
     <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
     <div class="row" style="margin-top:8px">
       <div>
@@ -332,25 +360,8 @@
     <div class="zeile"><span>Gespeicherte Stellen</span><span id="d-anzahl">0</span></div>
     <div class="zeile"><span>Speicherung</span><span id="d-speicher">–</span></div>
     <div class="zeile"><span>Kompass</span><span id="d-kompass">wird geprüft</span></div>
-    <div class="zeile"><span>Offline gespeicherte Kartendateien</span><span id="d-kacheln">wird geprüft…</span></div>
     <div class="zeile"><span>Belegter Speicherplatz</span><span id="d-speicherplatz">wird geprüft…</span></div>
-    <div class="hinweis">
-      Zeigt, wie viele Kartendateien von OpenFreeMap auf diesem Gerät offline verfügbar sind.
-      Beim normalen Online-Laden werden bereits betrachtete Bereiche automatisch gespeichert.
-      Der Wert gilt nur für dieses eine Gerät.
-    </div>
-
-    <h2>Karte für die ganze Insel vorladen</h2>
-    <label for="vorlade-zoom">Detailstufe</label>
-    <select id="vorlade-zoom">
-      <option value="14" selected>Vollständig – Straßen und Gebäude</option>
-    </select>
-    <button class="btn primary" id="vorladen-start" style="margin-top:10px">Insel jetzt vorladen (braucht Internet)</button>
-    <div class="hinweis" id="vorladen-status">
-      Lädt gezielt die Vektorkarte für ganz Föhr herunter und speichert sie offline – auch für
-      Orte, die noch nie manuell angesehen wurden. Das muss auf jedem Tablet einmal einzeln
-      ausgeführt werden.
-    </div>
+    <div class="hinweis">Die eigene Föhr-Grundkarte ist fest in der Anwendung enthalten und erscheint automatisch. Ein zusätzlicher Kartendownload durch den Nutzer ist nicht erforderlich.</div>
 
     <h2>Sichern und übertragen (manuell)</h2>
     <div class="hinweis warn" id="ungesichert-hinweis" hidden>
@@ -420,10 +431,9 @@
       GeoJSON-Datei (z. B. per E-Mail), die unter „Daten“ eingelesen wird.
     </div>
     <div class="hinweis">
-      Beim einmaligen Laden mit Internet unter „Karte“ und „Suchen → Punkt öffnen“ nicht nur
-      verschieben, sondern in allen wichtigen Orten der Insel auch nah heranzoomen (bis an den
-      Anschlag). Nur Zoomstufen, die dabei tatsächlich angezeigt wurden, sind offline scharf —
-      sonst wirkt die Karte beim Heranzoomen im Fahrzeug unscharf/verpixelt.
+      Die Föhr-Grundkarte wird beim ersten vollständigen Laden der App automatisch gespeichert.
+      Danach stehen alle enthaltenen Kartenbereiche und Zoomstufen ohne Internet zur Verfügung;
+      ein manuelles Öffnen oder Vorladen einzelner Orte ist nicht nötig.
     </div>
   </section>
 </main>
@@ -436,18 +446,42 @@
 </nav>
 
 <script src="vendor/leaflet.js"></script>
-<script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
-<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js"></script>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="vendor/pmtiles.js"></script>
+<script src="vendor/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
 const KEY = "wasserentnahme.foehr.v1";
-const OPENFREEMAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
-const OPENFREEMAP_TILEJSON = "https://tiles.openfreemap.org/planet";
+const PMTILES_DATEI = new URL("daten/foehr.pmtiles", document.baseURI).href;
+const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
+const pmtilesProtocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", pmtilesProtocol.tile);
 
-function grundkarteHinzufuegen(leafletMap){
-  return L.maplibreGL({
-    style: OPENFREEMAP_STYLE
-  }).addTo(leafletMap);
+const grundkartenStylePromise = fetch("vendor/protomaps-light-de.json")
+  .then(res => {
+    if(!res.ok) throw new Error("Kartenstil konnte nicht geladen werden");
+    return res.json();
+  })
+  .then(style => {
+    style.sources.protomaps.url = "pmtiles://" + PMTILES_DATEI;
+    style.sources.protomaps.attribution = PMTILES_ATTRIBUTION;
+    const assetBasis = new URL("vendor/protomaps-assets/", document.baseURI).href;
+    style.glyphs = assetBasis + "fonts/{fontstack}/{range}.pbf";
+    style.sprite = assetBasis + "sprites/v4/light";
+    return style;
+  });
+
+async function grundkarteHinzufuegen(leafletMap){
+  try {
+    const basisStyle = await grundkartenStylePromise;
+    const style = JSON.parse(JSON.stringify(basisStyle));
+    L.maplibreGL({
+      style,
+      attributionControl: { customAttribution: PMTILES_ATTRIBUTION }
+    }).addTo(leafletMap);
+  } catch(e){
+    console.error("Grundkarte konnte nicht geladen werden:", e);
+  }
 }
 
 if("serviceWorker" in navigator){
@@ -534,6 +568,51 @@ const typFilterEl = document.getElementById("f-typ-filter");
 sucheEl.addEventListener("input", zeichneListe);
 ortschaftFilterEl.addEventListener("change", zeichneListe);
 typFilterEl.addEventListener("change", zeichneListe);
+
+function istDefibrillator(s){
+  const typ = (s.typ || "").toLowerCase();
+  return typ.includes("defibrillator") || typ === "aed" || typ.includes(" aed");
+}
+
+function oeffneNaechstenDefibrillator(coords){
+  const defis = stellen.filter(s => istDefibrillator(s) && typeof s.lat === "number" && typeof s.lon === "number");
+  if(!defis.length){
+    alert("Es ist noch kein Defibrillator mit gültiger Position hinterlegt.");
+    return;
+  }
+  const naechster = defis.reduce((bester, s) => {
+    const entfernung = distanz(coords.latitude, coords.longitude, s.lat, s.lon);
+    return !bester || entfernung < bester.entfernung ? { stelle:s, entfernung } : bester;
+  }, null);
+  zeigeDetails(naechster.stelle);
+}
+
+const defiSchnellEl = document.getElementById("defi-schnell");
+defiSchnellEl.addEventListener("click", () => {
+  if(pos){
+    oeffneNaechstenDefibrillator(pos);
+    return;
+  }
+  if(!("geolocation" in navigator)){
+    alert("Dieses Gerät kann den aktuellen Standort nicht ermitteln.");
+    return;
+  }
+  const beschriftung = defiSchnellEl.querySelector("strong");
+  defiSchnellEl.disabled = true;
+  beschriftung.textContent = "Standort wird ermittelt …";
+  navigator.geolocation.getCurrentPosition(p => {
+    pos = p.coords;
+    defiSchnellEl.disabled = false;
+    beschriftung.textContent = "Nächsten Defibrillator finden";
+    oeffneNaechstenDefibrillator(p.coords);
+  }, err => {
+    defiSchnellEl.disabled = false;
+    beschriftung.textContent = "Nächsten Defibrillator finden";
+    alert(err.code === 1
+      ? "Bitte erlaube der App den Zugriff auf deinen Standort, damit der nächste Defibrillator gefunden werden kann."
+      : "Der aktuelle Standort konnte nicht ermittelt werden. Bitte versuche es erneut.");
+  }, { enableHighAccuracy:true, maximumAge:5000, timeout:20000 });
+});
 
 const ORTSCHAFT_GRUPPEN = {
   "Utersum": "Utersum / Dunsum / Witsum / Hedehusum",
@@ -1032,7 +1111,7 @@ function zeichneDaten(){
   document.getElementById("d-anzahl").textContent = stellen.length;
   document.getElementById("d-speicher").textContent = store.persistent ? "dauerhaft auf dem Gerät" : "nur bis zum Schließen";
   document.getElementById("d-pin").textContent = pinGesetzt() ? "aktiv" : "nicht gesetzt";
-  kachelInfoAktualisieren();
+  speicherInfoAktualisieren();
   document.getElementById("auto-sync-toggle").checked = autoSyncAktiv();
   let syncZeit = null;
   try { syncZeit = localStorage.getItem(SYNC_ZEIT_KEY); } catch(e){}
@@ -1040,176 +1119,20 @@ function zeichneDaten(){
   document.getElementById("ungesichert-hinweis").hidden = !istUngesichert();
 }
 
-/* ---------- Cache-Info (Offline-Kartendateien) ---------- */
-const TILE_CACHE_NAME = "openfreemap-assets-v1"; // muss zu TILE_CACHE in sw.js passen
-function kachelInfoAktualisieren(){
-  const kachelnEl = document.getElementById("d-kacheln");
-  const speicherEl = document.getElementById("d-speicherplatz");
-  if(!("caches" in window)){
-    kachelnEl.textContent = "nicht verfügbar";
-    speicherEl.textContent = "nicht verfügbar";
-    return;
-  }
-  caches.open(TILE_CACHE_NAME)
-    .then(c => c.keys())
-    .then(keys => { kachelnEl.textContent = keys.length + " Dateien"; })
-    .catch(() => { kachelnEl.textContent = "nicht verfügbar"; });
-
+function speicherInfoAktualisieren(){
+  const el = document.getElementById("d-speicherplatz");
   if(navigator.storage && navigator.storage.estimate){
     navigator.storage.estimate()
       .then(est => {
-        speicherEl.textContent = typeof est.usage === "number"
+        el.textContent = typeof est.usage === "number"
           ? (est.usage / 1024 / 1024).toFixed(1) + " MB (App gesamt)"
           : "nicht verfügbar";
       })
-      .catch(() => { speicherEl.textContent = "nicht verfügbar"; });
+      .catch(() => { el.textContent = "nicht verfügbar"; });
   } else {
-    speicherEl.textContent = "nicht verfügbar";
+    el.textContent = "nicht verfügbar";
   }
 }
-
-/* ---------- Insel vorladen (OpenFreeMap-Vektorkarte für Föhr) ---------- */
-const FOEHR_BBOX = { west: 8.40, south: 54.64, east: 8.63, north: 54.77 };
-const VORLADEN_MIN_ZOOM = 8;
-const VORLADEN_MAX_ZOOM = 14;
-
-function tileIndexBereich(zoom, bbox){
-  const n = Math.pow(2, zoom);
-  const lon2x = lon => Math.floor((lon + 180) / 360 * n);
-  const lat2y = lat => {
-    const rad = lat * Math.PI / 180;
-    return Math.floor((1 - Math.log(Math.tan(rad) + 1 / Math.cos(rad)) / Math.PI) / 2 * n);
-  };
-  return {
-    xMin: lon2x(bbox.west), xMax: lon2x(bbox.east),
-    yMin: lat2y(bbox.north), yMax: lat2y(bbox.south)
-  };
-}
-
-function kachelnFuerInsel(maxZoom){
-  const liste = [];
-  const bisZoom = Math.min(maxZoom, VORLADEN_MAX_ZOOM);
-  for(let z = VORLADEN_MIN_ZOOM; z <= bisZoom; z++){
-    const { xMin, xMax, yMin, yMax } = tileIndexBereich(z, FOEHR_BBOX);
-    for(let x = xMin; x <= xMax; x++){
-      for(let y = yMin; y <= yMax; y++) liste.push({ z, x, y });
-    }
-  }
-  return liste;
-}
-
-async function abrufenUndCachen(url, cache){
-  try {
-    const res = await fetch(url);
-    if(!res.ok) throw new Error("HTTP " + res.status);
-    await cache.put(url, res.clone());
-    return res;
-  } catch(e){
-    const vorhanden = await cache.match(url);
-    if(vorhanden) return vorhanden;
-    throw e;
-  }
-}
-
-async function openFreeMapMetadaten(cache){
-  const styleAntwort = await abrufenUndCachen(OPENFREEMAP_STYLE, cache);
-  const style = await styleAntwort.json();
-  const tilejsonUrl = style.sources && style.sources.openmaptiles && style.sources.openmaptiles.url
-    ? style.sources.openmaptiles.url
-    : OPENFREEMAP_TILEJSON;
-  const tilejsonAntwort = await abrufenUndCachen(tilejsonUrl, cache);
-  const tilejson = await tilejsonAntwort.json();
-  if(!tilejson.tiles || !tilejson.tiles[0]) throw new Error("Keine Kartenadresse gefunden");
-  return { style, kachelVorlage:tilejson.tiles[0] };
-}
-
-async function openFreeMapZusatzdateienCachen(style, cache){
-  const urls = [];
-  if(style.sprite){
-    urls.push(style.sprite + ".json", style.sprite + ".png");
-    urls.push(style.sprite + "@2x.json", style.sprite + "@2x.png");
-  }
-  if(style.glyphs){
-    const schriften = new Set();
-    (style.layers || []).forEach(layer => {
-      const f = layer.layout && layer.layout["text-font"];
-      if(Array.isArray(f) && f.length && f.every(x => typeof x === "string")) schriften.add(f.join(","));
-    });
-    schriften.forEach(font => {
-      urls.push(style.glyphs
-        .replace("{fontstack}", encodeURIComponent(font))
-        .replace("{range}", "0-255"));
-    });
-  }
-  let fehler = 0;
-  await Promise.all(urls.map(url => abrufenUndCachen(url, cache).catch(() => { fehler++; })));
-  return fehler;
-}
-
-let vorladenLaeuft = false, vorladenAbbrechen = false;
-document.getElementById("vorladen-start").addEventListener("click", async () => {
-  const statusEl = document.getElementById("vorladen-status");
-  const startBtn = document.getElementById("vorladen-start");
-
-  if(vorladenLaeuft){ vorladenAbbrechen = true; return; }
-
-  if(!navigator.onLine){ alert("Kein Internet erkannt. Zum Vorladen wird eine Verbindung benötigt."); return; }
-
-  const maxZoom = parseInt(document.getElementById("vorlade-zoom").value, 10);
-  const kacheln = kachelnFuerInsel(maxZoom);
-  const mbSchaetzung = Math.max(1, Math.round(kacheln.length * 60 / 1024));
-  if(!confirm(kacheln.length + " Kartendateien werden heruntergeladen (grob geschätzt ca. " + mbSchaetzung + " MB). Das kann mehrere Minuten dauern. Fortfahren?")) return;
-
-  vorladenLaeuft = true;
-  vorladenAbbrechen = false;
-  startBtn.textContent = "Abbrechen";
-  statusEl.textContent = "Kartendaten von OpenFreeMap werden vorbereitet…";
-
-  const cache = await caches.open(TILE_CACHE_NAME);
-  let fertig = 0, fehler = 0;
-  const GLEICHZEITIG = 4;
-  let naechsterIndex = 0;
-  let metadaten;
-  try {
-    metadaten = await openFreeMapMetadaten(cache);
-    fehler += await openFreeMapZusatzdateienCachen(metadaten.style, cache);
-  } catch(e){
-    vorladenLaeuft = false;
-    startBtn.textContent = "Insel jetzt vorladen (braucht Internet)";
-    statusEl.textContent = "Die OpenFreeMap-Kartendaten konnten nicht vorbereitet werden. Bitte Internetverbindung prüfen und erneut versuchen.";
-    return;
-  }
-
-  async function naechstesLaden(){
-    while(naechsterIndex < kacheln.length && !vorladenAbbrechen){
-      const i = naechsterIndex++;
-      const { z, x, y } = kacheln[i];
-      const url = metadaten.kachelVorlage
-        .replace("{z}", String(z))
-        .replace("{x}", String(x))
-        .replace("{y}", String(y));
-      try {
-        const vorhanden = await cache.match(url);
-        if(!vorhanden){
-          await abrufenUndCachen(url, cache);
-        }
-      } catch(e){ fehler++; }
-      fertig++;
-      if(fertig % 10 === 0 || fertig === kacheln.length){
-        statusEl.textContent = fertig + " / " + kacheln.length + " Kartendateien geladen" + (fehler ? " (" + fehler + " Fehler)" : "") + "…";
-      }
-    }
-  }
-
-  await Promise.all(Array.from({ length: GLEICHZEITIG }, naechstesLaden));
-
-  vorladenLaeuft = false;
-  startBtn.textContent = "Insel jetzt vorladen (braucht Internet)";
-  statusEl.textContent = vorladenAbbrechen
-    ? "Abgebrochen nach " + fertig + " von " + kacheln.length + " Kartendateien."
-    : "Fertig: " + fertig + " Kartendateien geprüft/geladen" + (fehler ? ", " + fehler + " Fehler (z. B. kurzzeitig kein Netz)." : ".") + " Die Grundkarte für Föhr ist jetzt offline gespeichert.";
-  kachelInfoAktualisieren();
-});
 
 /* ---------- PIN-Schutz ---------- */
 const PIN_KEY = "wasserentnahme.foehr.pin";
