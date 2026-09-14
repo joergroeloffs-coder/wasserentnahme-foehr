@@ -1,8 +1,10 @@
 "use strict";
-const SHELL_CACHE = "shell-v9-defibrillator";
+importScripts("./config.js");
+const SHELL_CACHE = "shell-v10-config";
 const SHELL_FILES = [
   "./",
   "./index.html",
+  "./config.js",
   "./manifest.json",
   "./icon.svg",
   "./icon-180.png",
@@ -10,24 +12,11 @@ const SHELL_FILES = [
   "./icon-512.png",
   "./vendor/leaflet.js",
   "./vendor/leaflet.css",
-  "./vendor/maplibre-gl.js",
-  "./vendor/maplibre-gl.css",
-  "./vendor/pmtiles.js",
-  "./vendor/leaflet-maplibre-gl.js",
-  "./vendor/protomaps-light-de.json",
-  "./vendor/protomaps-assets/fonts/Noto Sans Italic/0-255.pbf",
-  "./vendor/protomaps-assets/fonts/Noto Sans Regular/0-255.pbf",
-  "./vendor/protomaps-assets/fonts/Noto Sans Medium/0-255.pbf",
-  "./vendor/protomaps-assets/sprites/v4/light.json",
-  "./vendor/protomaps-assets/sprites/v4/light.png",
-  "./vendor/protomaps-assets/sprites/v4/light@2x.json",
-  "./vendor/protomaps-assets/sprites/v4/light@2x.png",
   "./vendor/images/marker-icon.png",
   "./vendor/images/marker-icon-2x.png",
   "./vendor/images/marker-shadow.png",
   "./vendor/images/layers.png",
   "./vendor/images/layers-2x.png",
-  "./daten/foehr.pmtiles",
   "./daten/stellen.geojson",
   "./anleitung/index.html",
   "./anleitung/bilder/suchen.png",
@@ -37,6 +26,26 @@ const SHELL_FILES = [
   "./anleitung/bilder/erfassen.png",
   "./anleitung/bilder/daten.png"
 ];
+/* Die PMTiles/MapLibre-Dateien nur cachen, wenn diese Gemeinde eine eigene
+   Offlinekarte hat (APP_CONFIG.pmtilesDatei gesetzt) - cache.addAll() ist
+   atomar, eine fehlende Datei würde sonst die GESAMTE Installation kippen. */
+if(self.APP_CONFIG && self.APP_CONFIG.pmtilesDatei){
+  SHELL_FILES.push(
+    "./vendor/maplibre-gl.js",
+    "./vendor/maplibre-gl.css",
+    "./vendor/pmtiles.js",
+    "./vendor/leaflet-maplibre-gl.js",
+    "./vendor/protomaps-light-de.json",
+    "./vendor/protomaps-assets/fonts/Noto Sans Italic/0-255.pbf",
+    "./vendor/protomaps-assets/fonts/Noto Sans Regular/0-255.pbf",
+    "./vendor/protomaps-assets/fonts/Noto Sans Medium/0-255.pbf",
+    "./vendor/protomaps-assets/sprites/v4/light.json",
+    "./vendor/protomaps-assets/sprites/v4/light.png",
+    "./vendor/protomaps-assets/sprites/v4/light@2x.json",
+    "./vendor/protomaps-assets/sprites/v4/light@2x.png",
+    "./daten/" + self.APP_CONFIG.pmtilesDatei
+  );
+}
 
 self.addEventListener("install", event => {
   event.waitUntil(
@@ -52,8 +61,9 @@ self.addEventListener("activate", event => {
   );
 });
 
-function istFoehrPmtiles(url){
-  return url.origin === self.location.origin && url.pathname.endsWith("/daten/foehr.pmtiles");
+function istPmtilesDatei(url){
+  if(!self.APP_CONFIG || !self.APP_CONFIG.pmtilesDatei) return false;
+  return url.origin === self.location.origin && url.pathname.endsWith("/daten/" + self.APP_CONFIG.pmtilesDatei);
 }
 
 async function pmtilesAusCache(request){
@@ -97,7 +107,7 @@ async function pmtilesAusCache(request){
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
 
-  if(istFoehrPmtiles(url)){
+  if(istPmtilesDatei(url)){
     event.respondWith(pmtilesAusCache(event.request));
     return;
   }

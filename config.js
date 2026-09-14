@@ -3,7 +3,7 @@
    alle anderen Dateien (index.html, nutzer/, nutzer-admin/, sw.js, vendor/)
    bleiben zwischen den Versionen identisch und werden per Sync-Skript
    (werkzeuge/sync_core.py) synchron gehalten. */
-window.APP_CONFIG = {
+self.APP_CONFIG = {
   ortName: "Föhr",
 
   // Startposition/Zoom der Karte
