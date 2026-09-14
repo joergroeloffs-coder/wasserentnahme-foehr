@@ -288,7 +288,7 @@
 <script>
 "use strict";
 /* Admin-Version ohne Testzeitraum-Sperre – nicht öffentlich verlinken */
-const KEY = "wasserentnahme.foehr.v1";
+const KEY = "wasserentnahme.foehr.admin.v1";
 
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
@@ -704,8 +704,8 @@ document.getElementById("karte-ortschaft-filter").addEventListener("change", () 
 });
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
-const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
-const SYNC_ZEIT_KEY = "wasserentnahme.foehr.synczeit";
+const SYNC_HASH_KEY = "wasserentnahme.foehr.admin.synchash";
+const SYNC_ZEIT_KEY = "wasserentnahme.foehr.admin.synczeit";
 const SYNC_URL = "../daten/stellen.geojson";
 
 function ortsNameAusDatei(dateiname){

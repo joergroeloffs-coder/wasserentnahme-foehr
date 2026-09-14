@@ -297,7 +297,7 @@
 /* ---------- Testzeitraum: 62 Tage ab erstem Öffnen auf diesem Gerät ---------- */
 (function trialPruefen(){
   const TRIAL_TAGE = 62;
-  const TRIAL_KEY = "wasserentnahme.nutzer.trialstart";
+  const TRIAL_KEY = "wasserentnahme.foehr.nutzer.trialstart";
   let start;
   try {
     const gespeichert = localStorage.getItem(TRIAL_KEY);
@@ -317,7 +317,7 @@
 
 /* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung ---------- */
 (function zugangsnummerAnzeigen(){
-  const ZN_KEY = "wasserentnahme.nutzer.zugangsnummer";
+  const ZN_KEY = "wasserentnahme.foehr.nutzer.zugangsnummer";
   try {
     const ausUrl = new URLSearchParams(window.location.search).get("zugang");
     let nr = null;
@@ -336,7 +336,7 @@
   } catch(e){}
 })();
 
-const KEY = "wasserentnahme.foehr.v1";
+const KEY = "wasserentnahme.foehr.nutzer.v1";
 
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
@@ -753,8 +753,8 @@ document.getElementById("karte-ortschaft-filter").addEventListener("change", () 
 });
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
-const SYNC_HASH_KEY = "wasserentnahme.foehr.synchash";
-const SYNC_ZEIT_KEY = "wasserentnahme.foehr.synczeit";
+const SYNC_HASH_KEY = "wasserentnahme.foehr.nutzer.synchash";
+const SYNC_ZEIT_KEY = "wasserentnahme.foehr.nutzer.synczeit";
 const SYNC_URL = "../daten/stellen.geojson";
 
 function ortsNameAusDatei(dateiname){
@@ -833,7 +833,7 @@ window.addEventListener("online", () => serverAbgleich(false));
 
 /* ---------- Kartenkacheln automatisch vorladen (für Offline-Nutzung unterwegs) ---------- */
 const TILE_CACHE_NAME = "osm-tiles-v1"; // muss zu TILE_CACHE in sw.js passen
-const KACHELN_FERTIG_KEY = "wasserentnahme.nutzer.kacheln_vorgeladen";
+const KACHELN_FERTIG_KEY = "wasserentnahme.foehr.nutzer.kacheln_vorgeladen";
 const FOEHR_BBOX = { west: 8.40, south: 54.64, east: 8.63, north: 54.77 };
 const VORLADEN_MIN_ZOOM = 13;
 const VORLADEN_MAX_ZOOM = 16;
