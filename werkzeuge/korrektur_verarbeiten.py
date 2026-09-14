@@ -30,9 +30,23 @@ DATEN_PFAD = REPO_ROOT / "daten" / "stellen.geojson"
 
 BLOCK_RE = re.compile(r"MELDUNG:\s*(.+)")
 
+# Manche Mail-Apps schicken den Text ohne Zeilenumbrüche (alles eine Zeile,
+# durch Leerzeichen getrennt) statt wie von der App vorgesehen mit \n. Vor
+# jedem bekannten Feldnamen wird deshalb ein Zeilenumbruch erzwungen, egal
+# wie der Text tatsächlich ankommt - das macht die Erkennung robust gegen
+# solche Mail-Client-Eigenheiten.
+FELD_LABEL_RE = re.compile(
+    r"\s*(?=(MELDUNG:|Ref:|Bezeichnung:|Neue Position:|Genauigkeit:|Bisherige Position \(App\):))"
+)
+
+
+def normalisiere_zeilenumbrueche(text):
+    return FELD_LABEL_RE.sub("\n", text).strip()
+
 
 def parse_meldungen(text):
     """Zerlegt den Text in einzelne MELDUNG-Blöcke."""
+    text = normalisiere_zeilenumbrueche(text)
     starts = [m.start() for m in BLOCK_RE.finditer(text)]
     starts.append(len(text))
     bloecke = []
