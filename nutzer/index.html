@@ -352,24 +352,27 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 }
 
-/* ---------- Testzeitraum: 62 Tage ab erstem Öffnen auf diesem Gerät ---------- */
+/* ---------- Zugangsdauer: 1 Jahr ab dem ersten Öffnen auf diesem Gerät ---------- */
 (function trialPruefen(){
-  const TRIAL_TAGE = 62;
+  const TRIAL_TAGE = 365;
   const TRIAL_KEY = APP_CONFIG.speicherPraefix + ".nutzer.trialstart";
+  let ablauf;
+
   let start;
   try {
     const gespeichert = localStorage.getItem(TRIAL_KEY);
     if(gespeichert){ start = Number(gespeichert); }
     else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
   } catch(e){ start = Date.now(); }
-  const ablauf = start + TRIAL_TAGE * 24 * 60 * 60 * 1000;
+  ablauf = start + TRIAL_TAGE * 24 * 60 * 60 * 1000;
+
   if(Date.now() > ablauf){
     document.body.innerHTML =
       '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
-      '<h1 style="font-size:20px;margin:0 0 12px">Testzeitraum abgelaufen</h1>' +
-      '<p style="color:#93a3b3;max-width:320px;margin:0">Der ' + TRIAL_TAGE + '-tägige Testzeitraum dieser Version ist beendet. Bei Interesse an einer dauerhaften Nutzung bitte den Admin kontaktieren.</p>' +
+      '<h1 style="font-size:20px;margin:0 0 12px">Zugang abgelaufen</h1>' +
+      '<p style="color:#93a3b3;max-width:320px;margin:0">Der Zugang zu dieser Version ist beendet. Bei Interesse an einer weiteren Nutzung bitte den Admin kontaktieren.</p>' +
       '</div>';
-    throw new Error("Testzeitraum abgelaufen");
+    throw new Error("Zugang abgelaufen");
   }
 })();
 
