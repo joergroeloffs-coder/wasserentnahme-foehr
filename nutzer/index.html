@@ -8,6 +8,7 @@
 <link rel="icon" href="../icon.svg">
 <link rel="apple-touch-icon" href="../icon-180.png">
 <link rel="stylesheet" href="../vendor/leaflet.css">
+<link rel="stylesheet" href="../vendor/maplibre-gl.css">
 <title>Wasserentnahmestellen</title>
 <style>
   :root{
@@ -291,8 +292,43 @@
 </nav>
 
 <script src="../vendor/leaflet.js"></script>
+<script src="../vendor/maplibre-gl.js"></script>
+<script src="../vendor/pmtiles.js"></script>
+<script src="../vendor/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
+
+const PMTILES_DATEI = new URL("../daten/foehr.pmtiles", document.baseURI).href;
+const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
+const pmtilesProtocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", pmtilesProtocol.tile);
+
+const grundkartenStylePromise = fetch("../vendor/protomaps-light-de.json")
+  .then(res => {
+    if(!res.ok) throw new Error("Kartenstil konnte nicht geladen werden");
+    return res.json();
+  })
+  .then(style => {
+    style.sources.protomaps.url = "pmtiles://" + PMTILES_DATEI;
+    style.sources.protomaps.attribution = PMTILES_ATTRIBUTION;
+    const assetBasis = new URL("../vendor/protomaps-assets/", document.baseURI).href;
+    style.glyphs = assetBasis + "fonts/{fontstack}/{range}.pbf";
+    style.sprite = assetBasis + "sprites/v4/light";
+    return style;
+  });
+
+async function grundkarteHinzufuegen(leafletMap){
+  try {
+    const basisStyle = await grundkartenStylePromise;
+    const style = JSON.parse(JSON.stringify(basisStyle));
+    L.maplibreGL({
+      style,
+      attributionControl: { customAttribution: PMTILES_ATTRIBUTION }
+    }).addTo(leafletMap);
+  } catch(e){
+    console.error("Grundkarte konnte nicht geladen werden:", e);
+  }
+}
 
 /* ---------- Testzeitraum: 62 Tage ab erstem Öffnen auf diesem Gerät ---------- */
 (function trialPruefen(){
@@ -497,10 +533,7 @@ function initDetailMap(){
   if(detailMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(detailMap);
+  grundkarteHinzufuegen(detailMap);
 }
 
 function zeigeDetails(s){
@@ -601,10 +634,7 @@ function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(peilMap);
+  grundkarteHinzufuegen(peilMap);
 
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
   peilMap.dragging.disable();
@@ -668,10 +698,7 @@ function initKarte(){
   if(map) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(map);
+  grundkarteHinzufuegen(map);
   markerLayer = L.featureGroup().addTo(map);
   zeichneKarte();
 }
@@ -831,102 +858,9 @@ document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgl
 window.addEventListener("load", () => { if(navigator.onLine) serverAbgleich(false); });
 window.addEventListener("online", () => serverAbgleich(false));
 
-/* ---------- Kartenkacheln automatisch vorladen (für Offline-Nutzung unterwegs) ---------- */
-const TILE_CACHE_NAME = "osm-tiles-v1"; // muss zu TILE_CACHE in sw.js passen
-const KACHELN_FERTIG_KEY = "wasserentnahme.foehr.nutzer.kacheln_vorgeladen";
-const FOEHR_BBOX = { west: 8.40, south: 54.64, east: 8.63, north: 54.77 };
-const VORLADEN_MIN_ZOOM = 13;
-const VORLADEN_MAX_ZOOM = 16;
-
-function tileIndexBereich(zoom, bbox){
-  const n = Math.pow(2, zoom);
-  const lon2x = lon => Math.floor((lon + 180) / 360 * n);
-  const lat2y = lat => {
-    const rad = lat * Math.PI / 180;
-    return Math.floor((1 - Math.log(Math.tan(rad) + 1 / Math.cos(rad)) / Math.PI) / 2 * n);
-  };
-  return {
-    xMin: lon2x(bbox.west), xMax: lon2x(bbox.east),
-    yMin: lat2y(bbox.north), yMax: lat2y(bbox.south)
-  };
-}
-
-function kachelnFuerInsel(maxZoom){
-  const liste = [];
-  for(let z = VORLADEN_MIN_ZOOM; z <= maxZoom; z++){
-    const { xMin, xMax, yMin, yMax } = tileIndexBereich(z, FOEHR_BBOX);
-    for(let x = xMin; x <= xMax; x++){
-      for(let y = yMin; y <= yMax; y++) liste.push({ z, x, y });
-    }
-  }
-  return liste;
-}
-
-async function kachelnImHintergrundVorladen(){
-  if(!("caches" in window)) return;
-  try { if(localStorage.getItem(KACHELN_FERTIG_KEY) === "1") return; } catch(e){}
-  if(!navigator.onLine) return;
-
-  const statusEl = document.getElementById("kachel-status");
-  const kacheln = kachelnFuerInsel(VORLADEN_MAX_ZOOM);
-  const cache = await caches.open(TILE_CACHE_NAME);
-  let fertig = 0, fehler = 0;
-  const GLEICHZEITIG = 3;
-  let naechsterIndex = 0;
-
-  async function eineKachel(url){
-    const abbruch = new AbortController();
-    const timeout = setTimeout(() => abbruch.abort(), 8000);
-    try {
-      const vorhanden = await cache.match(url);
-      if(vorhanden) return;
-      const res = await fetch(url, { signal: abbruch.signal });
-      if(res.ok) await cache.put(url, res);
-      else throw new Error("http " + res.status);
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  // Absicherung pro Kachel: egal was hängt (Netzwerk, Cache Storage, …), nach spätestens
-  // 10s wird abgebrochen und mit der nächsten Kachel weitergemacht, statt für immer zu warten.
-  function mitZeitlimit(promise, ms){
-    return new Promise((resolve, reject) => {
-      const t = setTimeout(() => reject(new Error("Zeitlimit")), ms);
-      promise.then(v => { clearTimeout(t); resolve(v); }, e => { clearTimeout(t); reject(e); });
-    });
-  }
-
-  async function naechstesLaden(){
-    while(naechsterIndex < kacheln.length){
-      const i = naechsterIndex++;
-      const { z, x, y } = kacheln[i];
-      const url = "https://tile.openstreetmap.org/" + z + "/" + x + "/" + y + ".png";
-      try {
-        await mitZeitlimit(eineKachel(url), 10000);
-      } catch(e){ fehler++; }
-      fertig++;
-      if(statusEl && (fertig % 15 === 0 || fertig === kacheln.length)){
-        statusEl.textContent = "Karte für Offline-Nutzung wird geladen: " + fertig + " / " + kacheln.length;
-      }
-    }
-  }
-
-  if(statusEl) statusEl.textContent = "Karte für Offline-Nutzung wird geladen …";
-  await Promise.all(Array.from({ length: GLEICHZEITIG }, naechstesLaden));
-
-  const vollstaendigDurchlaufen = naechsterIndex >= kacheln.length;
-  const grossteilsErfolgreich = fehler < kacheln.length * 0.1;
-  if(vollstaendigDurchlaufen && grossteilsErfolgreich){
-    try { localStorage.setItem(KACHELN_FERTIG_KEY, "1"); } catch(e){}
-  }
-  // sonst: abgebrochen oder zu viele Fehler – beim nächsten Online-Start wird fortgesetzt
-  // (schon gecachte Kacheln werden dank cache.match() nicht erneut heruntergeladen)
-  if(statusEl) statusEl.textContent = "";
-}
-
-window.addEventListener("load", () => { if(navigator.onLine) kachelnImHintergrundVorladen(); });
-window.addEventListener("online", () => kachelnImHintergrundVorladen());
+/* Kartenkacheln: seit Umstellung auf PMTiles übernimmt der Service Worker
+   das Vorladen der Kartendatei automatisch beim Installieren (siehe sw.js) -
+   kein manuelles Kachel-für-Kachel-Vorladen mehr nötig. */
 
 aktualisiereFilterListen(); zeichneListe();
 </script>

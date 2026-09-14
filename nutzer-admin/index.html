@@ -8,6 +8,7 @@
 <link rel="icon" href="../icon.svg">
 <link rel="apple-touch-icon" href="../icon-180.png">
 <link rel="stylesheet" href="../vendor/leaflet.css">
+<link rel="stylesheet" href="../vendor/maplibre-gl.css">
 <title>Wasserentnahmestellen</title>
 <style>
   :root{
@@ -285,8 +286,44 @@
 </nav>
 
 <script src="../vendor/leaflet.js"></script>
+<script src="../vendor/maplibre-gl.js"></script>
+<script src="../vendor/pmtiles.js"></script>
+<script src="../vendor/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
+
+const PMTILES_DATEI = new URL("../daten/foehr.pmtiles", document.baseURI).href;
+const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
+const pmtilesProtocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", pmtilesProtocol.tile);
+
+const grundkartenStylePromise = fetch("../vendor/protomaps-light-de.json")
+  .then(res => {
+    if(!res.ok) throw new Error("Kartenstil konnte nicht geladen werden");
+    return res.json();
+  })
+  .then(style => {
+    style.sources.protomaps.url = "pmtiles://" + PMTILES_DATEI;
+    style.sources.protomaps.attribution = PMTILES_ATTRIBUTION;
+    const assetBasis = new URL("../vendor/protomaps-assets/", document.baseURI).href;
+    style.glyphs = assetBasis + "fonts/{fontstack}/{range}.pbf";
+    style.sprite = assetBasis + "sprites/v4/light";
+    return style;
+  });
+
+async function grundkarteHinzufuegen(leafletMap){
+  try {
+    const basisStyle = await grundkartenStylePromise;
+    const style = JSON.parse(JSON.stringify(basisStyle));
+    L.maplibreGL({
+      style,
+      attributionControl: { customAttribution: PMTILES_ATTRIBUTION }
+    }).addTo(leafletMap);
+  } catch(e){
+    console.error("Grundkarte konnte nicht geladen werden:", e);
+  }
+}
+
 /* Admin-Version ohne Testzeitraum-Sperre – nicht öffentlich verlinken */
 const KEY = "wasserentnahme.foehr.admin.v1";
 
@@ -449,10 +486,7 @@ function initDetailMap(){
   if(detailMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(detailMap);
+  grundkarteHinzufuegen(detailMap);
 }
 
 function zeigeDetails(s){
@@ -552,10 +586,7 @@ function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(peilMap);
+  grundkarteHinzufuegen(peilMap);
 
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
   peilMap.dragging.disable();
@@ -619,10 +650,7 @@ function initKarte(){
   if(map) return;
   L.Icon.Default.imagePath = "../vendor/images/";
   map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
-  }).addTo(map);
+  grundkarteHinzufuegen(map);
   markerLayer = L.featureGroup().addTo(map);
   zeichneKarte();
 }
