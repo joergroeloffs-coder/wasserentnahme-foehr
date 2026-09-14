@@ -352,19 +352,35 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 }
 
-/* ---------- Zugangsdauer: 1 Jahr ab dem ersten Öffnen auf diesem Gerät ---------- */
+/* ---------- Zugangsdauer: erst Testphase (62 Tage ab erstem Öffnen), nach
+   Freigabe per Link (?freigabe=1) 365 Tage ab dem Freigabe-Zeitpunkt ---------- */
 (function trialPruefen(){
-  const TRIAL_TAGE = 365;
+  const TEST_TAGE = 62;
+  const FREIGABE_TAGE = 365;
   const TRIAL_KEY = APP_CONFIG.speicherPraefix + ".nutzer.trialstart";
+  const FREIGABE_KEY = APP_CONFIG.speicherPraefix + ".nutzer.freigabestart";
   let ablauf;
 
-  let start;
   try {
-    const gespeichert = localStorage.getItem(TRIAL_KEY);
-    if(gespeichert){ start = Number(gespeichert); }
-    else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
-  } catch(e){ start = Date.now(); }
-  ablauf = start + TRIAL_TAGE * 24 * 60 * 60 * 1000;
+    if(new URLSearchParams(window.location.search).get("freigabe") === "1" && !localStorage.getItem(FREIGABE_KEY)){
+      localStorage.setItem(FREIGABE_KEY, String(Date.now()));
+    }
+  } catch(e){}
+
+  let freigabeStart = null;
+  try { const g = localStorage.getItem(FREIGABE_KEY); if(g) freigabeStart = Number(g); } catch(e){}
+
+  if(freigabeStart){
+    ablauf = freigabeStart + FREIGABE_TAGE * 24 * 60 * 60 * 1000;
+  } else {
+    let start;
+    try {
+      const gespeichert = localStorage.getItem(TRIAL_KEY);
+      if(gespeichert){ start = Number(gespeichert); }
+      else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
+    } catch(e){ start = Date.now(); }
+    ablauf = start + TEST_TAGE * 24 * 60 * 60 * 1000;
+  }
 
   if(Date.now() > ablauf){
     document.body.innerHTML =
