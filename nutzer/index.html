@@ -89,6 +89,10 @@
     border:1px solid var(--line);
   }
   .btn.primary{background:var(--signal);border-color:var(--signal);font-weight:600}
+  .btn.defi-rund{
+    background:#e0398a;border-color:#e0398a;color:#fff;font-weight:700;font-size:16px;
+    border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;
+  }
   .btn.ghost{background:none}
   .row{display:flex;gap:10px}
   .row>*{flex:1}
@@ -271,6 +275,12 @@
   <!-- Liste -->
   <section id="v-liste" class="view on">
     <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
+    <button class="btn defi-rund" id="naechster-defi" style="margin-top:10px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+        <path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>
+      </svg>
+      Nächster Defi
+    </button>
     <div class="row" style="margin-top:8px">
       <div>
         <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
@@ -558,6 +568,18 @@ document.getElementById("detail-ja").addEventListener("click", () => {
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   detailStelle = null;
+});
+
+document.getElementById("naechster-defi").addEventListener("click", () => {
+  const defis = stellen.filter(s => (s.typ || "").toLowerCase().includes("defibrillator"));
+  if(!defis.length){ alert("Keine Defibrillatoren erfasst."); return; }
+  if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
+  let naechster = defis[0], minAbstand = distanz(pos.latitude, pos.longitude, naechster.lat, naechster.lon);
+  for(const s of defis){
+    const d = distanz(pos.latitude, pos.longitude, s.lat, s.lon);
+    if(d < minAbstand){ minAbstand = d; naechster = s; }
+  }
+  zeigeDetails(naechster);
 });
 
 /* ---------- Position teilen (immer per E-Mail an den Admin) ---------- */
@@ -863,6 +885,34 @@ window.addEventListener("online", () => serverAbgleich(false));
    kein manuelles Kachel-für-Kachel-Vorladen mehr nötig. */
 
 aktualisiereFilterListen(); zeichneListe();
+
+/* ---------- Handy-Zurück-Taste: erst Overlays/Ansichten schließen, ---------- */
+/* ---------- erst auf dem Startbildschirm nachfragen, ob App schließen ---------- */
+history.pushState({ appGuard: true }, "");
+window.addEventListener("popstate", () => {
+  if(document.getElementById("peil").classList.contains("on")){
+    document.getElementById("zurueck").click();
+    history.pushState({ appGuard: true }, "");
+    return;
+  }
+  if(document.getElementById("detailOverlay").classList.contains("on")){
+    document.getElementById("detailOverlay").classList.remove("on");
+    detailStelle = null;
+    history.pushState({ appGuard: true }, "");
+    return;
+  }
+  const aktiverTab = document.querySelector("nav button.on");
+  if(aktiverTab && aktiverTab.dataset.view !== "v-liste"){
+    document.querySelector('nav button[data-view="v-liste"]').click();
+    history.pushState({ appGuard: true }, "");
+    return;
+  }
+  if(confirm("App wirklich schließen?")){
+    // Nichts tun: der nächste Zurück-Druck verlässt die App wie gewohnt.
+  } else {
+    history.pushState({ appGuard: true }, "");
+  }
+});
 </script>
 </body>
 </html>
