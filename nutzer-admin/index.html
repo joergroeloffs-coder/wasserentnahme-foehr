@@ -295,6 +295,7 @@
   <button data-view="v-karte">Karte</button>
 </nav>
 
+<script src="../config.js"></script>
 <script src="../vendor/leaflet.js"></script>
 <script src="../vendor/maplibre-gl.js"></script>
 <script src="../vendor/pmtiles.js"></script>
@@ -302,26 +303,37 @@
 <script>
 "use strict";
 
-const PMTILES_DATEI = new URL("../daten/foehr.pmtiles", document.baseURI).href;
 const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
-const pmtilesProtocol = new pmtiles.Protocol();
-maplibregl.addProtocol("pmtiles", pmtilesProtocol.tile);
 
-const grundkartenStylePromise = fetch("../vendor/protomaps-light-de.json")
-  .then(res => {
-    if(!res.ok) throw new Error("Kartenstil konnte nicht geladen werden");
-    return res.json();
-  })
-  .then(style => {
-    style.sources.protomaps.url = "pmtiles://" + PMTILES_DATEI;
-    style.sources.protomaps.attribution = PMTILES_ATTRIBUTION;
-    const assetBasis = new URL("../vendor/protomaps-assets/", document.baseURI).href;
-    style.glyphs = assetBasis + "fonts/{fontstack}/{range}.pbf";
-    style.sprite = assetBasis + "sprites/v4/light";
-    return style;
-  });
+let grundkartenStylePromise = null;
+if(APP_CONFIG.pmtilesDatei){
+  const PMTILES_DATEI = new URL("../daten/" + APP_CONFIG.pmtilesDatei, document.baseURI).href;
+  const pmtilesProtocol = new pmtiles.Protocol();
+  maplibregl.addProtocol("pmtiles", pmtilesProtocol.tile);
+
+  grundkartenStylePromise = fetch("../vendor/protomaps-light-de.json")
+    .then(res => {
+      if(!res.ok) throw new Error("Kartenstil konnte nicht geladen werden");
+      return res.json();
+    })
+    .then(style => {
+      style.sources.protomaps.url = "pmtiles://" + PMTILES_DATEI;
+      style.sources.protomaps.attribution = PMTILES_ATTRIBUTION;
+      const assetBasis = new URL("../vendor/protomaps-assets/", document.baseURI).href;
+      style.glyphs = assetBasis + "fonts/{fontstack}/{range}.pbf";
+      style.sprite = assetBasis + "sprites/v4/light";
+      return style;
+    });
+}
 
 async function grundkarteHinzufuegen(leafletMap){
+  if(!grundkartenStylePromise){
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+    }).addTo(leafletMap);
+    return;
+  }
   try {
     const basisStyle = await grundkartenStylePromise;
     const style = JSON.parse(JSON.stringify(basisStyle));
@@ -335,7 +347,7 @@ async function grundkarteHinzufuegen(leafletMap){
 }
 
 /* Admin-Version ohne Testzeitraum-Sperre – nicht öffentlich verlinken */
-const KEY = "wasserentnahme.foehr.admin.v1";
+const KEY = APP_CONFIG.speicherPraefix + ".admin.v1";
 
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
@@ -419,14 +431,7 @@ sucheEl.addEventListener("input", zeichneListe);
 ortschaftFilterEl.addEventListener("change", zeichneListe);
 typFilterEl.addEventListener("change", zeichneListe);
 
-const ORTSCHAFT_GRUPPEN = {
-  "Utersum": "Utersum / Dunsum / Witsum / Hedehusum",
-  "Dunsum": "Utersum / Dunsum / Witsum / Hedehusum",
-  "Witsum": "Utersum / Dunsum / Witsum / Hedehusum",
-  "Hedehusum": "Utersum / Dunsum / Witsum / Hedehusum",
-  "Nieblum": "Nieblum / Goting",
-  "Goting": "Nieblum / Goting"
-};
+const ORTSCHAFT_GRUPPEN = APP_CONFIG.ortschaftGruppen;
 function ortschaftGruppe(o){ return ORTSCHAFT_GRUPPEN[o] || o; }
 
 function ortschaften(){
@@ -495,7 +500,7 @@ let detailMap = null, detailMarker = null;
 function initDetailMap(){
   if(detailMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
-  detailMap = L.map("detailMap", { zoomControl:false }).setView([54.693, 8.530], 14);
+  detailMap = L.map("detailMap", { zoomControl:false }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomDetail);
   grundkarteHinzufuegen(detailMap);
 }
 
@@ -607,7 +612,7 @@ let peilAutoZoom = true;
 function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
-  peilMap = L.map("peilMap", { zoomControl:false }).setView([54.693, 8.530], 13);
+  peilMap = L.map("peilMap", { zoomControl:false }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomPeil);
   grundkarteHinzufuegen(peilMap);
 
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
@@ -671,7 +676,7 @@ let map = null, markerLayer = null;
 function initKarte(){
   if(map) return;
   L.Icon.Default.imagePath = "../vendor/images/";
-  map = L.map("map", { zoomControl:true }).setView([54.693, 8.530], 12);
+  map = L.map("map", { zoomControl:true }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomUebersicht);
   grundkarteHinzufuegen(map);
   markerLayer = L.featureGroup().addTo(map);
   zeichneKarte();
@@ -754,8 +759,8 @@ document.getElementById("karte-ortschaft-filter").addEventListener("change", () 
 });
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
-const SYNC_HASH_KEY = "wasserentnahme.foehr.admin.synchash";
-const SYNC_ZEIT_KEY = "wasserentnahme.foehr.admin.synczeit";
+const SYNC_HASH_KEY = APP_CONFIG.speicherPraefix + ".admin.synchash";
+const SYNC_ZEIT_KEY = APP_CONFIG.speicherPraefix + ".admin.synczeit";
 const SYNC_URL = "../daten/stellen.geojson";
 
 function ortsNameAusDatei(dateiname){
