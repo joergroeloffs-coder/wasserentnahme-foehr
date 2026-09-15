@@ -413,6 +413,37 @@ async function grundkarteHinzufuegen(leafletMap){
   } catch(e){}
 })();
 
+/* ---------- Geräte-Limit: max. 2 Geräte pro Zugangsnummer (nur wenn
+   APP_CONFIG.zugangsWorkerUrl gesetzt ist; sonst wirkungslos) ---------- */
+(function geraeteLimitPruefen(){
+  if(!APP_CONFIG.zugangsWorkerUrl) return;
+  const GERAET_KEY = APP_CONFIG.speicherPraefix + ".nutzer.geraeteid";
+  const ZN_KEY = APP_CONFIG.speicherPraefix + ".nutzer.zugangsnummer";
+  let geraetId, zugangsnummer;
+  try {
+    geraetId = localStorage.getItem(GERAET_KEY);
+    if(!geraetId){
+      geraetId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (String(Date.now()) + Math.random());
+      localStorage.setItem(GERAET_KEY, geraetId);
+    }
+    zugangsnummer = localStorage.getItem(ZN_KEY);
+  } catch(e){ return; }
+  if(!zugangsnummer) return;
+
+  fetch(APP_CONFIG.zugangsWorkerUrl + "?code=" + encodeURIComponent(zugangsnummer) + "&geraet=" + encodeURIComponent(geraetId))
+    .then(r => r.json())
+    .then(daten => {
+      if(daten && daten.erlaubt === false){
+        document.body.innerHTML =
+          '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
+          '<h1 style="font-size:20px;margin:0 0 12px">Zugang gesperrt</h1>' +
+          '<p style="color:#93a3b3;max-width:320px;margin:0">Dieser Zugang wird bereits auf der maximalen Anzahl Geräte genutzt. Bei Fragen bitte den Admin kontaktieren.</p>' +
+          '</div>';
+      }
+    })
+    .catch(() => {});
+})();
+
 const KEY = APP_CONFIG.speicherPraefix + ".nutzer.v1";
 
 if("serviceWorker" in navigator){
