@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v10-config";
+const SHELL_CACHE = "shell-v11-config";
 const SHELL_FILES = [
   "./",
   "./index.html",
