@@ -1,6 +1,7 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v13-config";
+const SHELL_CACHE = "shell-v14-config";
+const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -56,10 +57,27 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(key => key !== SHELL_CACHE).map(key => caches.delete(key))
+      keys.filter(key => key !== SHELL_CACHE && key !== TILE_CACHE).map(key => caches.delete(key))
     )).then(() => self.clients.claim())
   );
 });
+
+function istOsmKachel(url){
+  return url.hostname === "tile.openstreetmap.org";
+}
+
+async function kachelAusCache(request){
+  const cache = await caches.open(TILE_CACHE);
+  const vorhanden = await cache.match(request);
+  if(vorhanden) return vorhanden;
+  try {
+    const res = await fetch(request);
+    if(res.ok) cache.put(request, res.clone());
+    return res;
+  } catch(e){
+    return new Response("", { status: 504 });
+  }
+}
 
 function istPmtilesDatei(url){
   if(!self.APP_CONFIG || !self.APP_CONFIG.pmtilesDatei) return false;
@@ -109,6 +127,11 @@ self.addEventListener("fetch", event => {
 
   if(istPmtilesDatei(url)){
     event.respondWith(pmtilesAusCache(event.request));
+    return;
+  }
+
+  if(istOsmKachel(url)){
+    event.respondWith(kachelAusCache(event.request));
     return;
   }
 
