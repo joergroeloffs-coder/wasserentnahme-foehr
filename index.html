@@ -1325,6 +1325,47 @@ window.addEventListener("load", () => { if(autoSyncAktiv() && navigator.onLine) 
 window.addEventListener("online", () => { if(autoSyncAktiv()) serverAbgleich(false); });
 
 aktualisiereOrtschaftsListen(); zeichneListe(); zeichneDaten();
+
+/* ---------- Handy-Zurück-Taste: erst Overlays/Ansichten schließen, ---------- */
+/* ---------- erst auf dem Startbildschirm nachfragen, ob App schließen ---------- */
+function zurueckWacheSetzen(){
+  try { history.pushState({ appGuard: true }, ""); } catch(e){}
+}
+// Zweimal setzen: manche Android/Chrome-Versionen erkennen bei installierten
+// PWAs einen einzelnen per JS gesetzten Verlaufsschritt bei der System-
+// Zurück-Geste nicht zuverlässig und schließen die App sonst direkt.
+zurueckWacheSetzen();
+zurueckWacheSetzen();
+// Nach Rückkehr aus dem Hintergrund (App-Wechsel) erneut absichern.
+window.addEventListener("pageshow", (e) => { if(e.persisted) zurueckWacheSetzen(); });
+document.addEventListener("visibilitychange", () => {
+  if(document.visibilityState === "visible") zurueckWacheSetzen();
+});
+
+window.addEventListener("popstate", () => {
+  if(document.getElementById("peil").classList.contains("on")){
+    document.getElementById("zurueck").click();
+    zurueckWacheSetzen();
+    return;
+  }
+  if(document.getElementById("detailOverlay").classList.contains("on")){
+    document.getElementById("detailOverlay").classList.remove("on");
+    detailStelle = null;
+    zurueckWacheSetzen();
+    return;
+  }
+  const aktiverTab = document.querySelector("nav button.on");
+  if(aktiverTab && aktiverTab.dataset.view !== "v-liste"){
+    document.querySelector('nav button[data-view="v-liste"]').click();
+    zurueckWacheSetzen();
+    return;
+  }
+  if(confirm("App wirklich schließen?")){
+    // Nichts tun: der nächste Zurück-Druck verlässt die App wie gewohnt.
+  } else {
+    zurueckWacheSetzen();
+  }
+});
 </script>
 </body>
 </html>
