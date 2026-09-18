@@ -552,34 +552,35 @@ document.getElementById("naechster-defi").addEventListener("click", () => {
   zeigeDetails(naechster);
 });
 
-/* ---------- Position teilen (Text an Admin) ---------- */
-async function teilenText(text){
-  if(navigator.share){
-    try { await navigator.share({ text }); return; }
-    catch(e){ if(e && e.name === "AbortError") return; }
-  }
-  try {
-    await navigator.clipboard.writeText(text);
-    alert("In Zwischenablage kopiert:\n\n" + text);
-  } catch(e){
-    prompt("Zum Kopieren markieren und kopieren:", text);
-  }
+/* ---------- Position teilen (immer per E-Mail an den Admin) ---------- */
+const POSITION_EMAIL = APP_CONFIG.kontaktEmail;
+
+function sendePositionPerMail(betreff, text){
+  const url = "mailto:" + POSITION_EMAIL + "?subject=" + encodeURIComponent(betreff) + "&body=" + encodeURIComponent(text);
+  window.location.href = url;
 }
 
 document.getElementById("pos-teilen").addEventListener("click", () => {
   if(!pos){ alert("Keine GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
-  teilenText("Eigene Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m)");
+  const text = "MELDUNG: Eigene Position\n" +
+    "Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + "\n" +
+    "Genauigkeit: ±" + genauigkeit + " m";
+  sendePositionPerMail("Eigene Position", text);
 });
 
 document.getElementById("detail-korrektur").addEventListener("click", () => {
   if(!detailStelle) return;
   if(!pos){ alert("Keine eigene GPS-Position verfügbar. Warten, bis oben eine Genauigkeit angezeigt wird."); return; }
   const genauigkeit = Math.round(pos.accuracy);
-  const text = "Korrektur zu " + (detailStelle.nr || "ohne Nummer") + ": richtige Position " +
-    pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + " (±" + genauigkeit + " m) — bisher gespeichert: " +
-    detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
-  teilenText(text);
+  const bezeichnung = [detailStelle.typ, detailStelle.nr || "ohne Nummer"].filter(Boolean).join(" ");
+  const text = "MELDUNG: Korrektur\n" +
+    "Ref: " + (detailStelle.nr || "") + "\n" +
+    "Bezeichnung: " + bezeichnung + "\n" +
+    "Neue Position: " + pos.latitude.toFixed(5) + ", " + pos.longitude.toFixed(5) + "\n" +
+    "Genauigkeit: ±" + genauigkeit + " m\n" +
+    "Bisherige Position (App): " + detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
+  sendePositionPerMail("Korrektur " + bezeichnung, text);
 });
 
 function oeffnePeil(s){
