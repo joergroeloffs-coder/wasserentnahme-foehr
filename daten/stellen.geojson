@@ -13452,6 +13452,1797 @@
     "art": "Defibrillator",
     "survey:date": "2026-09-12"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.576991,
+     54.69244
+    ]
+   },
+   "properties": {
+    "ref": "1",
+    "name": "1 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.575669,
+     54.693315
+    ]
+   },
+   "properties": {
+    "ref": "11",
+    "name": "11 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.575236,
+     54.693196
+    ]
+   },
+   "properties": {
+    "ref": "12",
+    "name": "12 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.574822,
+     54.693066
+    ]
+   },
+   "properties": {
+    "ref": "13",
+    "name": "13 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.574404,
+     54.692931
+    ]
+   },
+   "properties": {
+    "ref": "14",
+    "name": "14 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.573992,
+     54.692813
+    ]
+   },
+   "properties": {
+    "ref": "15",
+    "name": "15 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.573673,
+     54.692708
+    ]
+   },
+   "properties": {
+    "ref": "16",
+    "name": "16 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572744,
+     54.692422
+    ]
+   },
+   "properties": {
+    "ref": "17",
+    "name": "17 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.57266,
+     54.6922
+    ]
+   },
+   "properties": {
+    "ref": "18",
+    "name": "18 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572707,
+     54.691938
+    ]
+   },
+   "properties": {
+    "ref": "19",
+    "name": "19 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.576865,
+     54.692518
+    ]
+   },
+   "properties": {
+    "ref": "2",
+    "name": "2 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572362,
+     54.691783
+    ]
+   },
+   "properties": {
+    "ref": "21",
+    "name": "21 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572498,
+     54.691481
+    ]
+   },
+   "properties": {
+    "ref": "22",
+    "name": "22 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.57241,
+     54.691289
+    ]
+   },
+   "properties": {
+    "ref": "24",
+    "name": "24 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572844,
+     54.692156
+    ]
+   },
+   "properties": {
+    "ref": "25",
+    "name": "25 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572551,
+     54.691996
+    ]
+   },
+   "properties": {
+    "ref": "26",
+    "name": "26 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572658,
+     54.691795
+    ]
+   },
+   "properties": {
+    "ref": "27",
+    "name": "27 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572272,
+     54.691554
+    ]
+   },
+   "properties": {
+    "ref": "28",
+    "name": "28 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572158,
+     54.691345
+    ]
+   },
+   "properties": {
+    "ref": "29",
+    "name": "29 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.575842,
+     54.692721
+    ]
+   },
+   "properties": {
+    "ref": "3",
+    "name": "3 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571997,
+     54.691178
+    ]
+   },
+   "properties": {
+    "ref": "31",
+    "name": "31 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.573457,
+     54.69329
+    ]
+   },
+   "properties": {
+    "ref": "33",
+    "name": "33 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.573227,
+     54.692888
+    ]
+   },
+   "properties": {
+    "ref": "34",
+    "name": "34 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572555,
+     54.692693
+    ]
+   },
+   "properties": {
+    "ref": "35",
+    "name": "35 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571776,
+     54.692413
+    ]
+   },
+   "properties": {
+    "ref": "36",
+    "name": "36 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571527,
+     54.692113
+    ]
+   },
+   "properties": {
+    "ref": "37",
+    "name": "37 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571288,
+     54.691694
+    ]
+   },
+   "properties": {
+    "ref": "38",
+    "name": "38 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569401,
+     54.692022
+    ]
+   },
+   "properties": {
+    "ref": "39",
+    "name": "39 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.575065,
+     54.692446
+    ]
+   },
+   "properties": {
+    "ref": "4",
+    "name": "4 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.56894,
+     54.692511
+    ]
+   },
+   "properties": {
+    "ref": "40",
+    "name": "40 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569268,
+     54.692996
+    ]
+   },
+   "properties": {
+    "ref": "41",
+    "name": "41 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569376,
+     54.693739
+    ]
+   },
+   "properties": {
+    "ref": "42",
+    "name": "42 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569167,
+     54.693784
+    ]
+   },
+   "properties": {
+    "ref": "43",
+    "name": "43 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "E-Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569349,
+     54.69444
+    ]
+   },
+   "properties": {
+    "ref": "44",
+    "name": "44 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.574109,
+     54.695543
+    ]
+   },
+   "properties": {
+    "ref": "45",
+    "name": "45 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572656,
+     54.695955
+    ]
+   },
+   "properties": {
+    "ref": "46",
+    "name": "46 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572929,
+     54.696084
+    ]
+   },
+   "properties": {
+    "ref": "47",
+    "name": "47 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571919,
+     54.695153
+    ]
+   },
+   "properties": {
+    "ref": "48",
+    "name": "48 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.57161,
+     54.694507
+    ]
+   },
+   "properties": {
+    "ref": "49",
+    "name": "49 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.574198,
+     54.691928
+    ]
+   },
+   "properties": {
+    "ref": "5",
+    "name": "5 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.572424,
+     54.694071
+    ]
+   },
+   "properties": {
+    "ref": "50",
+    "name": "50 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570589,
+     54.694556
+    ]
+   },
+   "properties": {
+    "ref": "51",
+    "name": "51 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569981,
+     54.695113
+    ]
+   },
+   "properties": {
+    "ref": "52",
+    "name": "52 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570005,
+     54.69531
+    ]
+   },
+   "properties": {
+    "ref": "53",
+    "name": "53 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5724,
+     54.698205
+    ]
+   },
+   "properties": {
+    "ref": "54",
+    "name": "54 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567567,
+     54.694688
+    ]
+   },
+   "properties": {
+    "ref": "55",
+    "name": "55 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.566185,
+     54.69473
+    ]
+   },
+   "properties": {
+    "ref": "56",
+    "name": "56 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567034,
+     54.695615
+    ]
+   },
+   "properties": {
+    "ref": "57",
+    "name": "57 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.56693,
+     54.695864
+    ]
+   },
+   "properties": {
+    "ref": "58",
+    "name": "58 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.565757,
+     54.696047
+    ]
+   },
+   "properties": {
+    "ref": "59",
+    "name": "59 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.575334,
+     54.692913
+    ]
+   },
+   "properties": {
+    "ref": "6",
+    "name": "6 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.563894,
+     54.696353
+    ]
+   },
+   "properties": {
+    "ref": "60",
+    "name": "60 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "E-Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567171,
+     54.696295
+    ]
+   },
+   "properties": {
+    "ref": "61",
+    "name": "61 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.566047,
+     54.697391
+    ]
+   },
+   "properties": {
+    "ref": "62",
+    "name": "62 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.564287,
+     54.696689
+    ]
+   },
+   "properties": {
+    "ref": "63",
+    "name": "63 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.562577,
+     54.695912
+    ]
+   },
+   "properties": {
+    "ref": "65",
+    "name": "65 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567074,
+     54.690889
+    ]
+   },
+   "properties": {
+    "ref": "66",
+    "name": "66 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571642,
+     54.690532
+    ]
+   },
+   "properties": {
+    "ref": "67",
+    "name": "67 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571755,
+     54.690659
+    ]
+   },
+   "properties": {
+    "ref": "68",
+    "name": "68 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570253,
+     54.690777
+    ]
+   },
+   "properties": {
+    "ref": "69",
+    "name": "69 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.576665,
+     54.693353
+    ]
+   },
+   "properties": {
+    "ref": "7",
+    "name": "7 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569126,
+     54.690973
+    ]
+   },
+   "properties": {
+    "ref": "71",
+    "name": "71 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567968,
+     54.691124
+    ]
+   },
+   "properties": {
+    "ref": "72",
+    "name": "72 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567968,
+     54.69189
+    ]
+   },
+   "properties": {
+    "ref": "73",
+    "name": "73 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.566917,
+     54.690721
+    ]
+   },
+   "properties": {
+    "ref": "74",
+    "name": "74 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.56776,
+     54.690639
+    ]
+   },
+   "properties": {
+    "ref": "75",
+    "name": "75 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568518,
+     54.690476
+    ]
+   },
+   "properties": {
+    "ref": "76",
+    "name": "76 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569352,
+     54.69038
+    ]
+   },
+   "properties": {
+    "ref": "77",
+    "name": "77 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570557,
+     54.690192
+    ]
+   },
+   "properties": {
+    "ref": "78",
+    "name": "78 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.571305,
+     54.689998
+    ]
+   },
+   "properties": {
+    "ref": "79",
+    "name": "79 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.576105,
+     54.693333
+    ]
+   },
+   "properties": {
+    "ref": "8",
+    "name": "8 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569984,
+     54.689607
+    ]
+   },
+   "properties": {
+    "ref": "80",
+    "name": "80 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569274,
+     54.689793
+    ]
+   },
+   "properties": {
+    "ref": "81",
+    "name": "81 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568535,
+     54.689982
+    ]
+   },
+   "properties": {
+    "ref": "82",
+    "name": "82 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567673,
+     54.690351
+    ]
+   },
+   "properties": {
+    "ref": "83",
+    "name": "83 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567658,
+     54.690207
+    ]
+   },
+   "properties": {
+    "ref": "84",
+    "name": "84 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "E-Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568324,
+     54.689723
+    ]
+   },
+   "properties": {
+    "ref": "85",
+    "name": "85 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568778,
+     54.689472
+    ]
+   },
+   "properties": {
+    "ref": "86",
+    "name": "86 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569636,
+     54.689285
+    ]
+   },
+   "properties": {
+    "ref": "87",
+    "name": "87 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570592,
+     54.689061
+    ]
+   },
+   "properties": {
+    "ref": "88",
+    "name": "88 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570591,
+     54.688855
+    ]
+   },
+   "properties": {
+    "ref": "89",
+    "name": "89 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Bohrbrunnen",
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.576376,
+     54.693289
+    ]
+   },
+   "properties": {
+    "ref": "9",
+    "name": "9 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 800,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.569424,
+     54.688836
+    ]
+   },
+   "properties": {
+    "ref": "90",
+    "name": "90 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568607,
+     54.689096
+    ]
+   },
+   "properties": {
+    "ref": "91",
+    "name": "91 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.566467,
+     54.690159
+    ]
+   },
+   "properties": {
+    "ref": "92",
+    "name": "92 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.565843,
+     54.68945
+    ]
+   },
+   "properties": {
+    "ref": "93",
+    "name": "93 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567079,
+     54.689142
+    ]
+   },
+   "properties": {
+    "ref": "94",
+    "name": "94 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.567921,
+     54.688917
+    ]
+   },
+   "properties": {
+    "ref": "95",
+    "name": "95 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.568918,
+     54.688638
+    ]
+   },
+   "properties": {
+    "ref": "96",
+    "name": "96 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.570075,
+     54.688286
+    ]
+   },
+   "properties": {
+    "ref": "98",
+    "name": "98 - Wyk Nordost",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Hydrant",
+    "flow_rate": 1600,
+    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
+    "survey:date": ""
+   }
   }
  ]
 }
