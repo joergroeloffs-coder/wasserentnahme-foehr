@@ -15,13 +15,17 @@ self.APP_CONFIG = {
   // Dateiname der Offline-Kartendatei in daten/ (ohne Pfad). Auf null lassen,
   // solange für diese Gemeinde noch keine PMTiles-Datei erzeugt wurde -
   // die App nutzt dann automatisch normale Online-Kartenkacheln als Fallback.
-  // Bewusst auf null: echter OpenStreetMap-Kartenstil gewünscht statt Protomaps.
-  pmtilesDatei: null,
+  // Bewusst gesetzt (nicht null): direktes Live-Nachladen echter OSM-Kacheln
+  // verstößt gegen die OpenStreetMap-Nutzungsbedingungen (Tile Usage Policy,
+  // keine Massendownloads) und führte bereits zu einer IP-Sperre. Die eigene,
+  // aus OSM-Daten erzeugte PMTiles-Datei ist der zulässige Offline-Weg.
+  pmtilesDatei: "foehr.pmtiles",
 
   // Nur Hauptversion: Rechteck (Bounding Box) für den "Insel jetzt vorladen"-
-  // Knopf, der alle echten OSM-Kartenkacheln für dieses Gebiet offline
-  // speichert. Auf null lassen, wenn es diesen Knopf nicht geben soll.
-  vorladeBbox: { west: 8.40, south: 54.64, east: 8.63, north: 54.77 },
+  // Knopf, der echte OSM-Kacheln live nachlädt. BEWUSST AUSGESCHALTET (null) -
+  // siehe Hinweis bei pmtilesDatei oben. Nicht wieder aktivieren, ohne die
+  // OSM-Nutzungsbedingungen zu prüfen.
+  vorladeBbox: null,
 
   // Basis für alle localStorage-Schlüssel dieser Version (muss sich von allen
   // anderen Gemeinden UND von den anderen Apps derselben Gemeinde unterscheiden,
