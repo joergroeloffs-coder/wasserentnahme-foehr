@@ -292,6 +292,10 @@
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>
+    <button id="app-installieren-btn" class="btn" style="display:none;width:100%;margin-top:10px">App installieren</button>
+    <div id="app-installieren-ios" style="display:none;text-align:center;font-size:12px;color:var(--dim);margin-top:10px;padding:0 10px">
+      Als App installieren: unten auf „Teilen" (Quadrat mit Pfeil) tippen, dann „Zum Home-Bildschirm"
+    </div>
     <a class="anleitung-link" href="../anleitung/index.html">Anleitung ansehen</a>
     <div style="text-align:center;margin-top:10px;font-size:11px">
       <a href="https://roewise.com/impressum.html" style="color:var(--dim)">Impressum</a>
@@ -986,6 +990,41 @@ window.addEventListener("popstate", () => {
     zurueckWacheSetzen();
   }
 });
+
+/* ---------- App-Installation: eigener Button statt Browser-Menue suchen ---------- */
+(function appInstallierenEinrichten(){
+  const laeuftBereitsInstalliert =
+    window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  if(laeuftBereitsInstalliert) return;
+
+  let installEvent = null;
+  const btn = document.getElementById("app-installieren-btn");
+
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    installEvent = e;
+    if(btn) btn.style.display = "block";
+  });
+
+  if(btn){
+    btn.addEventListener("click", async () => {
+      if(!installEvent) return;
+      installEvent.prompt();
+      await installEvent.userChoice;
+      installEvent = null;
+      btn.style.display = "none";
+    });
+  }
+
+  window.addEventListener("appinstalled", () => { if(btn) btn.style.display = "none"; });
+
+  // iOS/Safari unterstuetzt beforeinstallprompt nicht: Kurzanleitung stattdessen zeigen.
+  const istIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if(istIOS){
+    const hinweis = document.getElementById("app-installieren-ios");
+    if(hinweis) hinweis.style.display = "block";
+  }
+})();
 </script>
 </body>
 </html>

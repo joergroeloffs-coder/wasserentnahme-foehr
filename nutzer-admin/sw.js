@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-admin-shell-v6-config";
+const SHELL_CACHE = "nutzer-admin-shell-v7-config";
 const SHELL_FILES = [
   "./",
   "./index.html",
