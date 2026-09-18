@@ -379,14 +379,13 @@
         <option value="14">14 – grober Überblick</option>
         <option value="15">15</option>
         <option value="16" selected>16 – Straßen gut erkennbar</option>
-        <option value="17">17 – sehr detailliert</option>
       </select>
       <button class="btn primary" id="vorladen-start" style="margin-top:10px">Insel jetzt vorladen (braucht Internet)</button>
       <div class="hinweis" id="vorladen-status">
         Lädt gezielt alle echten OpenStreetMap-Kartenkacheln für ganz Föhr bis zur gewählten
         Zoomstufe herunter und speichert sie offline – auch für Orte, die noch nie manuell
         angesehen wurden. Je nach Zoomstufe mehrere Minuten und einige zehn bis über hundert MB
-        Datenverbrauch. Muss auf jedem Tablet einmal einzeln ausgeführt werden.
+        Datenverbrauch. Nur einmal je Gerät ausführen, nicht mehrfach hintereinander wiederholen.
       </div>
     </div>
 
@@ -1477,8 +1476,11 @@ if(APP_CONFIG.vorladeBbox){
 
     const cache = await caches.open("osm-kacheln-v1");
     let fertig = 0, fehler = 0;
-    const GLEICHZEITIG = 4;
+    const GLEICHZEITIG = 2; // bewusst niedrig gehalten, kein Massendownload-Muster
+    const PAUSE_MS = 120; // kleine Pause zwischen Kacheln, entlastet den OSM-Server
     let naechsterIndex = 0;
+
+    const warten = ms => new Promise(r => setTimeout(r, ms));
 
     async function naechstesLaden(){
       while(naechsterIndex < kacheln.length && !vorladenAbbrechen){
@@ -1491,6 +1493,7 @@ if(APP_CONFIG.vorladeBbox){
             const res = await fetch(url);
             if(res.ok) await cache.put(url, res);
             else fehler++;
+            await warten(PAUSE_MS);
           }
         } catch(e){ fehler++; }
         fertig++;
