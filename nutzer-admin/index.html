@@ -205,7 +205,10 @@
 <body>
 
 <header>
-  <h1>Wasserentnahmestellen</h1>
+  <div>
+    <h1>Wasserentnahmestellen</h1>
+    <div id="kachel-status" style="font-size:11px;color:var(--dim);margin-top:2px"></div>
+  </div>
   <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
   <button id="pos-teilen" title="Eigene Position teilen" aria-label="Eigene Position teilen">⌖</button>
   <button id="sync-jetzt" title="Jetzt aktualisieren" aria-label="Jetzt aktualisieren">⟳</button>
@@ -833,6 +836,7 @@ async function serverAbgleich(manuell){
       localStorage.setItem(SYNC_HASH_KEY, hash);
       localStorage.setItem(SYNC_ZEIT_KEY, new Date().toISOString());
     } catch(e){}
+    standAnzeigen();
     aktualisiereFilterListen(); zeichneListe(); zeichneKarte();
     if(manuell) alert(eingelesen.length + " Stellen aus dem Internet übernommen.");
   } catch(e){
@@ -841,6 +845,19 @@ async function serverAbgleich(manuell){
     btn.style.opacity = "1";
   }
 }
+
+function standAnzeigen(){
+  const el = document.getElementById("kachel-status");
+  if(!el) return;
+  let zeit = null;
+  try { zeit = localStorage.getItem(SYNC_ZEIT_KEY); } catch(e){}
+  if(!zeit){ el.textContent = ""; return; }
+  const d = new Date(zeit);
+  const datum = d.toLocaleDateString("de-DE");
+  const uhrzeit = d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  el.textContent = "Stand: " + datum + ", " + uhrzeit + " Uhr";
+}
+standAnzeigen();
 
 document.getElementById("sync-jetzt").addEventListener("click", () => serverAbgleich(true));
 window.addEventListener("load", () => { if(navigator.onLine) serverAbgleich(false); });
