@@ -91,6 +91,22 @@
     width:auto;min-height:44px;padding:8px 30px 8px 12px;font-size:14px;
     background:var(--panel);border:1px solid var(--line);color:var(--text);
   }
+  .karte-filter-toggle{display:none}
+  @media (max-width:700px){
+    .karte-filter-toggle{
+      display:flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:50%;padding:0;
+      background:var(--panel);border:1px solid var(--line);color:var(--text);
+      cursor:pointer;font-size:18px;
+    }
+    .karte-leiste-inner{
+      display:none;position:absolute;top:56px;left:14px;right:14px;
+      background:var(--panel);border:1px solid var(--line);border-radius:8px;
+      padding:10px;flex-direction:column;align-items:stretch;gap:8px;
+    }
+    .karte-leiste-inner.offen{display:flex}
+    .karte-leiste-inner select,.karte-leiste-inner button{width:100%}
+  }
   .karte-banner{
     position:absolute;left:14px;right:14px;bottom:14px;z-index:1000;
     background:var(--signal);color:#fff;padding:10px 14px;border-radius:6px;
@@ -308,9 +324,12 @@
   <!-- Karte -->
   <section id="v-karte" class="view" style="position:relative">
     <div class="karte-leiste">
-      <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
-      <select id="karte-typ-filter"><option value="">Alle Arten</option></select>
-      <button type="button" id="karte-defi-btn">💗 Defi</button>
+      <button type="button" class="karte-filter-toggle" id="karte-filter-toggle" aria-label="Filter">🔎</button>
+      <div class="karte-leiste-inner" id="karte-leiste-inner">
+        <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+        <select id="karte-typ-filter"><option value="">Alle Arten</option></select>
+        <button type="button" id="karte-defi-btn">💗 Defi</button>
+      </div>
       <button id="karte-hinzufuegen">+ Punkt auf Karte setzen</button>
     </div>
     <div id="map"></div>
@@ -1084,6 +1103,10 @@ document.getElementById("karte-defi-btn").addEventListener("click", () => {
   const typEl = document.getElementById("karte-typ-filter");
   typEl.value = typEl.value === "Defibrillator" ? "" : "Defibrillator";
   karteNeuZeichnenUndZoomen();
+});
+
+document.getElementById("karte-filter-toggle").addEventListener("click", () => {
+  document.getElementById("karte-leiste-inner").classList.toggle("offen");
 });
 
 document.getElementById("karte-hinzufuegen").addEventListener("click", () => {
