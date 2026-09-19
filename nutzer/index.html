@@ -86,12 +86,18 @@
   #map{width:100%;height:calc(100vh - 118px);height:calc(100dvh - 118px);background:#1a232c}
   .karte-leiste{
     position:absolute;left:0;right:0;top:0;z-index:1000;padding:10px 14px 10px 58px;
-    display:flex;gap:8px;align-items:center;background:linear-gradient(#0d1116cc,transparent);
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:linear-gradient(#0d1116cc,transparent);
   }
   .karte-leiste select{
     width:auto;min-height:44px;padding:8px 30px 8px 12px;font-size:14px;
     background:var(--panel);border:1px solid var(--line);color:var(--text);
   }
+  .karte-leiste .defi-schnell{
+    width:auto;min-height:44px;padding:8px 14px;font-size:14px;font-weight:600;
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+    border-radius:6px;cursor:pointer;white-space:nowrap;
+  }
+  .karte-leiste .defi-schnell.aktiv{background:var(--signal);border-color:var(--signal);color:#fff}
 
   input,select,textarea,button{font:inherit}
   input,select{
@@ -293,6 +299,8 @@
   <section id="v-karte" class="view" style="position:relative">
     <div class="karte-leiste">
       <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+      <select id="karte-typ-filter"><option value="">Alle Arten</option></select>
+      <button type="button" class="defi-schnell" id="karte-defi-btn">💗 Defi</button>
     </div>
     <div id="map"></div>
   </section>
@@ -867,23 +875,46 @@ function aktualisiereKarteOrtschaftFilter(){
   if(werte.includes(aktuell)) el.value = aktuell;
 }
 
+function aktualisiereKarteTypFilter(){
+  const el = document.getElementById("karte-typ-filter");
+  const werte = typen();
+  const aktuell = el.value;
+  const anzahl = {};
+  stellen.forEach(s => { const t = (s.typ || "").trim(); if(t) anzahl[t] = (anzahl[t] || 0) + 1; });
+  el.innerHTML = '<option value="">Alle Arten</option>' +
+    werte.map(t => '<option value="' + esc(t) + '">' + esc(t) + ' (' + (anzahl[t] || 0) + ')</option>').join("");
+  if(werte.includes(aktuell)) el.value = aktuell;
+}
+
 function zeichneKarte(){
   if(!markerLayer) return;
   aktualisiereKarteOrtschaftFilter();
-  const filter = document.getElementById("karte-ortschaft-filter").value;
+  aktualisiereKarteTypFilter();
+  const ortFilter = document.getElementById("karte-ortschaft-filter").value;
+  const typFilter = document.getElementById("karte-typ-filter").value;
+  document.getElementById("karte-defi-btn").classList.toggle("aktiv", typFilter === "Defibrillator");
   markerLayer.clearLayers();
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
-    if(filter && ortschaftGruppe((s.ortschaft || "").trim()) !== filter) return;
+    if(ortFilter && ortschaftGruppe((s.ortschaft || "").trim()) !== ortFilter) return;
+    if(typFilter && (s.typ || "").trim() !== typFilter) return;
     const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
   });
 }
 
-document.getElementById("karte-ortschaft-filter").addEventListener("change", () => {
+function karteNeuZeichnenUndZoomen(){
   zeichneKarte();
   if(markerLayer.getLayers().length) map.fitBounds(markerLayer.getBounds(), { padding: [30, 30], maxZoom: 17 });
+}
+
+document.getElementById("karte-ortschaft-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
+document.getElementById("karte-typ-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
+document.getElementById("karte-defi-btn").addEventListener("click", () => {
+  const typEl = document.getElementById("karte-typ-filter");
+  typEl.value = typEl.value === "Defibrillator" ? "" : "Defibrillator";
+  karteNeuZeichnenUndZoomen();
 });
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
