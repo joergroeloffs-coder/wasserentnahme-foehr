@@ -279,6 +279,8 @@
         <button class="btn ghost" id="detail-nein">Nein</button>
       </div>
       <button class="btn ghost" id="detail-korrektur" style="margin-top:8px">Eigene Position als Korrektur teilen</button>
+      <button class="btn ghost" id="detail-foto" style="margin-top:8px">📷 Foto senden</button>
+      <input type="file" accept="image/*" capture="environment" id="foto-input" style="display:none">
     </div>
   </div>
 
@@ -723,6 +725,59 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
     "Genauigkeit: ±" + genauigkeit + " m\n" +
     "Bisherige Position (App): " + detailStelle.lat.toFixed(5) + ", " + detailStelle.lon.toFixed(5);
   sendePositionPerMail("Korrektur " + bezeichnung, text);
+});
+
+/* ---------- Foto senden (Lage/Schild), komprimiert per Teilen oder E-Mail ---------- */
+function komprimiereFoto(datei){
+  return new Promise((resolve) => {
+    const bild = new Image();
+    const leser = new FileReader();
+    leser.onload = e => { bild.src = e.target.result; };
+    bild.onload = () => {
+      const maxBreite = 1280;
+      let w = bild.width, h = bild.height;
+      if(w > maxBreite){ h = Math.round(h * maxBreite / w); w = maxBreite; }
+      const canvas = document.createElement("canvas");
+      canvas.width = w; canvas.height = h;
+      canvas.getContext("2d").drawImage(bild, 0, 0, w, h);
+      canvas.toBlob(blob => resolve(blob), "image/jpeg", 0.75);
+    };
+    leser.readAsDataURL(datei);
+  });
+}
+
+async function sendeFotoPerMail(s, datei){
+  const bezeichnung = [s.typ, s.nr || "ohne Nummer"].filter(Boolean).join(" ");
+  const dateiname = "Foto_" + (s.nr || "Stelle").replace(/[^a-zA-Z0-9_-]/g, "_") + ".jpg";
+  const betreff = "Foto " + bezeichnung;
+  const text = "Foto zu: " + bezeichnung + "\nRef: " + (s.nr || "") + "\nOrt: " + (s.ortschaft || "");
+  const blob = await komprimiereFoto(datei);
+  const fotoDatei = new File([blob], dateiname, { type: "image/jpeg" });
+
+  if(navigator.canShare && navigator.canShare({ files: [fotoDatei] })){
+    try {
+      await navigator.share({ files: [fotoDatei], title: betreff, text: text });
+      return;
+    } catch(e){ /* abgebrochen oder nicht möglich - Fallback unten */ }
+  }
+
+  const url = URL.createObjectURL(fotoDatei);
+  const a = document.createElement("a");
+  a.href = url; a.download = dateiname;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
+  alert("Foto wurde heruntergeladen (" + dateiname + "). Bitte in der sich öffnenden E-Mail manuell anhängen.");
+  sendePositionPerMail(betreff, text);
+}
+
+document.getElementById("detail-foto").addEventListener("click", () => {
+  if(!detailStelle) return;
+  document.getElementById("foto-input").click();
+});
+document.getElementById("foto-input").addEventListener("change", e => {
+  const datei = e.target.files[0];
+  if(datei && detailStelle) sendeFotoPerMail(detailStelle, datei);
+  e.target.value = "";
 });
 
 function oeffnePeil(s){
