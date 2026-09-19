@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Ruft ungelesene Korrektur-Mails direkt aus dem Postfach ab (IMAP) und
-übergibt sie zur Prüfung an korrektur_verarbeiten.verarbeite_text() — jede
-Korrektur wird einzeln mit j/n bestätigt, keine automatische Übernahme.
+Ruft ungelesene Korrektur- und Foto-Mails direkt aus dem Postfach ab (IMAP).
+Korrektur-Mails werden zur Prüfung an korrektur_verarbeiten.verarbeite_text()
+übergeben — jede Korrektur wird einzeln mit j/n bestätigt, keine automatische
+Übernahme. Foto-Mails werden nicht automatisch verarbeitet, ihre Bild-Anhänge
+werden nur in den Ordner werkzeuge/eingegangene_fotos/ gespeichert.
 
 Zugangsdaten stehen NICHT im Code, sondern in werkzeuge/zugangsdaten.json
 (diese Datei ist in .gitignore und wird nie eingecheckt).
@@ -10,10 +12,10 @@ Zugangsdaten stehen NICHT im Code, sondern in werkzeuge/zugangsdaten.json
 Nutzung:
   python3 werkzeuge/mail_abrufen.py
 
-Es werden nur ungelesene Mails mit Betreff, der mit "Korrektur" beginnt,
-geholt (die App verschickt genau solche Betreffs). Nach Verarbeitung
-werden die Mails als gelesen markiert, damit sie beim nächsten Aufruf
-nicht erneut auftauchen.
+Es werden nur ungelesene Mails geholt, deren Betreff mit "Korrektur" oder
+"Foto" beginnt (genau die Betreffs, die die App verschickt). Nach
+Verarbeitung werden die Mails als gelesen markiert, damit sie beim nächsten
+Aufruf nicht erneut auftauchen.
 """
 
 import email
@@ -28,8 +30,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from korrektur_verarbeiten import verarbeite_text  # noqa: E402
 
 ZUGANGSDATEN_PFAD = Path(__file__).resolve().parent / "zugangsdaten.json"
+FOTO_ORDNER = Path(__file__).resolve().parent / "eingegangene_fotos"
 IMAP_SERVER = "imap.web.de"
-BETREFF_FILTER = "Korrektur"
+BETREFF_FILTER = ("Korrektur", "Foto")
 
 
 def lade_zugangsdaten():
@@ -68,6 +71,25 @@ def extrahiere_body(msg):
     return payload.decode(charset, errors="replace")
 
 
+def speichere_fotos(msg, betreff, msg_id):
+    FOTO_ORDNER.mkdir(exist_ok=True)
+    praefix = "".join(c if c.isalnum() else "_" for c in betreff).strip("_")
+    anzahl = 0
+    for teil in msg.walk():
+        if teil.get_content_maintype() != "image":
+            continue
+        dateiname = teil.get_filename() or "foto.jpg"
+        dateiname = dekodiere(dateiname)
+        ziel = FOTO_ORDNER / f"{praefix}_{msg_id.decode()}_{dateiname}"
+        payload = teil.get_payload(decode=True)
+        if not payload:
+            continue
+        ziel.write_bytes(payload)
+        anzahl += 1
+        print(f"  Foto gespeichert: {ziel}")
+    return anzahl
+
+
 def main():
     benutzer, passwort = lade_zugangsdaten()
 
@@ -95,18 +117,25 @@ def main():
         msg = email.message_from_bytes(msg_daten[0][1])
         betreff = dekodiere(msg.get("Subject"))
 
-        if not betreff.strip().lower().startswith(BETREFF_FILTER.lower()):
+        if not betreff.strip().lower().startswith(tuple(f.lower() for f in BETREFF_FILTER)):
             continue
 
         gefunden += 1
-        body = extrahiere_body(msg)
         print(f"\n=== Mail: {betreff} ===")
-        verarbeite_text(body)
+
+        if betreff.strip().lower().startswith("foto"):
+            anzahl = speichere_fotos(msg, betreff, msg_id)
+            if not anzahl:
+                print("  Kein Bild-Anhang gefunden.")
+        else:
+            body = extrahiere_body(msg)
+            verarbeite_text(body)
 
         imap.store(msg_id, "+FLAGS", "\\Seen")
 
     if gefunden == 0:
-        print(f'Keine ungelesenen Mails mit Betreff-Beginn "{BETREFF_FILTER}" gefunden.')
+        filter_text = '" / "'.join(BETREFF_FILTER)
+        print(f'Keine ungelesenen Mails mit Betreff-Beginn "{filter_text}" gefunden.')
 
     imap.logout()
 

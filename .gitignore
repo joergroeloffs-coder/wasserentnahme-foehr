@@ -1,3 +1,4 @@
 *.tgz
 werkzeuge/zugangsdaten.json
+werkzeuge/eingegangene_fotos/
 __pycache__/
