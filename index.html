@@ -1197,8 +1197,8 @@ document.getElementById("edit-loeschen").addEventListener("click", () => {
 });
 
 document.getElementById("speichern").addEventListener("click", () => {
+  if(!pinPruefen()) return;
   if(bearbeiteIndex >= 0){
-    if(!pinPruefen()) return;
     if(neuLatLon){ neu(neuLatLon.lat, neuLatLon.lon, neuLatLon.genau != null ? neuLatLon.genau : null); return; }
     const s = stellen[bearbeiteIndex]; neu(s.lat, s.lon, s.genau); return;
   }
