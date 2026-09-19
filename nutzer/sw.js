@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v15-config";
+const SHELL_CACHE = "nutzer-shell-v16-config";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

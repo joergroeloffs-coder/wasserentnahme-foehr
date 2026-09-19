@@ -1,6 +1,6 @@
 {
-  "name": "Wasserentnahmestellen Föhr",
-  "short_name": "H2O Föhr",
+  "name": "Löschmeier Föhr",
+  "short_name": "Löschmeier",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
