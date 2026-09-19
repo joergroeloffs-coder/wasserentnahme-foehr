@@ -13368,42 +13368,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.396885991096498,
-     54.71385023818773
-    ]
-   },
-   "properties": {
-    "ref": "Defi 2",
-    "name": "Trixi Eilun",
-    "addr:city": "Utersum",
-    "emergency": "defibrillator",
-    "art": "Defibrillator",
-    "survey:date": "2026-09-12"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     8.407008647918703,
-     54.714784486085335
-    ]
-   },
-   "properties": {
-    "ref": "Defi 3",
-    "name": "Gemeindehaus",
-    "addr:city": "Utersum",
-    "emergency": "defibrillator",
-    "art": "Defibrillator",
-    "survey:date": "2026-09-12"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.408789634704592,
      54.71441112671899
     ]
@@ -13412,24 +13376,6 @@
     "ref": "Defi 4",
     "name": "oner Taarep",
     "addr:city": "Utersum",
-    "emergency": "defibrillator",
-    "art": "Defibrillator",
-    "survey:date": "2026-09-12"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     8.449103236198427,
-     54.732756345799615
-    ]
-   },
-   "properties": {
-    "ref": "Defi 5",
-    "name": "Toilettenhäuschen",
-    "addr:city": "Oldsum",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "survey:date": "2026-09-12"
