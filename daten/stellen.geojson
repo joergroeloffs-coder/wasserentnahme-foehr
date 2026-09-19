@@ -15243,6 +15243,196 @@
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
     "survey:date": ""
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5942423,
+     54.6382215
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-01",
+    "name": "",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4717102,
+     54.6836584
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-02",
+    "name": "Vorraum Toiletten",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.491744,
+     54.6919616
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-03",
+    "name": "An der Touristeninformation draußen",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4071467,
+     54.7147622
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-04",
+    "name": "",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4490743,
+     54.7327716
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-05",
+    "name": "",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5568377,
+     54.6917095
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-06",
+    "name": "Schulverwaltung",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5477142,
+     54.699355
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-07",
+    "name": "",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.5649072,
+     54.6917014
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-08",
+    "name": "Weißer Kasten an zentrale Säule, hinter zweiter Glastür",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.510863,
+     54.7081254
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-09",
+    "name": "Links neben dem Toiletteneingang",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4579225,
+     54.7007283
+    ]
+   },
+   "properties": {
+    "ref": "OSM-AED-10",
+    "name": "Außenwand rechts neben Feuerwehrtor",
+    "addr:city": "",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
+    "survey:date": ""
+   }
   }
  ]
 }
