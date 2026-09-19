@@ -15433,6 +15433,168 @@
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
     "survey:date": ""
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.46251964569092,
+     54.72915632532034
+    ]
+   },
+   "properties": {
+    "ref": "Defi 7",
+    "name": "",
+    "addr:city": "Toftum",
+    "emergency": "defibrillator",
+    "art": "Defibrillator",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.510853052139284,
+     54.70693704909146
+    ]
+   },
+   "properties": {
+    "ref": "GH ALK",
+    "name": "",
+    "addr:city": "Alkersum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.553722798824312,
+     54.69636227318181
+    ]
+   },
+   "properties": {
+    "ref": "GH BOL",
+    "name": "",
+    "addr:city": "Boldixum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.457933068275453,
+     54.70062630242443
+    ]
+   },
+   "properties": {
+    "ref": "GH BOR",
+    "name": "",
+    "addr:city": "Borgsum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.520458042621614,
+     54.714780719429285
+    ]
+   },
+   "properties": {
+    "ref": "GH MID",
+    "name": "",
+    "addr:city": "Midlum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.488325178623201,
+     54.692348933353344
+    ]
+   },
+   "properties": {
+    "ref": "GH NIE",
+    "name": "",
+    "addr:city": "Nieblum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.530272245407106,
+     54.70996963966169
+    ]
+   },
+   "properties": {
+    "ref": "GH OEV",
+    "name": "",
+    "addr:city": "Oevenum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.547623455524446,
+     54.69932590625278
+    ]
+   },
+   "properties": {
+    "ref": "GH WRI",
+    "name": "",
+    "addr:city": "Wrixum",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.559197187423708,
+     54.69211112780839
+    ]
+   },
+   "properties": {
+    "ref": "GH WYK",
+    "name": "",
+    "addr:city": "Wyk auf Föhr",
+    "emergency": "fire_hydrant",
+    "art": "Gerätehaus",
+    "survey:date": "2026-09-19"
+   }
   }
  ]
 }

@@ -1225,7 +1225,8 @@ document.getElementById("export").addEventListener("click", () => {
   const fc = { type:"FeatureCollection", features: stellen.map(s => ({
     type:"Feature",
     geometry:{ type:"Point", coordinates:[s.lon, s.lat] },
-    properties:{ ref:s.nr, name:s.ort, "addr:city":s.ortschaft || undefined, "emergency":"fire_hydrant", art:s.typ,
+    properties:{ ref:s.nr, name:s.ort, "addr:city":s.ortschaft || undefined,
+      "emergency": (s.typ || "").toLowerCase().includes("defibrillator") ? "defibrillator" : "fire_hydrant", art:s.typ,
       "fire_hydrant:diameter":s.dn || undefined, "flow_rate":s.menge || undefined,
       description:s.bem || undefined, "survey:date":(s.erfasst||"").slice(0,10) }
   })) };
