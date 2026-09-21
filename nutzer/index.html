@@ -149,6 +149,11 @@
     font-size:12px;padding:2px 7px;border-radius:4px;border:1px solid var(--line);
     color:var(--dim);margin-left:8px;white-space:nowrap;
   }
+  .item-typ{
+    width:30px;height:30px;border-radius:50%;flex:none;display:flex;
+    align-items:center;justify-content:center;background:var(--c,var(--signal));
+  }
+  .item-typ svg{width:16px;height:16px;display:block}
   .empty{color:var(--dim);padding:28px 4px;font-size:16px}
   .anleitung-link{
     display:block;text-align:center;margin-top:18px;color:var(--dim);
@@ -638,10 +643,13 @@ function zeichneListe(){
     const b = document.createElement("button");
     b.className = "item";
     const ortLage = [s.ortschaft, s.ort].filter(Boolean).join(" · ") || s.typ;
+    const typSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + typIcon(s.typ) + '</svg>';
     b.innerHTML =
       '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
+      '<span class="item-typ" style="--c:' + typFarbe(s.typ) + '" title="' + esc(s.typ || "") + '">' + typSvg + '</span>' +
       '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
+      (s.menge ? '<span class="tag">' + esc(s.menge) + ' l/min</span>' : "") +
       '<div class="meta">' + esc(ortLage) + '</div></span>';
     b.addEventListener("click", () => zeigeDetails(s));
     listeEl.appendChild(b);
