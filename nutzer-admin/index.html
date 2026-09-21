@@ -358,11 +358,19 @@
 </nav>
 
 <script src="../config.js"></script>
+<script src="../zugangsschutz.js"></script>
 <script src="../vendor/leaflet.js"></script>
 <script src="../vendor/maplibre-gl.js"></script>
 <script src="../vendor/pmtiles.js"></script>
 <script src="../vendor/leaflet-maplibre-gl.js"></script>
 <script>
+/* ---------- Interner Bereich: nur Betreiberkonten ----------
+   Die Berechtigung entscheidet der Worker anhand einer serverseitigen Liste.
+   Ohne bestaetigtes Betreiberkonto bleibt die Seite gesperrt. */
+let zugangsDaten = null;
+const zugangBereit = LOESCHBAERT_ZUGANG.starten({ betreiberErforderlich: true })
+  .then((ergebnis) => { zugangsDaten = ergebnis; return ergebnis; });
+
 "use strict";
 
 const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
@@ -948,9 +956,9 @@ async function serverAbgleich(manuell){
   const btn = document.getElementById("sync-jetzt");
   btn.style.opacity = "0.5";
   try {
-    const res = await fetch(SYNC_URL, { cache: "no-store" });
-    if(!res.ok) throw new Error("nicht erreichbar");
-    const text = await res.text();
+    // Daten ueber den berechtigungsgepruefen Endpunkt, solange er
+    // eingerichtet ist; sonst ueber die bisherige Datei (siehe Bericht).
+    const text = await LOESCHBAERT_ZUGANG.stellenLaden(zugangsDaten, SYNC_URL);
     const hash = einfacherHash(text);
     let vorherigerHash = null;
     try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}

@@ -44,7 +44,16 @@ self.APP_CONFIG = {
   },
 
   // Zentrale Vertrags- und Zugriffsprüfung für Privatkunden.
+  // Der Worker-Name stammt noch aus der Zeit vor der Umbenennung; eine
+  // Umbenennung würde die bestehende Adresse und damit den laufenden Betrieb
+  // brechen und ist deshalb bewusst unterblieben.
   aboWorkerUrl: "https://loeschmeier-abo-worker.joerg-roeloffs.workers.dev",
   supabaseUrl: "https://bmntahgtagjijfyeepju.supabase.co",
-  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbnRhaGd0YWdqaWpmeWVlcGp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTE2ODEsImV4cCI6MjEwNTQ2NzY4MX0.YzXfS98rli0PvIXmIyBAg9KJjcOW2NlXZq9fHzpcA0g"
+  // Öffentlicher anon-Schlüssel. Er ist für den Browser gedacht und gibt ohne
+  // Anmeldung nichts frei; der service_role-Schlüssel steht ausschließlich im
+  // Worker und niemals hier.
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbnRhaGd0YWdqaWpmeWVlcGp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTE2ODEsImV4cCI6MjEwNTQ2NzY4MX0.YzXfS98rli0PvIXmIyBAg9KJjcOW2NlXZq9fHzpcA0g",
+
+  // Zielseite für "Noch kein Jahreszugang?" in der Zugangssperre.
+  bestellSeite: "https://test.roewise.com/registrieren.html"
 };

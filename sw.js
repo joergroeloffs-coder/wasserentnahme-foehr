@@ -1,11 +1,12 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v23-config";
+const SHELL_CACHE = "shell-v24-zugangsschutz";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./config.js",
+  "./zugangsschutz.js",
   "./manifest.json",
   "./icon.svg",
   "./icon-180.png",
@@ -18,7 +19,6 @@ const SHELL_FILES = [
   "./vendor/images/marker-shadow.png",
   "./vendor/images/layers.png",
   "./vendor/images/layers-2x.png",
-  "./daten/stellen.geojson",
   "./anleitung/index.html",
   "./anleitung/bilder/suchen.png",
   "./anleitung/bilder/filter.png",

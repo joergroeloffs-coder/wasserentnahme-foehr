@@ -360,20 +360,8 @@
   <button data-view="v-karte">Karte</button>
 </nav>
 
-<div id="abo-sperre" style="position:fixed;inset:0;z-index:10000;background:#0d1116;color:#e6edf3;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,-apple-system,sans-serif">
-  <div style="width:min(420px,100%);text-align:center">
-    <h1 style="font-size:22px">Löschbärt Föhr</h1>
-    <p id="abo-hinweis" style="color:#93a3b3">Zugang wird geprüft …</p>
-    <div id="abo-login" style="display:none">
-      <input id="abo-email" type="email" autocomplete="email" placeholder="E-Mail-Adresse" style="width:100%;padding:12px;border-radius:8px;border:1px solid #2a313c;background:#161b22;color:#e6edf3;font:inherit">
-      <button id="abo-link-senden" type="button" style="width:100%;margin-top:10px;padding:12px;border:0;border-radius:8px;background:#2fa4ff;color:#071018;font-weight:700">Anmelde-Link senden</button>
-      <p style="font-size:13px"><a href="https://test.roewise.com/registrieren.html" style="color:#2fa4ff">Noch keinen Jahreszugang?</a></p>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="../config.js"></script>
+<script src="../zugangsschutz.js"></script>
 <script src="../vendor/leaflet.js"></script>
 <script src="../vendor/maplibre-gl.js"></script>
 <script src="../vendor/pmtiles.js"></script>
@@ -424,64 +412,13 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 }
 
-/* ---------- Vertrags- und Geräteprüfung ---------- */
-const aboClient = window.supabase.createClient(APP_CONFIG.supabaseUrl, APP_CONFIG.supabaseAnonKey);
-const aboSperre = document.getElementById("abo-sperre");
-const aboHinweis = document.getElementById("abo-hinweis");
-const aboLogin = document.getElementById("abo-login");
-
-function aboGeraetId(){
-  const key = APP_CONFIG.speicherPraefix + ".nutzer.geraeteid";
-  let id = localStorage.getItem(key);
-  if(!id){
-    id = (window.crypto && crypto.randomUUID)
-      ? crypto.randomUUID()
-      : String(Date.now()) + "-" + Math.random().toString(16).slice(2);
-    localStorage.setItem(key, id);
-  }
-  return id;
-}
-
-async function aboZugangPruefen(){
-  const { data: { session } } = await aboClient.auth.getSession();
-  if(!session){
-    aboHinweis.textContent = "Bitte mit der E-Mail-Adresse des Jahreszugangs anmelden.";
-    aboLogin.style.display = "block";
-    return;
-  }
-  const response = await fetch(
-    APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(aboGeraetId()),
-    { headers: { Authorization: "Bearer " + session.access_token } }
-  );
-  const result = await response.json().catch(() => ({}));
-  if(response.ok && result.erlaubt){
-    const el = document.getElementById("zugangsnummer");
-    if(el) el.textContent = "Angemeldet";
-    aboSperre.remove();
-    return;
-  }
-  aboHinweis.textContent = result.grund === "geraetelimit_erreicht"
-    ? "Der Zugang wird bereits auf zwei Geräten verwendet. Geräte können im Kundenbereich entfernt werden."
-    : "Für dieses Konto ist derzeit kein aktiver Föhr-Jahreszugang vorhanden.";
-  aboLogin.style.display = "block";
-}
-
-document.getElementById("abo-link-senden").addEventListener("click", async () => {
-  const email = document.getElementById("abo-email").value.trim();
-  if(!email){ aboHinweis.textContent = "Bitte E-Mail-Adresse eingeben."; return; }
-  const { error } = await aboClient.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo: location.origin + location.pathname },
-  });
-  aboHinweis.textContent = error
-    ? "Anmelde-Link konnte nicht gesendet werden."
-    : "Anmelde-Link wurde versandt. Bitte E-Mail-Postfach öffnen.";
-});
-
-aboClient.auth.onAuthStateChange(() => aboZugangPruefen());
-aboZugangPruefen().catch(() => {
-  aboHinweis.textContent = "Die Zugangsprüfung ist derzeit nicht erreichbar. Bitte später erneut versuchen.";
-});
+/* ---------- Zugang: Entscheidung faellt serverseitig ----------
+   Der gemeinsame Zugangsschutz (../zugangsschutz.js) blockiert die Seite,
+   bis der Worker einen gueltigen Jahreszugang bestaetigt hat. Es gibt hier
+   bewusst keinen lokalen Schalter und keinen Freigabecode. */
+let zugangsDaten = null;
+const zugangBereit = LOESCHBAERT_ZUGANG.starten({ betreiberErforderlich: false })
+  .then((ergebnis) => { zugangsDaten = ergebnis; return ergebnis; });
 
 const KEY = APP_CONFIG.speicherPraefix + ".nutzer.v1";
 
@@ -1022,9 +959,9 @@ async function serverAbgleich(manuell){
   const btn = document.getElementById("sync-jetzt");
   btn.style.opacity = "0.5";
   try {
-    const res = await fetch(SYNC_URL, { cache: "no-store" });
-    if(!res.ok) throw new Error("nicht erreichbar");
-    const text = await res.text();
+    // Daten ueber den berechtigungsgepruefen Endpunkt, solange er
+    // eingerichtet ist; sonst ueber die bisherige Datei (siehe Bericht).
+    const text = await LOESCHBAERT_ZUGANG.stellenLaden(zugangsDaten, SYNC_URL);
     const hash = einfacherHash(text);
     let vorherigerHash = null;
     try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}

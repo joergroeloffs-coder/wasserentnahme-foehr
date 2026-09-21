@@ -516,11 +516,19 @@
 </nav>
 
 <script src="config.js"></script>
+<script src="zugangsschutz.js"></script>
 <script src="vendor/leaflet.js"></script>
 <script src="vendor/maplibre-gl.js"></script>
 <script src="vendor/pmtiles.js"></script>
 <script src="vendor/leaflet-maplibre-gl.js"></script>
 <script>
+/* ---------- Interner Bereich: nur Betreiberkonten ----------
+   Die Berechtigung entscheidet der Worker anhand einer serverseitigen Liste.
+   Ohne bestaetigtes Betreiberkonto bleibt die Seite gesperrt. */
+let zugangsDaten = null;
+const zugangBereit = LOESCHBAERT_ZUGANG.starten({ betreiberErforderlich: true })
+  .then((ergebnis) => { zugangsDaten = ergebnis; return ergebnis; });
+
 "use strict";
 const KEY = APP_CONFIG.speicherPraefix + ".haupt.v1";
 
@@ -1443,9 +1451,9 @@ function einfacherHash(text){
 
 async function serverAbgleich(manuell){
   try {
-    const res = await fetch(SYNC_URL, { cache: "no-store" });
-    if(!res.ok) throw new Error("nicht erreichbar");
-    const text = await res.text();
+    // Daten ueber den berechtigungsgepruefen Endpunkt, solange er
+    // eingerichtet ist; sonst ueber die bisherige Datei (siehe Bericht).
+    const text = await LOESCHBAERT_ZUGANG.stellenLaden(zugangsDaten, SYNC_URL);
     const hash = einfacherHash(text);
     let vorherigerHash = null;
     try { vorherigerHash = localStorage.getItem(SYNC_HASH_KEY); } catch(e){}

@@ -1,12 +1,13 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-admin-shell-v17-config";
+const SHELL_CACHE = "nutzer-admin-shell-v18-zugangsschutz";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./manifest.json",
   "../config.js",
+  "../zugangsschutz.js",
   "../icon.svg",
   "../icon-180.png",
   "../icon-192.png",
@@ -18,7 +19,6 @@ const SHELL_FILES = [
   "../vendor/images/marker-shadow.png",
   "../vendor/images/layers.png",
   "../vendor/images/layers-2x.png",
-  "../daten/stellen.geojson",
   "../anleitung/index.html"
 ];
 /* Die PMTiles/MapLibre-Dateien nur cachen, wenn diese Gemeinde eine eigene
