@@ -132,6 +132,9 @@
     border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;
   }
   .btn.ghost{background:none}
+  .btn.gruen{background:var(--ok);border-color:var(--ok);color:#fff;font-weight:600}
+  .btn.gelb{background:var(--warn);border-color:var(--warn);color:#171203;font-weight:600}
+  .btn.rot{background:var(--signal);border-color:var(--signal);color:#fff;font-weight:600}
   .row{display:flex;gap:10px}
   .row>*{flex:1}
 
@@ -278,11 +281,9 @@
       <div class="ziel-meta" id="detailMeta"></div>
       <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
       <div class="hinweis" id="detailHinweis"></div>
-      <p class="navfrage">Zu diesem Punkt navigieren?</p>
-      <div class="row">
-        <button class="btn primary" id="detail-ja">Ja, navigieren</button>
-        <button class="btn ghost" id="detail-nein">Nein</button>
-      </div>
+      <button class="btn gruen" id="detail-ja" style="margin-top:12px">Hierher navigieren</button>
+      <button class="btn gelb" id="detail-zentrieren" style="margin-top:8px">Auf Karte zentrieren</button>
+      <button class="btn rot" id="detail-nein" style="margin-top:8px">Zurück</button>
       <button class="btn ghost" id="detail-korrektur" style="margin-top:8px">Eigene Position als Korrektur teilen</button>
       <button class="btn ghost" id="detail-foto" style="margin-top:8px">📷 Foto senden</button>
       <input type="file" accept="image/*" capture="environment" id="foto-input" style="display:none">
@@ -686,6 +687,16 @@ function zeigeDetails(s){
 document.getElementById("detail-ja").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   if(detailStelle) oeffnePeil(detailStelle);
+});
+document.getElementById("detail-zentrieren").addEventListener("click", () => {
+  const s = detailStelle;
+  document.getElementById("detailOverlay").classList.remove("on");
+  if(!s) return;
+  document.getElementById("karte-ortschaft-filter").value = "";
+  document.getElementById("karte-typ-filter").value = "";
+  document.querySelector('nav button[data-view="v-karte"]').click();
+  zeichneKarte();
+  setTimeout(() => { map.invalidateSize(); map.setView([s.lat, s.lon], 17); }, 60);
 });
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");

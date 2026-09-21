@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v24-typ-badge";
+const SHELL_CACHE = "shell-v25-detail-buttons";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
