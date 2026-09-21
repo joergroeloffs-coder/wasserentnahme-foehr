@@ -30,7 +30,7 @@ DATEN_PFAD = REPO_ROOT / "daten" / "stellen.geojson"
 AUSGABE_PFAD = REPO_ROOT / "werkzeuge" / "adressvorschlaege.csv"
 
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/reverse"
-USER_AGENT = "LoeschmeierApp-Foehr-Adressvorschlag/1.0 (wasserentnahme-foehr@web.de, einmaliger manueller Lauf)"
+USER_AGENT = "LoeschbaertApp-Foehr-Adressvorschlag/1.0 (wasserentnahme-foehr@web.de, einmaliger manueller Lauf)"
 PAUSE_SEKUNDEN = 1.1
 
 
