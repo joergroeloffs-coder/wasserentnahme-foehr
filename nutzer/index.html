@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="../icon-180.png">
 <link rel="stylesheet" href="../vendor/leaflet.css">
 <link rel="stylesheet" href="../vendor/maplibre-gl.css">
-<title>Löschmeier</title>
+<title>Löschbärt</title>
 <style>
   :root{
     --bg:#0d1116;
@@ -255,7 +255,7 @@
 
 <header>
   <div>
-    <h1>Löschmeier</h1>
+    <h1>Löschbärt</h1>
     <div id="zugangsnummer" style="font-size:11px;color:var(--dim);margin-top:2px"></div>
     <div id="kachel-status" style="font-size:11px;color:var(--dim);margin-top:2px"></div>
   </div>
@@ -360,6 +360,19 @@
   <button data-view="v-karte">Karte</button>
 </nav>
 
+<div id="abo-sperre" style="position:fixed;inset:0;z-index:10000;background:#0d1116;color:#e6edf3;display:flex;align-items:center;justify-content:center;padding:24px;font-family:system-ui,-apple-system,sans-serif">
+  <div style="width:min(420px,100%);text-align:center">
+    <h1 style="font-size:22px">Löschbärt Föhr</h1>
+    <p id="abo-hinweis" style="color:#93a3b3">Zugang wird geprüft …</p>
+    <div id="abo-login" style="display:none">
+      <input id="abo-email" type="email" autocomplete="email" placeholder="E-Mail-Adresse" style="width:100%;padding:12px;border-radius:8px;border:1px solid #2a313c;background:#161b22;color:#e6edf3;font:inherit">
+      <button id="abo-link-senden" type="button" style="width:100%;margin-top:10px;padding:12px;border:0;border-radius:8px;background:#2fa4ff;color:#071018;font-weight:700">Anmelde-Link senden</button>
+      <p style="font-size:13px"><a href="https://test.roewise.com/registrieren.html" style="color:#2fa4ff">Noch keinen Jahreszugang?</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="../config.js"></script>
 <script src="../vendor/leaflet.js"></script>
 <script src="../vendor/maplibre-gl.js"></script>
@@ -411,97 +424,64 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 }
 
-/* ---------- Zugangsdauer: erst Testphase (62 Tage ab erstem Öffnen), nach
-   Freigabe per Link (?freigabe=1) 365 Tage ab dem Freigabe-Zeitpunkt ---------- */
-(function trialPruefen(){
-  const TEST_TAGE = 31;
-  const FREIGABE_TAGE = 365;
-  const TRIAL_KEY = APP_CONFIG.speicherPraefix + ".nutzer.trialstart";
-  const FREIGABE_KEY = APP_CONFIG.speicherPraefix + ".nutzer.freigabestart";
-  let ablauf;
+/* ---------- Vertrags- und Geräteprüfung ---------- */
+const aboClient = window.supabase.createClient(APP_CONFIG.supabaseUrl, APP_CONFIG.supabaseAnonKey);
+const aboSperre = document.getElementById("abo-sperre");
+const aboHinweis = document.getElementById("abo-hinweis");
+const aboLogin = document.getElementById("abo-login");
 
-  try {
-    if(new URLSearchParams(window.location.search).get("freigabe") === "1" && !localStorage.getItem(FREIGABE_KEY)){
-      localStorage.setItem(FREIGABE_KEY, String(Date.now()));
-    }
-  } catch(e){}
-
-  let freigabeStart = null;
-  try { const g = localStorage.getItem(FREIGABE_KEY); if(g) freigabeStart = Number(g); } catch(e){}
-
-  if(freigabeStart){
-    ablauf = freigabeStart + FREIGABE_TAGE * 24 * 60 * 60 * 1000;
-  } else {
-    let start;
-    try {
-      const gespeichert = localStorage.getItem(TRIAL_KEY);
-      if(gespeichert){ start = Number(gespeichert); }
-      else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
-    } catch(e){ start = Date.now(); }
-    ablauf = start + TEST_TAGE * 24 * 60 * 60 * 1000;
+function aboGeraetId(){
+  const key = APP_CONFIG.speicherPraefix + ".nutzer.geraeteid";
+  let id = localStorage.getItem(key);
+  if(!id){
+    id = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : String(Date.now()) + "-" + Math.random().toString(16).slice(2);
+    localStorage.setItem(key, id);
   }
+  return id;
+}
 
-  if(Date.now() > ablauf){
-    document.body.innerHTML =
-      '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
-      '<h1 style="font-size:20px;margin:0 0 12px">Zugang abgelaufen</h1>' +
-      '<p style="color:#93a3b3;max-width:320px;margin:0">Der Zugang zu dieser Version ist beendet. Bei Interesse an einer weiteren Nutzung bitte den Admin kontaktieren.</p>' +
-      '</div>';
-    throw new Error("Zugang abgelaufen");
+async function aboZugangPruefen(){
+  const { data: { session } } = await aboClient.auth.getSession();
+  if(!session){
+    aboHinweis.textContent = "Bitte mit der E-Mail-Adresse des Jahreszugangs anmelden.";
+    aboLogin.style.display = "block";
+    return;
   }
-})();
-
-/* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung ---------- */
-(function zugangsnummerAnzeigen(){
-  const ZN_KEY = APP_CONFIG.speicherPraefix + ".nutzer.zugangsnummer";
-  try {
-    const ausUrl = new URLSearchParams(window.location.search).get("zugang");
-    let nr = null;
-    if(ausUrl && /^\d{8,}$/.test(ausUrl)){
-      nr = ausUrl;
-      localStorage.setItem(ZN_KEY, nr);
-    } else {
-      nr = localStorage.getItem(ZN_KEY);
-      if(!nr){
-        nr = String(Math.floor(10000000 + Math.random() * 90000000));
-        localStorage.setItem(ZN_KEY, nr);
-      }
-    }
+  const response = await fetch(
+    APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(aboGeraetId()),
+    { headers: { Authorization: "Bearer " + session.access_token } }
+  );
+  const result = await response.json().catch(() => ({}));
+  if(response.ok && result.erlaubt){
     const el = document.getElementById("zugangsnummer");
-    if(el) el.textContent = "Zugang Nr. " + nr;
-  } catch(e){}
-})();
+    if(el) el.textContent = "Angemeldet";
+    aboSperre.remove();
+    return;
+  }
+  aboHinweis.textContent = result.grund === "geraetelimit_erreicht"
+    ? "Der Zugang wird bereits auf zwei Geräten verwendet. Geräte können im Kundenbereich entfernt werden."
+    : "Für dieses Konto ist derzeit kein aktiver Föhr-Jahreszugang vorhanden.";
+  aboLogin.style.display = "block";
+}
 
-/* ---------- Geräte-Limit: max. 2 Geräte pro Zugangsnummer (nur wenn
-   APP_CONFIG.zugangsWorkerUrl gesetzt ist; sonst wirkungslos) ---------- */
-(function geraeteLimitPruefen(){
-  if(!APP_CONFIG.zugangsWorkerUrl) return;
-  const GERAET_KEY = APP_CONFIG.speicherPraefix + ".nutzer.geraeteid";
-  const ZN_KEY = APP_CONFIG.speicherPraefix + ".nutzer.zugangsnummer";
-  let geraetId, zugangsnummer;
-  try {
-    geraetId = localStorage.getItem(GERAET_KEY);
-    if(!geraetId){
-      geraetId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (String(Date.now()) + Math.random());
-      localStorage.setItem(GERAET_KEY, geraetId);
-    }
-    zugangsnummer = localStorage.getItem(ZN_KEY);
-  } catch(e){ return; }
-  if(!zugangsnummer) return;
+document.getElementById("abo-link-senden").addEventListener("click", async () => {
+  const email = document.getElementById("abo-email").value.trim();
+  if(!email){ aboHinweis.textContent = "Bitte E-Mail-Adresse eingeben."; return; }
+  const { error } = await aboClient.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: location.origin + location.pathname },
+  });
+  aboHinweis.textContent = error
+    ? "Anmelde-Link konnte nicht gesendet werden."
+    : "Anmelde-Link wurde versandt. Bitte E-Mail-Postfach öffnen.";
+});
 
-  fetch(APP_CONFIG.zugangsWorkerUrl + "?code=" + encodeURIComponent(zugangsnummer) + "&geraet=" + encodeURIComponent(geraetId))
-    .then(r => r.json())
-    .then(daten => {
-      if(daten && daten.erlaubt === false){
-        document.body.innerHTML =
-          '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
-          '<h1 style="font-size:20px;margin:0 0 12px">Zugang gesperrt</h1>' +
-          '<p style="color:#93a3b3;max-width:320px;margin:0">Dieser Zugang wird bereits auf der maximalen Anzahl Geräte genutzt. Bei Fragen bitte den Admin kontaktieren.</p>' +
-          '</div>';
-      }
-    })
-    .catch(() => {});
-})();
+aboClient.auth.onAuthStateChange(() => aboZugangPruefen());
+aboZugangPruefen().catch(() => {
+  aboHinweis.textContent = "Die Zugangsprüfung ist derzeit nicht erreichbar. Bitte später erneut versuchen.";
+});
 
 const KEY = APP_CONFIG.speicherPraefix + ".nutzer.v1";
 

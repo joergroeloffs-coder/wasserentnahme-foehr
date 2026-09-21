@@ -12,14 +12,9 @@ self.APP_CONFIG = {
   kartenZoomPeil: 13,
   kartenZoomDetail: 14,
 
-  // Dateiname der Offline-Kartendatei in daten/ (ohne Pfad). Auf null lassen,
-  // solange für diese Gemeinde noch keine PMTiles-Datei erzeugt wurde -
-  // die App nutzt dann automatisch normale Online-Kartenkacheln als Fallback.
-  // Bewusst auf null: echter OpenStreetMap-Kartenstil gewünscht statt Protomaps.
-  // Jeder Nutzer lädt die Kacheln einmal von seinem eigenen Gerät/Anschluss
-  // herunter (siehe vorladeBbox) - das verteilt sich auf viele IP-Adressen und
-  // ist normale, einmalige Nutzung (kein Massendownload-Skript von einer Stelle).
-  pmtilesDatei: null,
+  // Lokal ausgelieferte Offlinekarte. Vermeidet Massendownloads vom öffentlichen
+  // OpenStreetMap-Kachelserver und funktioniert nach dem ersten Laden offline.
+  pmtilesDatei: "foehr.pmtiles",
 
   // Nur Hauptversion: Rechteck (Bounding Box) für den "Insel jetzt vorladen"-
   // Knopf, der echte OSM-Kacheln herunterlädt und offline speichert. Max.
@@ -27,7 +22,7 @@ self.APP_CONFIG = {
   // je Nutzer klein zu halten. NIE mehrfach hintereinander von derselben Stelle
   // aus testen (Entwicklung/Debugging) - nur simuliert testen, echte Downloads
   // nur einmalig je echtem Gerät.
-  vorladeBbox: { west: 8.40, south: 54.64, east: 8.63, north: 54.77 },
+  vorladeBbox: null,
 
   // Basis für alle localStorage-Schlüssel dieser Version (muss sich von allen
   // anderen Gemeinden UND von den anderen Apps derselben Gemeinde unterscheiden,
@@ -46,5 +41,10 @@ self.APP_CONFIG = {
     "Hedehusum": "Utersum / Dunsum / Witsum / Hedehusum",
     "Nieblum": "Nieblum / Goting",
     "Goting": "Nieblum / Goting"
-  }
+  },
+
+  // Zentrale Vertrags- und Zugriffsprüfung für Privatkunden.
+  aboWorkerUrl: "https://loeschmeier-abo-worker.joerg-roeloffs.workers.dev",
+  supabaseUrl: "https://bmntahgtagjijfyeepju.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbnRhaGd0YWdqaWpmeWVlcGp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTE2ODEsImV4cCI6MjEwNTQ2NzY4MX0.YzXfS98rli0PvIXmIyBAg9KJjcOW2NlXZq9fHzpcA0g"
 };

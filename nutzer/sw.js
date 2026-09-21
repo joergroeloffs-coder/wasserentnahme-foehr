@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v17-config";
+const SHELL_CACHE = "nutzer-shell-v18-vertragszugang";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
