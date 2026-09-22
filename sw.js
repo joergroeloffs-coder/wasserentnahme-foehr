@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v26-karte-eigene-position";
+const SHELL_CACHE = "shell-v27-blauer-punkt-1km";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
