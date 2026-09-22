@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v19-detail-buttons";
+const SHELL_CACHE = "nutzer-shell-v20-karte-eigene-position";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

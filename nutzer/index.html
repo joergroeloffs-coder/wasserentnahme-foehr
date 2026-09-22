@@ -548,6 +548,10 @@ const gpsDetail = document.getElementById("gpsdetail");
 if("geolocation" in navigator){
   navigator.geolocation.watchPosition(p => {
     pos = p.coords;
+    if(map && !kartePositionAufEigenenStandort){
+      map.fitBounds(L.latLng(pos.latitude, pos.longitude).toBounds(4000));
+      kartePositionAufEigenenStandort = true;
+    }
     gpsBox.classList.toggle("fix-ok", p.coords.accuracy <= 15);
     gpsBox.classList.toggle("fix-bad", p.coords.accuracy > 15);
     gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
@@ -901,11 +905,14 @@ function aktualisierePeilKarte(fit){
 
 /* ---------- Karte ---------- */
 let map = null, markerLayer = null;
+let kartePositionAufEigenenStandort = false; // Karte einmalig automatisch auf eigenen Standort zentrieren, sobald GPS vorliegt
 
 function initKarte(){
   if(map) return;
   L.Icon.Default.imagePath = "../vendor/images/";
-  map = L.map("map", { zoomControl:true }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomUebersicht);
+  map = L.map("map", { zoomControl:true });
+  if(pos){ map.fitBounds(L.latLng(pos.latitude, pos.longitude).toBounds(4000)); kartePositionAufEigenenStandort = true; }
+  else map.setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomUebersicht);
   grundkarteHinzufuegen(map);
   markerLayer = L.featureGroup().addTo(map);
   zeichneKarte();
