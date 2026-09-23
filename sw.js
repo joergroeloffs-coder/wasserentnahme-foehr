@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v27-blauer-punkt-1km";
+const SHELL_CACHE = "shell-v28-marker-puls-ortschaft-sync";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

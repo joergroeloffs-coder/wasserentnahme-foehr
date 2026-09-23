@@ -231,6 +231,11 @@
     width:0;height:0;margin-top:-1px;
     border:9px solid transparent;border-top-width:10px;border-top-color:var(--pin, var(--signal));
   }
+  .nr-marker-wrap.puls{animation:nrPuls 1s ease-in-out 4;z-index:1000}
+  @keyframes nrPuls{
+    0%,100%{transform:translate(-50%,-100%) scale(1)}
+    50%{transform:translate(-50%,-100%) scale(1.8)}
+  }
   .peil-hinweis-touch{
     position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
     color:var(--dim);font-size:13px;pointer-events:none;
@@ -663,7 +668,11 @@ const sucheEl = document.getElementById("suche");
 const ortschaftFilterEl = document.getElementById("f-ortschaft-filter");
 const typFilterEl = document.getElementById("f-typ-filter");
 sucheEl.addEventListener("input", zeichneListe);
-ortschaftFilterEl.addEventListener("change", zeichneListe);
+ortschaftFilterEl.addEventListener("change", () => {
+  gewaehlteOrtschaft = ortschaftFilterEl.value;
+  zeichneListe();
+  ortschaftFilterAufKarteUebernehmen();
+});
 typFilterEl.addEventListener("change", zeichneListe);
 
 function istDefibrillator(s){
@@ -714,6 +723,10 @@ defiSchnellEl.addEventListener("click", () => {
 const ORTSCHAFT_GRUPPEN = APP_CONFIG.ortschaftGruppen;
 function ortschaftGruppe(o){ return ORTSCHAFT_GRUPPEN[o] || o; }
 
+// Gemeinsamer Ortschafts-Filter fuer Suchen und Karte, damit beide Ansichten
+// immer dieselbe Auswahl zeigen, egal in welcher sie geaendert wurde.
+let gewaehlteOrtschaft = "";
+
 function ortschaften(){
   return [...new Set(stellen.map(s => ortschaftGruppe((s.ortschaft || "").trim())).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
 }
@@ -740,10 +753,9 @@ function fuelleAuswahl(selectEl, werte, behalteWert){
 
 function aktualisiereOrtschaftsListen(){
   const werte = ortschaften();
-  const aktuellerFilter = ortschaftFilterEl.value;
   ortschaftFilterEl.innerHTML = '<option value="">Alle Ortschaften</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
-  if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
+  ortschaftFilterEl.value = werte.includes(gewaehlteOrtschaft) ? gewaehlteOrtschaft : "";
   fuelleAuswahl(document.getElementById("f-ortschaft"), ortschaftenRoh(), true);
 
   const typWerte = typen();
@@ -859,11 +871,15 @@ document.getElementById("detail-zentrieren").addEventListener("click", () => {
   const s = detailStelle;
   document.getElementById("detailOverlay").classList.remove("on");
   if(!s) return;
+  gewaehlteOrtschaft = "";
+  ortschaftFilterEl.value = "";
   document.getElementById("karte-ortschaft-filter").value = "";
   document.getElementById("karte-typ-filter").value = "";
   document.querySelector('nav button[data-view="v-karte"]').click();
+  hervorgehobenerNr = s.nr || null;
   zeichneKarte();
   setTimeout(() => { map.invalidateSize(); map.setView([s.lat, s.lon], 17); }, 60);
+  setTimeout(() => { hervorgehobenerNr = null; }, 4000);
 });
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
@@ -1136,12 +1152,12 @@ function typIcon(typ){
   return TYP_ICONS.sonstige;
 }
 
-function nrIcon(s){
+function nrIcon(s, hervorgehoben){
   const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
   const farbe = typFarbe(s.typ);
   const svg = '<svg class="nr-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + typIcon(s.typ) + '</svg>';
   return L.divIcon({
-    className: "", html: '<div class="nr-marker-wrap" style="--pin:' + farbe + '"><div class="nr-marker">' + svg + esc(beschriftung) + '</div><div class="nr-spitze"></div></div>',
+    className: "", html: '<div class="nr-marker-wrap' + (hervorgehoben ? ' puls' : '') + '" style="--pin:' + farbe + '"><div class="nr-marker">' + svg + esc(beschriftung) + '</div><div class="nr-spitze"></div></div>',
     iconSize: [0, 0], iconAnchor: [0, 0]
   });
 }
@@ -1149,12 +1165,20 @@ function nrIcon(s){
 function aktualisiereKarteOrtschaftFilter(){
   const el = document.getElementById("karte-ortschaft-filter");
   const werte = ortschaften();
-  const aktuell = el.value;
   const anzahl = {};
   stellen.forEach(s => { const o = ortschaftGruppe((s.ortschaft || "").trim()); if(o) anzahl[o] = (anzahl[o] || 0) + 1; });
   el.innerHTML = '<option value="">Alle Ortschaften (' + stellen.length + ')</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + ' (' + (anzahl[o] || 0) + ')</option>').join("");
-  if(werte.includes(aktuell)) el.value = aktuell;
+  el.value = werte.includes(gewaehlteOrtschaft) ? gewaehlteOrtschaft : "";
+}
+
+// Wird nach einer Aenderung im Suchen-Filter aufgerufen, damit die Karte
+// beim naechsten Oeffnen (oder sofort, falls schon initialisiert) dieselbe
+// Ortschaft zeigt.
+function ortschaftFilterAufKarteUebernehmen(){
+  const el = document.getElementById("karte-ortschaft-filter");
+  if([...el.options].some(o => o.value === gewaehlteOrtschaft)) el.value = gewaehlteOrtschaft;
+  if(markerLayer) karteNeuZeichnenUndZoomen();
 }
 
 function aktualisiereKarteTypFilter(){
@@ -1168,6 +1192,8 @@ function aktualisiereKarteTypFilter(){
   if(werte.includes(aktuell)) el.value = aktuell;
 }
 
+let hervorgehobenerNr = null;
+
 function zeichneKarte(){
   if(!markerLayer) return;
   aktualisiereKarteOrtschaftFilter();
@@ -1180,7 +1206,7 @@ function zeichneKarte(){
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
     if(ortFilter && ortschaftGruppe((s.ortschaft || "").trim()) !== ortFilter) return;
     if(typFilter && (s.typ || "").trim() !== typFilter) return;
-    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
+    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s, s.nr && s.nr === hervorgehobenerNr) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
   });
@@ -1191,7 +1217,12 @@ function karteNeuZeichnenUndZoomen(){
   if(markerLayer.getLayers().length) map.fitBounds(markerLayer.getBounds(), { padding: [30, 30], maxZoom: 17 });
 }
 
-document.getElementById("karte-ortschaft-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
+document.getElementById("karte-ortschaft-filter").addEventListener("change", () => {
+  gewaehlteOrtschaft = document.getElementById("karte-ortschaft-filter").value;
+  if([...ortschaftFilterEl.options].some(o => o.value === gewaehlteOrtschaft)) ortschaftFilterEl.value = gewaehlteOrtschaft;
+  zeichneListe();
+  karteNeuZeichnenUndZoomen();
+});
 document.getElementById("karte-typ-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
 document.getElementById("karte-defi-btn").addEventListener("click", () => {
   const typEl = document.getElementById("karte-typ-filter");
