@@ -620,11 +620,19 @@ const sucheEl = document.getElementById("suche");
 const ortschaftFilterEl = document.getElementById("f-ortschaft-filter");
 const typFilterEl = document.getElementById("f-typ-filter");
 sucheEl.addEventListener("input", zeichneListe);
-ortschaftFilterEl.addEventListener("change", zeichneListe);
+ortschaftFilterEl.addEventListener("change", () => {
+  gewaehlteOrtschaft = ortschaftFilterEl.value;
+  zeichneListe();
+  ortschaftFilterAufKarteUebernehmen();
+});
 typFilterEl.addEventListener("change", zeichneListe);
 
 const ORTSCHAFT_GRUPPEN = APP_CONFIG.ortschaftGruppen;
 function ortschaftGruppe(o){ return ORTSCHAFT_GRUPPEN[o] || o; }
+
+// Gemeinsamer Ortschafts-Filter fuer Suchen und Karte, damit beide Ansichten
+// immer dieselbe Auswahl zeigen, egal in welcher sie geaendert wurde.
+let gewaehlteOrtschaft = "";
 
 function ortschaften(){
   return [...new Set(stellen.map(s => ortschaftGruppe((s.ortschaft || "").trim())).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
@@ -638,10 +646,9 @@ function typen(){
 
 function aktualisiereFilterListen(){
   const werte = ortschaften();
-  const aktuellerFilter = ortschaftFilterEl.value;
   ortschaftFilterEl.innerHTML = '<option value="">Alle Ortschaften</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + "</option>").join("");
-  if(werte.includes(aktuellerFilter)) ortschaftFilterEl.value = aktuellerFilter;
+  ortschaftFilterEl.value = werte.includes(gewaehlteOrtschaft) ? gewaehlteOrtschaft : "";
 
   const typWerte = typen();
   const aktuellerTypFilter = typFilterEl.value;
@@ -722,6 +729,8 @@ document.getElementById("detail-zentrieren").addEventListener("click", () => {
   const s = detailStelle;
   document.getElementById("detailOverlay").classList.remove("on");
   if(!s) return;
+  gewaehlteOrtschaft = "";
+  ortschaftFilterEl.value = "";
   document.getElementById("karte-ortschaft-filter").value = "";
   document.getElementById("karte-typ-filter").value = "";
   document.querySelector('nav button[data-view="v-karte"]').click();
@@ -1057,12 +1066,20 @@ function nrIcon(s, hervorgehoben){
 function aktualisiereKarteOrtschaftFilter(){
   const el = document.getElementById("karte-ortschaft-filter");
   const werte = ortschaften();
-  const aktuell = el.value;
   const anzahl = {};
   stellen.forEach(s => { const o = ortschaftGruppe((s.ortschaft || "").trim()); if(o) anzahl[o] = (anzahl[o] || 0) + 1; });
   el.innerHTML = '<option value="">Alle Ortschaften (' + stellen.length + ')</option>' +
     werte.map(o => '<option value="' + esc(o) + '">' + esc(o) + ' (' + (anzahl[o] || 0) + ')</option>').join("");
-  if(werte.includes(aktuell)) el.value = aktuell;
+  el.value = werte.includes(gewaehlteOrtschaft) ? gewaehlteOrtschaft : "";
+}
+
+// Wird nach einer Aenderung im Suchen-Filter aufgerufen, damit die Karte
+// beim naechsten Oeffnen (oder sofort, falls schon initialisiert) dieselbe
+// Ortschaft zeigt.
+function ortschaftFilterAufKarteUebernehmen(){
+  const el = document.getElementById("karte-ortschaft-filter");
+  if([...el.options].some(o => o.value === gewaehlteOrtschaft)) el.value = gewaehlteOrtschaft;
+  if(markerLayer) karteNeuZeichnenUndZoomen();
 }
 
 function aktualisiereKarteTypFilter(){
@@ -1101,7 +1118,12 @@ function karteNeuZeichnenUndZoomen(){
   if(markerLayer.getLayers().length) map.fitBounds(markerLayer.getBounds(), { padding: [30, 30], maxZoom: 17 });
 }
 
-document.getElementById("karte-ortschaft-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
+document.getElementById("karte-ortschaft-filter").addEventListener("change", () => {
+  gewaehlteOrtschaft = document.getElementById("karte-ortschaft-filter").value;
+  if([...ortschaftFilterEl.options].some(o => o.value === gewaehlteOrtschaft)) ortschaftFilterEl.value = gewaehlteOrtschaft;
+  zeichneListe();
+  karteNeuZeichnenUndZoomen();
+});
 document.getElementById("karte-typ-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
 document.getElementById("karte-defi-btn").addEventListener("click", () => {
   const typEl = document.getElementById("karte-typ-filter");
