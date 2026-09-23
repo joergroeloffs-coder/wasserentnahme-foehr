@@ -297,11 +297,11 @@
       <div class="ziel">Angaben korrigieren</div>
       <div class="ziel-meta" id="angabenZiel"></div>
       <label for="ang-ortschaft">Ortschaft</label>
-      <input type="text" id="ang-ortschaft" autocomplete="off">
+      <select id="ang-ortschaft"></select>
       <label for="ang-strasse">Straße / Lage</label>
       <input type="text" id="ang-strasse" autocomplete="off">
       <label for="ang-typ">Typ</label>
-      <input type="text" id="ang-typ" autocomplete="off">
+      <select id="ang-typ"></select>
       <label for="ang-bemerkung">Bemerkung</label>
       <input type="text" id="ang-bemerkung" autocomplete="off">
       <div class="hinweis" style="margin-top:10px">Nur geänderte Felder werden gemeldet und per E-Mail geprüft, bevor sie übernommen werden.</div>
@@ -771,14 +771,26 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
   sendePositionPerMail("Korrektur " + bezeichnung, text);
 });
 
-/* ---------- Angaben korrigieren (Ortschaft, Straße/Lage, Typ, Bemerkung) ---------- */
+/* ---------- Angaben korrigieren (Ortschaft, Straße/Lage, Typ, Bemerkung) ----------
+   Ortschaft und Typ als feste Auswahl statt Freitext, damit bei der Übernahme
+   keine beliebigen Schreibweisen entstehen - dieselbe Grundliste wie in der
+   Hauptversion (dort TYP_GRUNDLISTE). */
+const ANG_TYP_LISTE = ["Unterflurhydrant","Überflurhydrant","Saugstelle","Löschwasserbrunnen","Zisterne","Defibrillator"];
+
+function fuelleAngabenAuswahl(selectEl, werte, aktuellerWert){
+  selectEl.innerHTML = '<option value="">– unverändert –</option>' +
+    werte.map(w => '<option value="' + w.replace(/"/g, "&quot;") + '">' + w + "</option>").join("");
+  selectEl.value = werte.includes(aktuellerWert) ? aktuellerWert : "";
+}
+
 document.getElementById("detail-angaben").addEventListener("click", () => {
   if(!detailStelle) return;
   document.getElementById("angabenZiel").textContent =
     (detailStelle.nr || "ohne Nummer") + " · " + (detailStelle.typ || "");
-  document.getElementById("ang-ortschaft").value = detailStelle.ortschaft || "";
+  const ortschaftListe = [...new Set(stellen.map(s => (s.ortschaft || "").trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, "de"));
+  fuelleAngabenAuswahl(document.getElementById("ang-ortschaft"), ortschaftListe, (detailStelle.ortschaft || "").trim());
+  fuelleAngabenAuswahl(document.getElementById("ang-typ"), ANG_TYP_LISTE, (detailStelle.typ || "").trim());
   document.getElementById("ang-strasse").value = detailStelle.ort || "";
-  document.getElementById("ang-typ").value = detailStelle.typ || "";
   document.getElementById("ang-bemerkung").value = detailStelle.bem || "";
   document.getElementById("angabenOverlay").classList.add("on");
 });

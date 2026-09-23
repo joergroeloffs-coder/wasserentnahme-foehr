@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v22-angaben-korrigieren";
+const SHELL_CACHE = "nutzer-shell-v23-angaben-dropdowns";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
