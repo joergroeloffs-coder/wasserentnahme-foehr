@@ -285,8 +285,28 @@
       <button class="btn gelb" id="detail-zentrieren" style="margin-top:8px">Auf Karte zentrieren</button>
       <button class="btn rot" id="detail-nein" style="margin-top:8px">Zurück</button>
       <button class="btn ghost" id="detail-korrektur" style="margin-top:8px">Eigene Position als Korrektur teilen</button>
+      <button class="btn ghost" id="detail-angaben" style="margin-top:8px">✏️ Angaben korrigieren</button>
       <button class="btn ghost" id="detail-foto" style="margin-top:8px">📷 Foto senden</button>
       <input type="file" accept="image/*" capture="environment" id="foto-input" style="display:none">
+    </div>
+  </div>
+
+  <!-- Angaben korrigieren: Ortschaft, Straße/Lage, Typ, Bemerkung per E-Mail melden -->
+  <div class="detail-overlay" id="angabenOverlay">
+    <div class="detail-karte">
+      <div class="ziel">Angaben korrigieren</div>
+      <div class="ziel-meta" id="angabenZiel"></div>
+      <label for="ang-ortschaft">Ortschaft</label>
+      <input type="text" id="ang-ortschaft" autocomplete="off">
+      <label for="ang-strasse">Straße / Lage</label>
+      <input type="text" id="ang-strasse" autocomplete="off">
+      <label for="ang-typ">Typ</label>
+      <input type="text" id="ang-typ" autocomplete="off">
+      <label for="ang-bemerkung">Bemerkung</label>
+      <input type="text" id="ang-bemerkung" autocomplete="off">
+      <div class="hinweis" style="margin-top:10px">Nur geänderte Felder werden gemeldet und per E-Mail geprüft, bevor sie übernommen werden.</div>
+      <button class="btn gruen" id="angaben-senden" style="margin-top:12px">Absenden</button>
+      <button class="btn rot" id="angaben-abbrechen" style="margin-top:8px">Abbrechen</button>
     </div>
   </div>
 
@@ -751,6 +771,44 @@ document.getElementById("detail-korrektur").addEventListener("click", () => {
   sendePositionPerMail("Korrektur " + bezeichnung, text);
 });
 
+/* ---------- Angaben korrigieren (Ortschaft, Straße/Lage, Typ, Bemerkung) ---------- */
+document.getElementById("detail-angaben").addEventListener("click", () => {
+  if(!detailStelle) return;
+  document.getElementById("angabenZiel").textContent =
+    (detailStelle.nr || "ohne Nummer") + " · " + (detailStelle.typ || "");
+  document.getElementById("ang-ortschaft").value = detailStelle.ortschaft || "";
+  document.getElementById("ang-strasse").value = detailStelle.ort || "";
+  document.getElementById("ang-typ").value = detailStelle.typ || "";
+  document.getElementById("ang-bemerkung").value = detailStelle.bem || "";
+  document.getElementById("angabenOverlay").classList.add("on");
+});
+document.getElementById("angaben-abbrechen").addEventListener("click", () => {
+  document.getElementById("angabenOverlay").classList.remove("on");
+});
+document.getElementById("angaben-senden").addEventListener("click", () => {
+  if(!detailStelle) return;
+  const geaendert = [];
+  const pruefe = (feldId, bisher, label, mailLabel) => {
+    const neu = document.getElementById(feldId).value.trim();
+    if(neu && neu !== (bisher || "").trim()) geaendert.push(mailLabel + ": " + neu);
+  };
+  pruefe("ang-ortschaft", detailStelle.ortschaft, "Ortschaft", "Neue Ortschaft");
+  pruefe("ang-strasse", detailStelle.ort, "Straße/Lage", "Neue Straße/Lage");
+  pruefe("ang-typ", detailStelle.typ, "Typ", "Neuer Typ");
+  pruefe("ang-bemerkung", detailStelle.bem, "Bemerkung", "Neue Bemerkung");
+  if(!geaendert.length){
+    alert("Keine Änderung eingetragen.");
+    return;
+  }
+  const bezeichnung = [detailStelle.typ, detailStelle.nr || "ohne Nummer"].filter(Boolean).join(" ");
+  const text = "MELDUNG: Korrektur\n" +
+    "Ref: " + (detailStelle.nr || "") + "\n" +
+    "Bezeichnung: " + bezeichnung + "\n" +
+    geaendert.join("\n");
+  document.getElementById("angabenOverlay").classList.remove("on");
+  sendePositionPerMail("Korrektur " + bezeichnung, text);
+});
+
 /* ---------- Foto senden (Lage/Schild), komprimiert per Teilen oder E-Mail ---------- */
 function komprimiereFoto(datei){
   return new Promise((resolve) => {
@@ -1152,6 +1210,11 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("popstate", () => {
   if(document.getElementById("peil").classList.contains("on")){
     document.getElementById("zurueck").click();
+    zurueckWacheSetzen();
+    return;
+  }
+  if(document.getElementById("angabenOverlay").classList.contains("on")){
+    document.getElementById("angabenOverlay").classList.remove("on");
     zurueckWacheSetzen();
     return;
   }

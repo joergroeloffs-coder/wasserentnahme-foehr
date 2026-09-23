@@ -13,7 +13,10 @@ Nutzung:
   4. Bestätigte Korrekturen werden in daten/stellen.geojson übernommen,
      committet und per "git push" veröffentlicht.
 
-Erkennt nur Blöcke vom Typ "MELDUNG: Korrektur" (mit Ref-Nummer).
+Erkennt nur Blöcke vom Typ "MELDUNG: Korrektur" (mit Ref-Nummer). Ein Block
+kann eine neue Position, geänderte Angaben (Ortschaft, Straße/Lage, Typ,
+Bemerkung) oder beides enthalten - je nachdem, was in der App ausgefüllt
+wurde.
 Blöcke vom Typ "MELDUNG: Eigene Position" (ohne Ref, z.B. Hinweis auf
 fehlende Wasserstelle) werden nur angezeigt, nicht automatisch verarbeitet.
 """
@@ -36,8 +39,19 @@ BLOCK_RE = re.compile(r"MELDUNG:\s*(.+)")
 # wie der Text tatsächlich ankommt - das macht die Erkennung robust gegen
 # solche Mail-Client-Eigenheiten.
 FELD_LABEL_RE = re.compile(
-    r"\s*(?=(MELDUNG:|Ref:|Bezeichnung:|Neue Position:|Genauigkeit:|Bisherige Position \(App\):))"
+    r"\s*(?=(MELDUNG:|Ref:|Bezeichnung:|Neue Position:|Genauigkeit:|Bisherige Position \(App\):"
+    r"|Neue Ortschaft:|Neue Straße/Lage:|Neuer Typ:|Neue Bemerkung:))"
 )
+
+# Ordnet ein Feldlabel aus der Mail der zugehoerigen GeoJSON-Eigenschaft zu.
+# "Straße/Lage" landet auf "name", weil geoJsonZuStellen() in der App genau
+# dieses Feld zuerst fuer s.ort liest (siehe nutzer/index.html).
+DATENFELD_ZU_EIGENSCHAFT = {
+    "neue ortschaft": "addr:city",
+    "neue straße/lage": "name",
+    "neuer typ": "art",
+    "neue bemerkung": "description",
+}
 
 
 def normalisiere_zeilenumbrueche(text):
@@ -107,8 +121,13 @@ def verarbeite_text(text):
 
         ref = felder.get("ref", "").strip()
         neue_pos = parse_koordinate(felder.get("neue position", ""))
-        if not ref or not neue_pos:
-            print(f"\n--- Korrektur ohne verwertbare Ref/Position übersprungen: {felder} ---")
+        datenaenderungen = {
+            DATENFELD_ZU_EIGENSCHAFT[label]: felder[label]
+            for label in DATENFELD_ZU_EIGENSCHAFT
+            if felder.get(label)
+        }
+        if not ref or (not neue_pos and not datenaenderungen):
+            print(f"\n--- Korrektur ohne verwertbare Ref/Position/Angaben übersprungen: {felder} ---")
             continue
 
         feature = features_nach_ref.get(ref)
@@ -116,22 +135,33 @@ def verarbeite_text(text):
             print(f"\n--- Ref '{ref}' nicht in {DATEN_PFAD.name} gefunden — übersprungen ---")
             continue
 
-        alt_lon, alt_lat = feature["geometry"]["coordinates"]
-        neu_lat, neu_lon = neue_pos
-        distanz = haversine_m(alt_lat, alt_lon, neu_lat, neu_lon)
-
         print(f"\n--- Korrektur Ref {ref} ({felder.get('bezeichnung', '')}) ---")
-        print(f"  Bisher:   {alt_lat:.5f}, {alt_lon:.5f}")
-        print(f"  Gemeldet: {neu_lat:.5f}, {neu_lon:.5f}")
-        print(f"  Abstand:  {distanz:.0f} m")
-        if felder.get("genauigkeit"):
-            print(f"  Genauigkeit der Meldung: {felder['genauigkeit']}")
-        if distanz > 200:
-            print("  ACHTUNG: großer Abstand — bitte besonders sorgfältig prüfen.")
+
+        neu_lat = neu_lon = None
+        if neue_pos:
+            alt_lon, alt_lat = feature["geometry"]["coordinates"]
+            neu_lat, neu_lon = neue_pos
+            distanz = haversine_m(alt_lat, alt_lon, neu_lat, neu_lon)
+            print(f"  Bisher:   {alt_lat:.5f}, {alt_lon:.5f}")
+            print(f"  Gemeldet: {neu_lat:.5f}, {neu_lon:.5f}")
+            print(f"  Abstand:  {distanz:.0f} m")
+            if felder.get("genauigkeit"):
+                print(f"  Genauigkeit der Meldung: {felder['genauigkeit']}")
+            if distanz > 200:
+                print("  ACHTUNG: großer Abstand — bitte besonders sorgfältig prüfen.")
+
+        if datenaenderungen:
+            print("  Geänderte Angaben:")
+            for eigenschaft, neuer_wert in datenaenderungen.items():
+                bisheriger_wert = feature["properties"].get(eigenschaft, "")
+                print(f"    {eigenschaft}: '{bisheriger_wert}' -> '{neuer_wert}'")
 
         antwort = input("  Übernehmen? (j/n): ").strip().lower()
         if antwort == "j":
-            feature["geometry"]["coordinates"] = [neu_lon, neu_lat]
+            if neu_lat is not None:
+                feature["geometry"]["coordinates"] = [neu_lon, neu_lat]
+            for eigenschaft, neuer_wert in datenaenderungen.items():
+                feature["properties"][eigenschaft] = neuer_wert
             uebernommene_refs.append(ref)
         else:
             print("  -> verworfen")
