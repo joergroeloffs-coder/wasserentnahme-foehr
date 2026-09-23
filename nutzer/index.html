@@ -219,6 +219,11 @@
     width:0;height:0;margin-top:-1px;
     border:9px solid transparent;border-top-width:10px;border-top-color:var(--pin, var(--signal));
   }
+  .nr-marker-wrap.puls{animation:nrPuls 1s ease-in-out 4;z-index:1000}
+  @keyframes nrPuls{
+    0%,100%{transform:translate(-50%,-100%) scale(1)}
+    50%{transform:translate(-50%,-100%) scale(1.8)}
+  }
   .peil-hinweis-touch{
     position:fixed;left:0;right:0;bottom:14px;text-align:center;z-index:1550;
     color:var(--dim);font-size:13px;pointer-events:none;
@@ -720,8 +725,10 @@ document.getElementById("detail-zentrieren").addEventListener("click", () => {
   document.getElementById("karte-ortschaft-filter").value = "";
   document.getElementById("karte-typ-filter").value = "";
   document.querySelector('nav button[data-view="v-karte"]').click();
+  hervorgehobenerNr = s.nr || null;
   zeichneKarte();
   setTimeout(() => { map.invalidateSize(); map.setView([s.lat, s.lon], 17); }, 60);
+  setTimeout(() => { hervorgehobenerNr = null; }, 4000);
 });
 document.getElementById("detail-nein").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
@@ -1037,12 +1044,12 @@ function typIcon(typ){
   return TYP_ICONS.sonstige;
 }
 
-function nrIcon(s){
+function nrIcon(s, hervorgehoben){
   const beschriftung = s.nr || (s.typ ? s.typ.slice(0, 3) + "." : "?");
   const farbe = typFarbe(s.typ);
   const svg = '<svg class="nr-icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + typIcon(s.typ) + '</svg>';
   return L.divIcon({
-    className: "", html: '<div class="nr-marker-wrap" style="--pin:' + farbe + '"><div class="nr-marker">' + svg + esc(beschriftung) + '</div><div class="nr-spitze"></div></div>',
+    className: "", html: '<div class="nr-marker-wrap' + (hervorgehoben ? ' puls' : '') + '" style="--pin:' + farbe + '"><div class="nr-marker">' + svg + esc(beschriftung) + '</div><div class="nr-spitze"></div></div>',
     iconSize: [0, 0], iconAnchor: [0, 0]
   });
 }
@@ -1069,6 +1076,8 @@ function aktualisiereKarteTypFilter(){
   if(werte.includes(aktuell)) el.value = aktuell;
 }
 
+let hervorgehobenerNr = null;
+
 function zeichneKarte(){
   if(!markerLayer) return;
   aktualisiereKarteOrtschaftFilter();
@@ -1081,7 +1090,7 @@ function zeichneKarte(){
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
     if(ortFilter && ortschaftGruppe((s.ortschaft || "").trim()) !== ortFilter) return;
     if(typFilter && (s.typ || "").trim() !== typFilter) return;
-    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s) });
+    const m = L.marker([s.lat, s.lon], { icon: nrIcon(s, s.nr && s.nr === hervorgehobenerNr) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
   });
