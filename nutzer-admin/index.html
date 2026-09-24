@@ -39,8 +39,9 @@
     padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);
     display:flex;align-items:center;gap:12px;flex:none;
   }
+  header>div:first-child{min-width:0;flex:1 1 auto;overflow-wrap:anywhere}
   header h1{font-size:16px;font-weight:600;margin:0;letter-spacing:.2px}
-  #gps{margin-left:auto;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
+  #gps{margin-left:auto;flex:none;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
   #gps b{display:block;font-size:15px;font-weight:600}
   .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
   #sync-jetzt, #pos-teilen{
@@ -118,6 +119,7 @@
     width:100%;background:var(--panel-2);color:var(--text);
     border:1px solid var(--line);border-radius:6px;padding:12px;min-height:var(--touch);
   }
+  select{padding-right:34px}
   label{display:block;margin:14px 0 5px;font-size:14px;color:var(--dim)}
   .btn{
     display:block;width:100%;min-height:var(--touch);border:0;border-radius:6px;

@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v29-foto-entfernt";
+const SHELL_CACHE = "shell-v30-firefox-layout";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
