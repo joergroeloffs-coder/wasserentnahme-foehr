@@ -184,7 +184,18 @@ def verarbeite_text(text):
         return
 
     subprocess.run(["git", "add", str(DATEN_PFAD)], cwd=REPO_ROOT, check=True)
-    subprocess.run(["git", "commit", "-m", commit_msg], cwd=REPO_ROOT, check=True)
+    # Wenn die gemeldeten Werte exakt den bereits gespeicherten entsprechen
+    # (z. B. Position auf 0 m genau bestaetigt), gibt es nichts zu committen -
+    # 'git commit' wuerde dann mit "nothing to commit" fehlschlagen. Trotzdem
+    # wird unten weiter zu pushen versucht, falls noch fruehere, lokal
+    # committete aber nie hochgeladene Aenderungen warten.
+    keine_aenderung = subprocess.run(
+        ["git", "diff", "--cached", "--quiet"], cwd=REPO_ROOT
+    ).returncode == 0
+    if keine_aenderung:
+        print("Keine inhaltliche Änderung an der Datei - nichts Neues zu committen.")
+    else:
+        subprocess.run(["git", "commit", "-m", commit_msg], cwd=REPO_ROOT, check=True)
 
     # Vor dem Push zuerst mit GitHub abgleichen, damit ein Push nicht wegen
     # zwischenzeitlich anderswo veroeffentlichter Aenderungen abgelehnt wird.
