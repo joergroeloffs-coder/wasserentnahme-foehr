@@ -145,19 +145,29 @@ def main():
         imap.logout()
         return
 
-    gefunden = 0
+    # Erst die passenden Mails ermitteln (nur Betreff lesen), damit die
+    # Gesamtzahl vorab bekannt ist und wir "Mail X von Y" anzeigen koennen -
+    # sonst weiss man beim Bestaetigen nicht, ob gerade die letzte Mail laeuft.
+    passende = []
     for msg_id in ids:
+        status, kopf_daten = imap.fetch(msg_id, "(BODY.PEEK[HEADER.FIELDS (SUBJECT)])")
+        if status != "OK":
+            continue
+        kopf = email.message_from_bytes(kopf_daten[0][1])
+        betreff = dekodiere(kopf.get("Subject"))
+        if betreff.strip().lower().startswith(tuple(f.lower() for f in BETREFF_FILTER)):
+            passende.append((msg_id, betreff))
+
+    gefunden = 0
+    gesamt = len(passende)
+    for msg_id, betreff in passende:
         status, msg_daten = imap.fetch(msg_id, "(RFC822)")
         if status != "OK":
             continue
         msg = email.message_from_bytes(msg_daten[0][1])
-        betreff = dekodiere(msg.get("Subject"))
-
-        if not betreff.strip().lower().startswith(tuple(f.lower() for f in BETREFF_FILTER)):
-            continue
 
         gefunden += 1
-        print(f"\n=== Mail: {betreff} ===")
+        print(f"\n=== Mail {gefunden} von {gesamt}: {betreff} ===")
 
         if betreff.strip().lower().startswith("foto"):
             anzahl = speichere_fotos(msg, betreff, msg_id)
