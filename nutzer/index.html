@@ -146,6 +146,7 @@
   .row>*{flex:1}
 
   /* Liste */
+  .liste-kopf-fix{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:8px}
   #suche{margin-bottom:10px}
   .item{
     display:flex;align-items:center;gap:14px;width:100%;text-align:left;
@@ -365,21 +366,23 @@
 
   <!-- Liste -->
   <section id="v-liste" class="view on">
-    <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
-    <button class="btn defi-rund" id="naechster-defi" style="margin-top:10px">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-        <path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>
-      </svg>
-      Nächster Defi
-    </button>
-    <div class="row" style="margin-top:8px">
-      <div>
-        <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
-        <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
-      </div>
-      <div>
-        <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
-        <select id="f-typ-filter"><option value="">Alle Arten</option></select>
+    <div class="liste-kopf-fix">
+      <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
+      <button class="btn defi-rund" id="naechster-defi" style="margin-top:10px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+          <path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>
+        </svg>
+        Nächster Defi
+      </button>
+      <div class="row" style="margin-top:8px">
+        <div>
+          <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
+          <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+        </div>
+        <div>
+          <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
+          <select id="f-typ-filter"><option value="">Alle Arten</option></select>
+        </div>
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>

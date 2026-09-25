@@ -158,6 +158,7 @@
   .defi-schnell small{display:block;margin-top:3px;font-size:13px;color:#ffe8e9}
 
   /* Liste */
+  .liste-kopf-fix{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:8px}
   #suche{margin-bottom:10px}
   .item{
     display:flex;align-items:center;gap:14px;width:100%;text-align:left;
@@ -358,27 +359,29 @@
 
   <!-- Liste -->
   <section id="v-liste" class="view on">
-    <button id="defi-schnell" class="defi-schnell" type="button">
-      <span class="defi-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 20c-4.3-3.1-8-6.2-8-10.3A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8 2.7c0 4.1-3.7 7.2-8 10.3z"/>
-          <path d="M13.2 8.6l-2.7 4.2h3l-2.7 4.1"/>
-        </svg>
-      </span>
-      <span>
-        <strong>Nächsten Defibrillator finden</strong>
-        <small>Standort verwenden und direkt anzeigen</small>
-      </span>
-    </button>
-    <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
-    <div class="row" style="margin-top:8px">
-      <div>
-        <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
-        <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
-      </div>
-      <div>
-        <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
-        <select id="f-typ-filter"><option value="">Alle Arten</option></select>
+    <div class="liste-kopf-fix">
+      <button id="defi-schnell" class="defi-schnell" type="button">
+        <span class="defi-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20c-4.3-3.1-8-6.2-8-10.3A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8 2.7c0 4.1-3.7 7.2-8 10.3z"/>
+            <path d="M13.2 8.6l-2.7 4.2h3l-2.7 4.1"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Nächsten Defibrillator finden</strong>
+          <small>Standort verwenden und direkt anzeigen</small>
+        </span>
+      </button>
+      <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
+      <div class="row" style="margin-top:8px">
+        <div>
+          <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
+          <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
+        </div>
+        <div>
+          <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
+          <select id="f-typ-filter"><option value="">Alle Arten</option></select>
+        </div>
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>
