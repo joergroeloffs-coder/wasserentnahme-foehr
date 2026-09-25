@@ -185,6 +185,21 @@ def verarbeite_text(text):
 
     subprocess.run(["git", "add", str(DATEN_PFAD)], cwd=REPO_ROOT, check=True)
     subprocess.run(["git", "commit", "-m", commit_msg], cwd=REPO_ROOT, check=True)
+
+    # Vor dem Push zuerst mit GitHub abgleichen, damit ein Push nicht wegen
+    # zwischenzeitlich anderswo veroeffentlichter Aenderungen abgelehnt wird.
+    print("Aktualisiere zuerst mit dem neuesten Stand von GitHub …")
+    pull = subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=REPO_ROOT)
+    if pull.returncode != 0:
+        print(
+            "\nAchtung: Das automatische Abgleichen mit GitHub ist fehlgeschlagen "
+            "(z. B. weil dieselbe Stelle gleichzeitig woanders geändert wurde).\n"
+            "Dein Commit ist lokal sicher, aber noch nicht hochgeladen.\n"
+            "Bitte im Terminal prüfen: 'git status', Konflikt lösen, dann "
+            "'git rebase --continue' und 'git push origin main'."
+        )
+        return
+
     subprocess.run(["git", "push", "origin", "main"], cwd=REPO_ROOT, check=True)
     print("Fertig — gepusht.")
 
