@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v31-sticky-suche";
+const SHELL_CACHE = "nutzer-shell-v32-zugangsnr-aus";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

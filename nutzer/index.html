@@ -491,8 +491,11 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 })();
 
-/* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung ---------- */
+/* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung. Nur in
+   Versionen ohne echtes Kontosystem (kein aboWorkerUrl) sinnvoll - in
+   Versionen mit Abo/Kundenkonto verwirrt eine bedeutungslose Nummer nur. ---------- */
 (function zugangsnummerAnzeigen(){
+  if(APP_CONFIG.aboWorkerUrl) return;
   const ZN_KEY = APP_CONFIG.speicherPraefix + ".nutzer.zugangsnummer";
   try {
     const ausUrl = new URLSearchParams(window.location.search).get("zugang");
