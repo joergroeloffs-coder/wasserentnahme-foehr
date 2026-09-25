@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v28-firefox-layout";
+const SHELL_CACHE = "nutzer-shell-v29-karte-suche";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

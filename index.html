@@ -92,6 +92,11 @@
     width:auto;min-height:44px;padding:8px 30px 8px 12px;font-size:14px;
     background:var(--panel);border:1px solid var(--line);color:var(--text);
   }
+  .karte-leiste #karte-suche{
+    flex:1 1 140px;min-width:120px;max-width:260px;min-height:44px;
+    padding:8px 12px;font-size:14px;
+    background:var(--panel);border:1px solid var(--line);color:var(--text);
+  }
   .karte-filter-toggle{display:none}
   @media (max-width:700px){
     .karte-filter-toggle{
@@ -107,6 +112,7 @@
     }
     .karte-leiste-inner.offen{display:flex}
     .karte-leiste-inner select,.karte-leiste-inner button{width:100%}
+    .karte-leiste #karte-suche{flex:1 1 auto;max-width:none}
   }
   .karte-banner{
     position:absolute;left:14px;right:14px;bottom:14px;z-index:1000;
@@ -337,6 +343,7 @@
   <!-- Karte -->
   <section id="v-karte" class="view" style="position:relative">
     <div class="karte-leiste">
+      <input id="karte-suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
       <button type="button" class="karte-filter-toggle" id="karte-filter-toggle" aria-label="Filter">🔎</button>
       <div class="karte-leiste-inner" id="karte-leiste-inner">
         <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
@@ -1148,12 +1155,14 @@ function zeichneKarte(){
   aktualisiereKarteTypFilter();
   const ortFilter = document.getElementById("karte-ortschaft-filter").value;
   const typFilter = document.getElementById("karte-typ-filter").value;
+  const sucheFilter = document.getElementById("karte-suche").value.trim().toLowerCase();
   document.getElementById("karte-defi-btn").classList.toggle("aktiv", typFilter === "Defibrillator");
   markerLayer.clearLayers();
   stellen.forEach(s => {
     if(typeof s.lat !== "number" || typeof s.lon !== "number") return;
     if(ortFilter && ortschaftGruppe((s.ortschaft || "").trim()) !== ortFilter) return;
     if(typFilter && (s.typ || "").trim() !== typFilter) return;
+    if(sucheFilter && !(s.nr+" "+s.ort+" "+(s.ortschaft||"")+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(sucheFilter)) return;
     const m = L.marker([s.lat, s.lon], { icon: nrIcon(s, s.nr && s.nr === hervorgehobenerNr) });
     m.on("click", () => zeigeDetails(s));
     m.addTo(markerLayer);
@@ -1172,6 +1181,7 @@ document.getElementById("karte-ortschaft-filter").addEventListener("change", () 
   karteNeuZeichnenUndZoomen();
 });
 document.getElementById("karte-typ-filter").addEventListener("change", karteNeuZeichnenUndZoomen);
+document.getElementById("karte-suche").addEventListener("input", karteNeuZeichnenUndZoomen);
 document.getElementById("karte-defi-btn").addEventListener("click", () => {
   const typEl = document.getElementById("karte-typ-filter");
   typEl.value = typEl.value === "Defibrillator" ? "" : "Defibrillator";
