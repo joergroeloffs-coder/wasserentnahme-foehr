@@ -11939,7 +11939,7 @@
     "emergency": "fire_hydrant",
     "art": "Unterflurhydrant",
     "flow_rate": 1600,
-    "description": "Vor Ort gemessen<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
+    "description": "Vor Ort gemessen",
     "survey:date": ""
    }
   },
@@ -11957,7 +11957,7 @@
     "name": "Haus 777",
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
-    "art": "Unterflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
+    "art": "Unterflurhydrant",
     "flow_rate": 1600,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
     "survey:date": ""
@@ -12987,7 +12987,7 @@
     "name": "Aussiedlung Siewertsen",
     "addr:city": "Dunsum",
     "emergency": "fire_hydrant",
-    "art": "Unterflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
+    "art": "Unterflurhydrant",
     "flow_rate": 800,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Dusum.pdf",
     "survey:date": ""
