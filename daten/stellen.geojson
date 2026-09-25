@@ -11556,7 +11556,7 @@
    "properties": {
     "ref": "841",
     "name": "",
-    "addr:city": "Toftum",
+    "addr:city": "Oldsum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": 800,
@@ -11576,7 +11576,7 @@
    "properties": {
     "ref": "855",
     "name": "",
-    "addr:city": "Toftum",
+    "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": 800,
@@ -11596,7 +11596,7 @@
    "properties": {
     "ref": "856",
     "name": "",
-    "addr:city": "Toftum",
+    "addr:city": "Oldsum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": 800,
@@ -11636,7 +11636,7 @@
    "properties": {
     "ref": "858",
     "name": "",
-    "addr:city": "Toftum",
+    "addr:city": "Oldsum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": 1600,
@@ -15383,7 +15383,7 @@
    "properties": {
     "ref": "Defi 7",
     "name": "",
-    "addr:city": "Toftum",
+    "addr:city": "Oldsum",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "survey:date": "2026-09-19"
@@ -15419,7 +15419,7 @@
    "properties": {
     "ref": "GH BOL",
     "name": "",
-    "addr:city": "Boldixum",
+    "addr:city": "Wyk-Boldixum",
     "emergency": "fire_hydrant",
     "art": "Gerätehaus",
     "survey:date": "2026-09-19"
