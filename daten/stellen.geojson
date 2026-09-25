@@ -11819,7 +11819,7 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "800",
-    "description": "Vor Ort geprüft, Funktion OK",
+    "description": "Vor Ort gemessen",
     "survey:date": "2026-09-25"
    }
   },
