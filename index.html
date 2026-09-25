@@ -264,17 +264,23 @@
     overflow-y:auto;
     display:flex;flex-direction:column;
   }
-  .detail-karte .ziel{margin-bottom:0;font-size:18px}
-  .detail-karte .ziel-meta{font-size:13px}
+  .detail-karte .ziel{margin-bottom:0;font-size:26px;font-weight:700}
+  .detail-karte .ziel-meta{font-size:17px}
   #detailMap{
     width:100%;height:clamp(140px,24vh,220px);flex:none;border-radius:8px;margin-bottom:10px;
     background:#1a232c;
   }
-  .detail-karte .koord{font-size:13px;margin-top:6px!important}
-  .detail-karte .hinweis{margin-top:8px;padding:10px;font-size:13px}
+  .detail-karte .koord{font-size:14px;margin-top:6px!important}
+  .detail-karte .hinweis{margin-top:8px;padding:10px;font-size:16px}
   .detail-karte .navfrage{margin:12px 0 8px;color:var(--dim);font-size:14px}
   .detail-karte .row{flex:none}
   .detail-karte .row .btn,.detail-karte>#detail-korrektur{min-height:48px;padding:11px}
+  .detail-aktionen{display:flex;gap:8px;margin-top:14px}
+  .detail-aktionen .btn{
+    width:auto;flex:1;min-height:56px;padding:8px 4px;font-size:12.5px;font-weight:600;
+    border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:2px;text-align:center;line-height:1.15;
+  }
   h2{font-size:15px;font-weight:600;color:var(--dim);margin:22px 0 8px}
   .zeile{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
   .zeile span:first-child{flex:none}
@@ -307,9 +313,11 @@
       <div class="ziel-meta" id="detailMeta"></div>
       <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
       <div class="hinweis" id="detailHinweis"></div>
-      <button class="btn gruen" id="detail-ja" style="margin-top:12px">Hierher navigieren</button>
-      <button class="btn gelb" id="detail-zentrieren" style="margin-top:8px">Auf Karte zentrieren</button>
-      <button class="btn rot" id="detail-nein" style="margin-top:8px">Zurück</button>
+      <div class="detail-aktionen">
+        <button class="btn gruen" id="detail-ja">Hierher<br>navigieren</button>
+        <button class="btn gelb" id="detail-zentrieren">Auf Karte<br>zentrieren</button>
+        <button class="btn rot" id="detail-nein">Zurück</button>
+      </div>
       <button class="btn ghost" id="detail-bearbeiten" style="margin-top:10px">Bearbeiten</button>
     </div>
   </div>
