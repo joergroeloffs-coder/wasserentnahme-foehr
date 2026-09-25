@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v34-mehrfachauswahl";
+const SHELL_CACHE = "shell-v35-pruefdatum";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

@@ -155,6 +155,7 @@
   }
   .item .dist{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;min-width:92px}
   .item .meta{font-size:14px;color:var(--dim);margin-top:2px}
+  .item-pruefdatum{margin-left:auto;flex:none;font-size:11px;color:var(--dim);text-align:right;padding-left:8px;white-space:nowrap;align-self:center}
   .item .name{font-size:17px}
   .tag{
     font-size:12px;padding:2px 7px;border-radius:4px;border:1px solid var(--line);
@@ -700,12 +701,18 @@ function zeichneListe(){
       '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
       (s.menge ? '<span class="tag">' + esc(s.menge) + ' l/min</span>' : "") +
-      '<div class="meta">' + esc(ortLage) + '</div></span>';
+      '<div class="meta">' + esc(ortLage) + '</div></span>' +
+      (s.erfasst ? '<span class="item-pruefdatum" title="Zuletzt geprüft am ' + esc(pruefdatumKurz(s.erfasst)) + '">✓ ' + esc(pruefdatumKurz(s.erfasst)) + '</span>' : "");
     b.addEventListener("click", () => zeigeDetails(s));
     listeEl.appendChild(b);
   });
 }
 const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+function pruefdatumKurz(iso){
+  const teile = String(iso || "").slice(0, 10).split("-");
+  if(teile.length !== 3) return "";
+  return teile[2] + "." + teile[1] + "." + teile[0].slice(2);
+}
 
 /* ---------- Detail + Peilung ---------- */
 let ziel = null;
