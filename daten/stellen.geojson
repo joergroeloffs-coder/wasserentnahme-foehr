@@ -11914,10 +11914,10 @@
    },
    "properties": {
     "ref": "875",
-    "name": "",
+    "name": "Hauptstraße",
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
-    "art": "Hydrant",
+    "art": "Überflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
     "flow_rate": 1600,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
     "survey:date": ""
@@ -11934,12 +11934,12 @@
    },
    "properties": {
     "ref": "876",
-    "name": "",
+    "name": "Hauptstraße, Haus 4",
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
-    "art": "Hydrant",
+    "art": "Unterflurhydrant",
     "flow_rate": 1600,
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
+    "description": "Vor Ort gemessen<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
     "survey:date": ""
    }
   },
@@ -11954,10 +11954,10 @@
    },
    "properties": {
     "ref": "877",
-    "name": "",
+    "name": "Hauptstraße, Haus Dörpfeld",
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
-    "art": "Hydrant",
+    "art": "Unterflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
     "flow_rate": 1600,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
     "survey:date": ""
@@ -12978,16 +12978,16 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.425573,
-     54.716163
+     8.42554,
+     54.7162
     ]
    },
    "properties": {
     "ref": "955",
-    "name": "",
+    "name": "Aussiedlung Siewertsen",
     "addr:city": "Dunsum",
     "emergency": "fire_hydrant",
-    "art": "Hydrant",
+    "art": "Unterflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
     "flow_rate": 800,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Dusum.pdf",
     "survey:date": ""
@@ -13386,8 +13386,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     8.432242870330812,
-     54.719666828638466
+     8.43248,
+     54.71984
     ]
    },
    "properties": {
@@ -13396,7 +13396,8 @@
     "addr:city": "Süderende",
     "emergency": "defibrillator",
     "art": "Defibrillator",
-    "survey:date": "2026-09-12"
+    "survey:date": "2026-09-12",
+    "description": "Eventuell nicht 24/7 erreichbar<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>"
    }
   },
   {
