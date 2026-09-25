@@ -11917,7 +11917,7 @@
     "name": "Hauptstraße",
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
-    "art": "Überflurhydrant<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
+    "art": "Überflurhydrant",
     "flow_rate": 1600,
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
     "survey:date": ""
