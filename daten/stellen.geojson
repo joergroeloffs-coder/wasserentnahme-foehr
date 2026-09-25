@@ -11819,7 +11819,7 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "800",
-    "description": "Vor Ort gemessen<br><br><div class=\"signature\">--<br>Gesendet mit der WEB.DE Mail App</div></body></html>",
+    "description": "Vor Ort gemessen",
     "survey:date": ""
    }
   },

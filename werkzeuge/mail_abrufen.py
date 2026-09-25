@@ -19,8 +19,10 @@ Aufruf nicht erneut auftauchen.
 """
 
 import email
+import html
 import imaplib
 import json
+import re
 import sys
 from email.header import decode_header
 from pathlib import Path
@@ -58,17 +60,51 @@ def dekodiere(wert):
     return ergebnis
 
 
+def html_zu_text(roh):
+    """Wandelt eine HTML-Mail (z.B. von der WEB.DE Mail App, die keinen
+    Klartext-Teil mitschickt) in einfachen Text um: Zeilenumbrueche statt
+    <br>/</p> usw., alle Tags entfernt, HTML-Entities aufgeloest, und alles
+    ab einer Signatur-Trennzeile "--" abgeschnitten."""
+    text = re.sub(r"(?i)<br\s*/?>", "\n", roh)
+    text = re.sub(r"(?i)</(p|div|tr|li|h[1-6])>", "\n", text)
+    text = re.sub(r"(?s)<[^>]+>", "", text)
+    text = html.unescape(text)
+    zeilen = []
+    for zeile in text.splitlines():
+        zeile = zeile.strip()
+        if zeile == "--":
+            break
+        zeilen.append(zeile)
+    return "\n".join(z for z in zeilen if z).strip()
+
+
 def extrahiere_body(msg):
     if msg.is_multipart():
+        klartext = None
+        html_teil = None
         for teil in msg.walk():
-            if teil.get_content_type() == "text/plain" and not teil.get("Content-Disposition"):
-                payload = teil.get_payload(decode=True)
-                charset = teil.get_content_charset() or "utf-8"
-                return payload.decode(charset, errors="replace")
+            if teil.get("Content-Disposition"):
+                continue
+            payload = teil.get_payload(decode=True)
+            if payload is None:
+                continue
+            charset = teil.get_content_charset() or "utf-8"
+            text = payload.decode(charset, errors="replace")
+            if teil.get_content_type() == "text/plain" and klartext is None:
+                klartext = text
+            elif teil.get_content_type() == "text/html" and html_teil is None:
+                html_teil = text
+        if klartext is not None:
+            return klartext
+        if html_teil is not None:
+            return html_zu_text(html_teil)
         return ""
     payload = msg.get_payload(decode=True)
     charset = msg.get_content_charset() or "utf-8"
-    return payload.decode(charset, errors="replace")
+    text = payload.decode(charset, errors="replace")
+    if msg.get_content_type() == "text/html":
+        return html_zu_text(text)
+    return text
 
 
 def speichere_fotos(msg, betreff, msg_id):
