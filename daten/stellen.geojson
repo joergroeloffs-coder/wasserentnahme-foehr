@@ -6719,10 +6719,10 @@
    "properties": {
     "ref": "502",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6778,10 +6778,10 @@
    "properties": {
     "ref": "505",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6798,7 +6798,7 @@
    "properties": {
     "ref": "506",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Bohrbrunnen",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
@@ -6817,7 +6817,7 @@
    "properties": {
     "ref": "507",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Bohrbrunnen",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
@@ -6836,10 +6836,10 @@
    "properties": {
     "ref": "508",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6856,10 +6856,10 @@
    "properties": {
     "ref": "509",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6876,10 +6876,10 @@
    "properties": {
     "ref": "512",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6896,7 +6896,7 @@
    "properties": {
     "ref": "513",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Bohrbrunnen",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
@@ -6915,10 +6915,10 @@
    "properties": {
     "ref": "514",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 1600,
+    "flow_rate": "1600",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -6935,10 +6935,10 @@
    "properties": {
     "ref": "515",
     "name": "",
-    "addr:city": "Midlum",
+    "addr:city": "Oevenum",
     "emergency": "fire_hydrant",
     "art": "Hydrant",
-    "flow_rate": 800,
+    "flow_rate": "800",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Midlum_Dorf.pdf",
     "survey:date": ""
    }
@@ -13317,7 +13317,6 @@
    },
    "properties": {
     "ref": "387-WYK-NO",
-    "plan_id": "387",
     "name": "387 - Wyk Nordost",
     "addr:city": "Wyk auf Föhr",
     "emergency": "fire_hydrant",
@@ -15202,7 +15201,6 @@
    "properties": {
     "ref": "OSM-AED-01",
     "name": "",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15221,7 +15219,6 @@
    "properties": {
     "ref": "OSM-AED-02",
     "name": "Vorraum Toiletten",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15240,7 +15237,6 @@
    "properties": {
     "ref": "OSM-AED-03",
     "name": "An der Touristeninformation draußen",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15259,7 +15255,6 @@
    "properties": {
     "ref": "OSM-AED-04",
     "name": "",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15278,7 +15273,6 @@
    "properties": {
     "ref": "OSM-AED-05",
     "name": "",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15297,7 +15291,6 @@
    "properties": {
     "ref": "OSM-AED-06",
     "name": "Schulverwaltung",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15316,7 +15309,6 @@
    "properties": {
     "ref": "OSM-AED-07",
     "name": "",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15335,7 +15327,6 @@
    "properties": {
     "ref": "OSM-AED-08",
     "name": "Weißer Kasten an zentrale Säule, hinter zweiter Glastür",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15354,7 +15345,6 @@
    "properties": {
     "ref": "OSM-AED-09",
     "name": "Links neben dem Toiletteneingang",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
@@ -15373,7 +15363,6 @@
    "properties": {
     "ref": "OSM-AED-10",
     "name": "Außenwand rechts neben Feuerwehrtor",
-    "addr:city": "",
     "emergency": "defibrillator",
     "art": "Defibrillator",
     "description": "Quelle: OpenStreetMap/OpenAEDMap, nicht vor Ort bestätigt, Ortschaft noch einzutragen",
