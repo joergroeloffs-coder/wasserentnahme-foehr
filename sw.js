@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v31-karte-suche";
+const SHELL_CACHE = "shell-v32-loeschbaert";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
