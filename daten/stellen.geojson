@@ -11700,8 +11700,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "800",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11720,8 +11720,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11739,8 +11739,8 @@
     "addr:city": "Süderende",
     "emergency": "fire_hydrant",
     "art": "Saugstelle",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11759,8 +11759,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11779,8 +11779,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11799,8 +11799,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11819,8 +11819,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "800",
-    "description": "Vor Ort gemessen",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11839,8 +11839,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "800",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11859,8 +11859,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11879,8 +11879,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": "1600",
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Oldsum_Dorf.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
@@ -11899,8 +11899,8 @@
     "emergency": "fire_hydrant",
     "art": "Hydrant",
     "flow_rate": 1600,
-    "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt · Quelle: Süderende.pdf",
-    "survey:date": ""
+    "description": "Vor Ort geprüft, Funktion OK",
+    "survey:date": "2026-09-25"
    }
   },
   {
