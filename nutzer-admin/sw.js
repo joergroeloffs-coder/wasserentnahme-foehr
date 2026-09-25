@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-admin-shell-v24-detailoverlay";
+const SHELL_CACHE = "nutzer-admin-shell-v25-detailoverlay2";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
