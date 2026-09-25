@@ -23,6 +23,16 @@
     --warn:#e8a020;
     --touch:56px;
   }
+  :root[data-theme="light"]{
+    --bg:#f4f6f8;
+    --panel:#ffffff;
+    --panel-2:#eef1f4;
+    --line:#d7dce2;
+    --text:#14181d;
+    --dim:#5b6673;
+    --ok:#227a45;
+    --warn:#a8650a;
+  }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{height:100%}
   html{overflow-x:hidden}
@@ -45,7 +55,7 @@
   #gps{margin-left:auto;flex:none;font-size:13px;color:var(--dim);text-align:right;line-height:1.2;max-width:92px}
   #gps b{display:block;font-size:15px;font-weight:600}
   .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
-  #sync-jetzt, #pos-teilen{
+  #sync-jetzt, #pos-teilen, #theme-umschalten{
     flex:none;width:40px;height:40px;border-radius:8px;background:var(--panel-2);
     border:1px solid var(--line);color:var(--text);font-size:19px;cursor:pointer;
   }
@@ -290,6 +300,7 @@
   <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
   <button id="pos-teilen" title="Eigene Position teilen" aria-label="Eigene Position teilen">⌖</button>
   <button id="sync-jetzt" title="Jetzt aktualisieren" aria-label="Jetzt aktualisieren">⟳</button>
+  <button id="theme-umschalten" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">🌙</button>
 </header>
 
 <main>
@@ -416,6 +427,32 @@
 <script src="../vendor/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
+
+/* ---------- Hell/Dunkel-Modus ---------- */
+(function themeInit(){
+  const KEY = APP_CONFIG.speicherPraefix + ".theme";
+  const btn = document.getElementById("theme-umschalten");
+  function anwenden(theme){
+    if(theme === "light") document.documentElement.setAttribute("data-theme", "light");
+    else document.documentElement.removeAttribute("data-theme");
+    if(btn) btn.textContent = theme === "light" ? "☀️" : "🌙";
+    try {
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if(meta) meta.setAttribute("content", theme === "light" ? "#f4f6f8" : "#0d1116");
+    } catch(e){}
+  }
+  let gespeichert = null;
+  try { gespeichert = localStorage.getItem(KEY); } catch(e){}
+  anwenden(gespeichert === "light" ? "light" : "dark");
+  if(btn){
+    btn.addEventListener("click", () => {
+      const aktuell = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const neu = aktuell === "light" ? "dark" : "light";
+      anwenden(neu);
+      try { localStorage.setItem(KEY, neu); } catch(e){}
+    });
+  }
+})();
 
 const PMTILES_ATTRIBUTION = '<a href="https://protomaps.com/" target="_blank" rel="noopener">Protomaps</a> | &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende</a>';
 

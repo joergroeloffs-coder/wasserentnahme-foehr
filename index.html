@@ -23,6 +23,20 @@
     --warn:#e8a020;
     --touch:56px;
   }
+  :root[data-theme="light"]{
+    --bg:#f4f6f8;
+    --panel:#ffffff;
+    --panel-2:#eef1f4;
+    --line:#d7dce2;
+    --text:#14181d;
+    --dim:#5b6673;
+    --ok:#227a45;
+    --warn:#a8650a;
+  }
+  #theme-umschalten{
+    flex:none;width:40px;height:40px;border-radius:8px;background:var(--panel-2);
+    border:1px solid var(--line);color:var(--text);font-size:19px;cursor:pointer;
+  }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{height:100%}
   html{overflow-x:hidden}
@@ -302,6 +316,7 @@
 <header>
   <h1>Löschbärt</h1>
   <div id="gps" class="fix-bad"><b>kein GPS</b><span id="gpsdetail">warte auf Position</span></div>
+  <button id="theme-umschalten" title="Hell/Dunkel umschalten" aria-label="Hell/Dunkel umschalten">🌙</button>
 </header>
 
 <main>
@@ -581,6 +596,33 @@
 <script src="vendor/leaflet-maplibre-gl.js"></script>
 <script>
 "use strict";
+
+/* ---------- Hell/Dunkel-Modus ---------- */
+(function themeInit(){
+  const KEY = APP_CONFIG.speicherPraefix + ".theme";
+  const btn = document.getElementById("theme-umschalten");
+  function anwenden(theme){
+    if(theme === "light") document.documentElement.setAttribute("data-theme", "light");
+    else document.documentElement.removeAttribute("data-theme");
+    if(btn) btn.textContent = theme === "light" ? "☀️" : "🌙";
+    try {
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if(meta) meta.setAttribute("content", theme === "light" ? "#f4f6f8" : "#0d1116");
+    } catch(e){}
+  }
+  let gespeichert = null;
+  try { gespeichert = localStorage.getItem(KEY); } catch(e){}
+  anwenden(gespeichert === "light" ? "light" : "dark");
+  if(btn){
+    btn.addEventListener("click", () => {
+      const aktuell = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const neu = aktuell === "light" ? "dark" : "light";
+      anwenden(neu);
+      try { localStorage.setItem(KEY, neu); } catch(e){}
+    });
+  }
+})();
+
 const KEY = APP_CONFIG.speicherPraefix + ".haupt.v1";
 
 /* Grundkarte: PMTiles (offline, MapLibre) wenn APP_CONFIG.pmtilesDatei gesetzt
