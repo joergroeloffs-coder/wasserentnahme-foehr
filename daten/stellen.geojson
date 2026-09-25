@@ -13322,7 +13322,8 @@
     "emergency": "fire_hydrant",
     "art": "Bohrbrunnen",
     "description": "kartografische Symbolposition; nicht vermessungstechnisch oder vor Ort bestätigt - Quelle: Wyk_Nord_Ost.pdf; Ortsbereich: Wyk auf Föhr (Nordost)",
-    "survey:date": ""
+    "survey:date": "",
+    "plan_id": "387"
    }
   },
   {
