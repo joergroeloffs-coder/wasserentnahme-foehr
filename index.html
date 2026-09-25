@@ -159,6 +159,7 @@
 
   /* Liste */
   .liste-kopf-fix{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:8px}
+  #mehrfach-toggle[hidden],#mehrfach-leiste[hidden]{display:none}
   #suche{margin-bottom:10px}
   .item{
     display:flex;align-items:center;gap:14px;width:100%;text-align:left;
@@ -312,6 +313,26 @@
     </div>
   </div>
 
+  <!-- Sammel-Bearbeitung: mehrere ausgewählte Stellen auf einmal ändern -->
+  <div class="detail-overlay" id="sammelOverlay">
+    <div class="detail-karte">
+      <div class="ziel">Sammel-Bearbeitung</div>
+      <div class="ziel-meta"><span id="sammelAnzahl">0</span> ausgewählt</div>
+      <label style="display:flex;align-items:center;gap:8px;margin-top:16px;font-size:15px">
+        <input type="checkbox" id="sammel-datum" style="width:20px;height:20px;margin:0">
+        Prüf-Datum auf heute setzen
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:15px">
+        <input type="checkbox" id="sammel-hinweis-entfernen" style="width:20px;height:20px;margin:0">
+        Standard-Hinweistext entfernen (falls vorhanden)
+      </label>
+      <label for="sammel-bemerkung">Bemerkung überschreiben (leer lassen = nicht ändern)</label>
+      <textarea id="sammel-bemerkung" rows="2" placeholder="z. B. Vor Ort geprüft, funktionsfähig"></textarea>
+      <button class="btn gruen" id="sammel-uebernehmen" style="margin-top:16px">Übernehmen</button>
+      <button class="btn rot" id="sammel-abbrechen" style="margin-top:8px">Abbrechen</button>
+    </div>
+  </div>
+
   <!-- Peilansicht (Navigation): Karte vollflächig, Pfeil dauerhaft sichtbar, Rest nur bei Berührung -->
   <section id="peil">
     <div id="peilMap"></div>
@@ -382,6 +403,14 @@
           <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
           <select id="f-typ-filter"><option value="">Alle Arten</option></select>
         </div>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button type="button" class="btn ghost" id="mehrfach-toggle" style="flex:none;width:auto;padding:8px 14px;font-size:13px">Mehrfachauswahl</button>
+      </div>
+      <div class="row" id="mehrfach-leiste" hidden style="margin-top:8px;align-items:center;gap:8px">
+        <span id="mehrfach-anzahl" style="font-size:13px;color:var(--dim);flex:1">0 ausgewählt</span>
+        <button type="button" class="btn primary" id="mehrfach-bearbeiten" style="flex:none;width:auto;padding:8px 14px;font-size:13px" disabled>Bearbeiten</button>
+        <button type="button" class="btn ghost" id="mehrfach-abbrechen" style="flex:none;width:auto;padding:8px 14px;font-size:13px">Abbrechen</button>
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>
@@ -832,19 +861,101 @@ function zeichneListe(){
     b.className = "item";
     const ortLage = [s.ortschaft, s.ort].filter(Boolean).join(" · ") || s.typ;
     const typSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + typIcon(s.typ) + '</svg>';
+    const vornDran = mehrfachModus
+      ? '<input type="checkbox" class="mehrfach-checkbox" style="flex:none;width:20px;height:20px;margin:0" ' + (ausgewaehlteRefs.has(s.nr) ? "checked" : "") + '>'
+      : '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>';
     b.innerHTML =
-      '<span class="dist">' + (pos ? fmtDist(s._d) : "–") + '</span>' +
+      vornDran +
       '<span class="item-typ" style="--c:' + typFarbe(s.typ) + '" title="' + esc(s.typ || "") + '">' + typSvg + '</span>' +
       '<span><span class="name">' + esc(s.nr || "ohne Nummer") + '</span>' +
       (s.dn ? '<span class="tag">' + esc(s.dn) + '</span>' : "") +
       (s.menge ? '<span class="tag">' + esc(s.menge) + ' l/min</span>' : "") +
       '<div class="meta">' + esc(ortLage) + '</div></span>' +
-      '<button class="item-edit" type="button" aria-label="Bearbeiten" title="Bearbeiten">✎</button>';
-    b.addEventListener("click", () => zeigeDetails(s));
-    b.querySelector(".item-edit").addEventListener("click", ev => { ev.stopPropagation(); bearbeitenStarten(s); });
+      (mehrfachModus ? "" : '<button class="item-edit" type="button" aria-label="Bearbeiten" title="Bearbeiten">✎</button>');
+    if(mehrfachModus){
+      b.addEventListener("click", () => mehrfachUmschalten(s.nr));
+    } else {
+      b.addEventListener("click", () => zeigeDetails(s));
+      b.querySelector(".item-edit").addEventListener("click", ev => { ev.stopPropagation(); bearbeitenStarten(s); });
+    }
     listeEl.appendChild(b);
   });
 }
+
+/* ---------- Mehrfachauswahl: mehrere Stellen auf einmal bearbeiten ---------- */
+let mehrfachModus = false;
+let ausgewaehlteRefs = new Set();
+
+function mehrfachUmschalten(nr){
+  if(ausgewaehlteRefs.has(nr)) ausgewaehlteRefs.delete(nr);
+  else ausgewaehlteRefs.add(nr);
+  aktualisiereMehrfachLeiste();
+  zeichneListe();
+}
+
+function aktualisiereMehrfachLeiste(){
+  document.getElementById("mehrfach-anzahl").textContent = ausgewaehlteRefs.size + " ausgewählt";
+  document.getElementById("mehrfach-bearbeiten").disabled = ausgewaehlteRefs.size === 0;
+}
+
+document.getElementById("mehrfach-toggle").addEventListener("click", () => {
+  mehrfachModus = true;
+  ausgewaehlteRefs.clear();
+  document.getElementById("mehrfach-toggle").hidden = true;
+  document.getElementById("mehrfach-leiste").hidden = false;
+  aktualisiereMehrfachLeiste();
+  zeichneListe();
+});
+
+document.getElementById("mehrfach-abbrechen").addEventListener("click", () => {
+  mehrfachModus = false;
+  ausgewaehlteRefs.clear();
+  document.getElementById("mehrfach-toggle").hidden = false;
+  document.getElementById("mehrfach-leiste").hidden = true;
+  zeichneListe();
+});
+
+document.getElementById("mehrfach-bearbeiten").addEventListener("click", () => {
+  if(!ausgewaehlteRefs.size) return;
+  document.getElementById("sammelAnzahl").textContent = ausgewaehlteRefs.size;
+  document.getElementById("sammel-datum").checked = true;
+  document.getElementById("sammel-hinweis-entfernen").checked = false;
+  document.getElementById("sammel-bemerkung").value = "";
+  document.getElementById("sammelOverlay").classList.add("on");
+});
+
+document.getElementById("sammel-abbrechen").addEventListener("click", () => {
+  document.getElementById("sammelOverlay").classList.remove("on");
+});
+
+document.getElementById("sammel-uebernehmen").addEventListener("click", () => {
+  const heute = new Date().toISOString().slice(0, 10);
+  const datumSetzen = document.getElementById("sammel-datum").checked;
+  const hinweisEntfernen = document.getElementById("sammel-hinweis-entfernen").checked;
+  const neueBemerkung = document.getElementById("sammel-bemerkung").value.trim();
+  const DISCLAIMER_RE = /kartografische Symbolposition;\s*nicht vermessungstechnisch oder vor Ort bestätigt(?:\s*·\s*Quelle:\s*\S+)?/gi;
+
+  stellen.forEach(s => {
+    if(!ausgewaehlteRefs.has(s.nr)) return;
+    if(datumSetzen) s.erfasst = heute;
+    if(neueBemerkung){
+      s.bem = neueBemerkung;
+    } else if(hinweisEntfernen && s.bem){
+      s.bem = s.bem.replace(DISCLAIMER_RE, "").replace(/^[;·\s]+/, "").replace(/\s{2,}/g, " ").trim();
+    }
+  });
+
+  store.save(stellen);
+  markUngesichert();
+  document.getElementById("sammelOverlay").classList.remove("on");
+  mehrfachModus = false;
+  ausgewaehlteRefs.clear();
+  document.getElementById("mehrfach-toggle").hidden = false;
+  document.getElementById("mehrfach-leiste").hidden = true;
+  zeichneListe();
+  zeichneDaten();
+  alert("Übernommen. Nicht vergessen: unter „Daten“ exportieren und die Datei an Claude schicken, damit es zentral übernommen wird.");
+});
 const esc = t => String(t == null ? "" : t).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
 
 /* ---------- Peilung ---------- */
