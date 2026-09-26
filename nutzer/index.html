@@ -218,8 +218,10 @@
   .koord{font-variant-numeric:tabular-nums;font-size:15px;color:var(--dim);text-align:center;margin-top:8px}
   .kompass-mini{
     position:fixed;right:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
-    width:64px;height:64px;background:#0d1116cc;border:1px solid var(--line);
-    border-radius:10px;padding:4px;pointer-events:none;
+    width:96px;height:96px;pointer-events:none;overflow:visible;
+    transform:perspective(500px) rotateX(58deg);
+    transform-style:preserve-3d;
+    filter:drop-shadow(0 20px 16px rgba(0,0,0,.55));
   }
   .eigene-pos{
     width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
@@ -345,15 +347,42 @@
   <section id="peil">
     <div id="peilMap"></div>
     <svg class="kompass-mini" id="kompassMini" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="100" cy="100" r="94" fill="#161d25" stroke="#2b3743" stroke-width="2"/>
+      <defs>
+        <radialGradient id="kompassGlas" cx="38%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="#3a4757"/>
+          <stop offset="55%" stop-color="#1c2530"/>
+          <stop offset="100%" stop-color="#0c1116"/>
+        </radialGradient>
+      </defs>
+      <circle cx="100" cy="100" r="96" fill="url(#kompassGlas)" stroke="#4a5a6b" stroke-width="2"/>
       <circle cx="100" cy="100" r="70" fill="none" stroke="#2b3743" stroke-width="1"/>
       <g id="ring">
-        <text x="100" y="30" text-anchor="middle" fill="#93a3b3" font-size="26" font-family="system-ui">N</text>
+        <g stroke="#4a5a6b" stroke-width="1.5">
+          <line x1="100" y1="8" x2="100" y2="18"/>
+          <line x1="100" y1="182" x2="100" y2="192"/>
+          <line x1="8" y1="100" x2="18" y2="100"/>
+          <line x1="182" y1="100" x2="192" y2="100"/>
+        </g>
+        <g stroke="#33404d" stroke-width="1">
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(30 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(60 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(120 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(150 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(210 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(240 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(300 100 100)"/>
+          <line x1="100" y1="8" x2="100" y2="14" transform="rotate(330 100 100)"/>
+        </g>
+        <text x="100" y="32" text-anchor="middle" fill="#e6ebf0" font-size="24" font-weight="700" font-family="system-ui">N</text>
+        <text x="168" y="108" text-anchor="middle" fill="#93a3b3" font-size="18" font-family="system-ui">O</text>
+        <text x="100" y="180" text-anchor="middle" fill="#93a3b3" font-size="18" font-family="system-ui">S</text>
+        <text x="32" y="108" text-anchor="middle" fill="#93a3b3" font-size="18" font-family="system-ui">W</text>
       </g>
       <g id="pfeil">
-        <path d="M100 26 L128 122 L100 104 L72 122 Z" fill="#e23c22"/>
+        <path d="M100 20 L130 124 L100 104 L70 124 Z" fill="#ff4a2e" stroke="#7a1a0c" stroke-width="1.5"/>
       </g>
-      <circle cx="100" cy="100" r="5" fill="#0d1116" stroke="#2b3743"/>
+      <circle cx="100" cy="100" r="6" fill="#0d1116" stroke="#4a5a6b" stroke-width="1.5"/>
+      <ellipse cx="72" cy="60" rx="46" ry="22" fill="#ffffff" opacity="0.08"/>
     </svg>
     <button class="btn ghost peil-zurueck-btn" id="zurueck">Zurück</button>
     <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
