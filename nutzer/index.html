@@ -654,10 +654,28 @@ if("geolocation" in navigator){
 
 /* ---------- Kompass ---------- */
 let kompass = null, gpsKurs = null, kompassAktiv = false;
+/* Tilt-kompensierter Kompass: berücksichtigt Kippwinkel (beta/gamma), nicht nur
+   den flachen Alpha-Wert - damit zeigt der Pfeil auch bei hochkant gehaltenem/
+   montiertem Gerät (z. B. Kfz-Halterung) in die richtige Richtung. */
+function tiltKompensierterHeading(alpha, beta, gamma){
+  const aR = alpha * (Math.PI / 180);
+  const bR = beta * (Math.PI / 180);
+  const gR = gamma * (Math.PI / 180);
+  const cA = Math.cos(aR), sA = Math.sin(aR);
+  const cB = Math.cos(bR), sB = Math.sin(bR);
+  const cG = Math.cos(gR), sG = Math.sin(gR);
+  const rA = -cA * sG - sA * sB * cG;
+  const rB = -sA * sG + cA * sB * cG;
+  let heading = Math.atan2(rA, rB);
+  if(heading < 0) heading += 2 * Math.PI;
+  return heading * (180 / Math.PI);
+}
 function orientierung(e){
   let h = null;
   if(typeof e.webkitCompassHeading === "number") h = e.webkitCompassHeading;
-  else if(e.absolute && typeof e.alpha === "number") h = (360 - e.alpha) % 360;
+  else if(e.absolute && typeof e.alpha === "number" && typeof e.beta === "number" && typeof e.gamma === "number"){
+    h = tiltKompensierterHeading(e.alpha, e.beta, e.gamma);
+  }
   if(h !== null){ kompass = h; kompassAktiv = true; aktualisierePeil(); }
 }
 window.addEventListener("deviceorientationabsolute", orientierung, true);

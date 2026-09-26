@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v36-theme";
+const SHELL_CACHE = "nutzer-shell-v37-tilt-kompass";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
