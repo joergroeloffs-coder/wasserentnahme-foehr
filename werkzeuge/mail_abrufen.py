@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """
 Ruft ungelesene Korrektur- und Foto-Mails direkt aus dem Postfach ab (IMAP).
-Korrektur-Mails werden zur Prüfung an korrektur_verarbeiten.verarbeite_text()
-übergeben — jede Korrektur wird einzeln mit j/n bestätigt, keine automatische
-Übernahme. Foto-Mails werden nicht automatisch verarbeitet, ihre Bild-Anhänge
-werden nur in den Ordner werkzeuge/eingegangene_fotos/ gespeichert.
+Korrektur-Mails werden zunächst gesammelt und danach gemeinsam an
+korrektur_verarbeiten.verarbeite_mails() übergeben — Meldungen mit derselben
+Ref-Nummer aus verschiedenen Mails (z.B. mehrere Fahrzeuge bei einer Übung)
+werden dabei zusammen angezeigt und verglichen, statt jede Mail isoliert zu
+verarbeiten. Jede Korrektur wird einzeln mit j/n bestätigt, keine
+automatische Übernahme. Foto-Mails werden nicht automatisch verarbeitet,
+ihre Bild-Anhänge werden nur in den Ordner werkzeuge/eingegangene_fotos/
+gespeichert.
 
 Zugangsdaten stehen NICHT im Code, sondern in werkzeuge/zugangsdaten.json
 (diese Datei ist in .gitignore und wird nie eingecheckt).
@@ -29,7 +33,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from korrektur_verarbeiten import verarbeite_text  # noqa: E402
+from korrektur_verarbeiten import verarbeite_mails  # noqa: E402
 
 ZUGANGSDATEN_PFAD = Path(__file__).resolve().parent / "zugangsdaten.json"
 FOTO_ORDNER = Path(__file__).resolve().parent / "eingegangene_fotos"
@@ -160,6 +164,7 @@ def main():
 
     gefunden = 0
     gesamt = len(passende)
+    korrektur_sammlung = []
     for msg_id, betreff in passende:
         status, msg_daten = imap.fetch(msg_id, "(RFC822)")
         if status != "OK":
@@ -175,7 +180,9 @@ def main():
                 print("  Kein Bild-Anhang gefunden.")
         else:
             body = extrahiere_body(msg)
-            verarbeite_text(body)
+            absender = dekodiere(msg.get("From", "")) or betreff
+            korrektur_sammlung.append((absender, body))
+            print(f"  (von {absender} — wird gemeinsam mit ggf. weiteren Korrektur-Mails ausgewertet)")
 
         imap.store(msg_id, "+FLAGS", "\\Seen")
 
@@ -184,6 +191,10 @@ def main():
         print(f'Keine ungelesenen Mails mit Betreff-Beginn "{filter_text}" gefunden.')
 
     imap.logout()
+
+    if korrektur_sammlung:
+        print(f"\n--- {len(korrektur_sammlung)} Korrektur-Mail(s) werden ausgewertet ---")
+        verarbeite_mails(korrektur_sammlung)
 
 
 if __name__ == "__main__":

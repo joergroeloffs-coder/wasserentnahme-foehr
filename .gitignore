@@ -1,4 +1,5 @@
 *.tgz
 werkzeuge/zugangsdaten.json
 werkzeuge/eingegangene_fotos/
+werkzeuge/_vorschau_temp.html
 __pycache__/
