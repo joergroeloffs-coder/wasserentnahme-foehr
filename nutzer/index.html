@@ -774,6 +774,7 @@ window.addEventListener("deviceorientation", orientierung, true);
 const NORD_OBEN_SCHLUESSEL = APP_CONFIG.speicherPraefix + ".nordOben";
 let nordOben = false;
 try { nordOben = localStorage.getItem(NORD_OBEN_SCHLUESSEL) === "1"; } catch(e){}
+let peilDrehungSofort = true; // erste Kartendrehung nach Öffnen/Umschalten nicht drosseln
 function aktualisiereModusKnopf(){
   document.getElementById("modusUmschalten").textContent = nordOben ? "Norden oben" : "Fahrtrichtung oben";
 }
@@ -782,6 +783,7 @@ document.getElementById("modusUmschalten").addEventListener("click", () => {
   nordOben = !nordOben;
   try { localStorage.setItem(NORD_OBEN_SCHLUESSEL, nordOben ? "1" : "0"); } catch(e){}
   aktualisiereModusKnopf();
+  peilDrehungSofort = true;
   aktualisierePeil();
 });
 
@@ -1038,6 +1040,7 @@ function oeffnePeil(s){
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   peilAutoZoom = true;
+  peilDrehungSofort = true;
   aktualisierePeil();
   aktualisierePeilKarte(true);
   zeigePeilOverlay();
@@ -1097,24 +1100,43 @@ function aktualisierePeil(){
     kartenDrehung = -richtung;
   }
   aktualisierePeilKarte(false);
-  drehePeilKarte(kartenDrehung);
+  drehePeilKarte(kartenDrehung, peilDrehungSofort);
+  // Die "sofort"-Markierung erst verbrauchen, sobald wirklich eine Kompass-
+  // oder GPS-Richtung vorliegt - sonst würde sie schon vom allerersten,
+  // noch richtungslosen Aufruf beim Öffnen verbraucht, bevor der erste
+  // echte Sensorwert ankommt.
+  if(kompassAktiv || gpsKurs !== null) peilDrehungSofort = false;
 }
 
 /* Dreht die Kartenkacheln per CSS um die eigene Achse (Course-Up) und dreht
    Zielmarker + Kartensteuerung gegen, damit deren Text lesbar bleibt. Die
    OSM-Kachel-Beschriftungen selbst werden dabei zwangsläufig schräg/seitlich
-   dargestellt - ein bekannter Kompromiss bei rotierten Rasterkarten. */
-function drehePeilKarte(gradCss){
+   dargestellt - ein bekannter Kompromiss bei rotierten Rasterkarten.
+   Die Kompass-Anzeige (Pfeil/Ring) reagiert weiterhin sofort auf jede
+   Änderung; die große Kartendrehung selbst wird dagegen höchstens alle
+   KARTEN_DREHUNG_INTERVALL aktualisiert, damit sie bei zitterndem
+   Kompasswert nicht hektisch hin- und herspringt. Beim Öffnen der
+   Peilansicht und beim manuellen Umschalten des Modus (sofort=true) greift
+   die Drosselung nicht, damit die Karte sich nicht erst spürbar verzögert
+   dreht. */
+const KARTEN_DREHUNG_INTERVALL = 12000;
+let kartenDrehungAngewandt = 0, letzteKartenDrehungZeit = 0;
+function drehePeilKarte(gradZiel, sofort){
+  const jetzt = Date.now();
+  if(sofort || letzteKartenDrehungZeit === 0 || jetzt - letzteKartenDrehungZeit >= KARTEN_DREHUNG_INTERVALL){
+    kartenDrehungAngewandt = gradZiel;
+    letzteKartenDrehungZeit = jetzt;
+  }
   const peilMapEl = document.getElementById("peilMap");
-  if(peilMapEl) peilMapEl.style.transform = "rotate(" + gradCss.toFixed(1) + "deg)";
+  if(peilMapEl) peilMapEl.style.transform = "rotate(" + kartenDrehungAngewandt.toFixed(1) + "deg)";
   if(peilZielMarker){
     const markerEl = peilZielMarker.getElement();
     const wrap = markerEl && markerEl.querySelector(".nr-marker-wrap");
-    if(wrap) wrap.style.transform = "translate(-50%,-100%) rotate(" + (-gradCss).toFixed(1) + "deg)";
+    if(wrap) wrap.style.transform = "translate(-50%,-100%) rotate(" + (-kartenDrehungAngewandt).toFixed(1) + "deg)";
   }
   if(peilMap){
     const steuerung = peilMap.getContainer().querySelector(".leaflet-control-container");
-    if(steuerung) steuerung.style.transform = "rotate(" + (-gradCss).toFixed(1) + "deg)";
+    if(steuerung) steuerung.style.transform = "rotate(" + (-kartenDrehungAngewandt).toFixed(1) + "deg)";
   }
 }
 
