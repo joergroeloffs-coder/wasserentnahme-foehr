@@ -230,10 +230,6 @@
     width:96px;pointer-events:none;
   }
   .peil-text b{display:block;color:var(--text);font-size:15px;font-weight:700}
-  .modus-umschalten{
-    position:fixed;right:14px;top:calc(10px + env(safe-area-inset-top) + 128px);z-index:1700;
-    width:96px;min-height:30px;padding:4px 0;font-size:12px;background:#0d1116cc;
-  }
   .abstand-dauer{
     position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));z-index:1700;
     transform:translateX(-50%);text-align:center;pointer-events:none;
@@ -403,7 +399,6 @@
       <ellipse cx="72" cy="60" rx="46" ry="22" fill="#ffffff" opacity="0.08"/>
     </svg>
     <div class="peil-text" id="peilText">–</div>
-    <button class="btn ghost modus-umschalten" id="modusUmschalten">Fahrtrichtung oben</button>
     <div class="abstand-dauer" id="abstandDauer">
       <div class="m" id="abstandDauerM">–</div>
       <div class="u" id="abstandDauerU">Meter Luftlinie</div>
@@ -770,23 +765,6 @@ function orientierung(e){
 window.addEventListener("deviceorientationabsolute", orientierung, true);
 window.addEventListener("deviceorientation", orientierung, true);
 
-/* ---------- North-Up / Course-Up ---------- */
-const NORD_OBEN_SCHLUESSEL = APP_CONFIG.speicherPraefix + ".nordOben";
-let nordOben = false;
-try { nordOben = localStorage.getItem(NORD_OBEN_SCHLUESSEL) === "1"; } catch(e){}
-let peilDrehungSofort = true; // erste Kartendrehung nach Öffnen/Umschalten nicht drosseln
-function aktualisiereModusKnopf(){
-  document.getElementById("modusUmschalten").textContent = nordOben ? "Norden oben" : "Fahrtrichtung oben";
-}
-aktualisiereModusKnopf();
-document.getElementById("modusUmschalten").addEventListener("click", () => {
-  nordOben = !nordOben;
-  try { localStorage.setItem(NORD_OBEN_SCHLUESSEL, nordOben ? "1" : "0"); } catch(e){}
-  aktualisiereModusKnopf();
-  peilDrehungSofort = true;
-  aktualisierePeil();
-});
-
 const HIMMELSRICHTUNGEN = ["N","NO","O","SO","S","SW","W","NW"];
 function himmelsrichtung(grad){
   return HIMMELSRICHTUNGEN[Math.round(grad / 45) % 8];
@@ -1040,7 +1018,6 @@ function oeffnePeil(s){
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   peilAutoZoom = true;
-  peilDrehungSofort = true;
   aktualisierePeil();
   aktualisierePeilKarte(true);
   zeigePeilOverlay();
@@ -1083,61 +1060,10 @@ function aktualisierePeil(){
   const peilText = document.getElementById("peilText");
   peilText.innerHTML = "<b>" + Math.round(b) + "°</b>" + himmelsrichtung(b);
 
-  let kartenDrehung = 0;
-  if(nordOben){
-    // North-Up: Ring bleibt fest (Norden immer oben), Pfeil zeigt die
-    // absolute Peilung zum Ziel. Karte bleibt unrotiert.
-    document.getElementById("ring").setAttribute("transform", "rotate(0 100 100)");
-    document.getElementById("pfeil").setAttribute("transform", "rotate(" + b.toFixed(1) + " 100 100)");
-    kartenDrehung = 0;
-  } else {
-    // Course-Up: Ring dreht sich mit der eigenen Fahrt-/Blickrichtung, Pfeil
-    // zeigt relativ dazu aufs Ziel - und die Karte selbst dreht sich mit, so
-    // dass die eigene Fahrtrichtung immer oben auf dem Bildschirm bleibt.
-    const dreh = (b - richtung + 360) % 360;
-    document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
-    document.getElementById("ring").setAttribute("transform", "rotate(" + (-richtung).toFixed(1) + " 100 100)");
-    kartenDrehung = -richtung;
-  }
+  const dreh = (b - richtung + 360) % 360;
+  document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
+  document.getElementById("ring").setAttribute("transform", "rotate(" + (-richtung).toFixed(1) + " 100 100)");
   aktualisierePeilKarte(false);
-  drehePeilKarte(kartenDrehung, peilDrehungSofort);
-  // Die "sofort"-Markierung erst verbrauchen, sobald wirklich eine Kompass-
-  // oder GPS-Richtung vorliegt - sonst würde sie schon vom allerersten,
-  // noch richtungslosen Aufruf beim Öffnen verbraucht, bevor der erste
-  // echte Sensorwert ankommt.
-  if(kompassAktiv || gpsKurs !== null) peilDrehungSofort = false;
-}
-
-/* Dreht die Kartenkacheln per CSS um die eigene Achse (Course-Up) und dreht
-   Zielmarker + Kartensteuerung gegen, damit deren Text lesbar bleibt. Die
-   OSM-Kachel-Beschriftungen selbst werden dabei zwangsläufig schräg/seitlich
-   dargestellt - ein bekannter Kompromiss bei rotierten Rasterkarten.
-   Die Kompass-Anzeige (Pfeil/Ring) reagiert weiterhin sofort auf jede
-   Änderung; die große Kartendrehung selbst wird dagegen höchstens alle
-   KARTEN_DREHUNG_INTERVALL aktualisiert, damit sie bei zitterndem
-   Kompasswert nicht hektisch hin- und herspringt. Beim Öffnen der
-   Peilansicht und beim manuellen Umschalten des Modus (sofort=true) greift
-   die Drosselung nicht, damit die Karte sich nicht erst spürbar verzögert
-   dreht. */
-const KARTEN_DREHUNG_INTERVALL = 12000;
-let kartenDrehungAngewandt = 0, letzteKartenDrehungZeit = 0;
-function drehePeilKarte(gradZiel, sofort){
-  const jetzt = Date.now();
-  if(sofort || letzteKartenDrehungZeit === 0 || jetzt - letzteKartenDrehungZeit >= KARTEN_DREHUNG_INTERVALL){
-    kartenDrehungAngewandt = gradZiel;
-    letzteKartenDrehungZeit = jetzt;
-  }
-  const peilMapEl = document.getElementById("peilMap");
-  if(peilMapEl) peilMapEl.style.transform = "rotate(" + kartenDrehungAngewandt.toFixed(1) + "deg)";
-  if(peilZielMarker){
-    const markerEl = peilZielMarker.getElement();
-    const wrap = markerEl && markerEl.querySelector(".nr-marker-wrap");
-    if(wrap) wrap.style.transform = "translate(-50%,-100%) rotate(" + (-kartenDrehungAngewandt).toFixed(1) + "deg)";
-  }
-  if(peilMap){
-    const steuerung = peilMap.getContainer().querySelector(".leaflet-control-container");
-    if(steuerung) steuerung.style.transform = "rotate(" + (-kartenDrehungAngewandt).toFixed(1) + "deg)";
-  }
 }
 
 /* ---------- Peilkarte (eigene Position + Ziel) ---------- */
@@ -1199,12 +1125,6 @@ function aktualisierePeilKarte(fit){
 
     if(fit || peilAutoZoom){
       peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
-      if(!nordOben){
-        // Course-Up: auf die eigene Position zentrieren (Rotationsmittelpunkt),
-        // beim selben Zoom, den fitBounds gerade ermittelt hat. Das Ziel darf
-        // dabei aus dem sichtbaren Bereich wandern, wie bei Navi-Apps üblich.
-        peilMap.setView(eigeneLL, peilMap.getZoom());
-      }
     }
   } else if(fit){
     peilMap.setView(zielLL, 15);
