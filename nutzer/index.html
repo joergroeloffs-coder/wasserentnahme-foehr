@@ -235,12 +235,12 @@
     width:96px;min-height:30px;padding:4px 0;font-size:12px;background:#0d1116cc;
   }
   .abstand-dauer{
-    position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top));z-index:1700;
-    transform:translateX(-50%);background:#0d1116cc;border:1px solid var(--line);
-    border-radius:10px;padding:4px 16px;text-align:center;pointer-events:none;
+    position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));z-index:1700;
+    transform:translateX(-50%);text-align:center;pointer-events:none;
+    text-shadow:0 1px 3px #000, 0 1px 8px #000;
   }
-  .abstand-dauer .m{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
-  .abstand-dauer .u{font-size:10px;color:var(--dim)}
+  .abstand-dauer .m{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1;color:#f4f7fa}
+  .abstand-dauer .u{font-size:11px;color:#c7d0d9}
   .eigene-pos{
     width:16px;height:16px;border-radius:50%;background:#3fa9ff;border:3px solid #fff;
     box-shadow:0 0 0 2px #3fa9ff88;
@@ -720,6 +720,13 @@ function tiltKompensierterHeading(alpha, beta, gamma){
   const cG = Math.cos(gR), sG = Math.sin(gR);
   const rA = -cA * sG - sA * sB * cG;
   const rB = -sA * sG + cA * sB * cG;
+  // Bei (fast) flachem Gerät (beta/gamma nahe 0) werden rA/rB beide nahezu 0 -
+  // die Formel wird dann numerisch instabil (atan2 eines Nullvektors). In
+  // diesem Fall auf die einfache, für den flachen Fall exakte Berechnung
+  // zurückfallen, statt eine undefinierte Richtung zu liefern.
+  if(Math.hypot(rA, rB) < 0.02){
+    return (360 - alpha) % 360;
+  }
   let heading = Math.atan2(rA, rB);
   if(heading < 0) heading += 2 * Math.PI;
   return heading * (180 / Math.PI);
@@ -1073,19 +1080,42 @@ function aktualisierePeil(){
   const peilText = document.getElementById("peilText");
   peilText.innerHTML = "<b>" + Math.round(b) + "°</b>" + himmelsrichtung(b);
 
+  let kartenDrehung = 0;
   if(nordOben){
     // North-Up: Ring bleibt fest (Norden immer oben), Pfeil zeigt die
-    // absolute Peilung zum Ziel.
+    // absolute Peilung zum Ziel. Karte bleibt unrotiert.
     document.getElementById("ring").setAttribute("transform", "rotate(0 100 100)");
     document.getElementById("pfeil").setAttribute("transform", "rotate(" + b.toFixed(1) + " 100 100)");
+    kartenDrehung = 0;
   } else {
-    // Course-Up (bisheriges Verhalten): Ring dreht sich mit der eigenen
-    // Fahrt-/Blickrichtung, Pfeil zeigt relativ dazu aufs Ziel.
+    // Course-Up: Ring dreht sich mit der eigenen Fahrt-/Blickrichtung, Pfeil
+    // zeigt relativ dazu aufs Ziel - und die Karte selbst dreht sich mit, so
+    // dass die eigene Fahrtrichtung immer oben auf dem Bildschirm bleibt.
     const dreh = (b - richtung + 360) % 360;
     document.getElementById("pfeil").setAttribute("transform", "rotate(" + dreh.toFixed(1) + " 100 100)");
     document.getElementById("ring").setAttribute("transform", "rotate(" + (-richtung).toFixed(1) + " 100 100)");
+    kartenDrehung = -richtung;
   }
   aktualisierePeilKarte(false);
+  drehePeilKarte(kartenDrehung);
+}
+
+/* Dreht die Kartenkacheln per CSS um die eigene Achse (Course-Up) und dreht
+   Zielmarker + Kartensteuerung gegen, damit deren Text lesbar bleibt. Die
+   OSM-Kachel-Beschriftungen selbst werden dabei zwangsläufig schräg/seitlich
+   dargestellt - ein bekannter Kompromiss bei rotierten Rasterkarten. */
+function drehePeilKarte(gradCss){
+  const peilMapEl = document.getElementById("peilMap");
+  if(peilMapEl) peilMapEl.style.transform = "rotate(" + gradCss.toFixed(1) + "deg)";
+  if(peilZielMarker){
+    const markerEl = peilZielMarker.getElement();
+    const wrap = markerEl && markerEl.querySelector(".nr-marker-wrap");
+    if(wrap) wrap.style.transform = "translate(-50%,-100%) rotate(" + (-gradCss).toFixed(1) + "deg)";
+  }
+  if(peilMap){
+    const steuerung = peilMap.getContainer().querySelector(".leaflet-control-container");
+    if(steuerung) steuerung.style.transform = "rotate(" + (-gradCss).toFixed(1) + "deg)";
+  }
 }
 
 /* ---------- Peilkarte (eigene Position + Ziel) ---------- */
@@ -1147,6 +1177,12 @@ function aktualisierePeilKarte(fit){
 
     if(fit || peilAutoZoom){
       peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
+      if(!nordOben){
+        // Course-Up: auf die eigene Position zentrieren (Rotationsmittelpunkt),
+        // beim selben Zoom, den fitBounds gerade ermittelt hat. Das Ziel darf
+        // dabei aus dem sichtbaren Bereich wandern, wie bei Navi-Apps üblich.
+        peilMap.setView(eigeneLL, peilMap.getZoom());
+      }
     }
   } else if(fit){
     peilMap.setView(zielLL, 15);

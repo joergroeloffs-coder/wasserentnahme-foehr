@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v39-navigation";
+const SHELL_CACHE = "nutzer-shell-v40-kartendrehung";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
