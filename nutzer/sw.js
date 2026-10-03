@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v38-kompass-3d";
+const SHELL_CACHE = "nutzer-shell-v39-navigation";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
