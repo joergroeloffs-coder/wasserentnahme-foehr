@@ -588,6 +588,41 @@ async function grundkarteHinzufuegen(leafletMap){
       '</div>';
     throw new Error("Zugang abgelaufen");
   }
+
+  // Hinweis in der letzten Woche vor Ablauf der Testphase (nicht fuer per
+  // Link freigeschaltete Zugaenge, die laufen ja noch 365 Tage). Erscheint
+  // hoechstens einmal pro Tag als schliessbarer Hinweis unten im Bild.
+  if(!freigabeStart){
+    const RESTTAGE_GRENZE = 7;
+    const restMs = ablauf - Date.now();
+    if(restMs > 0 && restMs <= RESTTAGE_GRENZE * 24 * 60 * 60 * 1000){
+      const HINWEIS_KEY = APP_CONFIG.speicherPraefix + ".nutzer.testphaseHinweisTag";
+      const heute = new Date().toISOString().slice(0, 10);
+      let schonGezeigt = false;
+      try { schonGezeigt = localStorage.getItem(HINWEIS_KEY) === heute; } catch(e){}
+      if(!schonGezeigt){
+        const resttage = Math.max(1, Math.ceil(restMs / (24 * 60 * 60 * 1000)));
+        window.addEventListener("DOMContentLoaded", () => {
+          const box = document.createElement("div");
+          box.style.cssText =
+            "position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));" +
+            "z-index:9999;background:#2a1d08;border:1px solid #e0a13a;color:#f4ecc9;" +
+            "padding:12px 14px;border-radius:10px;font:14px/1.4 system-ui,sans-serif;" +
+            "box-shadow:0 6px 24px rgba(0,0,0,.6)";
+          box.innerHTML =
+            "Diese Testversion endet am 31.10.2026 (noch " + resttage + " Tag" + (resttage === 1 ? "" : "e") + "). " +
+            "Ab dem 1.11. ist die App ohne Freischaltung nicht mehr nutzbar." +
+            '<button type="button" style="display:block;margin-top:8px;background:#e0a13a;color:#1a1200;' +
+            'border:0;border-radius:6px;padding:6px 12px;font-weight:700;cursor:pointer">Verstanden</button>';
+          document.body.appendChild(box);
+          box.querySelector("button").addEventListener("click", () => {
+            box.remove();
+            try { localStorage.setItem(HINWEIS_KEY, heute); } catch(e){}
+          });
+        });
+      }
+    }
+  }
 })();
 
 /* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung. Nur in

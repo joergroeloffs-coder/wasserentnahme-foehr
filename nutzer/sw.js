@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v43-testphase-31-10";
+const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
