@@ -545,11 +545,16 @@ async function grundkarteHinzufuegen(leafletMap){
   }
 }
 
-/* ---------- Zugangsdauer: erst Testphase (62 Tage ab erstem Öffnen), nach
-   Freigabe per Link (?freigabe=1) 365 Tage ab dem Freigabe-Zeitpunkt ---------- */
+/* ---------- Zugangsdauer: erst Testphase (31 Tage ab erstem Öffnen, aber
+   mindestens bis 31.10.2026), nach Freigabe per Link (?freigabe=1) 365 Tage
+   ab dem Freigabe-Zeitpunkt ---------- */
 (function trialPruefen(){
   const TEST_TAGE = 31;
   const FREIGABE_TAGE = 365;
+  // Testphase laeuft fuer alle (unabhaengig vom individuellen Startdatum)
+  // mindestens bis zu diesem festen Datum, damit beim Ausrollen der ~100
+  // Zugangslinks niemand vorzeitig ausgesperrt wird.
+  const FESTE_TESTPHASEN_GRENZE = new Date("2026-10-31T23:59:59").getTime();
   const TRIAL_KEY = APP_CONFIG.speicherPraefix + ".nutzer.trialstart";
   const FREIGABE_KEY = APP_CONFIG.speicherPraefix + ".nutzer.freigabestart";
   let ablauf;
@@ -572,7 +577,7 @@ async function grundkarteHinzufuegen(leafletMap){
       if(gespeichert){ start = Number(gespeichert); }
       else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
     } catch(e){ start = Date.now(); }
-    ablauf = start + TEST_TAGE * 24 * 60 * 60 * 1000;
+    ablauf = Math.max(start + TEST_TAGE * 24 * 60 * 60 * 1000, FESTE_TESTPHASEN_GRENZE);
   }
 
   if(Date.now() > ablauf){
