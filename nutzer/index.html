@@ -278,6 +278,10 @@
   }
   .detail-karte .ziel{margin-bottom:0;font-size:26px;font-weight:700}
   .detail-karte .ziel-meta{font-size:18px;color:var(--text);font-weight:500}
+  .detail-tabelle{margin-top:4px}
+  .detail-tabelle .zeile{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .detail-tabelle .zeile span:first-child{flex:none;color:var(--dim)}
+  .detail-tabelle .zeile span:last-child{color:var(--text);font-weight:500;text-align:right}
   #detailMap{
     width:100%;height:clamp(140px,24vh,220px);flex:none;border-radius:8px;margin-bottom:10px;
     background:#1a232c;
@@ -325,8 +329,7 @@
     <div class="detail-karte">
       <div id="detailMap"></div>
       <div class="ziel" id="detailName">–</div>
-      <div class="ziel-meta" id="detailMeta"></div>
-      <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
+      <div class="detail-tabelle" id="detailMeta"></div>
       <div class="hinweis" id="detailHinweis"></div>
       <div class="detail-aktionen">
         <button class="btn gruen" id="detail-ja">Navi</button>
@@ -926,9 +929,14 @@ function zeigeDetails(s){
   else { detailMarker.setLatLng(ll); detailMarker.setIcon(nrIcon(s)); }
   detailMap.setView(ll, 16);
   document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
-  document.getElementById("detailMeta").textContent =
-    [s.typ, s.dn, s.menge ? s.menge + " l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
-  document.getElementById("detailKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  const detailZeile = (label, wert) => wert ? '<div class="zeile"><span>' + esc(label) + '</span><span>' + esc(wert) + '</span></div>' : "";
+  document.getElementById("detailMeta").innerHTML =
+    detailZeile("Art", s.typ) +
+    detailZeile("Nennweite", s.dn) +
+    detailZeile("Löschwassermenge", s.menge ? s.menge + " l/min" : "") +
+    detailZeile("Ortschaft", s.ortschaft) +
+    detailZeile("Lage", s.ort) +
+    detailZeile("Koordinaten", s.lat.toFixed(5) + ", " + s.lon.toFixed(5));
   document.getElementById("detailHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   document.getElementById("detailOverlay").classList.add("on");
 }
@@ -1200,6 +1208,7 @@ function initKarte(){
 
 function typFarbe(typ){
   const t = (typ || "").toLowerCase();
+  if(t.includes("klären") || t.includes("klaeren") || t.includes("prüfen")) return "#ffb300";
   if(t.includes("hydrant")) return "#e23c22";
   if(t.includes("saug")) return "#2f8fd1";
   if(t.includes("brunnen")) return "#8a5a2b";
@@ -1219,10 +1228,12 @@ const TYP_ICONS = {
   geraetehaus: '<path d="M4 11L12 4l8 7"/><path d="M6 10v9h12v-9"/><rect x="10" y="14" width="4" height="5"/>',
   sammelplatz: '<circle cx="12" cy="6" r="2" fill="#fff" stroke="none"/><path d="M12 9v5M8 12l4 2.4 4-2.4M7 19l5-7 5 7"/>',
   defibrillator: '<path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>',
+  pruefen: '<path d="M12 4l9 16H3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r="0.6" fill="#fff" stroke="none"/>',
   sonstige: '<path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1.4 1-1.4 2"/><circle cx="12" cy="16.5" r="0.6" fill="#fff" stroke="none"/>'
 };
 function typIcon(typ){
   const t = (typ || "").toLowerCase();
+  if(t.includes("klären") || t.includes("klaeren") || t.includes("prüfen")) return TYP_ICONS.pruefen;
   if(t.includes("unterflur")) return TYP_ICONS.unterflur;
   if(t.includes("hydrant")) return TYP_ICONS.hydrant;
   if(t.includes("saug")) return TYP_ICONS.saug;
