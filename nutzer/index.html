@@ -607,6 +607,7 @@ async function grundkarteHinzufuegen(leafletMap){
         const resttage = Math.max(1, Math.ceil(restMs / (24 * 60 * 60 * 1000)));
         window.addEventListener("DOMContentLoaded", () => {
           const box = document.createElement("div");
+          box.id = "testphase-hinweis";
           box.style.cssText =
             "position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));" +
             "z-index:9999;background:#2a1d08;border:1px solid #e0a13a;color:#f4ecc9;" +
@@ -626,6 +627,35 @@ async function grundkarteHinzufuegen(leafletMap){
       }
     }
   }
+})();
+
+/* ---------- Hinweis auf die neuen Wasserwerk-Daten. Erscheint bei jedem
+   Öffnen der App (keine Unterdrückung über localStorage - bewusst so,
+   bis der Hinweis wieder entfernt wird), schließbar für die laufende
+   Sitzung. ---------- */
+(function wasserwerkHinweisAnzeigen(){
+  window.addEventListener("DOMContentLoaded", () => {
+    // Falls der Testphase-Hinweis gerade auch eingeblendet ist, nicht
+    // darueberlegen, sondern obendrauf stapeln.
+    const bestehend = document.getElementById("testphase-hinweis");
+    const unten = bestehend
+      ? "calc(" + (bestehend.offsetHeight + 24) + "px + env(safe-area-inset-bottom))"
+      : "calc(14px + env(safe-area-inset-bottom))";
+    const box = document.createElement("div");
+    box.style.cssText =
+      "position:fixed;left:12px;right:12px;bottom:" + unten + ";" +
+      "z-index:9999;background:#0d2b3a;border:1px solid #3f9cdc;color:#d9edf9;" +
+      "padding:12px 14px;border-radius:10px;font:14px/1.4 system-ui,sans-serif;" +
+      "box-shadow:0 6px 24px rgba(0,0,0,.6)";
+    box.innerHTML =
+      "Die Standorte stammen jetzt offiziell vom Wasserwerk. Einzelne Punkte können auf der Karte " +
+      "trotzdem etwas neben der tatsächlichen Position liegen. Führt das zu Missverständnissen, bitte " +
+      "am betroffenen Punkt über „Angaben korrigieren” Bescheid geben." +
+      '<button type="button" style="display:block;margin-top:8px;background:#3f9cdc;color:#07212e;' +
+      'border:0;border-radius:6px;padding:6px 12px;font-weight:700;cursor:pointer">Verstanden</button>';
+    document.body.appendChild(box);
+    box.querySelector("button").addEventListener("click", () => box.remove());
+  });
 })();
 
 /* ---------- Zugangsnummer: rein kosmetisch, keine echte Prüfung. Nur in
