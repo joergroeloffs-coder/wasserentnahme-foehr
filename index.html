@@ -1563,7 +1563,12 @@ function geoJsonZuStellen(j, dateiname){
     if(!bem && (p.lagegenauigkeit || p.lagehinweis || p.quelle || p.quellkarte)){
       bem = [p.lagegenauigkeit || p.lagehinweis, (p.quelle || p.quellkarte) ? "Quelle: " + (p.quelle || p.quellkarte) : ""].filter(Boolean).join(" · ");
     }
-    eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: p.name || p.ort || p.addr || "",
+    let ort = p.ort || p.addr || "";
+    if(!ort && (p["addr:street"] || p["addr:housenumber"])){
+      ort = [p["addr:street"], p["addr:housenumber"]].filter(Boolean).join(" ");
+    }
+    if(!ort) ort = p.name || "";
+    eingelesen.push({ nr: p.ref || p.nr || p.name || p.id || "", ort: ort,
       ortschaft: p["addr:city"] || p.ortschaft || p.ortsname || ortschaftAusDatei,
       typ: p.art || p["fire_hydrant:type"] || p.typ || "", dn: p["fire_hydrant:diameter"] || p.dn || "",
       menge: menge, bem: bem,
