@@ -280,6 +280,10 @@
   }
   .detail-karte .ziel{margin-bottom:0;font-size:26px;font-weight:700}
   .detail-karte .ziel-meta{font-size:18px;color:var(--text);font-weight:500}
+  .detail-tabelle{margin-top:4px}
+  .detail-tabelle .zeile{font-size:16px;padding:9px 0}
+  .detail-tabelle .zeile span:first-child{color:var(--dim)}
+  .detail-tabelle .zeile span:last-child{color:var(--text);font-weight:500}
   #detailMap{
     width:100%;height:clamp(140px,24vh,220px);flex:none;border-radius:8px;margin-bottom:10px;
     background:#1a232c;
@@ -325,8 +329,7 @@
     <div class="detail-karte">
       <div id="detailMap"></div>
       <div class="ziel" id="detailName">–</div>
-      <div class="ziel-meta" id="detailMeta"></div>
-      <div class="koord" id="detailKoord" style="text-align:left;margin-top:10px"></div>
+      <div class="detail-tabelle" id="detailMeta"></div>
       <div class="hinweis" id="detailHinweis"></div>
       <div class="detail-aktionen">
         <button class="btn gruen" id="detail-ja">Navi</button>
@@ -1035,9 +1038,14 @@ function zeigeDetails(s){
   else { detailMarker.setLatLng(ll); detailMarker.setIcon(nrIcon(s)); }
   detailMap.setView(ll, 16);
   document.getElementById("detailName").textContent = s.nr || "ohne Nummer";
-  document.getElementById("detailMeta").textContent =
-    [s.typ, s.dn, s.menge ? s.menge + " l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
-  document.getElementById("detailKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
+  const detailZeile = (label, wert) => wert ? '<div class="zeile"><span>' + esc(label) + '</span><span>' + esc(wert) + '</span></div>' : "";
+  document.getElementById("detailMeta").innerHTML =
+    detailZeile("Art", s.typ) +
+    detailZeile("Nennweite", s.dn) +
+    detailZeile("Löschwassermenge", s.menge ? s.menge + " l/min" : "") +
+    detailZeile("Ortschaft", s.ortschaft) +
+    detailZeile("Lage", s.ort) +
+    detailZeile("Koordinaten", s.lat.toFixed(5) + ", " + s.lon.toFixed(5));
   document.getElementById("detailHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   document.getElementById("detailOverlay").classList.add("on");
 }
