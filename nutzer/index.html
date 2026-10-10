@@ -15,6 +15,7 @@
     --bg:#0d1116;
     --panel:#161d25;
     --panel-2:#1e2833;
+    --kopf-bg:#19222c;
     --line:#2b3743;
     --text:#e6edf3;
     --dim:#93a3b3;
@@ -27,6 +28,7 @@
     --bg:#f4f6f8;
     --panel:#ffffff;
     --panel-2:#eef1f4;
+    --kopf-bg:#e2e8ec;
     --line:#d7dce2;
     --text:#14181d;
     --dim:#5b6673;
@@ -156,7 +158,11 @@
   .row>*{flex:1}
 
   /* Liste */
-  .liste-kopf-fix{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:8px}
+  .liste-kopf-fix{
+    position:sticky;top:0;z-index:5;background:var(--kopf-bg);
+    padding:12px 14px 8px;margin:-12px -14px 0;border-bottom:1px solid var(--line);
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+  }
   #suche{margin-bottom:10px}
   .item{
     display:flex;align-items:center;gap:14px;width:100%;text-align:left;
