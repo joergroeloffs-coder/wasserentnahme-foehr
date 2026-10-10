@@ -436,6 +436,7 @@
       </div>
       <div class="row" id="mehrfach-leiste" hidden style="margin-top:8px;align-items:center;gap:8px">
         <span id="mehrfach-anzahl" style="font-size:13px;color:var(--dim);flex:1">0 ausgewählt</span>
+        <button type="button" class="btn ghost" id="mehrfach-alle" style="flex:none;width:auto;padding:8px 14px;font-size:13px">Alle auswählen</button>
         <button type="button" class="btn primary" id="mehrfach-bearbeiten" style="flex:none;width:auto;padding:8px 14px;font-size:13px" disabled>Bearbeiten</button>
         <button type="button" class="btn ghost" id="mehrfach-abbrechen" style="flex:none;width:auto;padding:8px 14px;font-size:13px">Abbrechen</button>
       </div>
@@ -890,9 +891,7 @@ function leseAuswahlWert(selectId, neuId){
   return select.value;
 }
 
-function zeichneListe(){
-  if(document.getElementById("peil").classList.contains("on")) return;
-  if(!document.getElementById("v-liste").classList.contains("on")) return;
+function gefilterteStellen(){
   const q = sucheEl.value.trim().toLowerCase();
   const ortschaftFilter = ortschaftFilterEl.value;
   const typFilter = typFilterEl.value;
@@ -900,6 +899,13 @@ function zeichneListe(){
   if(q) d = d.filter(s => (s.nr+" "+s.ort+" "+(s.ortschaft||"")+" "+s.typ+" "+(s.bem||"")).toLowerCase().includes(q));
   if(ortschaftFilter) d = d.filter(s => ortschaftGruppe((s.ortschaft || "").trim()) === ortschaftFilter);
   if(typFilter) d = d.filter(s => s.typ === typFilter);
+  return d;
+}
+
+function zeichneListe(){
+  if(document.getElementById("peil").classList.contains("on")) return;
+  if(!document.getElementById("v-liste").classList.contains("on")) return;
+  let d = gefilterteStellen();
   if(pos) d.forEach(s => s._d = distanz(pos.latitude,pos.longitude,s.lat,s.lon));
   d.sort((a,b) => pos ? a._d-b._d : (a.nr||"").localeCompare(b.nr||""));
 
@@ -958,6 +964,12 @@ document.getElementById("mehrfach-toggle").addEventListener("click", () => {
   ausgewaehlteRefs.clear();
   document.getElementById("mehrfach-toggle").hidden = true;
   document.getElementById("mehrfach-leiste").hidden = false;
+  aktualisiereMehrfachLeiste();
+  zeichneListe();
+});
+
+document.getElementById("mehrfach-alle").addEventListener("click", () => {
+  gefilterteStellen().forEach(s => ausgewaehlteRefs.add(s.nr));
   aktualisiereMehrfachLeiste();
   zeichneListe();
 });
