@@ -139,8 +139,11 @@
         email,
         options: { emailRedirectTo: location.origin + location.pathname },
       });
+      if (error) console.error("Anmelde-Link:", error.status, error.code, error.message);
       hinweis.textContent = error
-        ? "Der Anmelde-Link konnte nicht gesendet werden. Bitte später erneut versuchen."
+        ? error.status === 429
+          ? "Zu viele Anfragen. Bitte eine Minute warten und dann erneut versuchen."
+          : "Der Anmelde-Link konnte nicht gesendet werden. Bitte später erneut versuchen."
         : "Anmelde-Link wurde versandt. Bitte das E-Mail-Postfach öffnen.";
     });
 
