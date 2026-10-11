@@ -1,12 +1,13 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis";
+const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis-zugriff";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./manifest.json",
   "../config.js",
+  "../zugriffspruefung.js",
   "../icon.svg",
   "../icon-180.png",
   "../icon-192.png",
