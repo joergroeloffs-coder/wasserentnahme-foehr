@@ -21,16 +21,17 @@
   // verlangt wird. Ohne Angabe genuegt ein aktiver Jahreszugang.
   const EIGENES_SKRIPT = document.currentScript;
 
-  const BIBLIOTHEK = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
+  // Lokal ausgeliefert, damit kein Drittanbieter (CDN) eingebunden wird.
+  const BIBLIOTHEK = new URL("vendor/supabase.js", EIGENES_SKRIPT.src).href;
 
   const TEXTE = {
     nicht_angemeldet: "Bitte mit der E-Mail-Adresse des Jahreszugangs anmelden.",
     kein_profil: "Für dieses Konto besteht kein Jahreszugang.",
     kein_abo: "Für dieses Konto besteht kein Jahreszugang.",
-    manuell_gesperrt: "Dieser Zugang ist gesperrt. Bitte Kontakt aufnehmen.",
-    bezahlter_zeitraum_beendet: "Der bezahlte Zeitraum ist beendet.",
-    kuendigung_wirksam: "Der Vertrag ist beendet.",
-    vertragsende_ungeklaert: "Das Vertragsende ist noch nicht geklärt. Bitte Kontakt aufnehmen.",
+    manuell_gesperrt: "Dieser Zugang ist gesperrt. Bitte Kontakt aufnehmen: wasserentnahme-foehr@web.de",
+    bezahlter_zeitraum_beendet: "Der bezahlte Zeitraum ist beendet. Fragen: wasserentnahme-foehr@web.de",
+    kuendigung_wirksam: "Der Vertrag ist beendet. Fragen: wasserentnahme-foehr@web.de",
+    vertragsende_ungeklaert: "Das Vertragsende ist noch nicht geklärt. Bitte Kontakt aufnehmen: wasserentnahme-foehr@web.de",
     geraetelimit_erreicht:
       "Der Zugang wird bereits auf der vereinbarten Anzahl Geräte genutzt. Im Kundenbereich lässt sich ein Gerät entfernen.",
     kein_betreiberkonto: "Dieser Bereich ist dem Betrieb vorbehalten.",
