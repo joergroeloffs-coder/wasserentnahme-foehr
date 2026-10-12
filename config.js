@@ -61,5 +61,5 @@ self.APP_CONFIG = {
   // Öffentlicher Schlüssel zur Prüfung der Gnadenfrist (Offline-Freigabe, vom
   // Worker signiert). Solange hier null steht, gibt es keine Offline-Freigabe.
   // Der Wert wird im Admin-Bereich unter "Offline-Gnadenfrist" erzeugt.
-  gnadenSchluessel: null
+  gnadenSchluessel: {"kty": "EC", "crv": "P-256", "x": "Qbc-HjGei-4U0cnUsjvOsTii2VlQjOpcYBlIiGz5vLw", "y": "lyPYxH7qQCbBsxAJquMw3OdAtGt7UI3VKqFUp6YlCao"}
 };
