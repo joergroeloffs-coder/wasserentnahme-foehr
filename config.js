@@ -15,11 +15,10 @@ self.APP_CONFIG = {
   // Dateiname der Offline-Kartendatei in daten/ (ohne Pfad). Auf null lassen,
   // solange für diese Gemeinde noch keine PMTiles-Datei erzeugt wurde -
   // die App nutzt dann automatisch normale Online-Kartenkacheln als Fallback.
-  // Bewusst auf null: echter OpenStreetMap-Kartenstil gewünscht statt Protomaps.
-  // Jeder Nutzer lädt die Kacheln einmal von seinem eigenen Gerät/Anschluss
-  // herunter (siehe vorladeBbox) - das verteilt sich auf viele IP-Adressen und
-  // ist normale, einmalige Nutzung (kein Massendownload-Skript von einer Stelle).
-  pmtilesDatei: null,
+  // Eigene Kartendatei (Protomaps/OpenStreetMap-Daten): kein Drittanbieter-Server, beim
+  // Installieren der App automatisch offline gespeichert. Ohne WebGL oder bei einem
+  // Fehler faellt die Karte auf die Online-Rasterkarte zurueck.
+  pmtilesDatei: "foehr.pmtiles",
 
   // Nur Hauptversion: Rechteck (Bounding Box) für den "Insel jetzt vorladen"-
   // Knopf, der echte OSM-Kacheln herunterlädt und offline speichert. Max.

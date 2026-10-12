@@ -1,6 +1,6 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v38-theme-zugriff4";
+const SHELL_CACHE = "shell-v38-theme-karte1";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

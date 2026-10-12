@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis-zugriff4";
+const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis-karte1";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
