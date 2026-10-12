@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis-zugriff3";
+const SHELL_CACHE = "nutzer-shell-v44-ablauf-hinweis-zugriff4";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
@@ -8,6 +8,7 @@ const SHELL_FILES = [
   "./manifest.json",
   "../config.js",
   "../zugriffspruefung.js",
+  "../vendor/supabase.js",
   "../icon.svg",
   "../icon-180.png",
   "../icon-192.png",

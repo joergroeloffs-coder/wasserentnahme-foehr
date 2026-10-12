@@ -1,12 +1,13 @@
 "use strict";
 importScripts("./config.js");
-const SHELL_CACHE = "shell-v38-theme-zugriff3";
+const SHELL_CACHE = "shell-v38-theme-zugriff4";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./config.js",
   "./zugriffspruefung.js",
+  "./vendor/supabase.js",
   "./manifest.json",
   "./icon.svg",
   "./icon-180.png",

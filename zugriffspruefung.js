@@ -60,6 +60,7 @@
 
   // Nach entzogenem Zugang darf keine benutzbare Kopie zurueckbleiben.
   async function zwischenspeicherLeeren() {
+    gnadeLoeschen();
     try {
       if (window.caches && caches.keys) {
         const namen = await caches.keys();
@@ -72,6 +73,81 @@
         await Promise.all(registrierungen.map((r) => r.unregister()));
       }
     } catch (e) {}
+  }
+
+  // ---------- Gnadenfrist: vom Server signierte Offline-Freigabe ----------
+  // Nach jeder erfolgreichen Pruefung gibt der Server ein Token mit (ECDSA P-256,
+  // an dieses Geraet gebunden, standardmaessig 72 Stunden gueltig). Faellt die
+  // Verbindung aus (Funkloch, Serverstoerung), laeuft die App damit weiter.
+  // Eine verweigerte Pruefung loescht das Token sofort.
+
+  function gnadeSchluessel() {
+    return APP_CONFIG.speicherPraefix + ".gnadentoken";
+  }
+
+  function base64UrlZuBytes(text) {
+    let t = text.replace(/-/g, "+").replace(/_/g, "/");
+    while (t.length % 4) t += "=";
+    const bin = atob(t);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  function gnadeSpeichern(token) {
+    try {
+      localStorage.setItem(gnadeSchluessel(), token);
+    } catch (e) {}
+  }
+
+  function gnadeLoeschen() {
+    try {
+      localStorage.removeItem(gnadeSchluessel());
+    } catch (e) {}
+  }
+
+  async function gnadeLesen() {
+    try {
+      if (!APP_CONFIG.gnadenSchluessel || !window.crypto || !crypto.subtle) return null;
+      const roh = localStorage.getItem(gnadeSchluessel());
+      if (!roh) return null;
+      const [nutzlast, signatur] = roh.split(".");
+      if (!nutzlast || !signatur) return null;
+      const key = await crypto.subtle.importKey(
+        "jwk",
+        APP_CONFIG.gnadenSchluessel,
+        { name: "ECDSA", namedCurve: "P-256" },
+        false,
+        ["verify"]
+      );
+      const echt = await crypto.subtle.verify(
+        { name: "ECDSA", hash: "SHA-256" },
+        key,
+        base64UrlZuBytes(signatur),
+        new TextEncoder().encode(nutzlast)
+      );
+      if (!echt) return null;
+      const daten = JSON.parse(new TextDecoder().decode(base64UrlZuBytes(nutzlast)));
+      if (daten.v !== 1 || daten.g !== geraeteId() || !(daten.bis > Date.now())) return null;
+      return daten;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function gnadenHinweisZeigen(gnade) {
+    const bis = new Date(gnade.bis).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" });
+    const leiste = document.createElement("div");
+    leiste.id = "zugang-gnade";
+    leiste.setAttribute("role", "status");
+    leiste.style.cssText =
+      "position:fixed;top:0;left:0;right:0;z-index:2147483000;background:#3a2a05;color:#ffe3a3;" +
+      "padding:8px 12px;font:13px/1.35 system-ui,sans-serif;text-align:center;border-bottom:1px solid #8a6a1f";
+    leiste.textContent =
+      "Keine Verbindung: Löschbärt läuft mit der zuletzt geprüften Freigabe, gültig bis " + bis +
+      ". Sobald wieder Netz da ist, wird neu geprüft.";
+    document.body.appendChild(leiste);
+    window.addEventListener("online", () => location.reload(), { once: true });
   }
 
   function sperreAufbauen() {
@@ -113,6 +189,18 @@
       anmeldung.hidden = false;
     }
 
+    // Gilt nur fuer die normale App, nie fuer Betreiberseiten.
+    async function gnadeOderNetzfehler() {
+      const gnade = betreiberErforderlich ? null : await gnadeLesen();
+      if (!gnade) {
+        hinweis.textContent = TEXTE.netzfehler;
+        return null;
+      }
+      sperre.remove();
+      gnadenHinweisZeigen(gnade);
+      return { session: null, zugang: { erlaubt: true, gnade: true, gnadeBis: gnade.bis } };
+    }
+
     let client;
     try {
       if (!window.supabase) {
@@ -126,8 +214,7 @@
       }
       client = window.supabase.createClient(APP_CONFIG.supabaseUrl, APP_CONFIG.supabaseAnonKey);
     } catch (e) {
-      hinweis.textContent = TEXTE.netzfehler;
-      return null;
+      return gnadeOderNetzfehler();
     }
 
     sperre.querySelector("#zugang-senden").addEventListener("click", async () => {
@@ -151,8 +238,15 @@
     async function pruefen() {
       const {
         data: { session },
+        error: sitzungsfehler,
       } = await client.auth.getSession();
       if (!session) {
+        // Ohne Netz kann die Sitzung nicht erneuert werden: Gnadenfrist pruefen,
+        // statt den Zwischenspeicher zu loeschen.
+        const offline =
+          navigator.onLine === false ||
+          (sitzungsfehler && /retryable|fetch|network/i.test(String(sitzungsfehler.name) + String(sitzungsfehler.message)));
+        if (offline) return gnadeOderNetzfehler();
         await zwischenspeicherLeeren();
         zeigeAnmeldung(TEXTE.nicht_angemeldet);
         return null;
@@ -165,13 +259,13 @@
           { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store" }
         );
       } catch (e) {
-        // Ohne Netz wird nicht freigegeben. Eine dauerhaft offline nutzbare
-        // Vollversion liesse sich sonst nicht mehr sperren.
-        hinweis.textContent = TEXTE.netzfehler;
-        return null;
+        // Ohne Netz gilt nur die vom Server signierte, zeitlich begrenzte Gnadenfrist.
+        return gnadeOderNetzfehler();
       }
 
       const ergebnis = await antwort.json().catch(() => ({}));
+      // Serverstoerung (kein Pruefergebnis): wie fehlende Verbindung behandeln.
+      if (!antwort.ok && antwort.status >= 500 && !ergebnis.grund) return gnadeOderNetzfehler();
       if (!antwort.ok || !ergebnis.erlaubt) {
         await zwischenspeicherLeeren();
         zeigeAnmeldung(TEXTE[ergebnis.grund] || TEXTE.kein_abo);
@@ -184,11 +278,13 @@
         return null;
       }
 
+      if (!betreiberErforderlich && ergebnis.gnadenToken) gnadeSpeichern(ergebnis.gnadenToken);
       sperre.remove();
       return { session, zugang: ergebnis };
     }
 
-    client.auth.onAuthStateChange(() => {
+    client.auth.onAuthStateChange((ereignis) => {
+      if (ereignis === "SIGNED_OUT") gnadeLoeschen();
       if (document.getElementById("zugang-sperre")) pruefen();
     });
 
