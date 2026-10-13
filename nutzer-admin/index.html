@@ -127,8 +127,16 @@
     }
     .karte-leiste-inner.offen{display:flex}
     .karte-leiste-inner select,.karte-leiste-inner .defi-schnell{width:100%}
-    .karte-leiste #karte-suche{flex:1 1 auto;max-width:none}
+    .karte-leiste{flex-wrap:nowrap}
+    .karte-leiste #karte-suche{flex:1 1 auto;min-width:0;max-width:none}
+    .karte-filter-toggle{flex:0 0 44px}
+    .karte-leiste-inner{top:64px}
+    .karte-filter-fertig{
+      display:block;width:100%;min-height:44px;padding:8px 14px;font-size:14px;font-weight:600;
+      background:var(--signal);border:1px solid var(--signal);color:#fff;border-radius:6px;cursor:pointer;
+    }
   }
+  @media (min-width:701px){.karte-filter-fertig{display:none}}
 
   input,select,textarea,button{font:inherit}
   input,select{
@@ -341,6 +349,7 @@
         <select id="karte-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
         <select id="karte-typ-filter"><option value="">Alle Arten</option></select>
         <button type="button" class="defi-schnell" id="karte-defi-btn">💗 Defi</button>
+        <button type="button" class="karte-filter-fertig" id="karte-filter-fertig">Fertig</button>
       </div>
     </div>
     <div id="map"></div>
@@ -931,6 +940,12 @@ document.getElementById("karte-defi-btn").addEventListener("click", () => {
 document.getElementById("karte-filter-toggle").addEventListener("click", () => {
   document.getElementById("karte-leiste-inner").classList.toggle("offen");
 });
+// Schliesst das Filter-Feld auch per "Fertig" und beim Tippen auf die Karte.
+function karteFilterSchliessen(){
+  document.getElementById("karte-leiste-inner").classList.remove("offen");
+}
+document.getElementById("karte-filter-fertig").addEventListener("click", karteFilterSchliessen);
+document.getElementById("map").addEventListener("click", karteFilterSchliessen);
 
 /* ---------- Automatischer Abgleich bei Internet/WLAN (immer aktiv) ---------- */
 const SYNC_HASH_KEY = APP_CONFIG.speicherPraefix + ".admin.synchash";
