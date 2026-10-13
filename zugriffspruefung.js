@@ -77,7 +77,7 @@
 
   // ---------- Gnadenfrist: vom Server signierte Offline-Freigabe ----------
   // Nach jeder erfolgreichen Pruefung gibt der Server ein Token mit (ECDSA P-256,
-  // an dieses Geraet gebunden, standardmaessig 72 Stunden gueltig). Faellt die
+  // an dieses Geraet gebunden, standardmaessig 7 Tage gueltig). Faellt die
   // Verbindung aus (Funkloch, Serverstoerung), laeuft die App damit weiter.
   // Eine verweigerte Pruefung loescht das Token sofort.
 
