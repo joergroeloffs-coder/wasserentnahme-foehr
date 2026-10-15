@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v47-strassenroute";
+const SHELL_CACHE = "nutzer-shell-v48-schlank";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

@@ -48,18 +48,23 @@
     width:100%;
   }
   header{
-    padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);
-    display:flex;align-items:center;gap:10px;flex:none;
+    padding:6px 12px;background:var(--panel);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;gap:6px;flex:none;
   }
-  header>div:first-child{min-width:0;flex:1 1 auto;overflow-wrap:anywhere}
-  header h1{font-size:16px;font-weight:600;margin:0;letter-spacing:.2px}
-  #zugangsnummer,#kachel-status{overflow-wrap:anywhere}
-  #gps{margin-left:auto;flex:none;font-size:13px;color:var(--dim);text-align:right;line-height:1.2;max-width:92px}
-  #gps b{display:block;font-size:15px;font-weight:600}
+  /* Eine schmale Zeile: Name, darunter klein Nr. und Stand, rechts GPS und Knoepfe */
+  header>div:first-child{
+    min-width:0;flex:1 1 auto;display:grid;grid-template-columns:auto minmax(0,1fr);
+    grid-template-rows:auto auto;column-gap:8px;align-items:center;
+  }
+  header h1{grid-row:1 / 3;font-size:14px;font-weight:600;margin:0;letter-spacing:.2px}
+  #zugangsnummer,#kachel-status{font-size:10.5px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.25;margin-top:0!important}
+  #gps{margin-left:auto;flex:none;font-size:13px;color:var(--dim);text-align:right;line-height:1.2}
+  #gps b{display:block;font-size:13px;font-weight:600;white-space:nowrap}
+  #gpsdetail{display:none}
   .fix-ok b{color:var(--ok)} .fix-bad b{color:var(--warn)}
   #sync-jetzt, #pos-teilen, #theme-umschalten{
-    flex:none;width:40px;height:40px;border-radius:8px;background:var(--panel-2);
-    border:1px solid var(--line);color:var(--text);font-size:19px;cursor:pointer;
+    flex:none;width:32px;height:32px;border-radius:8px;background:var(--panel-2);padding:0;
+    border:1px solid var(--line);color:var(--text);font-size:17px;cursor:pointer;
   }
 
   #install-banner{
@@ -173,7 +178,15 @@
     padding:12px 14px 8px;margin:-12px -14px 0;border-bottom:2px solid var(--line);
     box-shadow:0 6px 14px rgba(0,0,0,.18);
   }
-  #suche{margin-bottom:10px}
+  #suche{margin-bottom:8px;min-height:40px;padding:6px 12px;font-size:15px}
+  .filter-zeile{display:flex;gap:8px;align-items:center}
+  .filter-zeile select{flex:1 1 0;min-width:0;min-height:44px;padding:8px 24px 8px 8px;font-size:13px;text-overflow:ellipsis}
+  .filter-zeile select#f-ortschaft-filter{flex-grow:1.2}
+  .defi-kreis{
+    flex:0 0 48px;width:48px;height:48px;padding:0;border-radius:50%;
+    background:#e0398a;border:1px solid #e0398a;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
   .item{
     display:flex;align-items:center;gap:14px;width:100%;text-align:left;
     background:var(--panel);border:1px solid var(--line);border-radius:8px;
@@ -181,6 +194,8 @@
   }
   .item .dist{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;min-width:92px}
   .item .meta{font-size:14px;color:var(--dim);margin-top:2px}
+  .item>span:nth-child(3){min-width:0;flex:1 1 auto}
+  @media (max-width:380px){.item{gap:10px}.item .dist{min-width:70px;font-size:20px}}
   .item-pruefdatum{margin-left:auto;flex:none;font-size:11px;color:var(--dim);text-align:right;padding-left:8px;white-space:nowrap;align-self:center}
   .item .name{font-size:17px}
   .tag{
@@ -214,10 +229,20 @@
     position:relative;pointer-events:auto;padding:64px 88px 18px 14px;
     background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
   }
-  .peil-route{margin-top:10px}
-  .peil-route .btn{width:100%}
-  .peil-route-text{margin-top:6px;font-size:14px;color:var(--dim);min-height:1.2em}
-  .peil-unten:has(.peil-route:not([hidden])){padding-bottom:44px}
+  .peil-route-knopf{
+    position:fixed;right:16px;top:calc(160px + env(safe-area-inset-top));z-index:1700;
+    width:56px;height:56px;border-radius:50%;padding:0;border:0;cursor:pointer;
+    background:#2f7cff;box-shadow:0 4px 14px rgba(0,0,0,.5);
+    display:none;align-items:center;justify-content:center;
+  }
+  #peil.on .peil-route-knopf:not([hidden]){display:flex}
+  .peil-route-knopf:disabled{opacity:.6}
+  .peil-route-info{
+    position:fixed;right:84px;top:calc(176px + env(safe-area-inset-top));z-index:1700;
+    max-width:calc(100vw - 110px);padding:6px 12px;border-radius:999px;font-size:13px;white-space:nowrap;
+    background:#0d1116dd;color:#e6ebf0;border:1px solid #2f7cff;display:none;
+  }
+  #peil.on .peil-route-info.zeigen{display:block}
   .peil-zurueck-btn{
     position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
     width:auto;min-height:44px;padding:10px 18px;background:#0d1116cc;
@@ -356,8 +381,7 @@
         <button class="btn gelb" id="detail-zentrieren">Karte</button>
         <button class="btn rot" id="detail-nein">Zurück</button>
       </div>
-      <button class="btn ghost" id="detail-route" style="margin-top:10px">Route in Google Maps öffnen</button>
-      <button class="btn ghost" id="detail-korrektur" style="margin-top:8px">Eigene Position als Korrektur teilen</button>
+      <button class="btn ghost" id="detail-korrektur" style="margin-top:10px">Eigene Position als Korrektur teilen</button>
       <button class="btn ghost" id="detail-angaben" style="margin-top:8px">✏️ Angaben korrigieren</button>
     </div>
   </div>
@@ -428,6 +452,10 @@
       <div class="u" id="abstandDauerU">Meter Luftlinie</div>
     </div>
     <button class="btn ghost peil-zurueck-btn" id="zurueck">Zurück</button>
+    <button type="button" class="peil-route-knopf" id="peil-route-btn" hidden aria-label="Straßenroute auf der Karte zeigen" title="Straßenroute auf der Karte zeigen">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M12 2L4.5 20.3 12 16.5l7.5 3.8z"/></svg>
+    </button>
+    <div class="peil-route-info" id="peilRouteText"></div>
     <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
     <div class="peil-overlay" id="peilOverlay">
       <div class="peil-oben">
@@ -438,10 +466,6 @@
         <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
         <div class="koord" id="zielKoord"></div>
         <div class="hinweis" id="peilHinweis"></div>
-        <div class="peil-route" id="peilRoute" hidden>
-          <button type="button" class="btn ghost" id="peil-route-btn">Straßenroute auf der Karte zeigen</button>
-          <div class="peil-route-text" id="peilRouteText"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -465,21 +489,14 @@
   <section id="v-liste" class="view on">
     <div class="liste-kopf-fix">
       <input id="suche" type="search" placeholder="Nummer, Straße oder Lage suchen" autocomplete="off">
-      <button class="btn defi-rund" id="naechster-defi" style="margin-top:10px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-          <path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>
-        </svg>
-        Nächster Defi
-      </button>
-      <div class="row" style="margin-top:8px">
-        <div>
-          <label for="f-ortschaft-filter" style="margin:0 0 5px">Ortschaft</label>
-          <select id="f-ortschaft-filter"><option value="">Alle Ortschaften</option></select>
-        </div>
-        <div>
-          <label for="f-typ-filter" style="margin:0 0 5px">Art</label>
-          <select id="f-typ-filter"><option value="">Alle Arten</option></select>
-        </div>
+      <div class="filter-zeile">
+        <select id="f-ortschaft-filter" aria-label="Ortschaft"><option value="">Alle Ortschaften</option></select>
+        <select id="f-typ-filter" aria-label="Art"><option value="">Alle Arten</option></select>
+        <button type="button" class="defi-kreis" id="naechster-defi" aria-label="Nächster Defibrillator" title="Nächster Defibrillator">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+            <path d="M12 19c-4.2-3-8-6.2-8-10.2A4.3 4.3 0 0 1 12 6a4.3 4.3 0 0 1 8 2.8c0 4-3.8 7.2-8 10.2z"/><path d="M13 8.5l-2.4 4h2.8l-2.4 4"/>
+          </svg>
+        </button>
       </div>
     </div>
     <div id="liste" style="margin-top:10px"></div>
@@ -705,7 +722,7 @@ async function grundkarteHinzufuegen(leafletMap){
       }
     }
     const el = document.getElementById("zugangsnummer");
-    if(el) el.textContent = "Zugang Nr. " + nr;
+    if(el) el.textContent = "Nr. " + nr;
   } catch(e){}
 })();
 
@@ -788,6 +805,7 @@ if("geolocation" in navigator){
     gpsBox.classList.toggle("fix-bad", p.coords.accuracy > 15);
     gpsBox.querySelector("b").textContent = "±" + Math.round(p.coords.accuracy) + " m";
     gpsDetail.textContent = p.coords.latitude.toFixed(5) + ", " + p.coords.longitude.toFixed(5);
+    gpsBox.title = gpsDetail.textContent;
     letzteGeschwindigkeit = (typeof p.coords.speed === "number" && !isNaN(p.coords.speed)) ? p.coords.speed : 0;
     if(typeof p.coords.heading === "number" && !isNaN(p.coords.heading) && p.coords.speed > 1) gpsKurs = p.coords.heading;
     aktualisierePeil();
@@ -796,6 +814,8 @@ if("geolocation" in navigator){
   }, err => {
     gpsBox.querySelector("b").textContent = "kein GPS";
     gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
+    gpsBox.title = gpsDetail.textContent;
+    gpsBox.querySelector("b").textContent = err.code === 1 ? "GPS aus" : "kein GPS";
   }, { enableHighAccuracy:true, maximumAge:2000, timeout:20000 });
 } else {
   gpsDetail.textContent = "vom Gerät nicht unterstützt";
@@ -1000,14 +1020,6 @@ function zeigeDetails(s){
 document.getElementById("detail-ja").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   if(detailStelle) oeffnePeil(detailStelle);
-});
-// Strassenroute: oeffnet Google Maps (App oder Browser) mit dem Punkt als Ziel.
-// Es werden nur die Zielkoordinaten uebergeben, Start ist der aktuelle Standort.
-document.getElementById("detail-route").addEventListener("click", () => {
-  if(!detailStelle) return;
-  const url = "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" +
-    encodeURIComponent(detailStelle.lat + "," + detailStelle.lon);
-  window.open(url, "_blank", "noopener");
 });
 document.getElementById("detail-zentrieren").addEventListener("click", () => {
   const s = detailStelle;
@@ -1227,18 +1239,16 @@ function peilRouteZuruecksetzen(){
     try { peilMap.attributionControl.removeAttribution(ROUTE_QUELLENANGABE); } catch(e){}
   }
   peilRouteLinie = null;
-  const t = document.getElementById("peilRouteText"); if(t) t.textContent = "";
-  const b = document.getElementById("peil-route-btn"); if(b) b.textContent = "Straßenroute auf der Karte zeigen";
+  const t = document.getElementById("peilRouteText"); if(t){ t.textContent = ""; t.classList.remove("zeigen"); }
 }
 (function routeKnopfEinrichten(){
-  const box = document.getElementById("peilRoute");
   if(!APP_CONFIG.routeApiUrl) return;   // Funktion ausgeschaltet
-  box.hidden = false;
   const knopf = document.getElementById("peil-route-btn");
+  knopf.hidden = false;
   const text = document.getElementById("peilRouteText");
   knopf.addEventListener("click", async () => {
     if(!ziel) return;
-    const meldung = t => { text.textContent = t; zeigePeilOverlay(); };
+    const meldung = t => { text.textContent = t; text.classList.add("zeigen"); };
     if(!pos) return meldung("Noch kein GPS-Standort.");
     if(!navigator.onLine) return meldung("Für die Route wird Internet gebraucht.");
     knopf.disabled = true;
@@ -1265,8 +1275,7 @@ function peilRouteZuruecksetzen(){
       peilMap.fitBounds(peilRouteLinie.getBounds(), { padding:[36,36] });
       const km = d.meter >= 1000 ? (d.meter / 1000).toFixed(1).replace(".", ",") + " km" : d.meter + " m";
       const min = Math.max(1, Math.round(d.sekunden / 60));
-      knopf.textContent = "Route neu berechnen";
-      meldung("Route: " + km + " · ca. " + min + " Min. mit dem Auto");
+      meldung(km + " · ca. " + min + " Min.");
     } catch(e){
       meldung("Route konnte nicht berechnet werden.");
     } finally {
@@ -1543,9 +1552,10 @@ function standAnzeigen(){
   try { zeit = localStorage.getItem(SYNC_ZEIT_KEY); } catch(e){}
   if(!zeit){ el.textContent = ""; return; }
   const d = new Date(zeit);
-  const datum = d.toLocaleDateString("de-DE");
+  const datum = d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
   const uhrzeit = d.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
-  el.textContent = "Stand: " + datum + ", " + uhrzeit + " Uhr";
+  el.textContent = datum + " " + uhrzeit;
+  el.title = "Stand der Daten: " + datum + " " + uhrzeit + " Uhr";
 }
 standAnzeigen();
 
