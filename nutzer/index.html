@@ -352,7 +352,8 @@
         <button class="btn gelb" id="detail-zentrieren">Karte</button>
         <button class="btn rot" id="detail-nein">Zurück</button>
       </div>
-      <button class="btn ghost" id="detail-korrektur" style="margin-top:10px">Eigene Position als Korrektur teilen</button>
+      <button class="btn ghost" id="detail-route" style="margin-top:10px">Route in Google Maps öffnen</button>
+      <button class="btn ghost" id="detail-korrektur" style="margin-top:8px">Eigene Position als Korrektur teilen</button>
       <button class="btn ghost" id="detail-angaben" style="margin-top:8px">✏️ Angaben korrigieren</button>
     </div>
   </div>
@@ -991,6 +992,14 @@ function zeigeDetails(s){
 document.getElementById("detail-ja").addEventListener("click", () => {
   document.getElementById("detailOverlay").classList.remove("on");
   if(detailStelle) oeffnePeil(detailStelle);
+});
+// Strassenroute: oeffnet Google Maps (App oder Browser) mit dem Punkt als Ziel.
+// Es werden nur die Zielkoordinaten uebergeben, Start ist der aktuelle Standort.
+document.getElementById("detail-route").addEventListener("click", () => {
+  if(!detailStelle) return;
+  const url = "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" +
+    encodeURIComponent(detailStelle.lat + "," + detailStelle.lon);
+  window.open(url, "_blank", "noopener");
 });
 document.getElementById("detail-zentrieren").addEventListener("click", () => {
   const s = detailStelle;
