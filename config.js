@@ -37,6 +37,10 @@ self.APP_CONFIG = {
   // Nur Nutzerversion: Zieladresse für Positions-/Korrekturmeldungen.
   kontaktEmail: "wasserentnahme-foehr@web.de",
 
+  // Nur Nutzerversion: Strassenroute in der Peilkarte (Dienst: OpenRouteService,
+  // ueber den eigenen Worker). Auf null setzen = Funktion aus, Knopf verschwindet.
+  routeApiUrl: "https://loeschbaert-worker.joerg-roeloffs.workers.dev/api/route",
+
   // Nur Hauptversion: Zusammenfassung benachbarter Ortsteile in der Ortschafts-
   // Auswahl/Filterung. Leer lassen ({}), wenn nicht gebraucht.
   ortschaftGruppen: {

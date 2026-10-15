@@ -214,6 +214,10 @@
     position:relative;pointer-events:auto;padding:64px 88px 18px 14px;
     background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
   }
+  .peil-route{margin-top:10px}
+  .peil-route .btn{width:100%}
+  .peil-route-text{margin-top:6px;font-size:14px;color:var(--dim);min-height:1.2em}
+  .peil-unten:has(.peil-route:not([hidden])){padding-bottom:44px}
   .peil-zurueck-btn{
     position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
     width:auto;min-height:44px;padding:10px 18px;background:#0d1116cc;
@@ -434,6 +438,10 @@
         <div class="abstand"><div class="m" id="abstandM">–</div><div class="u" id="abstandU">Meter Luftlinie</div></div>
         <div class="koord" id="zielKoord"></div>
         <div class="hinweis" id="peilHinweis"></div>
+        <div class="peil-route" id="peilRoute" hidden>
+          <button type="button" class="btn ghost" id="peil-route-btn">Straßenroute auf der Karte zeigen</button>
+          <div class="peil-route-text" id="peilRouteText"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1122,12 +1130,14 @@ function oeffnePeil(s){
   document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
+  peilRouteZuruecksetzen();
   peilAutoZoom = true;
   aktualisierePeil();
   aktualisierePeilKarte(true);
   zeigePeilOverlay();
 }
 document.getElementById("zurueck").addEventListener("click", () => {
+  peilRouteZuruecksetzen();
   document.getElementById("peil").classList.remove("on");
   document.getElementById("v-liste").classList.add("on");
   document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x.dataset.view === "v-liste"));
@@ -1207,6 +1217,63 @@ function zeigePeilOverlay(){
     document.getElementById("peilOverlay").classList.remove("sichtbar");
   }, 4000);
 }
+
+/* ---------- Strassenroute in der Peilkarte (OpenRouteService ueber den eigenen Worker) ---------- */
+const ROUTE_QUELLENANGABE = '© <a href="https://openrouteservice.org/">openrouteservice.org</a> by HeiGIT';
+let peilRouteLinie = null;
+function peilRouteZuruecksetzen(){
+  if(peilRouteLinie && peilMap){
+    peilMap.removeLayer(peilRouteLinie);
+    try { peilMap.attributionControl.removeAttribution(ROUTE_QUELLENANGABE); } catch(e){}
+  }
+  peilRouteLinie = null;
+  const t = document.getElementById("peilRouteText"); if(t) t.textContent = "";
+  const b = document.getElementById("peil-route-btn"); if(b) b.textContent = "Straßenroute auf der Karte zeigen";
+}
+(function routeKnopfEinrichten(){
+  const box = document.getElementById("peilRoute");
+  if(!APP_CONFIG.routeApiUrl) return;   // Funktion ausgeschaltet
+  box.hidden = false;
+  const knopf = document.getElementById("peil-route-btn");
+  const text = document.getElementById("peilRouteText");
+  knopf.addEventListener("click", async () => {
+    if(!ziel) return;
+    const meldung = t => { text.textContent = t; zeigePeilOverlay(); };
+    if(!pos) return meldung("Noch kein GPS-Standort.");
+    if(!navigator.onLine) return meldung("Für die Route wird Internet gebraucht.");
+    knopf.disabled = true;
+    meldung("Route wird berechnet …");
+    try {
+      const antwort = await fetch(APP_CONFIG.routeApiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ von: [pos.latitude, pos.longitude], nach: [ziel.lat, ziel.lon] }),
+        signal: AbortSignal.timeout(15000)
+      });
+      if(!antwort.ok){
+        if(antwort.status === 503) return meldung("Routenfunktion derzeit nicht verfügbar.");
+        if(antwort.status === 429) return meldung("Zu viele Anfragen, bitte später erneut versuchen.");
+        if(antwort.status === 404) return meldung("Keine Straßenverbindung gefunden.");
+        return meldung("Route konnte nicht berechnet werden.");
+      }
+      const d = await antwort.json();
+      initPeilMap();
+      peilRouteZuruecksetzen();
+      peilRouteLinie = L.polyline(d.punkte, { color:"#2f7cff", weight:5, opacity:.9 }).addTo(peilMap);
+      try { peilMap.attributionControl.addAttribution(ROUTE_QUELLENANGABE); } catch(e){}
+      peilAutoZoom = false;
+      peilMap.fitBounds(peilRouteLinie.getBounds(), { padding:[36,36] });
+      const km = d.meter >= 1000 ? (d.meter / 1000).toFixed(1).replace(".", ",") + " km" : d.meter + " m";
+      const min = Math.max(1, Math.round(d.sekunden / 60));
+      knopf.textContent = "Route neu berechnen";
+      meldung("Route: " + km + " · ca. " + min + " Min. mit dem Auto");
+    } catch(e){
+      meldung("Route konnte nicht berechnet werden.");
+    } finally {
+      knopf.disabled = false;
+    }
+  });
+})();
 
 function aktualisierePeilKarte(fit){
   if(!ziel || !document.getElementById("peil").classList.contains("on")) return;
