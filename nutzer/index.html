@@ -597,7 +597,8 @@ async function grundkarteHinzufuegen(leafletMap){
       if(gespeichert){ start = Number(gespeichert); }
       else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
     } catch(e){ start = Date.now(); }
-    ablauf = Math.max(start + TEST_TAGE * 24 * 60 * 60 * 1000, FESTE_TESTPHASEN_GRENZE);
+    // Testphase seit 15.10.2026 beendet: ohne Freigabe-Link kein Zugang mehr.
+    ablauf = 0;
   }
 
   if(Date.now() > ablauf){
