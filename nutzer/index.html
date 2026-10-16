@@ -239,7 +239,7 @@
   .peil-route-knopf:disabled{opacity:.6}
   .peil-route-info{
     position:fixed;right:84px;top:calc(176px + env(safe-area-inset-top));z-index:1700;
-    max-width:calc(100vw - 110px);padding:6px 12px;border-radius:999px;font-size:13px;white-space:nowrap;
+    max-width:calc(100vw - 110px);padding:6px 14px;border-radius:16px;font-size:13px;line-height:1.3;
     background:#0d1116dd;color:#e6ebf0;border:1px solid #2f7cff;display:none;
   }
   #peil.on .peil-route-info.zeigen{display:block}
@@ -1206,7 +1206,7 @@ function initPeilMap(){
   peilMap.dragging.disable();
   const container = peilMap.getContainer();
   const zweiFingerCheck = e => {
-    if(e.touches.length >= 2){ peilMap.dragging.enable(); peilAutoZoom = false; }
+    if(e.touches.length >= 2){ peilMap.dragging.enable(); peilAutoZoom = false; peilManuellBis = Date.now() + 12000; }
     else peilMap.dragging.disable();
   };
   container.addEventListener("touchstart", e => {
@@ -1232,13 +1232,66 @@ function zeigePeilOverlay(){
 /* ---------- Strassenroute in der Peilkarte (OpenRouteService ueber den eigenen Worker) ---------- */
 const ROUTE_QUELLENANGABE = '© <a href="https://openrouteservice.org/">openrouteservice.org</a> by HeiGIT';
 let peilRouteLinie = null;
+let peilRoute = null;            // { punkte, schritte, kum, meter, sekunden } der berechneten Route
+let peilRouteAnsicht = "folgen"; // "folgen" = Standort + naechste Abzweigung, "gesamt" = ganze Route
+let peilManuellBis = 0;          // nach Verschieben mit zwei Fingern kurz nicht automatisch nachziehen
+const ROUTE_ABSEITS_M = 80;
 function peilRouteZuruecksetzen(){
+  peilRoute = null; peilRouteAnsicht = "folgen";
   if(peilRouteLinie && peilMap){
     peilMap.removeLayer(peilRouteLinie);
     try { peilMap.attributionControl.removeAttribution(ROUTE_QUELLENANGABE); } catch(e){}
   }
   peilRouteLinie = null;
   const t = document.getElementById("peilRouteText"); if(t){ t.textContent = ""; t.classList.remove("zeigen"); }
+}
+function fmtRouteM(m){ return m >= 1000 ? (m / 1000).toFixed(1).replace(".", ",") + " km" : Math.round(m / 10) * 10 + " m"; }
+function peilRouteNaechsterIndex(){
+  let best = 0, bestD = Infinity;
+  const p = peilRoute.punkte;
+  for(let i = 0; i < p.length; i++){
+    const d = distanz(pos.latitude, pos.longitude, p[i][0], p[i][1]);
+    if(d < bestD){ bestD = d; best = i; }
+  }
+  return { index: best, abstand: bestD };
+}
+function peilRouteAbseits(){
+  return !!(peilRoute && pos && peilRouteNaechsterIndex().abstand > ROUTE_ABSEITS_M);
+}
+// Zeigt die naechste Abzweigung (Entfernung + Text) und stellt den Kartenausschnitt ein.
+function peilRouteAnsichtAnwenden(erzwingen){
+  if(!peilRoute || !pos || !peilMap) return;
+  const text = document.getElementById("peilRouteText");
+  const { index, abstand } = peilRouteNaechsterIndex();
+  const r = peilRoute;
+  const eigene = L.latLng(pos.latitude, pos.longitude);
+  text.classList.add("zeigen");
+  if(abstand > ROUTE_ABSEITS_M){
+    text.textContent = "Abseits der Route – Knopf tippen für neue Route";
+    return;
+  }
+  const naechster = r.schritte.find(s => s.i > index);
+  const restM = Math.max(0, r.meter - Math.round(r.kum[index]));
+  const gesamtText = fmtRouteM(restM) + " · ca. " + Math.max(1, Math.round(r.sekunden * restM / Math.max(1, r.meter) / 60)) + " Min.";
+  let ziel2, danach = null;
+  if(naechster && r.punkte[naechster.i]){
+    const bisAbzweig = Math.max(0, r.kum[naechster.i] - r.kum[index]);
+    text.textContent = "in " + fmtRouteM(bisAbzweig) + ": " + (naechster.t || "weiter") + " (" + gesamtText + ")";
+    ziel2 = L.latLng(r.punkte[naechster.i][0], r.punkte[naechster.i][1]);
+    // Ein Stueck hinter der Abzweigung mit einbeziehen, damit man sieht, wohin es danach geht.
+    let j = naechster.i;
+    while(j < r.punkte.length - 1 && r.kum[j] - r.kum[naechster.i] < 300) j++;
+    danach = L.latLng(r.punkte[j][0], r.punkte[j][1]);
+  } else {
+    text.textContent = "Ziel in " + fmtRouteM(restM);
+    ziel2 = L.latLng(ziel.lat, ziel.lon);
+  }
+  if(peilRouteAnsicht === "gesamt"){
+    if(erzwingen) peilMap.fitBounds(peilRouteLinie.getBounds().extend(eigene), { padding:[36,36] });
+    return;
+  }
+  if(!erzwingen && Date.now() < peilManuellBis) return;
+  peilMap.fitBounds(L.latLngBounds(danach ? [eigene, ziel2, danach] : [eigene, ziel2]), { padding:[70,70], maxZoom:17, minZoom:11, animate:true });
 }
 (function routeKnopfEinrichten(){
   if(!APP_CONFIG.routeApiUrl) return;   // Funktion ausgeschaltet
@@ -1248,6 +1301,12 @@ function peilRouteZuruecksetzen(){
   knopf.addEventListener("click", async () => {
     if(!ziel) return;
     const meldung = t => { text.textContent = t; text.classList.add("zeigen"); };
+    // Route vorhanden und noch auf der Strecke: Antippen wechselt zwischen "naechste Abzweigung" und "ganze Route".
+    if(peilRoute && !peilRouteAbseits()){
+      peilRouteAnsicht = peilRouteAnsicht === "folgen" ? "gesamt" : "folgen";
+      peilRouteAnsichtAnwenden(true);
+      return;
+    }
     if(!pos) return meldung("Noch kein GPS-Standort.");
     if(!navigator.onLine) return meldung("Für die Route wird Internet gebraucht.");
     knopf.disabled = true;
@@ -1272,9 +1331,13 @@ function peilRouteZuruecksetzen(){
       try { peilMap.attributionControl.addAttribution(ROUTE_QUELLENANGABE); } catch(e){}
       peilAutoZoom = false;
       peilMap.fitBounds(peilRouteLinie.getBounds(), { padding:[36,36] });
-      const km = d.meter >= 1000 ? (d.meter / 1000).toFixed(1).replace(".", ",") + " km" : d.meter + " m";
-      const min = Math.max(1, Math.round(d.sekunden / 60));
-      meldung(km + " · ca. " + min + " Min.");
+      const kum = [0];
+      for(let i = 1; i < d.punkte.length; i++){
+        kum.push(kum[i-1] + distanz(d.punkte[i-1][0], d.punkte[i-1][1], d.punkte[i][0], d.punkte[i][1]));
+      }
+      peilRoute = { punkte: d.punkte, schritte: Array.isArray(d.schritte) ? d.schritte : [], kum, meter: d.meter, sekunden: d.sekunden };
+      peilRouteAnsicht = "folgen";
+      peilRouteAnsichtAnwenden(true);
     } catch(e){
       meldung("Route konnte nicht berechnet werden.");
     } finally {
@@ -1303,7 +1366,8 @@ function aktualisierePeilKarte(fit){
     if(peilLinie) peilMap.removeLayer(peilLinie);
     peilLinie = L.polyline([eigeneLL, zielLL], { color:"#e23c22", weight:3, dashArray:"6 6" }).addTo(peilMap);
 
-    if(fit || peilAutoZoom){
+    if(peilRoute) peilRouteAnsichtAnwenden(false);
+    else if(fit || peilAutoZoom){
       peilMap.fitBounds(L.latLngBounds([eigeneLL, zielLL]), { padding:[36,36] });
     }
   } else if(fit){
