@@ -226,7 +226,7 @@
   }
   .peil-overlay.sichtbar{opacity:1;pointer-events:auto}
   .peil-oben{
-    position:relative;pointer-events:auto;padding:64px 88px 18px 14px;
+    position:relative;pointer-events:auto;padding:90px 88px 18px 14px;
     background:linear-gradient(#0d1116ee, #0d1116aa 60%, transparent);
   }
   .peil-route-knopf{
@@ -251,6 +251,11 @@
   #peil.on .peil-route-info.zeigen{display:block}
   #peil.route-info .peil-hinweis-touch{display:none}
   #peil.route-info .peil-unten{padding-bottom:84px}
+  .peil-nr-fix{
+    position:fixed;left:14px;top:calc(64px + env(safe-area-inset-top));z-index:1650;pointer-events:none;
+    font-size:15px;font-weight:600;color:#e6ebf0;text-shadow:0 0 3px #000,0 0 6px #000;
+  }
+  .peil-nr-fix small{font-size:13px;font-weight:500;color:#c7d0d9;margin-left:6px}
   .peil-zurueck-btn{
     position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:1700;
     width:auto;min-height:44px;padding:10px 18px;background:#0d1116cc;
@@ -415,6 +420,7 @@
   <!-- Peilansicht (Navigation): Karte vollflächig, Pfeil dauerhaft sichtbar, Rest nur bei Berührung -->
   <section id="peil">
     <div id="peilMap"></div>
+    <div class="peil-nr-fix" id="peilNrFix"></div>
     <svg class="kompass-mini" id="kompassMini" viewBox="0 0 200 200" aria-hidden="true">
       <defs>
         <radialGradient id="kompassGlas" cx="38%" cy="30%" r="75%">
@@ -466,7 +472,6 @@
     <div class="peil-hinweis-touch" id="peilTouchHinweis">Bildschirm berühren für Details · Verschieben mit zwei Fingern</div>
     <div class="peil-overlay" id="peilOverlay">
       <div class="peil-oben">
-        <div class="ziel" id="zielName">–</div>
         <div class="ziel-meta" id="zielMeta"></div>
       </div>
       <div class="peil-unten">
@@ -1145,8 +1150,8 @@ function oeffnePeil(s){
   ziel = s;
   document.getElementById("peil").classList.add("on");
   document.querySelectorAll(".view").forEach(v => v.classList.remove("on"));
-  document.getElementById("zielName").textContent = s.nr || "ohne Nummer";
-  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.menge ? s.menge+" l/min" : "", s.ortschaft, s.ort].filter(Boolean).join(" · ");
+  document.getElementById("peilNrFix").innerHTML = esc(s.nr || "ohne Nummer") + (s.menge ? "<small>" + esc(s.menge) + " l/min</small>" : "");
+  document.getElementById("zielMeta").textContent = [s.typ, s.dn, s.ortschaft, s.ort].filter(Boolean).join(" · ");
   document.getElementById("zielKoord").textContent = s.lat.toFixed(5) + ", " + s.lon.toFixed(5);
   document.getElementById("peilHinweis").textContent = s.bem || "Keine Bemerkung hinterlegt.";
   peilRouteZuruecksetzen();
@@ -1172,9 +1177,18 @@ function aktualisierePeil(){
     mDauerEl.textContent = "–"; uDauerEl.textContent = "keine eigene Position";
     return;
   }
-  const m = distanz(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  let m = distanz(pos.latitude,pos.longitude,ziel.lat,ziel.lon);
+  let art = "Luftlinie";
+  // Mit berechneter Route: verbleibende Fahrstrecke statt Luftlinie
+  if(peilRoute){
+    const n = peilRouteNaechsterIndex();
+    if(n.abstand <= ROUTE_ABSEITS_M){
+      m = Math.max(0, peilRoute.kum[peilRoute.kum.length - 1] - peilRoute.kum[n.index]);
+      art = "Fahrstrecke";
+    }
+  }
   const mText = m < 1000 ? String(Math.round(m)) : (m/1000).toFixed(1);
-  const uText = m < 1000 ? "Meter Luftlinie" : "Kilometer Luftlinie";
+  const uText = (m < 1000 ? "Meter " : "Kilometer ") + art;
   mEl.textContent = mText; uEl.textContent = uText;
   mDauerEl.textContent = mText; uDauerEl.textContent = uText;
 
@@ -1348,6 +1362,7 @@ function peilRouteAnsichtAnwenden(erzwingen){
       }
       peilRoute = { punkte: d.punkte, schritte: Array.isArray(d.schritte) ? d.schritte : [], kum, meter: d.meter, sekunden: d.sekunden };
       peilRouteAnsicht = "folgen";
+      aktualisierePeil();
       peilRouteAnsichtAnwenden(true);
     } catch(e){
       meldung("Route konnte nicht berechnet werden.");
