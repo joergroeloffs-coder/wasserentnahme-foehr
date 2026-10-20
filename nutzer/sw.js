@@ -1,12 +1,14 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v53-nr-hintergrund";
+const SHELL_CACHE = "nutzer-shell-v54-vertragspruefung";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./manifest.json",
   "../config.js",
+  "../zugriffspruefung.js",
+  "../vendor/supabase.js",
   "../icon.svg",
   "../icon-180.png",
   "../icon-192.png",

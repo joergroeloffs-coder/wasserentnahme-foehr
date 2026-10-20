@@ -529,6 +529,7 @@
 </nav>
 
 <script src="../config.js"></script>
+<script src="../zugriffspruefung.js"></script>
 <script src="../vendor/leaflet.js"></script>
 <script src="../vendor/maplibre-gl.js"></script>
 <script src="../vendor/pmtiles.js"></script>
@@ -585,12 +586,25 @@ if(APP_CONFIG.pmtilesDatei){
     });
 }
 
-async function grundkarteHinzufuegen(leafletMap){
-  if(!grundkartenStylePromise){
+function webglVerfuegbar(){
+  try {
+    const c = document.createElement("canvas");
+    return Boolean(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch(e){ return false; }
+}
+
+function rasterGrundkarteHinzufuegen(leafletMap){
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
     }).addTo(leafletMap);
+}
+
+async function grundkarteHinzufuegen(leafletMap){
+  // Ohne eigene Kartendatei oder ohne WebGL (aeltere Geraete) gibt es die
+  // Rasterkarte als Rueckfall, damit nie eine leere Karte erscheint.
+  if(!grundkartenStylePromise || !webglVerfuegbar()){
+    rasterGrundkarteHinzufuegen(leafletMap);
     return;
   }
   try {
@@ -602,90 +616,9 @@ async function grundkarteHinzufuegen(leafletMap){
     }).addTo(leafletMap);
   } catch(e){
     console.error("Grundkarte konnte nicht geladen werden:", e);
+    rasterGrundkarteHinzufuegen(leafletMap);
   }
 }
-
-/* ---------- Zugangsdauer: erst Testphase (31 Tage ab erstem Öffnen, aber
-   mindestens bis 31.10.2026), nach Freigabe per Link (?freigabe=1) 365 Tage
-   ab dem Freigabe-Zeitpunkt ---------- */
-(function trialPruefen(){
-  const TEST_TAGE = 31;
-  const FREIGABE_TAGE = 365;
-  // Testphase laeuft fuer alle (unabhaengig vom individuellen Startdatum)
-  // mindestens bis zu diesem festen Datum, damit beim Ausrollen der ~100
-  // Zugangslinks niemand vorzeitig ausgesperrt wird.
-  const FESTE_TESTPHASEN_GRENZE = new Date("2026-10-31T23:59:59").getTime();
-  const TRIAL_KEY = APP_CONFIG.speicherPraefix + ".nutzer.trialstart";
-  const FREIGABE_KEY = APP_CONFIG.speicherPraefix + ".nutzer.freigabestart";
-  let ablauf;
-
-  try {
-    if(new URLSearchParams(window.location.search).get("freigabe") === "1" && !localStorage.getItem(FREIGABE_KEY)){
-      localStorage.setItem(FREIGABE_KEY, String(Date.now()));
-    }
-  } catch(e){}
-
-  let freigabeStart = null;
-  try { const g = localStorage.getItem(FREIGABE_KEY); if(g) freigabeStart = Number(g); } catch(e){}
-
-  if(freigabeStart){
-    ablauf = freigabeStart + FREIGABE_TAGE * 24 * 60 * 60 * 1000;
-  } else {
-    let start;
-    try {
-      const gespeichert = localStorage.getItem(TRIAL_KEY);
-      if(gespeichert){ start = Number(gespeichert); }
-      else { start = Date.now(); localStorage.setItem(TRIAL_KEY, String(start)); }
-    } catch(e){ start = Date.now(); }
-    // Testphase seit 15.10.2026 beendet: ohne Freigabe-Link kein Zugang mehr.
-    ablauf = 0;
-  }
-
-  if(Date.now() > ablauf){
-    document.body.innerHTML =
-      '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;padding:24px;text-align:center;background:#0d1116;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif">' +
-      '<h1 style="font-size:20px;margin:0 0 12px">Zugang abgelaufen</h1>' +
-      '<p style="color:#93a3b3;max-width:320px;margin:0">Der Zugang zu dieser Version ist beendet. Bei Interesse an einer weiteren Nutzung bitte den Admin kontaktieren.</p>' +
-      '</div>';
-    throw new Error("Zugang abgelaufen");
-  }
-
-  // Hinweis in der letzten Woche vor Ablauf der Testphase (nicht fuer per
-  // Link freigeschaltete Zugaenge, die laufen ja noch 365 Tage). Erscheint
-  // hoechstens einmal pro Tag als schliessbarer Hinweis unten im Bild.
-  if(!freigabeStart){
-    const RESTTAGE_GRENZE = 7;
-    const restMs = ablauf - Date.now();
-    if(restMs > 0 && restMs <= RESTTAGE_GRENZE * 24 * 60 * 60 * 1000){
-      const HINWEIS_KEY = APP_CONFIG.speicherPraefix + ".nutzer.testphaseHinweisTag";
-      const heute = new Date().toISOString().slice(0, 10);
-      let schonGezeigt = false;
-      try { schonGezeigt = localStorage.getItem(HINWEIS_KEY) === heute; } catch(e){}
-      if(!schonGezeigt){
-        const resttage = Math.max(1, Math.ceil(restMs / (24 * 60 * 60 * 1000)));
-        window.addEventListener("DOMContentLoaded", () => {
-          const box = document.createElement("div");
-          box.id = "testphase-hinweis";
-          box.style.cssText =
-            "position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));" +
-            "z-index:9999;background:#2a1d08;border:1px solid #e0a13a;color:#f4ecc9;" +
-            "padding:12px 14px;border-radius:10px;font:14px/1.4 system-ui,sans-serif;" +
-            "box-shadow:0 6px 24px rgba(0,0,0,.6)";
-          box.innerHTML =
-            "Diese Testversion endet am 31.10.2026 (noch " + resttage + " Tag" + (resttage === 1 ? "" : "e") + "). " +
-            "Ab dem 1.11. ist die App ohne Freischaltung nicht mehr nutzbar." +
-            '<button type="button" style="display:block;margin-top:8px;background:#e0a13a;color:#1a1200;' +
-            'border:0;border-radius:6px;padding:6px 12px;font-weight:700;cursor:pointer">Verstanden</button>';
-          document.body.appendChild(box);
-          box.querySelector("button").addEventListener("click", () => {
-            box.remove();
-            try { localStorage.setItem(HINWEIS_KEY, heute); } catch(e){}
-          });
-        });
-      }
-    }
-  }
-})();
 
 /* ---------- Hinweis auf die neuen Wasserwerk-Daten. Erscheint bei jedem
    Öffnen der App (keine Unterdrückung über localStorage - bewusst so,

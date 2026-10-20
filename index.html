@@ -605,6 +605,7 @@
 </nav>
 
 <script src="config.js"></script>
+<script src="zugriffspruefung.js" data-betreiber="ja"></script>
 <script src="vendor/leaflet.js"></script>
 <script src="vendor/maplibre-gl.js"></script>
 <script src="vendor/pmtiles.js"></script>
@@ -666,12 +667,25 @@ if(APP_CONFIG.pmtilesDatei){
     });
 }
 
-async function grundkarteHinzufuegen(leafletMap){
-  if(!grundkartenStylePromise){
+function webglVerfuegbar(){
+  try {
+    const c = document.createElement("canvas");
+    return Boolean(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch(e){ return false; }
+}
+
+function rasterGrundkarteHinzufuegen(leafletMap){
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
     }).addTo(leafletMap);
+}
+
+async function grundkarteHinzufuegen(leafletMap){
+  // Ohne eigene Kartendatei oder ohne WebGL (aeltere Geraete) gibt es die
+  // Rasterkarte als Rueckfall, damit nie eine leere Karte erscheint.
+  if(!grundkartenStylePromise || !webglVerfuegbar()){
+    rasterGrundkarteHinzufuegen(leafletMap);
     return;
   }
   try {
@@ -683,6 +697,7 @@ async function grundkarteHinzufuegen(leafletMap){
     }).addTo(leafletMap);
   } catch(e){
     console.error("Grundkarte konnte nicht geladen werden:", e);
+    rasterGrundkarteHinzufuegen(leafletMap);
   }
 }
 

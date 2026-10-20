@@ -50,5 +50,20 @@ self.APP_CONFIG = {
     "Hedehusum": "Utersum / Dunsum / Witsum / Hedehusum",
     "Nieblum": "Nieblum / Goting",
     "Goting": "Nieblum / Goting"
-  }
+  },
+
+  // Zentrale Vertrags- und Zugriffsprüfung. Der Worker-Name stammt aus der
+  // Zeit vor der Umbenennung; eine Änderung würde die bestehende Adresse und
+  // damit den laufenden Betrieb brechen.
+  aboWorkerUrl: "https://loeschbaert-worker.joerg-roeloffs.workers.dev",
+  supabaseUrl: "https://bmntahgtagjijfyeepju.supabase.co",
+  // Öffentlicher anon-Schlüssel, für den Browser vorgesehen. Der
+  // service_role-Schlüssel steht ausschließlich im Worker.
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJtbnRhaGd0YWdqaWpmeWVlcGp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk4OTE2ODEsImV4cCI6MjEwNTQ2NzY4MX0.YzXfS98rli0PvIXmIyBAg9KJjcOW2NlXZq9fHzpcA0g",
+  bestellSeite: "/registrieren.html",
+
+  // Öffentlicher Schlüssel zur Prüfung der Gnadenfrist (Offline-Freigabe, vom
+  // Worker signiert). Solange hier null steht, gibt es keine Offline-Freigabe.
+  // Der Wert wird im Admin-Bereich unter "Offline-Gnadenfrist" erzeugt.
+  gnadenSchluessel: {"kty": "EC", "crv": "P-256", "x": "Qbc-HjGei-4U0cnUsjvOsTii2VlQjOpcYBlIiGz5vLw", "y": "lyPYxH7qQCbBsxAJquMw3OdAtGt7UI3VKqFUp6YlCao"}
 };
