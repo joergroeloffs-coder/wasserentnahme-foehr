@@ -179,6 +179,19 @@
 
   async function starten(optionen) {
     const betreiberErforderlich = Boolean(optionen && optionen.betreiberErforderlich);
+    // Fehler aus dem Anmelde-Link (z.B. abgelaufen oder schon benutzt) merken, bevor
+    // die Bibliothek die Adresse bereinigt. Wird auf der Anmeldeseite angezeigt.
+    let linkFehler = "";
+    try {
+      const teile = new URLSearchParams(location.hash.replace(/^#/, "") + "&" + location.search.replace(/^\?/, ""));
+      const code = teile.get("error_code") || teile.get("error");
+      if (code) {
+        linkFehler = code === "otp_expired"
+          ? "Der Anmelde-Link ist abgelaufen oder wurde schon geöffnet (manche Mail-Programme prüfen Links vorab). Bitte neuen Link anfordern und gleich öffnen."
+          : "Die Anmeldung über den Link ist fehlgeschlagen (" + code + "). Bitte neuen Link anfordern.";
+        console.error("Anmelde-Link:", teile.get("error_description") || code);
+      }
+    } catch (e) {}
     const sperre = sperreAufbauen();
     const hinweis = sperre.querySelector("#zugang-hinweis");
     const anmeldung = sperre.querySelector("#zugang-anmeldung");
@@ -249,7 +262,7 @@
           (sitzungsfehler && /retryable|fetch|network/i.test(String(sitzungsfehler.name) + String(sitzungsfehler.message)));
         if (offline) return gnadeOderNetzfehler();
         await zwischenspeicherLeeren();
-        zeigeAnmeldung(TEXTE.nicht_angemeldet);
+        zeigeAnmeldung(linkFehler || TEXTE.nicht_angemeldet);
         return null;
       }
 
