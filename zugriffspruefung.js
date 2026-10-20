@@ -143,11 +143,25 @@
     leiste.style.cssText =
       "position:fixed;top:0;left:0;right:0;z-index:2147483000;background:#3a2a05;color:#ffe3a3;" +
       "padding:8px 12px;font:13px/1.35 system-ui,sans-serif;text-align:center;border-bottom:1px solid #8a6a1f";
-    leiste.textContent =
+    const text = document.createElement("span");
+    text.textContent =
       "Keine Verbindung: Löschbärt läuft mit der zuletzt geprüften Freigabe, gültig bis " + bis +
       ". Sobald wieder Netz da ist, wird neu geprüft.";
+    // Schliessbar: Antippen blendet den Hinweis fuer diese Sitzung aus.
+    const zu = document.createElement("button");
+    zu.type = "button";
+    zu.textContent = "Schließen";
+    zu.style.cssText =
+      "display:block;margin:6px auto 0;background:#ffe3a3;color:#3a2a05;border:0;border-radius:6px;" +
+      "padding:6px 14px;font:600 13px system-ui,sans-serif;cursor:pointer";
+    zu.addEventListener("click", () => leiste.remove());
+    leiste.append(text, zu);
     document.body.appendChild(leiste);
+    // Sobald wieder Netz da ist, neu pruefen (Ereignis und zur Sicherheit alle 20 Sekunden).
     window.addEventListener("online", () => location.reload(), { once: true });
+    const pruefer = setInterval(() => {
+      if (navigator.onLine) { clearInterval(pruefer); location.reload(); }
+    }, 20000);
   }
 
   function sperreAufbauen() {
