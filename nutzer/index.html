@@ -625,6 +625,8 @@ async function grundkarteHinzufuegen(leafletMap){
    bis der Hinweis wieder entfernt wird), schließbar für die laufende
    Sitzung. ---------- */
 (function wasserwerkHinweisAnzeigen(){
+  // Wird ab dem 04.11.2026 (14 Tage nach dem 21.10.2026) nicht mehr angezeigt.
+  if(Date.now() >= new Date("2026-11-04T00:00:00").getTime()) return;
   window.addEventListener("DOMContentLoaded", () => {
     // Falls der Testphase-Hinweis gerade auch eingeblendet ist, nicht
     // darueberlegen, sondern obendrauf stapeln.
