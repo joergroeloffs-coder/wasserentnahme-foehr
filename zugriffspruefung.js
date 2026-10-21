@@ -185,6 +185,13 @@
       '<button id="zugang-senden" type="button" ' +
       'style="width:100%;margin-top:10px;padding:12px;border:0;border-radius:8px;background:#2fa4ff;color:#071018;font-weight:700;font-size:15px;cursor:pointer">' +
       "Anmelde-Link senden</button>" +
+      '<div id="zugang-code-bereich" hidden style="margin-top:18px;text-align:left">' +
+      '<label for="zugang-code" style="display:block;font-size:13px;color:#93a3b3">Oder: Code aus der E-Mail (zum Beispiel für ein Tablet)</label>' +
+      '<input id="zugang-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="10" ' +
+      'style="width:100%;padding:12px;margin-top:4px;border-radius:8px;border:1px solid #2a313c;background:#161b22;color:#e6edf3;font:inherit;letter-spacing:.2em">' +
+      '<button id="zugang-code-senden" type="button" ' +
+      'style="width:100%;margin-top:10px;padding:12px;border:1px solid #2fa4ff;border-radius:8px;background:none;color:#2fa4ff;font-weight:700;font-size:15px;cursor:pointer">' +
+      "Mit Code anmelden</button></div>" +
       '<p style="font-size:13px;margin-top:14px"><a id="zugang-kaufen" href="#" style="color:#2fa4ff">Noch kein Zugang? Anfrage per E-Mail</a></p>' +
       "</div></div>";
     document.body.prepend(sperre);
@@ -260,7 +267,23 @@
         ? error.status === 429
           ? "Zu viele Anfragen. Bitte eine Minute warten und dann erneut versuchen."
           : "Der Anmelde-Link konnte nicht gesendet werden. Bitte später erneut versuchen."
-        : "Anmelde-Link wurde versandt. Bitte das E-Mail-Postfach öffnen.";
+        : "Anmelde-Link wurde versandt. Bitte das E-Mail-Postfach öffnen. Auf einem anderen Gerät kannst du stattdessen den Code aus der E-Mail unten eingeben.";
+      if (!error) sperre.querySelector("#zugang-code-bereich").hidden = false;
+    });
+
+    // Anmeldung mit dem Zahlencode aus derselben E-Mail (kein Link-Transfer noetig).
+    sperre.querySelector("#zugang-code-senden").addEventListener("click", async () => {
+      const email = sperre.querySelector("#zugang-email").value.trim();
+      const code = sperre.querySelector("#zugang-code").value.replace(/\s+/g, "");
+      if (!email) { hinweis.textContent = "Bitte oben die E-Mail-Adresse eingeben."; return; }
+      if (!/^\d{6,10}$/.test(code)) { hinweis.textContent = "Bitte den Code aus der E-Mail eingeben (nur Ziffern)."; return; }
+      const { error } = await client.auth.verifyOtp({ email, token: code, type: "email" });
+      if (error) {
+        console.error("Code-Anmeldung:", error.status, error.code, error.message);
+        hinweis.textContent = "Der Code ist falsch oder abgelaufen. Bitte einen neuen Code anfordern.";
+        return;
+      }
+      // Der Wechsel des Anmeldestatus loest die Pruefung von selbst aus.
     });
 
     async function pruefen() {
