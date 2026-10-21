@@ -61,6 +61,7 @@
   // Nach entzogenem Zugang darf keine benutzbare Kopie zurueckbleiben.
   async function zwischenspeicherLeeren() {
     gnadeLoeschen();
+    try { localStorage.removeItem(APP_CONFIG.speicherPraefix + ".angemeldet-als"); } catch (e) {}
     try {
       if (window.caches && caches.keys) {
         const namen = await caches.keys();
