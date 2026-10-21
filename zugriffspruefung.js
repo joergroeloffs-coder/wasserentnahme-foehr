@@ -193,7 +193,7 @@
       '<button id="zugang-code-senden" type="button" ' +
       'style="width:100%;margin-top:10px;padding:12px;border:1px solid #2fa4ff;border-radius:8px;background:none;color:#2fa4ff;font-weight:700;font-size:15px;cursor:pointer">' +
       "Mit Code anmelden</button></div>" +
-      '<p id="zugang-kundenbereich" hidden style="font-size:14px;margin-top:16px"><a href="https://roewise.com/kundenbereich.html" style="color:#2fa4ff">Geräte im Kundenbereich verwalten</a></p>' +
+      '<p id="zugang-kundenbereich" style="font-size:14px;margin-top:16px"><a href="https://roewise.com/kundenbereich.html" style="color:#2fa4ff">Geräte im Kundenbereich verwalten</a></p>' +
       '<p style="font-size:13px;margin-top:14px"><a id="zugang-kaufen" href="#" style="color:#2fa4ff">Noch kein Zugang? Anfrage per E-Mail</a></p>' +
       "</div></div>";
     document.body.prepend(sperre);
@@ -322,8 +322,6 @@
       if (!antwort.ok || !ergebnis.erlaubt) {
         await zwischenspeicherLeeren();
         zeigeAnmeldung(TEXTE[ergebnis.grund] || TEXTE.kein_abo);
-        // Bei erreichtem Gerätelimit führt ein Link zum Kundenbereich, wo ein altes Gerät entfernt wird.
-        if (ergebnis.grund === "geraetelimit_erreicht") sperre.querySelector("#zugang-kundenbereich").hidden = false;
         return null;
       }
       if (betreiberErforderlich && ergebnis.betreiber !== true) {
