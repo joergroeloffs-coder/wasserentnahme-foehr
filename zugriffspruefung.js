@@ -58,6 +58,22 @@
     return id;
   }
 
+  // Anzeigename des Geraets fuer die Verwaltung, z.B. "Android Chrome" oder "Windows Edge App".
+  function geraeteName() {
+    const ua = navigator.userAgent || "";
+    let os = /iPad/.test(ua) ? "iPad" : /iPhone|iPod/.test(ua) ? "iPhone" : /Android/.test(ua) ? "Android"
+      : /Windows/.test(ua) ? "Windows" : /CrOS/.test(ua) ? "ChromeOS" : /Mac OS X|Macintosh/.test(ua) ? "Mac"
+      : /Linux/.test(ua) ? "Linux" : "";
+    if (os === "Mac" && navigator.maxTouchPoints > 1) os = "iPad"; // iPadOS meldet sich als Mac
+    const browser = /Edg\//.test(ua) ? "Edge" : /OPR\/|Opera/.test(ua) ? "Opera" : /SamsungBrowser/.test(ua) ? "Samsung Internet"
+      : /Firefox|FxiOS/.test(ua) ? "Firefox" : /CriOS|Chrome/.test(ua) ? "Chrome" : /Safari/.test(ua) ? "Safari" : "";
+    let app = "";
+    try {
+      if ((window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone) app = " App";
+    } catch (e) {}
+    return ((os + " " + browser).trim() + app).trim() || "Gerät";
+  }
+
   // Nach entzogenem Zugang darf keine benutzbare Kopie zurueckbleiben.
   async function zwischenspeicherLeeren() {
     gnadeLoeschen();
@@ -308,7 +324,8 @@
       let antwort;
       try {
         antwort = await fetch(
-          APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(geraeteId()),
+          APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(geraeteId()) +
+            "&name=" + encodeURIComponent(geraeteName()),
           { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store" }
         );
       } catch (e) {
