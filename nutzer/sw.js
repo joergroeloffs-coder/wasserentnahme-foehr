@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v62-geraetename";
+const SHELL_CACHE = "nutzer-shell-v63-anleitung";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
@@ -21,7 +21,8 @@ const SHELL_FILES = [
   "../vendor/images/layers.png",
   "../vendor/images/layers-2x.png",
   "../daten/stellen.geojson",
-  "../anleitung/index.html"
+  "../anleitung/index.html",
+  "../anleitung/nutzer.html"
 ];
 /* Die PMTiles/MapLibre-Dateien nur cachen, wenn diese Gemeinde eine eigene
    Offlinekarte hat (APP_CONFIG.pmtilesDatei gesetzt) - cache.addAll() ist
