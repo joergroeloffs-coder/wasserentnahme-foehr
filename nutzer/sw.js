@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v63-anleitung";
+const SHELL_CACHE = "nutzer-shell-v64-zoom500";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",

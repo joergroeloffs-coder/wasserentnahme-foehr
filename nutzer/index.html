@@ -785,7 +785,7 @@ if("geolocation" in navigator){
     gpsDetail.textContent = err.code === 1 ? "Zugriff verweigert" : "kein Empfang";
     gpsBox.title = gpsDetail.textContent;
     gpsBox.querySelector("b").textContent = err.code === 1 ? "GPS aus" : "kein GPS";
-  }, { enableHighAccuracy:true, maximumAge:2000, timeout:20000 });
+  }, { enableHighAccuracy:true, maximumAge:0, timeout:20000 });
 } else {
   gpsDetail.textContent = "vom Gerät nicht unterstützt";
 }
@@ -1178,7 +1178,7 @@ let peilAutoZoom = true;
 function initPeilMap(){
   if(peilMap) return;
   L.Icon.Default.imagePath = "../vendor/images/";
-  peilMap = L.map("peilMap", { zoomControl:false }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomPeil);
+  peilMap = L.map("peilMap", { zoomControl:false, zoomSnap:0.25 }).setView(APP_CONFIG.kartenMitte, APP_CONFIG.kartenZoomPeil);
   grundkarteHinzufuegen(peilMap);
 
   // Verschieben nur mit zwei Fingern (versehentliches Verschieben vermindern)
@@ -1272,7 +1272,22 @@ function peilRouteAnsichtAnwenden(erzwingen){
     return;
   }
   if(!erzwingen && Date.now() < peilManuellBis) return;
-  peilMap.fitBounds(L.latLngBounds(danach ? [eigene, ziel2, danach] : [eigene, ziel2]), { paddingTopLeft:[60,150], paddingBottomRight:[60,130], maxZoom:17, minZoom:11, animate:true });
+  const grenzen = L.latLngBounds(danach ? [eigene, ziel2, danach] : [eigene, ziel2]);
+  // Ausschnitt hoechstens ca. 500 m breit: Zoomstufe, bei der die Kartenbreite 500 m entspricht.
+  const breite = Math.max(200, peilMap.getSize().x);
+  const zoom500 = Math.ceil(Math.log2(156543.03 * Math.cos(eigene.lat * Math.PI / 180) * breite / 500) * 4) / 4;
+  const zoomPassend = peilMap.getBoundsZoom(grenzen, false, L.point(120, 280));
+  if(zoomPassend >= zoom500){
+    // Standort, Abzweigung und der Weg danach passen in einen engen Ausschnitt
+    peilMap.fitBounds(grenzen, { paddingTopLeft:[60,150], paddingBottomRight:[60,130], maxZoom:17.5, animate:true });
+  } else {
+    // Abzweigung weit weg: engen Ausschnitt auf Standort und die Strecke davor zeigen (ca. 250 m voraus)
+    let j = index;
+    while(j < r.punkte.length - 1 && r.kum[j] - r.kum[index] < 250) j++;
+    const voraus = L.latLng(r.punkte[j][0], r.punkte[j][1]);
+    const mitte = L.latLng((eigene.lat + voraus.lat) / 2, (eigene.lng + voraus.lng) / 2);
+    peilMap.setView(mitte, zoom500, { animate:true });
+  }
 }
 (function routeKnopfEinrichten(){
   if(!APP_CONFIG.routeApiUrl) return;   // Funktion ausgeschaltet
