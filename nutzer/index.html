@@ -1632,21 +1632,40 @@ aktualisiereFilterListen(); zeichneListe();
 
 /* ---------- Handy-Zurück-Taste: erst Overlays/Ansichten schließen, ---------- */
 /* ---------- erst auf dem Startbildschirm nachfragen, ob App schließen ---------- */
-function zurueckWacheSetzen(){
-  try { history.pushState({ appGuard: true }, ""); } catch(e){}
+let wacheNr = 0;           // Zaehler der von der App gesetzten Verlaufsschritte
+let appWirdVerlassen = false;
+function wacheOben(){ return !!(history.state && history.state.appGuard); }
+function zurueckWacheSetzen(erzwingen){
+  // Nur setzen, wenn oben nicht schon ein eigener Schritt liegt (verhindert, dass sich Schritte stapeln).
+  if(!erzwingen && wacheOben()) return;
+  try { history.pushState({ appGuard: true, nr: ++wacheNr }, ""); } catch(e){}
 }
 // Zweimal setzen: manche Android/Chrome-Versionen erkennen bei installierten
 // PWAs einen einzelnen per JS gesetzten Verlaufsschritt bei der System-
 // Zurück-Geste nicht zuverlässig und schließen die App sonst direkt.
-zurueckWacheSetzen();
-zurueckWacheSetzen();
-// Nach Rückkehr aus dem Hintergrund (App-Wechsel) erneut absichern.
+zurueckWacheSetzen(true);
+zurueckWacheSetzen(true);
+// Chrome ueberspringt Verlaufsschritte, die ohne Bedienung der Seite gesetzt wurden.
+// Deshalb nach der ersten Beruehrung einmal einen echten Schritt anlegen.
+window.addEventListener("pointerdown", () => zurueckWacheSetzen(true), { once: true });
+// Nach Rückkehr aus dem Hintergrund (App-Wechsel) erneut absichern, ohne Schritte zu stapeln.
 window.addEventListener("pageshow", (e) => { if(e.persisted) zurueckWacheSetzen(); });
 document.addEventListener("visibilitychange", () => {
   if(document.visibilityState === "visible") zurueckWacheSetzen();
 });
 
-window.addEventListener("popstate", () => {
+// Verlaesst die App sicher: genau so viele Schritte zurueck, wie die App selbst angelegt hat.
+function appVerlassen(landeNr){
+  appWirdVerlassen = true;
+  const schritte = (landeNr || 0) + 1;   // bis zum Ausgangsschritt und einen weiter
+  try { window.close(); } catch(e){}
+  try { history.go(-schritte); } catch(e){ history.back(); }
+  // Falls das Verlassen nicht greift (z.B. Verlauf anders als erwartet): einzeln zurueck.
+  setTimeout(() => { if(document.visibilityState === "visible") history.back(); }, 400);
+}
+
+window.addEventListener("popstate", (ereignis) => {
+  if(appWirdVerlassen) return;
   if(document.getElementById("peil").classList.contains("on")){
     document.getElementById("zurueck").click();
     zurueckWacheSetzen();
@@ -1669,10 +1688,11 @@ window.addEventListener("popstate", () => {
     zurueckWacheSetzen();
     return;
   }
+  const landeNr = ereignis.state && ereignis.state.appGuard ? ereignis.state.nr : 0;
   if(confirm("App wirklich schließen?")){
-    // Nichts tun: der nächste Zurück-Druck verlässt die App wie gewohnt.
+    appVerlassen(landeNr);
   } else {
-    zurueckWacheSetzen();
+    zurueckWacheSetzen(true);
   }
 });
 
