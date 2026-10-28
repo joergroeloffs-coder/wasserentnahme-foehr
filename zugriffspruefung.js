@@ -350,7 +350,11 @@
 
       if (!betreiberErforderlich && ergebnis.gnadenToken) gnadeSpeichern(ergebnis.gnadenToken);
       sperre.remove();
-      return { session, zugang: ergebnis };
+      const ergebnisObjekt = { session, zugang: ergebnis };
+      // Auch bei einer spaeteren Anmeldung (Link/Code auf der Sperrseite) melden, wer angemeldet ist.
+      window.LOESCHBAERT_ZUGANG.zugang = ergebnisObjekt;
+      document.dispatchEvent(new CustomEvent("loeschbaert-zugang-bereit", { detail: ergebnisObjekt }));
+      return ergebnisObjekt;
     }
 
     client.auth.onAuthStateChange((ereignis) => {
