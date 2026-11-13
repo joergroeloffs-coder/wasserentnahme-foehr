@@ -305,10 +305,19 @@
     });
 
     async function pruefen() {
+      // Ohne Netz sofort die Gnadenfrist pruefen. Sonst versucht die Bibliothek bei abgelaufener
+      // Sitzung minutenlang, sie zu erneuern, und die App haengt bei "Zugang wird geprueft".
+      if (navigator.onLine === false) return gnadeOderNetzfehler();
+      // Im Funkloch (Netz gemeldet, aber keine Verbindung) nach wenigen Sekunden aufgeben.
+      const sitzungsAntwort = await Promise.race([
+        client.auth.getSession(),
+        new Promise((fertig) => setTimeout(() => fertig({ zeitlimit: true }), 6000)),
+      ]);
+      if (sitzungsAntwort.zeitlimit) return gnadeOderNetzfehler();
       const {
         data: { session },
         error: sitzungsfehler,
-      } = await client.auth.getSession();
+      } = sitzungsAntwort;
       if (!session) {
         // Ohne Netz kann die Sitzung nicht erneuert werden: Gnadenfrist pruefen,
         // statt den Zwischenspeicher zu loeschen.
@@ -326,7 +335,7 @@
         antwort = await fetch(
           APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(geraeteId()) +
             "&name=" + encodeURIComponent(geraeteName()),
-          { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store" }
+          { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store", signal: AbortSignal.timeout(8000) }
         );
       } catch (e) {
         // Ohne Netz gilt nur die vom Server signierte, zeitlich begrenzte Gnadenfrist.
