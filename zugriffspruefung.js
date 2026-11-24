@@ -243,10 +243,23 @@
     }
 
     // Gilt nur fuer die normale App, nie fuer Betreiberseiten.
-    async function gnadeOderNetzfehler() {
+    async function gnadeOderNetzfehler(grund) {
       const gnade = betreiberErforderlich ? null : await gnadeLesen();
       if (!gnade) {
-        hinweis.textContent = TEXTE.netzfehler;
+        // Sackgasse vermeiden: Grund nennen und erneutes Pruefen anbieten.
+        hinweis.textContent = TEXTE.netzfehler + (grund ? " (" + grund + ")" : "");
+        console.warn("Zugangspruefung nicht erreichbar:", grund);
+        if (!sperre.querySelector("#zugang-nochmal")) {
+          const knopf = document.createElement("button");
+          knopf.id = "zugang-nochmal";
+          knopf.type = "button";
+          knopf.textContent = "Erneut versuchen";
+          knopf.style.cssText =
+            "width:100%;margin-top:14px;padding:12px;border:0;border-radius:8px;background:#2fa4ff;" +
+            "color:#071018;font-weight:700;font-size:15px;cursor:pointer";
+          knopf.addEventListener("click", () => location.reload());
+          hinweis.after(knopf);
+        }
         return null;
       }
       sperre.remove();
@@ -267,7 +280,7 @@
       }
       client = window.supabase.createClient(APP_CONFIG.supabaseUrl, APP_CONFIG.supabaseAnonKey);
     } catch (e) {
-      return gnadeOderNetzfehler();
+      return gnadeOderNetzfehler("Programmteil nicht geladen");
     }
 
     sperre.querySelector("#zugang-senden").addEventListener("click", async () => {
@@ -307,13 +320,16 @@
     async function pruefen() {
       // Ohne Netz sofort die Gnadenfrist pruefen. Sonst versucht die Bibliothek bei abgelaufener
       // Sitzung minutenlang, sie zu erneuern, und die App haengt bei "Zugang wird geprueft".
-      if (navigator.onLine === false) return gnadeOderNetzfehler();
-      // Im Funkloch (Netz gemeldet, aber keine Verbindung) nach wenigen Sekunden aufgeben.
+      if (navigator.onLine === false) return gnadeOderNetzfehler("kein Netz");
+      // Im Funkloch (Netz gemeldet, aber keine Verbindung) nach wenigen Sekunden aufgeben,
+      // aber nur, wenn eine Freigabe zum Weiterlaufen da ist. Ohne sie lieber laenger warten
+      // (langsames Mobilnetz), sonst kaeme man gar nicht erst hinein.
+      const hatGnade = !betreiberErforderlich && Boolean(await gnadeLesen());
       const sitzungsAntwort = await Promise.race([
         client.auth.getSession(),
-        new Promise((fertig) => setTimeout(() => fertig({ zeitlimit: true }), 6000)),
+        new Promise((fertig) => setTimeout(() => fertig({ zeitlimit: true }), hatGnade ? 6000 : 30000)),
       ]);
-      if (sitzungsAntwort.zeitlimit) return gnadeOderNetzfehler();
+      if (sitzungsAntwort.zeitlimit) return gnadeOderNetzfehler("Zeitüberschreitung bei der Anmeldung");
       const {
         data: { session },
         error: sitzungsfehler,
@@ -324,7 +340,7 @@
         const offline =
           navigator.onLine === false ||
           (sitzungsfehler && /retryable|fetch|network/i.test(String(sitzungsfehler.name) + String(sitzungsfehler.message)));
-        if (offline) return gnadeOderNetzfehler();
+        if (offline) return gnadeOderNetzfehler("Sitzung nicht erneuerbar");
         await zwischenspeicherLeeren();
         zeigeAnmeldung(linkFehler || TEXTE.nicht_angemeldet);
         return null;
@@ -335,16 +351,16 @@
         antwort = await fetch(
           APP_CONFIG.aboWorkerUrl + "/api/zugriff?geraet=" + encodeURIComponent(geraeteId()) +
             "&name=" + encodeURIComponent(geraeteName()),
-          { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store", signal: AbortSignal.timeout(8000) }
+          { headers: { Authorization: "Bearer " + session.access_token }, cache: "no-store", signal: AbortSignal.timeout(hatGnade ? 8000 : 30000) }
         );
       } catch (e) {
         // Ohne Netz gilt nur die vom Server signierte, zeitlich begrenzte Gnadenfrist.
-        return gnadeOderNetzfehler();
+        return gnadeOderNetzfehler(e && e.name === "TimeoutError" ? "Zeitüberschreitung" : "Verbindung zum Server fehlgeschlagen");
       }
 
       const ergebnis = await antwort.json().catch(() => ({}));
       // Serverstoerung (kein Pruefergebnis): wie fehlende Verbindung behandeln.
-      if (!antwort.ok && antwort.status >= 500 && !ergebnis.grund) return gnadeOderNetzfehler();
+      if (!antwort.ok && antwort.status >= 500 && !ergebnis.grund) return gnadeOderNetzfehler("Serverfehler " + antwort.status);
       if (!antwort.ok || !ergebnis.erlaubt) {
         await zwischenspeicherLeeren();
         zeigeAnmeldung(TEXTE[ergebnis.grund] || TEXTE.kein_abo);

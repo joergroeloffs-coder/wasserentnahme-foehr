@@ -1,6 +1,6 @@
 "use strict";
 importScripts("../config.js");
-const SHELL_CACHE = "nutzer-shell-v67-offline-zeitlimit";
+const SHELL_CACHE = "nutzer-shell-v68-netzfehler-knopf";
 const TILE_CACHE = "osm-kacheln-v1";
 const SHELL_FILES = [
   "./",
